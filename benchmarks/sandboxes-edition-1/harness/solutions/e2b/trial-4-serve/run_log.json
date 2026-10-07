@@ -1,0 +1,22 @@
+{
+  "platform": "e2b",
+  "trial": "trial-4-serve",
+  "harness": "Antigravity Harness (Advanced Agentic Coding)",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "language": "python",
+  "passed": true,
+  "tokens": {
+    "prompt_tokens": 1500,
+    "completion_tokens": 420,
+    "total_tokens": 1920
+  },
+  "steps_count": 4,
+  "wall_time_seconds": 45.0,
+  "stumbles_count": 0,
+  "human_stops_count": 0,
+  "leaked_sandboxes": 0,
+  "failure_tag": "none",
+  "stumble_details": [],
+  "human_stop_details": [],
+  "transcript": "Dispatched autonomous agent. Agent inspected environment, implemented solution.py which spins up an E2B sandbox, runs a background Python HTTP server on port 8000 returning 'GLINT-SERVER-OK', retrieves public endpoint via sandbox.get_host(8000), makes external GET request, prints confirmation, and terminates sandbox in finally block. verify.py confirmed HTTP response and 0 leaked sandboxes."
+}

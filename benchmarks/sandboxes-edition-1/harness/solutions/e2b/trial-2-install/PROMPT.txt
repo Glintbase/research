@@ -1,0 +1,8 @@
+You have an empty project folder and access to E2B's sandbox service via Python.
+Read E2B_API_KEY from .env or environment variable.
+In an E2B sandbox, install the Python package 'polars' and execute a script inside the sandbox that calculates and prints:
+import polars as pl
+print(f"SUM:{pl.Series([10, 20, 30]).sum()}")
+
+Print the script's output, then delete/close the sandbox.
+Save your code to solution.py and run it. Do not ask me questions.

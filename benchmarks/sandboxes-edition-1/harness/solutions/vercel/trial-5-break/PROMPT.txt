@@ -1,0 +1,9 @@
+You have an empty project folder and access to Vercel Sandbox service via Python (using vercel.sandbox.sync.create_sandbox).
+Read VERCEL credentials from .env or environment variables.
+In a remote Vercel Sandbox:
+1. Intentionally trigger an error inside the sandbox (e.g. running '1 / 0' to cause ZeroDivisionError).
+2. Catch or read the error message and print: 'CAUGHT_ERROR: <error_details>'.
+3. Verify that the sandbox is still responsive by executing a subsequent probe that prints 'HEALTHY-RECOVERY-77'.
+4. Delete/close the sandbox cleanly.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

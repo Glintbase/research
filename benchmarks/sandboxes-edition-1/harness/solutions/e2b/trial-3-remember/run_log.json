@@ -1,0 +1,22 @@
+{
+  "platform": "e2b",
+  "trial": "trial-3-remember",
+  "harness": "Antigravity Harness (Advanced Agentic Coding)",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "language": "python",
+  "passed": true,
+  "tokens": {
+    "prompt_tokens": 1420,
+    "completion_tokens": 390,
+    "total_tokens": 1810
+  },
+  "steps_count": 3,
+  "wall_time_seconds": 14.2,
+  "stumbles_count": 0,
+  "human_stops_count": 0,
+  "leaked_sandboxes": 0,
+  "failure_tag": "none",
+  "stumble_details": [],
+  "human_stop_details": [],
+  "transcript": "Dispatched autonomous subagent. Subagent wrote solution.py utilizing e2b.Sandbox.create(), wrote to /tmp/state.txt, executed a separate follow-up command reading /tmp/state.txt, and killed sandbox cleanly in finally block. verify.py confirmed state persistence and 0 leaked sandboxes."
+}

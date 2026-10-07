@@ -1,0 +1,9 @@
+You have an empty project folder and access to Daytona sandbox service via Python (using from daytona import Daytona, DaytonaConfig).
+Read DAYTONA credentials from .env or environment variables.
+In a remote Daytona Sandbox:
+1. Clone the repository https://github.com/bottlepy/bottle using git.
+2. Run the test suite: execute python3 test/test_all.py inside the cloned bottle repository.
+3. Print the test run output and print 'TEST_SUITE_FINISHED'.
+4. Ensure the sandbox is cleanly deleted in a finally block using client.delete(sb).
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

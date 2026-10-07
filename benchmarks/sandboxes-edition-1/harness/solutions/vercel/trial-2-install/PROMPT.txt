@@ -1,0 +1,9 @@
+You have an empty project folder and access to Vercel Sandbox service via Python (using vercel.sandbox.sync.create_sandbox).
+Read VERCEL credentials from .env or environment variables.
+In a remote Vercel Sandbox, install the Python package 'polars' and execute a script inside the sandbox that calculates and prints:
+import polars as pl
+print(f"SUM:{pl.Series([10, 20, 30]).sum()}")
+
+Print the script's output, then cleanly delete/close the sandbox.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

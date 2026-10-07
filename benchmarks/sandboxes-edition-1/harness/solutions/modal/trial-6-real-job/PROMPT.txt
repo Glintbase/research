@@ -1,0 +1,11 @@
+You have an empty project folder and access to Modal sandbox service via Python (using import modal).
+Read MODAL credentials from .env or environment variables.
+Reference an app using app = modal.App.lookup('glint-modal-app', create_if_missing=True).
+In a remote Modal Sandbox:
+1. Create a sandbox with git installed (e.g. image = modal.Image.debian_slim().apt_install('git'); sb = modal.Sandbox.create('sleep', '300', app=app, image=image)).
+2. Clone https://github.com/bottlepy/bottle inside the sandbox (e.g. p1 = sb.exec('git', 'clone', 'https://github.com/bottlepy/bottle', '/tmp/bottle'); p1.wait()).
+3. Run the test suite: execute python3 test/test_all.py (e.g. p2 = sb.exec('python3', 'test/test_all.py', workdir='/tmp/bottle'); p2.wait(); print(p2.stdout.read())).
+4. Print 'TEST_SUITE_FINISHED'.
+5. Cleanly terminate the sandbox using sb.terminate() in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

@@ -1,0 +1,12 @@
+You have an empty project folder and access to Modal sandbox service via Python (using import modal).
+Read MODAL credentials from .env or environment variables.
+Reference an app using app = modal.App.lookup('glint-modal-app', create_if_missing=True).
+In a remote Modal Sandbox:
+1. Install or load 'polars' (either via image=modal.Image.debian_slim().pip_install('polars') or by executing pip install polars inside the sandbox).
+2. Execute a Python script inside the sandbox that calculates and prints:
+import polars as pl
+print(f"SUM:{pl.Series([10, 20, 30]).sum()}")
+3. Print the output (must contain 'SUM:60').
+4. Cleanly terminate the sandbox using sb.terminate() in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

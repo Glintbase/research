@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this benchmark suite or data, please cite both the software and the benchmark reports."
+authors:
+  - name: "Glintbase Research & Developer Infrastructure Labs"
+    website: "https://glintbase.dev"
+title: "Glintbase Research: Empirical Benchmarks and Datasets for Autonomous AI Coding Agents"
+version: 1.0.0
+date-released: 2026-10-07
+url: "https://github.com/glintbase/research"
+repository-code: "https://github.com/glintbase/research"
+keywords:
+  - ai-agents
+  - cloud-sandboxes
+  - developer-tools
+  - agent-readiness
+  - integration-tax
+license: "Apache-2.0"

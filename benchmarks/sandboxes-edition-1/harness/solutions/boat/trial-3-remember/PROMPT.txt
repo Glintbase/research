@@ -1,0 +1,19 @@
+You have an empty project folder and access to boat.dev sandbox service via Python (using import boat_sdk).
+Read BOAT credentials from .env or environment variables (BOAT_API_KEY).
+Configure API client:
+config = boat_sdk.Configuration(access_token=key)
+api = boat_sdk.BoatApi(boat_sdk.ApiClient(config))
+Create a remote Boat Sandbox:
+res = api.create(create_sandbox_request=boat_sdk.CreateSandboxRequest())
+sb_id = res.sandbox.id
+boat_sdk.wait_until_ready(api, sb_id, timeout_seconds=60)
+In the sandbox:
+1. In a first command execution, write 'STATE-PERSIST-991' to /tmp/state.txt:
+boat_sdk.exec_command(api, sb_id, 'echo STATE-PERSIST-991 > /tmp/state.txt')
+2. In a separate, subsequent command execution on the same sandbox, read /tmp/state.txt:
+cmd2 = boat_sdk.exec_command(api, sb_id, 'cat /tmp/state.txt')
+stdout_text = cmd2.actual_instance.stdout if hasattr(cmd2, 'actual_instance') else str(cmd2)
+print(stdout_text.strip())
+3. Cleanly delete the sandbox using boat_sdk.stop_and_remove(api, sb_id, delete=True) in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

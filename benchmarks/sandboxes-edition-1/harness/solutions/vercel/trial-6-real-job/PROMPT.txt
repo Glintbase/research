@@ -1,0 +1,9 @@
+You have an empty project folder and access to Vercel Sandbox service via Python (using vercel.sandbox.sync.create_sandbox).
+Read VERCEL credentials from .env or environment variables.
+In a remote Vercel Sandbox:
+1. Clone the repository https://github.com/bottlepy/bottle
+2. Run the test suite (e.g. `python3 test/test_all.py` or install pytest and run pytest).
+3. Print the final summary of the test run containing the string 'TEST_SUITE_FINISHED'.
+4. Delete/close the sandbox cleanly.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

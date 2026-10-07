@@ -1,0 +1,22 @@
+{
+  "platform": "modal",
+  "trial": "trial-4-serve",
+  "harness": "Antigravity Harness (Advanced Agentic Coding)",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "language": "python",
+  "passed": true,
+  "tokens": {
+    "prompt_tokens": 1850,
+    "completion_tokens": 580,
+    "total_tokens": 2430
+  },
+  "steps_count": 4,
+  "wall_time_seconds": 24.5,
+  "stumbles_count": 0,
+  "human_stops_count": 0,
+  "leaked_sandboxes": 0,
+  "failure_tag": "none",
+  "stumble_details": [],
+  "human_stop_details": [],
+  "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\93c04367-7a27-4735-9d9a-207909167b70\\.system_generated\\logs\\transcript.jsonl"
+}

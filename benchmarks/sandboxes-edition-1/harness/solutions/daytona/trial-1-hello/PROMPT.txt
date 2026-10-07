@@ -1,0 +1,8 @@
+You have an empty project folder and access to Daytona sandbox service via Python (using from daytona import Daytona, DaytonaConfig).
+Read DAYTONA credentials from .env or environment variables (DAYTONA_API_KEY).
+Create a remote Daytona Sandbox using client = Daytona(DaytonaConfig(api_key=key)) and sb = client.create().
+Execute a Python script inside the sandbox using sb.process.exec(...) that prints the exact code:
+GLINT-DAYTONA-4019
+Print the output, then delete/close the sandbox cleanly using client.delete(sb).
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

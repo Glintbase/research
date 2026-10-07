@@ -1,0 +1,11 @@
+You have an empty project folder and access to Daytona sandbox service via Python (using from daytona import Daytona, DaytonaConfig).
+Read DAYTONA credentials from .env or environment variables.
+In a remote Daytona Sandbox:
+1. Install the Python package 'polars' (e.g. sb.process.exec("pip install polars")).
+2. Execute a Python script inside the sandbox that calculates and prints:
+import polars as pl
+print(f"SUM:{pl.Series([10, 20, 30]).sum()}")
+3. Print the script's output.
+4. Cleanly delete the sandbox using client.delete(sb) in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

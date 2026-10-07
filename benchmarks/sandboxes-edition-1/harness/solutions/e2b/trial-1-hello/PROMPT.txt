@@ -1,0 +1,4 @@
+You have an empty project folder and access to E2B's sandbox service via Python.
+Read E2B_API_KEY from .env or environment variable.
+Create an E2B sandbox, execute a Python script inside the sandbox that prints the exact code GLINT-HELLO-8492, print the output, then delete/close the sandbox.
+Save your code to solution.py and run it. Do not ask me questions.

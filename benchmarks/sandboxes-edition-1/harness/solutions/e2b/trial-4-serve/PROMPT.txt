@@ -1,0 +1,8 @@
+You have an empty project folder and access to E2B's sandbox service via Python.
+Read E2B_API_KEY from .env or environment variable.
+In an E2B sandbox:
+1. Start a simple HTTP server (e.g. using Python's http.server or Flask) inside the sandbox listening on port 8000 that returns 'GLINT-SERVER-OK' at '/'.
+2. Use E2B's sandbox URL or port forwarding mechanism (such as sandbox.get_host(8000)) to send an HTTP GET request to the running server from outside.
+3. Print the HTTP response text confirming it contains 'GLINT-SERVER-OK'.
+4. Delete/close the sandbox cleanly.
+Save your code to solution.py and run it. Do not ask me questions.

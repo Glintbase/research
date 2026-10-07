@@ -1,0 +1,9 @@
+You have an empty project folder and access to Daytona sandbox service via Python (using from daytona import Daytona, DaytonaConfig).
+Read DAYTONA credentials from .env or environment variables.
+In a remote Daytona Sandbox:
+1. Intentionally trigger an error inside the sandbox (e.g. running '1 / 0' via python3 to cause ZeroDivisionError).
+2. Catch or read the error message and print: 'CAUGHT_ERROR: <error_details>'.
+3. Verify that the sandbox is still responsive by executing a subsequent probe that prints 'HEALTHY-RECOVERY-77'.
+4. Delete/close the sandbox cleanly using client.delete(sb) in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

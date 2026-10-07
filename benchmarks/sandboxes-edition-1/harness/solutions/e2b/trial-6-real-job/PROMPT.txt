@@ -1,0 +1,8 @@
+You have an empty project folder and access to E2B's sandbox service via Python.
+Read E2B_API_KEY from .env or environment variable.
+In an E2B sandbox:
+1. Clone the repository https://github.com/bottlepy/bottle
+2. Install pytest inside the sandbox and run the test suite (or run python test/test_all.py).
+3. Print the final summary of the test run containing the string 'TEST_SUITE_FINISHED'.
+4. Delete/close the sandbox cleanly.
+Save your code to solution.py and run it. Do not ask me questions.

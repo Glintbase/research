@@ -1,0 +1,9 @@
+You have an empty project folder and access to Vercel Sandbox service via Python (using vercel.sandbox.sync.create_sandbox).
+Read VERCEL credentials from .env or environment variables.
+In a remote Vercel Sandbox:
+1. Start an HTTP server listening on port 8000 inside the sandbox that returns 'GLINT-SERVER-OK' at '/'.
+2. Use the sandbox's port exposure mechanism (e.g. creating sandbox with ports=[8000] and checking sandbox.routes / sandbox network address) to access the server externally.
+3. Send an HTTP GET request to the running server, print the response confirming it contains 'GLINT-SERVER-OK'.
+4. Cleanly delete/close the sandbox.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

@@ -1,0 +1,15 @@
+You have an empty project folder and access to boat.dev sandbox service via Python (using import boat_sdk).
+Read BOAT credentials from .env or environment variables (BOAT_API_KEY).
+Configure API client:
+config = boat_sdk.Configuration(access_token=key)
+api = boat_sdk.BoatApi(boat_sdk.ApiClient(config))
+Create a remote Boat Sandbox:
+res = api.create(create_sandbox_request=boat_sdk.CreateSandboxRequest())
+sb_id = res.sandbox.id
+boat_sdk.wait_until_ready(api, sb_id, timeout_seconds=60)
+Execute command inside the sandbox:
+cmd = boat_sdk.exec_command(api, sb_id, 'echo GLINT-BOAT-9103')
+print(cmd.actual_instance.stdout.strip())
+Cleanly delete the sandbox using boat_sdk.stop_and_remove(api, sb_id, delete=True) in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

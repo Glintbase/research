@@ -1,0 +1,22 @@
+{
+  "platform": "daytona",
+  "trial": "trial-5-break",
+  "harness": "Antigravity Harness (Advanced Agentic Coding)",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "language": "python",
+  "passed": true,
+  "tokens": {
+    "prompt_tokens": 1680,
+    "completion_tokens": 540,
+    "total_tokens": 2220
+  },
+  "steps_count": 5,
+  "wall_time_seconds": 22.4,
+  "stumbles_count": 0,
+  "human_stops_count": 0,
+  "leaked_sandboxes": 0,
+  "failure_tag": "none",
+  "stumble_details": [],
+  "human_stop_details": [],
+  "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\c4cdccd0-c93e-4666-9c65-8d25b4b959c8\\.system_generated\\logs\\transcript.jsonl"
+}

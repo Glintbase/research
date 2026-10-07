@@ -1,0 +1,24 @@
+{
+  "platform": "boat",
+  "trial": "trial-2-install",
+  "harness": "Antigravity Harness (Advanced Agentic Coding)",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "language": "python",
+  "passed": true,
+  "tokens": {
+    "prompt_tokens": 8822,
+    "completion_tokens": 3781,
+    "total_tokens": 12603
+  },
+  "steps_count": 6,
+  "wall_time_seconds": 42.0,
+  "stumbles_count": 1,
+  "human_stops_count": 0,
+  "leaked_sandboxes": 0,
+  "failure_tag": "billing_activation_required",
+  "stumble_details": [
+    "Encountered Payment Required 402 prior to credit card addition on boat.dev dashboard"
+  ],
+  "human_stop_details": [],
+  "transcript": "C:/Users/USER/.gemini/antigravity/brain/0fd13caa-6b6a-445a-b2c1-aa2d669a479c/.system_generated/logs/transcript.jsonl"
+}

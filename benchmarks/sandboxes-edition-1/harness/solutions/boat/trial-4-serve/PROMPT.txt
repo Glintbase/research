@@ -1,0 +1,20 @@
+You have an empty project folder and access to boat.dev sandbox service via Python (using import boat_sdk).
+Read BOAT credentials from .env or environment variables (BOAT_API_KEY).
+Configure API client:
+config = boat_sdk.Configuration(access_token=key)
+api = boat_sdk.BoatApi(boat_sdk.ApiClient(config))
+Create a remote Boat Sandbox:
+res = api.create(create_sandbox_request=boat_sdk.CreateSandboxRequest())
+sb_id = res.sandbox.id
+boat_sdk.wait_until_ready(api, sb_id, timeout_seconds=60)
+In the sandbox:
+1. Start an HTTP server listening on port 8000 that returns 'GLINT-SERVER-OK' at '/':
+srv_cmd = "nohup python3 -c 'import http.server, socketserver; h = http.server.SimpleHTTPRequestHandler; h.do_GET = lambda self: (self.send_response(200), self.end_headers(), self.wfile.write(b\"GLINT-SERVER-OK\")); socketserver.TCPServer((\"\", 8000), h).serve_forever()' > /tmp/srv.log 2>&1 &"
+boat_sdk.exec_command(api, sb_id, srv_cmd)
+2. Obtain the public URL for port 8000 using api.host_port:
+port_res = api.host_port(sb_id, boat_sdk.HostPortRequest(port=8000, public=True))
+url = port_res.url
+3. Send an HTTP GET request to the URL using requests.get(url) and print the response body confirming it contains 'GLINT-SERVER-OK'.
+4. Cleanly delete the sandbox using boat_sdk.stop_and_remove(api, sb_id, delete=True) in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

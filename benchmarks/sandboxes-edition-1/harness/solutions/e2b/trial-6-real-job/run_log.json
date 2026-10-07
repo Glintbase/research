@@ -1,0 +1,22 @@
+{
+  "platform": "e2b",
+  "trial": "trial-6-real-job",
+  "harness": "Antigravity Harness (Advanced Agentic Coding)",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "language": "python",
+  "passed": true,
+  "tokens": {
+    "prompt_tokens": 1600,
+    "completion_tokens": 450,
+    "total_tokens": 2050
+  },
+  "steps_count": 4,
+  "wall_time_seconds": 40.0,
+  "stumbles_count": 0,
+  "human_stops_count": 0,
+  "leaked_sandboxes": 0,
+  "failure_tag": "none",
+  "stumble_details": [],
+  "human_stop_details": [],
+  "transcript": "Dispatched autonomous agent. Agent inspected environment, implemented solution.py which spins up an E2B sandbox, clones https://github.com/bottlepy/bottle, installs pytest, executes the test suite with 363 passed tests, outputs 'TEST_SUITE_FINISHED', and cleanly deletes the sandbox in a finally block. verify.py confirmed test suite execution and 0 leaked sandboxes."
+}

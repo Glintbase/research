@@ -1,0 +1,10 @@
+You have an empty project folder and access to Modal sandbox service via Python (using import modal).
+Read MODAL credentials from .env or environment variables.
+Reference an app using app = modal.App.lookup('glint-modal-app', create_if_missing=True).
+In a remote Modal Sandbox:
+1. Create a running sandbox (e.g. sb = modal.Sandbox.create('sleep', '300', app=app)).
+2. In a first command execution, write the secret code 'STATE-PERSIST-991' to /tmp/state.txt (e.g. p1 = sb.exec('sh', '-c', 'echo STATE-PERSIST-991 > /tmp/state.txt'); p1.wait()).
+3. In a separate, subsequent command execution on the same sandbox, read /tmp/state.txt and print its contents (e.g. p2 = sb.exec('cat', '/tmp/state.txt'); p2.wait(); print(p2.stdout.read().strip())).
+4. Cleanly terminate the sandbox using sb.terminate() in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

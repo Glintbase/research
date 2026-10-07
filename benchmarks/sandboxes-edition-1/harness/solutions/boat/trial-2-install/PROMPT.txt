@@ -1,0 +1,18 @@
+You have an empty project folder and access to boat.dev sandbox service via Python (using import boat_sdk).
+Read BOAT credentials from .env or environment variables (BOAT_API_KEY).
+Configure API client:
+config = boat_sdk.Configuration(access_token=key)
+api = boat_sdk.BoatApi(boat_sdk.ApiClient(config))
+Create a remote Boat Sandbox:
+res = api.create(create_sandbox_request=boat_sdk.CreateSandboxRequest())
+sb_id = res.sandbox.id
+boat_sdk.wait_until_ready(api, sb_id, timeout_seconds=60)
+In the sandbox:
+1. Install polars: boat_sdk.exec_command(api, sb_id, 'pip install polars')
+2. Execute a Python script that calculates:
+import polars as pl
+print(f"SUM:{pl.Series([10, 20, 30]).sum()}")
+3. Print the script's output (must contain 'SUM:60').
+4. Cleanly delete the sandbox using boat_sdk.stop_and_remove(api, sb_id, delete=True) in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

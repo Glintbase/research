@@ -1,0 +1,8 @@
+You have an empty project folder and access to E2B's sandbox service via Python.
+Read E2B_API_KEY from .env or environment variable.
+In an E2B sandbox:
+1. Intentionally trigger an error inside the sandbox (e.g. running '1 / 0' to cause ZeroDivisionError).
+2. Catch or read the error message and print: 'CAUGHT_ERROR: <error_details>'.
+3. Verify that the sandbox is still responsive by executing a subsequent probe that prints 'HEALTHY-RECOVERY-77'.
+4. Delete/close the sandbox cleanly.
+Save your code to solution.py and run it. Do not ask me questions.

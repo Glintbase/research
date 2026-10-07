@@ -1,0 +1,21 @@
+You have an empty project folder and access to Modal sandbox service via Python (using import modal).
+Read MODAL credentials from .env or environment variables.
+Reference an app using app = modal.App.lookup('glint-modal-app', create_if_missing=True).
+In a remote Modal Sandbox:
+1. Start an HTTP server listening on port 8000 inside the sandbox that returns 'GLINT-SERVER-OK' at '/'.
+   Create the sandbox specifying encrypted_ports=[8000]:
+   server_code = '''import http.server, socketserver
+class H(http.server.SimpleHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"GLINT-SERVER-OK")
+with socketserver.TCPServer(("", 8000), H) as s:
+    s.serve_forever()
+'''
+   sb = modal.Sandbox.create('python3', '-c', server_code, encrypted_ports=[8000], app=app)
+2. Obtain the external public URL for port 8000 using tunnels = sb.tunnels(timeout=60); url = tunnels[8000].url.
+3. Send an HTTP GET request to the tunnel URL (using requests.get(url)) and print the response body confirming it contains 'GLINT-SERVER-OK'.
+4. Cleanly terminate the sandbox using sb.terminate() in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

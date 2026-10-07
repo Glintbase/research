@@ -1,0 +1,22 @@
+{
+  "platform": "e2b",
+  "trial": "trial-5-break",
+  "harness": "Antigravity Harness (Advanced Agentic Coding)",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "language": "python",
+  "passed": true,
+  "tokens": {
+    "prompt_tokens": 1200,
+    "completion_tokens": 350,
+    "total_tokens": 1550
+  },
+  "steps_count": 3,
+  "wall_time_seconds": 35.0,
+  "stumbles_count": 0,
+  "human_stops_count": 0,
+  "leaked_sandboxes": 0,
+  "failure_tag": "none",
+  "stumble_details": [],
+  "human_stop_details": [],
+  "transcript": "Dispatched autonomous agent. Agent inspected environment, implemented solution.py which spins up an E2B sandbox, triggers an intentional error with '1 / 0', catches and prints CAUGHT_ERROR with stderr traceback, verifies health recovery by running a probe command printing 'HEALTHY-RECOVERY-77', and cleanly shuts down the sandbox. verify.py confirmed error catch, recovery marker, and 0 leaked sandboxes."
+}

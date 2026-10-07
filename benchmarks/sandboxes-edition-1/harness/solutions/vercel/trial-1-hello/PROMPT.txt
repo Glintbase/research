@@ -1,0 +1,7 @@
+You have an empty project folder and access to Vercel Sandbox service via Python (using vercel.sandbox.sync.create_sandbox).
+Read VERCEL credentials from .env or environment variables (VERCEL_TOKEN, VERCEL_PROJECT_ID, VERCEL_TEAM_ID).
+Create a remote Vercel Sandbox, execute code inside the sandbox that prints the secret code:
+GLINT-VERCEL-1092
+Print the output, then cleanly delete/close the sandbox.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

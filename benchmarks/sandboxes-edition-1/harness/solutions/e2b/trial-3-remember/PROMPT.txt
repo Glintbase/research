@@ -1,0 +1,7 @@
+You have an empty project folder and access to E2B's sandbox service via Python.
+Read E2B_API_KEY from .env or environment variable.
+In an E2B sandbox:
+1. Run a command that creates and writes the secret code 'STATE-PERSIST-991' to a file named /tmp/state.txt.
+2. In a separate, subsequent command execution on the same sandbox, read /tmp/state.txt and print its contents.
+Print the second command's output, then delete/close the sandbox.
+Save your code to solution.py and run it. Do not ask me questions.

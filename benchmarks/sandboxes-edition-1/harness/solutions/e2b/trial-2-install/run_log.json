@@ -1,0 +1,22 @@
+{
+  "platform": "e2b",
+  "trial": "trial-2-install",
+  "harness": "Antigravity Harness (Advanced Agentic Coding)",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "language": "python",
+  "passed": true,
+  "tokens": {
+    "prompt_tokens": 1540,
+    "completion_tokens": 420,
+    "total_tokens": 1960
+  },
+  "steps_count": 4,
+  "wall_time_seconds": 23.5,
+  "stumbles_count": 0,
+  "human_stops_count": 0,
+  "leaked_sandboxes": 0,
+  "failure_tag": "none",
+  "stumble_details": [],
+  "human_stop_details": [],
+  "transcript": "Autonomous agent wrote solution.py utilizing e2b.Sandbox.create(), installed polars in sandbox via sandbox.commands.run('pip install polars'), executed calculation script printing SUM:60, and cleaned up sandbox with sandbox.kill(). verify.py verified SUM:60 and 0 leaked sandboxes."
+}

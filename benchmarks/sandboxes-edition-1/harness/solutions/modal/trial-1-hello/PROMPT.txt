@@ -1,0 +1,8 @@
+You have an empty project folder and access to Modal sandbox service via Python (using import modal).
+Read MODAL credentials from .env or environment variables.
+Reference an app using app = modal.App.lookup('glint-modal-app', create_if_missing=True).
+Create a remote Modal Sandbox using sb = modal.Sandbox.create('python3', '-c', 'print("GLINT-MODAL-5821")', app=app).
+Wait for completion (sb.wait()) and print the stdout.
+Terminate the sandbox cleanly using sb.terminate() in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

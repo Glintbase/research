@@ -1,0 +1,8 @@
+You have an empty project folder and access to Daytona sandbox service via Python (using from daytona import Daytona, DaytonaConfig).
+Read DAYTONA credentials from .env or environment variables.
+In a remote Daytona Sandbox:
+1. Run a command that creates and writes the secret code 'STATE-PERSIST-991' to a file named /tmp/state.txt.
+2. In a separate, subsequent command execution on the same sandbox, read /tmp/state.txt and print its contents.
+Print the second command's output, then cleanly delete/close the sandbox using client.delete(sb) in a finally block.
+Save your code to solution.py in this directory and execute it.
+Do not ask questions.

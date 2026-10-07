@@ -1,0 +1,22 @@
+{
+  "platform": "vercel",
+  "trial": "trial-2-install",
+  "harness": "Antigravity Harness (Advanced Agentic Coding)",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "language": "python",
+  "passed": true,
+  "tokens": {
+    "prompt_tokens": 1780,
+    "completion_tokens": 640,
+    "total_tokens": 2420
+  },
+  "steps_count": 6,
+  "wall_time_seconds": 28.5,
+  "stumbles_count": 0,
+  "human_stops_count": 0,
+  "leaked_sandboxes": 0,
+  "failure_tag": "none",
+  "stumble_details": [],
+  "human_stop_details": [],
+  "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\3f1f105c-60b1-4026-ae1e-f0216b43a857\\.system_generated\\logs\\transcript.jsonl"
+}
