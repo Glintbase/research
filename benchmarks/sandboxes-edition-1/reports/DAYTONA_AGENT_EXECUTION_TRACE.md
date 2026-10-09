@@ -5,7 +5,7 @@
 |---|---|
 | **Provider** | Daytona |
 | **SDK** | `daytona 0.222.0` (Python SDK) |
-| **Agent Model** | Gemini 3.8 Flash (`MODEL_PLACEHOLDER_M319`, temperature 0.2, Antigravity Autonomous Coding Harness) |
+| **Agent Model** | Gemini 3.8 Flash (temperature 0.2, Antigravity Autonomous Coding Harness) |
 | **Harness** | Antigravity Autonomous Agent Framework, zero human-in-the-loop intervention during runs |
 | **Run Date** | October 6, 2026 |
 | **Execution Mode** | Prompt-provided API scaffold / interface hints (pre-installed SDK, zero web search permitted during execution, local runtime Python introspection enabled) |
