@@ -18,5 +18,5 @@
   "failure_tag": "none",
   "stumble_details": [],
   "human_stop_details": [],
-  "transcript": "Autonomous agent wrote solution.py utilizing e2b.Sandbox.create(), installed polars in sandbox via sandbox.commands.run('pip install polars'), executed calculation script printing SUM:60, and cleaned up sandbox with sandbox.kill(). verify.py verified SUM:60 and 0 leaked sandboxes."
+  "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-2-install/transcript_readable.md"
 }

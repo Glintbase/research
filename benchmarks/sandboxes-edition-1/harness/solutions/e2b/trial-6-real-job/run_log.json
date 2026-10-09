@@ -18,5 +18,5 @@
   "failure_tag": "none",
   "stumble_details": [],
   "human_stop_details": [],
-  "transcript": "Dispatched autonomous agent. Agent inspected environment, implemented solution.py which spins up an E2B sandbox, clones https://github.com/bottlepy/bottle, installs pytest, executes the test suite with 363 passed tests, outputs 'TEST_SUITE_FINISHED', and cleanly deletes the sandbox in a finally block. verify.py confirmed test suite execution and 0 leaked sandboxes."
+  "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-6-real-job/transcript_readable.md"
 }

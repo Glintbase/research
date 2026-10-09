@@ -35,15 +35,16 @@ COLOR_SAGE = "#8BA898"        # Sonnet 5 / boat muted sage green
 COLOR_SLATE = "#6B7D96"       # Vercel slate blue
 COLOR_TAUPE = "#BAAE9E"       # Daytona oatmeal taupe
 
-OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
-ARTIFACT_DIR = r"C:\Users\USER\.gemini\antigravity\brain\5cbe0344-fbc0-4389-8025-d9d3ae4b88eb"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_DIR = os.path.join(BASE_DIR, "..", "visuals")
+LOGOS_DIR = os.path.join(OUTPUT_DIR, "logos")
 
 LOGO_PATHS = {
-    'modal': r'C:/Users/USER/.gemini/antigravity/brain/5cbe0344-fbc0-4389-8025-d9d3ae4b88eb/.user_uploaded/media_1791327854470.jpg',
-    'e2b': r'C:/Users/USER/.gemini/antigravity/brain/5cbe0344-fbc0-4389-8025-d9d3ae4b88eb/.user_uploaded/media_1791327854467.png',
-    'boat': r'C:/Users/USER/.gemini/antigravity/brain/5cbe0344-fbc0-4389-8025-d9d3ae4b88eb/.user_uploaded/media_1791327854464.png',
-    'vercel': r'C:/Users/USER/.gemini/antigravity/brain/5cbe0344-fbc0-4389-8025-d9d3ae4b88eb/.user_uploaded/media_1791327854466.png',
-    'daytona': r'C:/Users/USER/.gemini/antigravity/brain/5cbe0344-fbc0-4389-8025-d9d3ae4b88eb/.user_uploaded/media_1791327854471.png'
+    'modal': os.path.join(LOGOS_DIR, 'modal.jpg'),
+    'e2b': os.path.join(LOGOS_DIR, 'e2b.png'),
+    'boat': os.path.join(LOGOS_DIR, 'boat.png'),
+    'vercel': os.path.join(LOGOS_DIR, 'vercel.png'),
+    'daytona': os.path.join(LOGOS_DIR, 'daytona.png')
 }
 
 def generate_clean_badge(name, path, size=128):
@@ -131,11 +132,13 @@ def generate_clean_badge(name, path, size=128):
 BADGES = {k: generate_clean_badge(k, v) for k, v in LOGO_PATHS.items()}
 
 def copy_to_artifact(filename):
-    src = os.path.join(OUTPUT_DIR, filename)
-    dst = os.path.join(ARTIFACT_DIR, filename)
-    if os.path.exists(src):
-        shutil.copy2(src, dst)
-        print(f"Synced {filename} to artifact directory.")
+    artifact_dir = os.environ.get("GLINT_ARTIFACT_DIR")
+    if artifact_dir and os.path.exists(artifact_dir):
+        src = os.path.join(OUTPUT_DIR, filename)
+        dst = os.path.join(artifact_dir, filename)
+        if os.path.exists(src):
+            shutil.copy2(src, dst)
+            print(f"Synced {filename} to artifact directory.")
 
 # ==============================================================================
 # VISUAL 1: Master Leaderboard Benchmark Table (matching media_1791326076769.png)

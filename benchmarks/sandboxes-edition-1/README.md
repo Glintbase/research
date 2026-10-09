@@ -40,6 +40,9 @@ We evaluated 5 leading cloud sandboxes across **119 front-door scanner runs** an
   - [`REPORT_SANDBOXES_EDITION_1.md`](reports/REPORT_SANDBOXES_EDITION_1.md): Flagship publication whitepaper.
   - [`METHODOLOGY.md`](reports/METHODOLOGY.md): Measurement specification, formula derivations, and mathematical rules.
   - [`GOTCHAS_AND_TRAPS.md`](reports/GOTCHAS_AND_TRAPS.md): Detailed diagnostic traces of all 4 silent runtime traps with stack traces.
+  - [`DAYTONA_AGENT_EXECUTION_TRACE.md`](reports/DAYTONA_AGENT_EXECUTION_TRACE.md): Dedicated autonomous agent trace breakdown and recommendations for Daytona.
+- `transcripts/`:
+  - Complete, unedited autonomous agent execution traces (both machine-readable `transcript.jsonl` and formatted `transcript_readable.md`) across all 30 trials (Modal, E2B, boat.dev, Vercel, Daytona).
 - `data/`:
   - [`benchmark_master.csv`](data/benchmark_master.csv): Canonical 30-trial results matrix.
   - [`benchmark_master.json`](data/benchmark_master.json): Deep run logs with token prompt/completion splits.
@@ -50,3 +53,4 @@ We evaluated 5 leading cloud sandboxes across **119 front-door scanner runs** an
   - Python calculation and visualization scripts, trial templates, and isolated trial solution scripts.
 - `distribution/`:
   - Social distribution launch kit for X and LinkedIn.
+

@@ -29,7 +29,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\bd363863-ad85-4468-979d-ff2495ab5b05\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/boat/trial-1-hello/transcript_readable.md"
       },
       {
         "platform": "boat",
@@ -53,7 +53,7 @@
           "Encountered Payment Required 402 prior to credit card addition on boat.dev dashboard"
         ],
         "human_stop_details": [],
-        "transcript": "C:/Users/USER/.gemini/antigravity/brain/0fd13caa-6b6a-445a-b2c1-aa2d669a479c/.system_generated/logs/transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/boat/trial-2-install/transcript_readable.md"
       },
       {
         "platform": "boat",
@@ -75,7 +75,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:/Users/USER/.gemini/antigravity/brain/6c69d77d-213b-4a18-9cb9-5da759621833/.system_generated/logs/transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/boat/trial-3-remember/transcript_readable.md"
       },
       {
         "platform": "boat",
@@ -97,7 +97,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\308244e1-f1f1-46ab-902d-0f2ff2813023\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/boat/trial-4-serve/transcript_readable.md"
       },
       {
         "platform": "boat",
@@ -119,7 +119,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\ec176dfa-6f52-4c4d-a5c8-b0f42ea7c206\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/boat/trial-5-break/transcript_readable.md"
       },
       {
         "platform": "boat",
@@ -141,7 +141,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\9976aa74-b088-4b1b-978f-b14545b271c9\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/boat/trial-6-real-job/transcript_readable.md"
       }
     ],
     "integration_tax": 1.21
@@ -176,7 +176,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\b042874f-5301-42de-94c9-cc675298e875\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/daytona/trial-1-hello/transcript_readable.md"
       },
       {
         "platform": "daytona",
@@ -198,7 +198,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\c5aae30d-5f56-4125-9136-487d1b8612c5\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/daytona/trial-2-install/transcript_readable.md"
       },
       {
         "platform": "daytona",
@@ -220,7 +220,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\640964fd-bbe3-443c-a9fc-a72c2f99a080\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/daytona/trial-3-remember/transcript_readable.md"
       },
       {
         "platform": "daytona",
@@ -242,7 +242,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\2603e9f4-dfd9-4a77-b97a-1d70c4eebc5f\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/daytona/trial-4-serve/transcript_readable.md"
       },
       {
         "platform": "daytona",
@@ -264,7 +264,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\c4cdccd0-c93e-4666-9c65-8d25b4b959c8\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/daytona/trial-5-break/transcript_readable.md"
       },
       {
         "platform": "daytona",
@@ -286,7 +286,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\329126f4-7e7c-45ba-9882-3b06863dd271\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/daytona/trial-6-real-job/transcript_readable.md"
       }
     ],
     "integration_tax": 1.43
@@ -321,7 +321,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\5d483e67-1821-4885-afbe-10d631777d05\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/modal/trial-1-hello/transcript_readable.md"
       },
       {
         "platform": "modal",
@@ -343,7 +343,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\2f7fbddf-2dc2-460e-b483-6a0c4dc60354\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/modal/trial-2-install/transcript_readable.md"
       },
       {
         "platform": "modal",
@@ -365,7 +365,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\9370b47b-4869-4ac8-a56a-0bd73e33f853\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/modal/trial-3-remember/transcript_readable.md"
       },
       {
         "platform": "modal",
@@ -387,7 +387,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\93c04367-7a27-4735-9d9a-207909167b70\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/modal/trial-4-serve/transcript_readable.md"
       },
       {
         "platform": "modal",
@@ -409,7 +409,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\a5972e1f-9b58-4172-ab3d-c70645e6dbf1\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/modal/trial-5-break/transcript_readable.md"
       },
       {
         "platform": "modal",
@@ -431,7 +431,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\cf32159a-ae16-41cd-aa35-339c36951ded\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/modal/trial-6-real-job/transcript_readable.md"
       }
     ],
     "integration_tax": 1.03
@@ -466,7 +466,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "Dispatched autonomous subagent. Subagent wrote solution.py utilizing e2b.Sandbox.create(), executed remote command printing GLINT-HELLO-8492, and called sandbox.kill() in finally block. verify.py confirmed exact secret and 0 leaked sandboxes."
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-1-hello/transcript_readable.md"
       },
       {
         "platform": "e2b",
@@ -488,7 +488,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "Autonomous agent wrote solution.py utilizing e2b.Sandbox.create(), installed polars in sandbox via sandbox.commands.run('pip install polars'), executed calculation script printing SUM:60, and cleaned up sandbox with sandbox.kill(). verify.py verified SUM:60 and 0 leaked sandboxes."
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-2-install/transcript_readable.md"
       },
       {
         "platform": "e2b",
@@ -510,7 +510,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "Dispatched autonomous subagent. Subagent wrote solution.py utilizing e2b.Sandbox.create(), wrote to /tmp/state.txt, executed a separate follow-up command reading /tmp/state.txt, and killed sandbox cleanly in finally block. verify.py confirmed state persistence and 0 leaked sandboxes."
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-3-remember/transcript_readable.md"
       },
       {
         "platform": "e2b",
@@ -532,7 +532,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "Dispatched autonomous agent. Agent inspected environment, implemented solution.py which spins up an E2B sandbox, runs a background Python HTTP server on port 8000 returning 'GLINT-SERVER-OK', retrieves public endpoint via sandbox.get_host(8000), makes external GET request, prints confirmation, and terminates sandbox in finally block. verify.py confirmed HTTP response and 0 leaked sandboxes."
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-4-serve/transcript_readable.md"
       },
       {
         "platform": "e2b",
@@ -554,7 +554,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "Dispatched autonomous agent. Agent inspected environment, implemented solution.py which spins up an E2B sandbox, triggers an intentional error with '1 / 0', catches and prints CAUGHT_ERROR with stderr traceback, verifies health recovery by running a probe command printing 'HEALTHY-RECOVERY-77', and cleanly shuts down the sandbox. verify.py confirmed error catch, recovery marker, and 0 leaked sandboxes."
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-5-break/transcript_readable.md"
       },
       {
         "platform": "e2b",
@@ -576,7 +576,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "Dispatched autonomous agent. Agent inspected environment, implemented solution.py which spins up an E2B sandbox, clones https://github.com/bottlepy/bottle, installs pytest, executes the test suite with 363 passed tests, outputs 'TEST_SUITE_FINISHED', and cleanly deletes the sandbox in a finally block. verify.py confirmed test suite execution and 0 leaked sandboxes."
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-6-real-job/transcript_readable.md"
       }
     ],
     "integration_tax": 1.17
@@ -611,7 +611,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "Dispatched autonomous subagent. Subagent wrote solution.py utilizing vercel.sandbox.sync.create_sandbox(), executed remote python process printing GLINT-VERCEL-1092, and cleanly called sandbox.stop() and sandbox.destroy() in a finally block. verify.py confirmed exact secret and 0 leaked sandboxes."
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/vercel/trial-1-hello/transcript_readable.md"
       },
       {
         "platform": "vercel",
@@ -633,7 +633,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\3f1f105c-60b1-4026-ae1e-f0216b43a857\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/vercel/trial-2-install/transcript_readable.md"
       },
       {
         "platform": "vercel",
@@ -655,7 +655,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\9a430f8a-7ce5-4072-a2d7-363e2c314880\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/vercel/trial-3-remember/transcript_readable.md"
       },
       {
         "platform": "vercel",
@@ -677,7 +677,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\f55b0020-76b8-4b59-8727-6381e224b61b\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/vercel/trial-4-serve/transcript_readable.md"
       },
       {
         "platform": "vercel",
@@ -699,7 +699,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "C:\\Users\\USER\\.gemini\\antigravity\\brain\\e12a48da-5316-4f0b-bbe7-649935021bfa\\.system_generated\\logs\\transcript.jsonl"
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/vercel/trial-5-break/transcript_readable.md"
       },
       {
         "platform": "vercel",
@@ -721,7 +721,7 @@
         "failure_tag": "none",
         "stumble_details": [],
         "human_stop_details": [],
-        "transcript": "Dispatched autonomous subagent. Subagent implemented solution.py connecting to Vercel Sandbox via vercel.sandbox.sync.create_sandbox, cloned repository https://github.com/bottlepy/bottle, executed the test suite via python3 test/test_all.py, printed output ending with TEST_SUITE_FINISHED, and cleanly destroyed the sandbox in a finally block. Verification script confirmed 363 tests passed and 0 leaked sandboxes."
+        "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/vercel/trial-6-real-job/transcript_readable.md"
       }
     ],
     "integration_tax": 1.37

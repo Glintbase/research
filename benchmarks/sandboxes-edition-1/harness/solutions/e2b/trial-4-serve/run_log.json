@@ -18,5 +18,5 @@
   "failure_tag": "none",
   "stumble_details": [],
   "human_stop_details": [],
-  "transcript": "Dispatched autonomous agent. Agent inspected environment, implemented solution.py which spins up an E2B sandbox, runs a background Python HTTP server on port 8000 returning 'GLINT-SERVER-OK', retrieves public endpoint via sandbox.get_host(8000), makes external GET request, prints confirmation, and terminates sandbox in finally block. verify.py confirmed HTTP response and 0 leaked sandboxes."
+  "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-4-serve/transcript_readable.md"
 }

@@ -48,7 +48,15 @@ glintbase-research/
     │   ├── reports/
     │   │   ├── REPORT_SANDBOXES_EDITION_1.md# Canonical publication whitepaper
     │   │   ├── METHODOLOGY.md               # Mathematical formulation of Integration Tax (IT)
-    │   │   └── GOTCHAS_AND_TRAPS.md         # Runtime trap stack traces and workarounds
+    │   │   ├── GOTCHAS_AND_TRAPS.md         # Runtime trap stack traces and workarounds
+    │   │   └── DAYTONA_AGENT_EXECUTION_TRACE.md # Dedicated execution trace & gotchas deep-dive
+    │   │
+    │   ├── transcripts/                     # Complete autonomous agent traces (JSONL + Markdown)
+    │   │   ├── boat/                        # Trials 1–6 (24 to 88 steps per trial)
+    │   │   ├── daytona/                     # Trials 1–6 (33 to 110 steps per trial)
+    │   │   ├── e2b/                         # Trials 1–6 (50 to 85 steps per trial)
+    │   │   ├── modal/                       # Trials 1–6 (20 to 32 steps per trial)
+    │   │   └── vercel/                      # Trials 1–6 (42 to 92 steps per trial)
     │   │
     │   ├── data/
     │   │   ├── benchmark_master.json        # Canonical 30-trial results with tokens & steps

@@ -18,5 +18,5 @@
   "failure_tag": "none",
   "stumble_details": [],
   "human_stop_details": [],
-  "transcript": "Dispatched autonomous subagent. Subagent wrote solution.py utilizing e2b.Sandbox.create(), wrote to /tmp/state.txt, executed a separate follow-up command reading /tmp/state.txt, and killed sandbox cleanly in finally block. verify.py confirmed state persistence and 0 leaked sandboxes."
+  "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-3-remember/transcript_readable.md"
 }

@@ -18,5 +18,5 @@
   "failure_tag": "none",
   "stumble_details": [],
   "human_stop_details": [],
-  "transcript": "Dispatched autonomous agent. Agent inspected environment, implemented solution.py which spins up an E2B sandbox, triggers an intentional error with '1 / 0', catches and prints CAUGHT_ERROR with stderr traceback, verifies health recovery by running a probe command printing 'HEALTHY-RECOVERY-77', and cleanly shuts down the sandbox. verify.py confirmed error catch, recovery marker, and 0 leaked sandboxes."
+  "transcript": "https://github.com/Glintbase/research/blob/main/benchmarks/sandboxes-edition-1/transcripts/e2b/trial-5-break/transcript_readable.md"
 }
