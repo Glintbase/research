@@ -24,6 +24,7 @@ import random
 import re
 import time
 from datetime import datetime, timezone
+from pathlib import Path
 
 import httpx
 from playwright.async_api import async_playwright
@@ -159,8 +160,13 @@ async def main():
     ap.add_argument("--round", required=True)
     ap.add_argument("--workers", type=int, default=10)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--pages", help="alternate pages.jsonl (tests only)")
+    ap.add_argument("--fast", action="store_true", help="skip pauses (local tests only)")
     a = ap.parse_args()
-    rows = read_jsonl(DATA_DIR / "sample" / "pages.jsonl")
+    if a.fast:
+        global PAUSE_BETWEEN_IDENTITIES_S, PAUSE_BETWEEN_REQUESTS_S
+        PAUSE_BETWEEN_IDENTITIES_S = PAUSE_BETWEEN_REQUESTS_S = 0
+    rows = read_jsonl(Path(a.pages) if a.pages else DATA_DIR / "sample" / "pages.jsonl")
     if a.limit:
         rows = rows[: a.limit]
     out_dir = EDGE_DIR / f"round_{a.round}"
