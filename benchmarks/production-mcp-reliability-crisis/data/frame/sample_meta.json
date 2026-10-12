@@ -1,0 +1,7 @@
+{
+  "rule": "simple random sample n=3000, seed=20261012",
+  "frame_size": 26365,
+  "sample_size": 3000,
+  "frame_sha256": "ae90e5342e3e817b726b4cc26d089ab36e99fe4b878e8700321b9d918cb93817",
+  "sample_sha256": "8e89d36de5ed35cb33c283d84dc2c7f5a62ea2dae87d7aa40721fef82c375270"
+}

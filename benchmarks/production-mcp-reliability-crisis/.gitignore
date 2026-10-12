@@ -1,0 +1,2 @@
+# Raw per-request logs contain response body snippets from third-party servers; not published.
+data/raw/

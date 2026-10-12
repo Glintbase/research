@@ -1,0 +1,21 @@
+{
+  "built_at": "2026-10-12T03:17:59.541184+00:00",
+  "snapshot_first_page_at": "2026-10-12T02:34:48.502452+00:00",
+  "snapshot_last_page_at": "2026-10-12T02:47:58.162016+00:00",
+  "registry": "https://registry.modelcontextprotocol.io/v0/servers?version=latest",
+  "harness_git_sha": "d97f1d2bb9709acb60f842dbd9bb8bb8af6e2d70",
+  "frame_sha256": "ae90e5342e3e817b726b4cc26d089ab36e99fe4b878e8700321b9d918cb93817",
+  "counts": {
+    "registry_entries": 42176,
+    "latest_active_servers": 41660,
+    "servers_with_remotes": 26619,
+    "remote_entries": 27282,
+    "excluded_templated": 283,
+    "excluded_non_https": 0,
+    "excluded_invalid_url": 0,
+    "excluded_private_address": 0,
+    "excluded_opt_out": 0,
+    "duplicate_urls_merged": 634,
+    "frame_endpoints": 26365
+  }
+}

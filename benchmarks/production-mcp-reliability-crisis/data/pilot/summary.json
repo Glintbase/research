@@ -1,0 +1,542 @@
+{
+  "rounds": "round pilot",
+  "round_1": {
+    "sample_endpoints": 25,
+    "excluded": {},
+    "analysed_endpoints": 25,
+    "rq1_primary_status": {
+      "ok": {
+        "k": 14,
+        "n": 25,
+        "pct": 56.0,
+        "ci95": [
+          37.1,
+          73.3
+        ]
+      },
+      "handshake_only": {
+        "k": 0,
+        "n": 25,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          13.3
+        ]
+      },
+      "auth_compliant": {
+        "k": 7,
+        "n": 25,
+        "pct": 28.0,
+        "ci95": [
+          14.3,
+          47.6
+        ]
+      },
+      "auth_noncompliant": {
+        "k": 2,
+        "n": 25,
+        "pct": 8.0,
+        "ci95": [
+          2.2,
+          25.0
+        ]
+      },
+      "modern_rejected": {
+        "k": 0,
+        "n": 25,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          13.3
+        ]
+      },
+      "legacy_sse": {
+        "k": 0,
+        "n": 25,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          13.3
+        ]
+      },
+      "jsonrpc_error": {
+        "k": 0,
+        "n": 25,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          13.3
+        ]
+      },
+      "payment_required": {
+        "k": 2,
+        "n": 25,
+        "pct": 8.0,
+        "ci95": [
+          2.2,
+          25.0
+        ]
+      },
+      "server_error": {
+        "k": 0,
+        "n": 25,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          13.3
+        ]
+      },
+      "not_mcp": {
+        "k": 0,
+        "n": 25,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          13.3
+        ]
+      },
+      "unreachable": {
+        "k": 0,
+        "n": 25,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          13.3
+        ]
+      }
+    },
+    "rq1_by_transport": {
+      "sse": {
+        "ok": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        },
+        "handshake_only": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        },
+        "auth_compliant": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        },
+        "auth_noncompliant": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        },
+        "modern_rejected": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        },
+        "legacy_sse": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        },
+        "jsonrpc_error": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        },
+        "payment_required": {
+          "k": 2,
+          "n": 2,
+          "pct": 100.0,
+          "ci95": [
+            34.2,
+            100.0
+          ]
+        },
+        "server_error": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        },
+        "not_mcp": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        },
+        "unreachable": {
+          "k": 0,
+          "n": 2,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            65.8
+          ]
+        }
+      },
+      "streamable-http": {
+        "ok": {
+          "k": 14,
+          "n": 23,
+          "pct": 60.9,
+          "ci95": [
+            40.8,
+            77.8
+          ]
+        },
+        "handshake_only": {
+          "k": 0,
+          "n": 23,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            14.3
+          ]
+        },
+        "auth_compliant": {
+          "k": 7,
+          "n": 23,
+          "pct": 30.4,
+          "ci95": [
+            15.6,
+            50.9
+          ]
+        },
+        "auth_noncompliant": {
+          "k": 2,
+          "n": 23,
+          "pct": 8.7,
+          "ci95": [
+            2.4,
+            26.8
+          ]
+        },
+        "modern_rejected": {
+          "k": 0,
+          "n": 23,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            14.3
+          ]
+        },
+        "legacy_sse": {
+          "k": 0,
+          "n": 23,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            14.3
+          ]
+        },
+        "jsonrpc_error": {
+          "k": 0,
+          "n": 23,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            14.3
+          ]
+        },
+        "payment_required": {
+          "k": 0,
+          "n": 23,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            14.3
+          ]
+        },
+        "server_error": {
+          "k": 0,
+          "n": 23,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            14.3
+          ]
+        },
+        "not_mcp": {
+          "k": 0,
+          "n": 23,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            14.3
+          ]
+        },
+        "unreachable": {
+          "k": 0,
+          "n": 23,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            14.3
+          ]
+        }
+      }
+    },
+    "rq1_speaks_mcp": {
+      "k": 23,
+      "n": 25,
+      "pct": 92.0,
+      "ci95": [
+        75.0,
+        97.8
+      ]
+    },
+    "rq1_reachable": {
+      "k": 25,
+      "n": 25,
+      "pct": 100.0,
+      "ci95": [
+        86.7,
+        100.0
+      ]
+    },
+    "hosts": 24,
+    "endpoints_per_host_max": 2,
+    "top_hosts_share_of_sample": {
+      "api.m2mcent.com": 2,
+      "api-docs.vendizap.com": 1,
+      "api.brainiall.com": 1,
+      "api.diglabo.com": 1,
+      "api.dryos.ai": 1,
+      "api.instantreply.co": 1,
+      "api.korely.ai": 1,
+      "api.measuredsize.com": 1,
+      "api.useinvent.com": 1,
+      "app.tellseed.com": 1
+    },
+    "rq1_primary_status_host_weighted_pct": {
+      "ok": 58.3,
+      "handshake_only": 0.0,
+      "auth_compliant": 29.2,
+      "auth_noncompliant": 8.3,
+      "modern_rejected": 0.0,
+      "legacy_sse": 0.0,
+      "jsonrpc_error": 0.0,
+      "payment_required": 4.2,
+      "server_error": 0.0,
+      "not_mcp": 0.0,
+      "unreachable": 0.0
+    },
+    "rq2_handshakes": 14,
+    "rq2_era": {
+      "legacy": {
+        "k": 9,
+        "n": 14,
+        "pct": 64.3,
+        "ci95": [
+          38.8,
+          83.7
+        ]
+      },
+      "modern": {
+        "k": 5,
+        "n": 14,
+        "pct": 35.7,
+        "ci95": [
+          16.3,
+          61.2
+        ]
+      }
+    },
+    "rq2_legacy_negotiated_version": {
+      "2025-11-25": {
+        "k": 8,
+        "n": 9,
+        "pct": 88.9,
+        "ci95": [
+          56.5,
+          98.0
+        ]
+      },
+      "2025-06-18": {
+        "k": 1,
+        "n": 9,
+        "pct": 11.1,
+        "ci95": [
+          2.0,
+          43.5
+        ]
+      }
+    },
+    "rq2_modern_supported": {
+      "k": 5,
+      "n": 14,
+      "pct": 35.7,
+      "ci95": [
+        16.3,
+        61.2
+      ]
+    },
+    "rq2_dual_era_among_modern": {
+      "k": 3,
+      "n": 5,
+      "pct": 60.0,
+      "ci95": [
+        23.1,
+        88.2
+      ]
+    },
+    "rq2_session_issued_among_legacy": {
+      "k": 2,
+      "n": 9,
+      "pct": 22.2,
+      "ci95": [
+        6.3,
+        54.7
+      ]
+    },
+    "rq2_handshake_latency_ms_median": 507.0,
+    "rq3_auth_endpoints": {
+      "k": 9,
+      "n": 25,
+      "pct": 36.0,
+      "ci95": [
+        20.2,
+        55.5
+      ]
+    },
+    "rq3_compliant_among_auth": {
+      "k": 7,
+      "n": 9,
+      "pct": 77.8,
+      "ci95": [
+        45.3,
+        93.7
+      ]
+    },
+    "rq3_bearer_challenge_among_auth": {
+      "k": 8,
+      "n": 9,
+      "pct": 88.9,
+      "ci95": [
+        56.5,
+        98.0
+      ]
+    },
+    "rq3_prm_valid_among_auth": {
+      "k": 7,
+      "n": 9,
+      "pct": 77.8,
+      "ci95": [
+        45.3,
+        93.7
+      ]
+    },
+    "rq3_auth_after_anonymous_handshake": {
+      "k": 0,
+      "n": 9,
+      "pct": 0.0,
+      "ci95": [
+        0.0,
+        29.9
+      ]
+    },
+    "rq4_ok_endpoints": 14,
+    "rq4_zero_tools": {
+      "k": 0,
+      "n": 14,
+      "pct": 0.0,
+      "ci95": [
+        0.0,
+        21.5
+      ]
+    },
+    "rq4_tool_count_median": 6.5,
+    "rq4_paginated": {
+      "k": 0,
+      "n": 14,
+      "pct": 0.0,
+      "ci95": [
+        0.0,
+        21.5
+      ]
+    },
+    "rq4_all_tools_strict_schema": {
+      "k": 14,
+      "n": 14,
+      "pct": 100.0,
+      "ci95": [
+        78.5,
+        100.0
+      ]
+    },
+    "rq4_any_readonly_annotation": {
+      "k": 12,
+      "n": 14,
+      "pct": 85.7,
+      "ci95": [
+        60.1,
+        96.0
+      ]
+    },
+    "rq4_any_destructive_annotation": {
+      "k": 12,
+      "n": 14,
+      "pct": 85.7,
+      "ci95": [
+        60.1,
+        96.0
+      ]
+    },
+    "rq4_all_tools_described": {
+      "k": 14,
+      "n": 14,
+      "pct": 100.0,
+      "ci95": [
+        78.5,
+        100.0
+      ]
+    },
+    "rq4_mean_pct_strict": 100.0,
+    "rq5_canary_answered": 14,
+    "rq5_error_in_channel": {
+      "k": 14,
+      "n": 14,
+      "pct": 100.0,
+      "ci95": [
+        78.5,
+        100.0
+      ]
+    },
+    "rq5_canary_http_status": {
+      "200": 14
+    }
+  }
+}
