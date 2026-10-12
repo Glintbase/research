@@ -103,3 +103,17 @@ That is a figure **per 100,000 agent sessions per month**, comparing a hypotheti
 
 - PDF Appendix A points to `ars-report/data/exports/full-scores.csv`. In this repository the file is at `data/full-scores.csv`.
 - The PDF's "1,000 Pathfinder scans" matches the data: 100 platforms × 10 benchmarks.
+
+## 7. Open issue: ARS values do not follow from the benchmark outcomes (added 2026-10-12)
+
+The published ARS cannot be reproduced from the per-platform benchmark results in `data/full-scores.csv` using the scoring described in the report. Across the 100 platforms, ARS and the number of passed benchmarks (`PassCount`) correlate only weakly (Pearson r ≈ 0.43), and some pairs run in opposite directions:
+
+| Platform | Benchmarks passed | ARS |
+|---|---:|---:|
+| Chroma | 2 / 10 | 68 |
+| Helicone | 2 / 10 | 68 |
+| Pinecone | 2 / 10 | 58 |
+| Voyage AI | 8 / 10 | 42 |
+| Cohere | 9 / 10 | 66 |
+
+The ARS values were presumably computed from additional inputs (for example surface flags or token efficiency) that are not documented in the report. Until the exact computation is published, treat individual ARS values and rankings in this edition as unverifiable from the released data.
