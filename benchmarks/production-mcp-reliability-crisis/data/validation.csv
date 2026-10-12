@@ -1,0 +1,31 @@
+url,probe_status,independent_status,agree,independent_note,reviewer_verdict,reviewer_note
+https://nexgendata-mcp-proxy.steve-corbeil.workers.dev/sports-mcp-server/mcp,auth_compliant,auth_compliant,True,PRM at https://nexgendata-mcp-proxy.steve-corbeil.workers.dev/.well-known/oauth-protected-resource/sports-mcp-server/mcp,auth_compliant,Agree
+https://qrx.codes/mcp,auth_compliant,auth_compliant,True,PRM at https://qrx.codes/.well-known/oauth-protected-resource/mcp,auth_compliant,Agree
+https://api.hesperan.com/mcp,auth_noncompliant,ok,False,modern; tools/list status 200,auth_noncompliant,"Probe correct per frozen rule order (auth before ok): discover+tools/list anonymous, tools/call 401 without PRM. Reported as auth_after_handshake."
+https://pixeldrive.pro/mcp,auth_noncompliant,auth_noncompliant,True,"www-authenticate='', no valid PRM",auth_noncompliant,Agree
+https://nova.civai.co/mcp/agents/browsergpt-agent,handshake_only,modern_rejected,False,modern error -32022,handshake_only,"Probe correct: -32022 lists legacy versions; Deviation 2 fallback to initialize succeeded, then 502s. Validator used pre-Deviation-2 rule."
+https://gateway.pipeworx.io/wiktionary/mcp,handshake_only,handshake_only,True,legacy 2025-03-26; tools/list status 429,handshake_only,Agree
+https://api.stroomwekker.nl/mcp,jsonrpc_error,jsonrpc_error,True,"discover 405, initialize 405",jsonrpc_error,Agree
+https://ask-ai-mcp-710575177112.asia-south1.run.app/mcp/,jsonrpc_error,not_mcp,False,"discover 307, initialize 307, GET 400",jsonrpc_error,Probe correct: after 307 redirect the server answers JSON-RPC -32600 'Missing session ID' even to initialize. urllib does not follow POST 307.
+https://www.fareeagle.com/sse,legacy_sse,not_mcp,False,"discover 404, initialize 404, GET None",legacy_sse,Probe correct: GET returned event: endpoint. Validator's blocking read timed out on the open SSE stream.
+https://svelte-llm.stanislav.garden/mcp/sse,legacy_sse,not_mcp,False,"discover 405, initialize 405, GET None",legacy_sse,Probe correct: GET returned event: endpoint. Validator's blocking read timed out on the open SSE stream.
+https://jobily.gr/mcp,modern_rejected,modern_rejected,True,modern error -32020,modern_rejected,Agree
+https://api.aibooma.com/mcp,not_mcp,not_mcp,True,"discover 404, initialize 404, GET 404",not_mcp,Agree
+https://console.cloud.mia-platform.eu/console-mcp-server/mcp,not_mcp,not_mcp,True,"discover 405, initialize 405, GET 200",not_mcp,Agree
+https://api.mcp.ai/p_anp_instalacoes_simp,ok,ok,True,legacy 2025-11-25; tools/list status 200,ok,Agree
+https://api.mcp.ai/p_mpt_al_cnf,ok,ok,True,legacy 2025-11-25; tools/list status 200,ok,Agree
+https://cloud-pathfinder.vercel.app/mcp,payment_required,payment_required,True,402 on discover,payment_required,Agree
+https://wazir-x402.duckdns.org/api/bug-intel,payment_required,payment_required,True,402 on discover,payment_required,Agree
+https://legal-grounding-199120533535.europe-north2.run.app/mcp,server_error,server_error,True,"discover 503, initialize 503",server_error,Agree
+https://mcp.fatemcp.com/destiny-weight,server_error,server_error,True,"discover 502, initialize 502",server_error,Agree
+https://suitedforit.com/mcp,unreachable,unreachable,True,ERR URLError / ERR URLError,unreachable,Agree
+https://mcp.globalping.io/sse,unreachable,unreachable,True,ERR URLError / ERR URLError,unreachable,Agree
+https://a2awire.com/mcp/data/new-mcp-server-directory-agent-tools-index-8f68ac/http,ok,ok,True,legacy 2025-11-25; tools/list status 200,ok,Agree
+https://staylonger.com.au/mcp,ok,ok,True,modern; tools/list status 200,ok,Agree
+https://api.mcp.ai/p_fincen,ok,ok,True,legacy 2025-11-25; tools/list status 200,ok,Agree
+https://betteroff.finance/mcp,not_mcp,not_mcp,True,"discover 404, initialize 404, GET 404",not_mcp,Agree
+https://mcp.audioscrape.com,auth_compliant,auth_compliant,True,PRM at https://mcp.audioscrape.com/.well-known/oauth-protected-resource,auth_compliant,Agree
+https://mcpindex.ai/api/mcp,ok,ok,True,modern; tools/list status 200,ok,Agree
+https://gateway.pipeworx.io/clickup/mcp,ok,handshake_only,False,legacy 2025-03-26; tools/list status 429,ok,Probe correct at probe time: tools/list 200 with tools. Validator received 429 (host rate limit; 194 sampled endpoints on this host).
+https://mcp.aivideoatlas.com/mcp,ok,ok,True,legacy 2025-11-25; tools/list status 200,ok,Agree
+https://constat.dev/api/mcp,ok,jsonrpc_error,False,"discover 400, initialize 400",ok,Probe correct: pre-registered initialize retry with 2025-03-26 succeeded; validator has no retry.

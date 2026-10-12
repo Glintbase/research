@@ -177,6 +177,9 @@ def to_markdown(summary: dict) -> str:
         st = summary["stability"]
         lines += ["## RQ6 Re-test reliability (back-to-back rounds; see Deviation 1)", "", f"- Paired endpoints: {st['paired']}",
                   f"- Same primary status: {fmt(st['same_status'])}", f"- Cohen's κ: {st['cohens_kappa']}", ""]
+        if "stability_excluding_hosts" in summary:
+            sx = summary["stability_excluding_hosts"]
+            lines += [f"Excluding {', '.join(sx['excluded_hosts'])}: same status {fmt(sx['same_status'])}, κ {sx['cohens_kappa']}", ""]
     return "\n".join(lines) + "\n"
 
 
@@ -184,6 +187,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--round", required=True)
     ap.add_argument("--retest")
+    ap.add_argument("--sensitivity-exclude-host", action="append", default=[],
+                    help="also report stability without these hosts (e.g. a host whose anonymous quota our probing exhausted)")
     a = ap.parse_args()
     r1 = read_jsonl(DATA_DIR / f"round_{a.round}.jsonl")
     summary = {"rounds": f"round {a.round}" + (f" + retest {a.retest}" if a.retest else ""), "round_1": analyse(r1)}
@@ -191,6 +196,12 @@ def main():
         r2 = read_jsonl(DATA_DIR / f"round_{a.retest}.jsonl")
         summary["round_2"] = analyse(r2)
         summary["stability"] = stability(r1, r2)
+        if a.sensitivity_exclude_host:
+            ex = set(a.sensitivity_exclude_host)
+            summary["stability_excluding_hosts"] = {
+                "excluded_hosts": sorted(ex),
+                **stability([r for r in r1 if r.get("host") not in ex], [r for r in r2 if r.get("host") not in ex]),
+            }
     (DATA_DIR / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf8")
     md = to_markdown(summary)
     (DATA_DIR / "summary.md").write_text(md, encoding="utf8")
