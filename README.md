@@ -94,8 +94,6 @@ glintbase-research/
     │   │   ├── measure_transcripts.py       # Derives measured metrics from transcripts
     │   │   └── solutions/                   # Per-provider PROMPT.txt, solution.py, verify.py, run_log.json
     │   │
-    │   └── distribution/
-    │       └── DISTRIBUTION_KIT_3DAY_LAUNCH.md # Launch sequences, thread copy, and carousel script
     │
     ├── state-of-agent-readiness-2026/       # Foundational 100-Platform Ecosystem Audit
     │   ├── README.md                        # Abstract and headline numbers (recomputed from data)
