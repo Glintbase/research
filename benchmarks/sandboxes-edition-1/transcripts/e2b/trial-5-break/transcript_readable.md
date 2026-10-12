@@ -1305,8 +1305,8 @@ The following code has been modified to include a line number before every line,
 1: # Glintbase Sandboxes Edition 1 - Credentials
 2: E2B_API_KEY=[REDACTED_API_KEY]
 3: 
-4: MODAL_TOKEN_ID=wk-tdPhMjs10NyH3af0omxAUF
-5: MODAL_TOKEN_SECRET=ws-liMLTZv26uDkvPG246HdlX
+4: MODAL_TOKEN_ID=[REDACTED]
+5: MODAL_TOKEN_SECRET=[REDACTED]
 6: 
 7: DAYTONA_API_KEY=[REDACTED_API_KEY]
 8: 

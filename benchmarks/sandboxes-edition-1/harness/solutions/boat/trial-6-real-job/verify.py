@@ -10,9 +10,27 @@ Asserts:
 import os
 import sys
 import subprocess
+import re
 from dotenv import load_dotenv
 
 load_dotenv()
+
+
+def real_test_run_signal(text):
+    """Correction (2026-10-12): require evidence that a real test suite ran and passed.
+
+    Accepts either a unittest summary ("Ran N tests in ..." with N > 0 followed by an
+    "OK" line) or a pytest summary ("N passed" with no failures or errors). The old
+    check passed on the bare marker, or on the substrings "passed"/"ok" anywhere in
+    stdout, which matched even when test/test_all.py did not exist.
+    """
+    ran = re.search(r"^Ran (\d+) tests? in ", text, re.M)
+    if ran and int(ran.group(1)) > 0 and re.search(r"^OK\b", text[ran.end():], re.M):
+        return True
+    summary = re.search(r"=+ (.*\b(\d+) passed\b.*) =+", text)
+    if summary and int(summary.group(2)) > 0 and not re.search(r"\b\d+ (failed|errors?)\b", summary.group(1)):
+        return True
+    return False
 
 EXPECTED_OUTPUT = "TEST_SUITE_FINISHED"
 
@@ -37,15 +55,19 @@ def verify():
     stdout = proc.stdout
     stderr = proc.stderr
 
-    if EXPECTED_OUTPUT not in stdout:
-        print(f"[FAIL] Expected marker '{EXPECTED_OUTPUT}' not found in stdout!")
+    combined = stdout + "\n" + (stderr or "")
+    if EXPECTED_OUTPUT not in stdout or not real_test_run_signal(combined):
+        print(f"[FAIL] No evidence of a real, passing test run (need '{EXPECTED_OUTPUT}' plus a unittest 'Ran N tests ... OK' or pytest 'N passed' summary)!")
         print(f"Stdout was:\n{stdout}")
         if stderr:
             print(f"Stderr was:\n{stderr}")
         sys.exit(1)
 
-    print(f"[PASS] Full test suite executed: '{EXPECTED_OUTPUT}' found in output!")
+    print(f"[PASS] Test suite ran and passed (real test-run summary found).")
 
+    # Correction (2026-10-12): remaining sandboxes now FAIL the leak check (non-zero exit)
+    # before cleanup. Previously they were deleted with only a warning and the trial still passed.
+    leak_failed = False
     # Check for leaked sandboxes via boat client
     try:
         import boat_sdk
@@ -53,7 +75,8 @@ def verify():
         api = boat_sdk.BoatApi(boat_sdk.ApiClient(boat_sdk.Configuration(access_token=key)))
         active = api.sandboxes().sandboxes
         if len(active) > 0:
-            print(f"[WARN] Warning: Detected {len(active)} active sandboxes after execution!")
+            print(f"[FAIL] Leak check FAILED: {len(active)} sandbox(es) still active after execution. Cleaning up after reporting.")
+            leak_failed = True
             for s in active:
                 try:
                     boat_sdk.stop_and_remove(api, s.id, delete=True)
@@ -62,7 +85,12 @@ def verify():
         else:
             print("[PASS] Clean-Up Check PASSED: 0 leaked sandboxes.")
     except Exception as e:
-        print(f"[INFO] Could not check boat_sdk sandboxes list directly: {e}")
+        print(f"[FAIL] Leak check could not run (boat_sdk sandboxes list raised): {e}")
+        leak_failed = True
+
+    if leak_failed:
+        print("\n>>> BOAT TRIAL 6 VERIFICATION FAILED (leak check) <<<\n")
+        sys.exit(1)
 
     print("\n>>> BOAT TRIAL 6 VERIFICATION PASSED! <<<\n")
 

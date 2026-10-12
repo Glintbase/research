@@ -46,6 +46,9 @@ def verify():
 
     print(f"[PASS] Successfully verified output '{EXPECTED_OUTPUT}' in solution output!")
 
+    # Correction (2026-10-12): remaining sandboxes now FAIL the leak check (non-zero exit)
+    # before cleanup. Previously they were deleted with only a warning and the trial still passed.
+    leak_failed = False
     # Check for leaked sandboxes via boat client
     try:
         import boat_sdk
@@ -53,7 +56,8 @@ def verify():
         api = boat_sdk.BoatApi(boat_sdk.ApiClient(boat_sdk.Configuration(access_token=key)))
         active = api.sandboxes().sandboxes
         if len(active) > 0:
-            print(f"[WARN] Warning: Detected {len(active)} active sandboxes after execution!")
+            print(f"[FAIL] Leak check FAILED: {len(active)} sandbox(es) still active after execution. Cleaning up after reporting.")
+            leak_failed = True
             for s in active:
                 try:
                     boat_sdk.stop_and_remove(api, s.id, delete=True)
@@ -62,7 +66,12 @@ def verify():
         else:
             print("[PASS] Clean-Up Check PASSED: 0 leaked sandboxes.")
     except Exception as e:
-        print(f"[INFO] Could not check boat_sdk sandboxes list directly: {e}")
+        print(f"[FAIL] Leak check could not run (boat_sdk sandboxes list raised): {e}")
+        leak_failed = True
+
+    if leak_failed:
+        print("\n>>> BOAT TRIAL 1 VERIFICATION FAILED (leak check) <<<\n")
+        sys.exit(1)
 
     print("\n>>> BOAT TRIAL 1 VERIFICATION PASSED! <<<\n")
 

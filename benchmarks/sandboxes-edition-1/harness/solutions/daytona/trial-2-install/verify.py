@@ -46,6 +46,9 @@ def verify():
 
     print(f"[PASS] Found computed result '{EXPECTED_OUTPUT}' in execution output!")
 
+    # Correction (2026-10-12): remaining sandboxes now FAIL the leak check (non-zero exit)
+    # before cleanup. Previously they were deleted with only a warning and the trial still passed.
+    leak_failed = False
     # Check for leaked sandboxes via Daytona client
     try:
         from daytona import Daytona, DaytonaConfig
@@ -53,7 +56,8 @@ def verify():
         client = Daytona(DaytonaConfig(api_key=key))
         active = list(client.list())
         if len(active) > 0:
-            print(f"[WARN] Warning: Detected {len(active)} active sandboxes after execution!")
+            print(f"[FAIL] Leak check FAILED: {len(active)} sandbox(es) still active after execution. Cleaning up after reporting.")
+            leak_failed = True
             for s in active:
                 try:
                     client.delete(s)
@@ -62,7 +66,12 @@ def verify():
         else:
             print("[PASS] Clean-Up Check PASSED: 0 leaked sandboxes.")
     except Exception as e:
-        print(f"[INFO] Could not check client.list() directly: {e}")
+        print(f"[FAIL] Leak check could not run (client.list() raised): {e}")
+        leak_failed = True
+
+    if leak_failed:
+        print("\n>>> DAYTONA TRIAL 2 VERIFICATION FAILED (leak check) <<<\n")
+        sys.exit(1)
 
     print("\n>>> DAYTONA TRIAL 2 VERIFICATION PASSED! <<<\n")
 

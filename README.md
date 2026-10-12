@@ -4,8 +4,8 @@
 ### Empirical Benchmarks, Datasets, and Evaluation Suites for Autonomous AI Coding Agents
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Data License: CC-BY 4.0](https://img.shields.io/badge/Data%20License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Benchmarks: 2 Active](https://img.shields.io/badge/Benchmarks-2%20Published-crimson.svg)](https://glintbase.dev/research)
+[![Research: All rights reserved](https://img.shields.io/badge/Research%20%26%20Data-All%20rights%20reserved-lightgrey.svg)](#license--ethics-statement)
+[![Benchmarks: 2 Published](https://img.shields.io/badge/Benchmarks-2%20Published-crimson.svg)](https://glintbase.dev/research)
 [![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://python.org)
 
 [Explore Interactive Research Hub](https://glintbase.dev/research) • [Sandboxes Edition 1](benchmarks/sandboxes-edition-1) • [ARS 2026 Report](benchmarks/state-of-agent-readiness-2026) • [Citation](#citation)
@@ -24,10 +24,23 @@ Our mission is to establish rigorous, empirical, and reproducible standards for 
 
 ## Published Benchmark Editions
 
-| Edition | Title | Scope | Date | Deliverables |
+> **Corrections (2026-10-12):** both published benchmarks have been corrected. See [`benchmarks/sandboxes-edition-1/ERRATA.md`](benchmarks/sandboxes-edition-1/ERRATA.md) and [`benchmarks/state-of-agent-readiness-2026/ERRATA.md`](benchmarks/state-of-agent-readiness-2026/ERRATA.md).
+
+| Series & Edition | Title | Scope | Date | Status & Deliverables |
 |---|---|---|---|---|
-| **Edition 2 (Latest)** | [**The Glintbase Integration Index: Sandboxes Edition 1**](benchmarks/sandboxes-edition-1) | 5 Cloud Sandboxes (Modal, E2B, boat.dev, Vercel, Daytona) | October 2026 | 30 Live Agent Trials • 119 Scans • 5 Figures • Gotchas Dossier |
-| **Edition 1** | [**State of Agent Readiness 2026 (ARS 2026)**](benchmarks/state-of-agent-readiness-2026) | Global Audit of 100 Developer Platforms across 10 Cohorts | August 2026 | 24-Page PDF • 1,000 Pathfinder Scans • 450 Agent Runs • $433k Token Tax |
+| **Integration Index · Sandboxes Edition 1** (latest) | [**The Glintbase Integration Index: Sandboxes Edition 1**](benchmarks/sandboxes-edition-1) | 5 Cloud Sandboxes (Modal, E2B, boat.dev, Vercel, Daytona) | October 2026 | Published pilot, corrected 2026-10-12 • 30 agent trials (n=1 each) • 119 front-door checks • 5 figures • Gotchas dossier. Corrected pass rate is 28/30. Prompts differed by provider, so the ranking is indicative only. |
+| **State of Agent Readiness 2026 · Edition 1** | [**State of Agent Readiness 2026 (ARS 2026)**](benchmarks/state-of-agent-readiness-2026) | 100 developer platforms across 10 categories | August 2026 | Published, corrected 2026-10-12 • 24-page PDF • dataset of 1,000 simulated Pathfinder traversals (100 platforms × 10 benchmarks). The PDF's 450 live-harness runs have no published data. |
+
+## Planned Studies (not yet run — no results)
+
+These folders hold pre-registered study designs only. Each README states the research question, design, and status; no data or findings exist until the status changes.
+
+| Study | Question | Status |
+|---|---|---|
+| [**State of Agent Readiness 2026 — Edition 2**](benchmarks/state-of-agent-readiness-2026-edition-2) | Do measured runtime behaviours predict agent task success better than static discoverability signals? | Planned (paused at design) |
+| [**The Silent Wall**](benchmarks/the-silent-wall) | How do public bot policies and WAF behaviour treat declared AI agents vs. browsers? | Active (design) |
+| [**Remote MCP Server Reliability**](benchmarks/production-mcp-reliability-crisis) | How often do public remote MCP servers fail protocol, discovery, and error-signalling basics? | Active (design) |
+| [**Beyond Self-Reporting**](benchmarks/beyond-self-reporting-execution-gap) | How far do agents' self-reported completions diverge from verified backend state in integration tasks? | Paused |
 
 ---
 
@@ -38,11 +51,13 @@ glintbase-research/
 ├── README.md                                # Canonical research index and reproduction guide
 ├── LICENSE                                  # Apache 2.0 License
 ├── CITATION.cff                             # Machine-readable citation metadata
+├── BOT.md                                   # Description of the research crawler user agent
 ├── .gitignore
 │
 └── benchmarks/
     ├── sandboxes-edition-1/                 # The Glintbase Integration Index: Cloud Sandboxes
     │   ├── README.md                        # Summary, leaderboard table, and reproduction steps
+    │   ├── ERRATA.md                        # Corrections of 2026-10-12 with evidence
     │   ├── .env.example                     # Environment key template (zero secrets)
     │   │
     │   ├── reports/
@@ -52,41 +67,49 @@ glintbase-research/
     │   │   └── DAYTONA_AGENT_EXECUTION_TRACE.md # Dedicated execution trace & gotchas deep-dive
     │   │
     │   ├── transcripts/                     # Complete autonomous agent traces (JSONL + Markdown)
-    │   │   ├── boat/                        # Trials 1–6 (24 to 88 steps per trial)
-    │   │   ├── daytona/                     # Trials 1–6 (33 to 110 steps per trial)
-    │   │   ├── e2b/                         # Trials 1–6 (50 to 85 steps per trial)
-    │   │   ├── modal/                       # Trials 1–6 (20 to 32 steps per trial)
-    │   │   └── vercel/                      # Trials 1–6 (42 to 92 steps per trial)
+    │   │   ├── boat/                        # Trials 1–6 (24 to 88 raw transcript events per trial)
+    │   │   ├── daytona/                     # Trials 1–6 (33 to 110 raw transcript events per trial)
+    │   │   ├── e2b/                         # Trials 1–6 (50 to 85 raw transcript events per trial)
+    │   │   ├── modal/                       # Trials 1–6 (20 to 32 raw transcript events per trial)
+    │   │   └── vercel/                      # Trials 1–6 (42 to 92 raw transcript events per trial)
     │   │
     │   ├── data/
-    │   │   ├── benchmark_master.json        # Canonical 30-trial results with tokens & steps
+    │   │   ├── benchmark_master.json        # 30-trial results as published (tokens/steps/time self-reported)
     │   │   ├── benchmark_master.csv         # Tabular dataset for pandas / R / spreadsheet analysis
     │   │   ├── integration_tax_summary.json # Aggregated median and total metrics per provider
+    │   │   ├── measured_metrics.csv         # Turns, tool calls, session length derived from transcripts
+    │   │   ├── trial_corrections.csv        # Per-trial corrections (raw rows left unchanged)
     │   │   └── phase1-scans/                # Raw machine scanner outputs (modal, e2b, etc.)
     │   │
-    │   ├── visuals/                         # High-resolution Anthropic-styled figures
+    │   ├── visuals/                         # High-resolution publication figures
     │   │   ├── visual1_master_leaderboard_table.png
     │   │   ├── visual2_frontdoor_vs_reality_scatter.png
     │   │   ├── visual3_challenge_progression_linegraph.png
     │   │   ├── visual4_integration_tax_leaderboard.png
     │   │   └── visual5_provider_challenge_heatmap.png
     │   │
-    │   ├── harness/                         # Evaluation scripts & runner templates
+    │   ├── harness/                         # Evaluation scripts & per-trial solutions
     │   │   ├── calculate_tax.py             # Computes Integration Tax from run logs
     │   │   ├── generate_visuals.py          # Generates publication graphics with embedded badges
-    │   │   ├── templates/                   # Standardized prompt instructions for trials 1-6
-    │   │   └── solutions/                   # Per-provider trial solutions (Modal, E2B, boat, etc.)
+    │   │   ├── measure_transcripts.py       # Derives measured metrics from transcripts
+    │   │   └── solutions/                   # Per-provider PROMPT.txt, solution.py, verify.py, run_log.json
     │   │
     │   └── distribution/
     │       └── DISTRIBUTION_KIT_3DAY_LAUNCH.md # Launch sequences, thread copy, and carousel script
     │
-    └── state-of-agent-readiness-2026/       # Foundational 100-Platform Ecosystem Audit
-        ├── README.md                        # Abstract, cohort breakdown, and findings
-        ├── reports/
-        │   └── STATE_OF_AGENT_READINESS_2026.pdf # Full 24-page PDF whitepaper (1.1 MB)
-        └── data/
-            ├── full-scores.csv              # 100 Platforms × 10 Benchmarks score matrix
-            └── research-dataset.json        # Deep metadata and traversal logs for all 100 platforms
+    ├── state-of-agent-readiness-2026/       # Foundational 100-Platform Ecosystem Audit
+    │   ├── README.md                        # Abstract and headline numbers (recomputed from data)
+    │   ├── ERRATA.md                        # Every PDF-vs-data disagreement; licence flag
+    │   ├── reports/
+    │   │   └── STATE_OF_AGENT_READINESS_2026.pdf # 24-page PDF as originally published (1.1 MB)
+    │   └── data/
+    │       ├── full-scores.csv              # 100 Platforms × 10 Benchmarks score matrix (source of truth)
+    │       └── research-dataset.json        # Simulated traversal records for all 100 platforms
+    │
+    ├── state-of-agent-readiness-2026-edition-2/ # PLANNED (paused): design only, no data
+    ├── the-silent-wall/                     # PLANNED: protocol being finalised, no results
+    ├── production-mcp-reliability-crisis/   # PLANNED: protocol being finalised, no results
+    └── beyond-self-reporting-execution-gap/ # PLANNED (paused): design only, no data
 ```
 
 ---
@@ -109,7 +132,7 @@ pip install matplotlib seaborn pandas pillow requests
 ```python
 import pandas as pd
 df = pd.read_csv("data/benchmark_master.csv")
-print(df.groupby("platform")[["total_tokens", "steps_count", "wall_time_seconds"]].median())
+print(df.groupby("provider")[["total_tokens", "steps_count", "wall_time_seconds"]].median())  # column is "provider" (corrected 2026-10-12)
 ```
 
 ### 3. Recalculate Integration Tax ($IT$)
@@ -124,7 +147,28 @@ python harness/calculate_tax.py
 python harness/generate_visuals.py
 ```
 
-All 5 publication graphics will be rendered directly to `visuals/`.
+All 5 publication graphics will be rendered directly to `visuals/`. (The values are hard-coded in the script and reflect the original publication, not the 2026-10-12 corrections.)
+
+### 5. Derive Measured Metrics from the Transcripts
+
+```bash
+python harness/measure_transcripts.py   # writes data/measured_metrics.csv (standard library only)
+```
+
+### 6. (Optional) Re-run a Trial and Its Verifier
+
+Running `solution.py` / `verify.py` under `harness/solutions/<provider>/<trial>/` creates real sandboxes on your own account. It needs `python-dotenv`, the provider SDK, and credentials in a `.env` file (see `.env.example`). The SDK versions below are the ones listed in `reports/METHODOLOGY.md` §3:
+
+```bash
+pip install python-dotenv requests
+pip install modal==1.6.1          # Modal
+pip install e2b==1.0.5            # E2B
+pip install boat-sdk==1.5.0       # boat.dev
+pip install vercel-sandbox==0.7.0 # Vercel Sandbox (imported as vercel.sandbox)
+pip install daytona==0.222.0      # Daytona
+```
+
+The corrected `verify.py` exits non-zero when sandboxes are still running after the solution finishes. The Trial 6 verifiers also require a real unittest or pytest summary.
 
 ---
 
@@ -138,6 +182,8 @@ $$\text{Integration Tax (IT)} = \left[ 0.40 \times \left(\frac{\text{Tokens}_{\t
   - $\text{Min Time} = 19.5\text{s}$ (Modal)
 - **Penalty Multiplier**:
   $$\text{Penalty} = 1.0 + \frac{100 - \text{Pass Rate}}{50} \quad (\text{when Pass Rate } < 100\%)$$
+
+> **Caveat (2026-10-12):** the token, step and time inputs to this formula were self-reported by the agent, and prompts differed by provider. Treat the resulting ranking as indicative, not as a controlled comparison. See the Sandboxes Edition 1 [`ERRATA.md`](benchmarks/sandboxes-edition-1/ERRATA.md).
 
 ---
 
@@ -171,7 +217,7 @@ If you use Glintbase benchmarks, datasets, or methodologies in your academic res
   month = {August},
   type = {Benchmark Research Report},
   url = {https://glintbase.dev/research},
-  note = {N=100 platforms, 1,000 Pathfinder scans, 450 live harness evaluations}
+  note = {N=100 platforms, 1,000 simulated Pathfinder traversals; see ERRATA.md}
 }
 ```
 
@@ -179,8 +225,8 @@ If you use Glintbase benchmarks, datasets, or methodologies in your academic res
 
 ## License & Ethics Statement
 
-- **Code & Harnesses**: Licensed under [Apache License 2.0](LICENSE).
-- **Benchmark Datasets & Reports**: Licensed under [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+- **Code & Harnesses**: [Apache License 2.0](LICENSE) covers the code in this repository (harness scripts, verifiers, solution code).
+- **Research Reports, Datasets, Transcripts & Prompts**: © 2026 Glintbase. All rights reserved. You may read, cite and quote them with attribution; redistribution or republication requires written permission (research@glintbase.dev). This replaces the earlier CC-BY 4.0 statement (changed 2026-10-12) and the MIT note in the ARS 2026 PDF Appendix B.
 - **Independence Disclosure**: Glintbase maintains zero affiliate compensation or preferential ranking deals with any evaluated infrastructure vendor. All evaluation trials are conducted in deterministic, isolated environments using standard customer tiers.
 
 For questions, corrections, or vendor re-scan requests, reach out to **research@glintbase.dev** or open an issue.

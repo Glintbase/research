@@ -10,7 +10,7 @@
 | **Run Date** | October 6, 2026 |
 | **Execution Mode** | Prompt-provided API scaffold / interface hints (pre-installed SDK, zero web search permitted during execution, local runtime Python introspection enabled) |
 | **Credentials** | Single pre-provisioned `DAYTONA_API_KEY`, loaded from `.env` |
-| **Evaluation Result** | **6 of 6 tasks passed (100% pass rate)**. 0 leaked sandboxes across all runs. |
+| **Evaluation Result** | **6 of 6 tasks passed (100% pass rate)**. 0 leaked sandboxes across all runs. *(Correction 2026-10-12: the 6/6 pass stands; Trial 6 shows a real unittest run. The "0 leaked" claim is not verifiable. In Trial 4 the first verifier run found one leftover sandbox, deleted it silently and passed. See [`../ERRATA.md`](../ERRATA.md) E5.)* |
 | **Integration Tax** | **1.43×** (median-based), **1.65×** (totals-based). Rank #5 of 5 under both. |
 
 ---
@@ -28,7 +28,7 @@
 |---|---|
 | **Step** | A single autonomous tool call executed by the agent (e.g., executing a command via `run_command`, writing code via `write_to_file`, or inspecting files via `view_file`). |
 | **Stumble** | A moment where an agent tool call failed or returned an unexpected exit code/response, necessitating corrective backtracking or adaptation in subsequent steps. |
-| **Tokens** | Cumulative prompt and completion token counts measured and reported by the Antigravity agent runtime for each trial. |
+| **Tokens** | Cumulative prompt and completion token counts measured and reported by the Antigravity agent runtime for each trial. *(Correction 2026-10-12: the agent wrote these values into `run_log.json` itself; neither the runtime nor the harness measured them. Steps and wall time are likewise self-reported. See ERRATA E3 and `data/measured_metrics.csv`.)* |
 | **Wall Time** | Elapsed seconds from initial prompt ingestion to verified sandbox destruction. |
 | **Integration Tax** | Standardized overhead index computed as $0.4 \times (\text{Tokens} / \text{Best}) + 0.4 \times (\text{Steps} / \text{Best}) + 0.2 \times (\text{Time} / \text{Best})$. A score of 1.00× represents the top benchmark performer across all dimensions. |
 
@@ -95,7 +95,7 @@ finally:
         client.delete(sb)
 ```
 
-**Architectural Consistency**: All runs reliably instantiated `client = Daytona(DaytonaConfig(api_key=...))` and cleaned up via `client.delete(sb)` inside `finally` blocks, resulting in **zero leaked sandboxes** across all runs.
+**Architectural Consistency**: All runs reliably instantiated `client = Daytona(DaytonaConfig(api_key=...))` and cleaned up via `client.delete(sb)` inside `finally` blocks, resulting in **zero leaked sandboxes** across all runs. *(Correction 2026-10-12: not verifiable. See Trial 4 and ERRATA E5.)*
 
 ---
 
@@ -318,7 +318,7 @@ print(probe_res.result.strip())
   6. `run_command python solution.py`: Executed script; `git clone` succeeded, but `python3 test/test_all.py` returned exit code 2 (file not found in latest upstream branch).
   7. `run_command`: Queried GitHub API for repository file structure (`/contents/test`); confirmed absence of legacy `test_all.py`.
   8. `write_to_file solution.py`: Updated script to dynamically provision standard `unittest.defaultTestLoader.discover('test')` runner into `/tmp/bottle/test/test_all.py`.
-  9. `run_command python solution.py`: Executed updated script; `unittest` ran 182 test cases in 1.48s (`OK`), printed `TEST_SUITE_FINISHED`, and deleted sandbox cleanly.
+  9. `run_command python solution.py`: Executed updated script; `unittest` ran 373 tests in 0.194s (`OK (skipped=1)`) *(corrected 2026-10-12 from "182 test cases in 1.48s", which the transcript does not contain)*, printed `TEST_SUITE_FINISHED`, and deleted sandbox cleanly.
   10. `run_command python verify.py`: Verified exit code 0 and zero leaked sandboxes.
 
 ```python
@@ -371,15 +371,15 @@ Trial 6 was the most resource-intensive trial across the Daytona battery (4,080 
 1. **Upstream Repository Drift**: The prompt instructed running `python3 test/test_all.py` on `https://github.com/bottlepy/bottle`. In legacy releases of `bottle`, `test_all.py` was the standard test entry point. In modern revisions of the repository, tests are modularized under `test/` for discovery by `pytest` or `unittest`.
 2. **Local Investigation**: When the initial execution failed with `[Errno 2] No such file or directory`, the agent queried the GitHub API to inspect the `test/` directory.
 3. **Self-Healing Wrapper**: The agent synthesized a clean Python wrapper that invoked `unittest.defaultTestLoader.discover('test')`, writing it to `/tmp/bottle/test/test_all.py` if not present.
-4. **Execution Outcome**: The suite ran all 182 unit tests in 1.48 seconds (`Ran 182 tests in 1.482s, OK`), printed `TEST_SUITE_FINISHED`, and passed harness verification.
-5. **Cross-Provider Comparison**: Other providers handled this similarly: E2B dynamically installed and ran `pytest`, while Modal and boat executed through the direct path specified in their prompts.
+4. **Execution Outcome**: The suite ran `Ran 373 tests in 0.194s, OK (skipped=1)`, printed `TEST_SUITE_FINISHED`, and passed harness verification. *(Corrected 2026-10-12 from "182 unit tests in 1.48 seconds". Earlier attempts in the same transcript ran 25 and 132 tests with errors before the final passing run.)*
+5. **Cross-Provider Comparison**: Other providers handled this similarly: E2B dynamically installed and ran `pytest`, while Modal and boat executed through the direct path specified in their prompts. *(Correction 2026-10-12: Vercel also wrote its own discovery runner. Modal and boat ran no tests at all. Their solutions called the non-existent `test/test_all.py` and printed the marker unconditionally, so their Trial 6 is not counted as passed. See ERRATA E4.)*
 
 ---
 
 ## 7. What Worked Exceptionally Well
 
 1. **Zero Credential Friction**: A single `DAYTONA_API_KEY` was sufficient for full lifecycle management. No human authentication stops, OAuth popups, or auxiliary tokens were required.
-2. **Zero Leaked Sandboxes**: Across all six trials, every sandbox was cleanly destroyed in `finally` blocks. Daytona's API executed teardown reliably without orphaned microVMs.
+2. **Zero Leaked Sandboxes**: Across all six trials, every sandbox was cleanly destroyed in `finally` blocks. Daytona's API executed teardown reliably without orphaned microVMs. *(Correction 2026-10-12: in Trial 4, `client.delete(sb)` returned before deletion finished, and the first verifier run found the sandbox still listed. The agent fixed this with `wait=True`.)*
 3. **Pre-Installed Tooling**: Daytona's default sandbox image comes equipped with `git`, `python3`, `pip`, and standard utilities, enabling `git clone` and dependency installation without base image modification.
 4. **Clean File System API**: `sb.fs.upload_file` provided a native byte/string upload mechanism without requiring complex shell escaping or base64 decoding.
 5. **Debian Bookworm Environment**: Pre-configured Python 3.12 environment in Debian Bookworm provided clean binary wheel compatibility for packages like `polars`.
@@ -389,7 +389,7 @@ Trial 6 was the most resource-intensive trial across the Daytona battery (4,080 
 ## 8. Empirical Observations & Recommendations for Daytona
 
 ### O1. Preview URL Discovery in Agent Docs
-Daytona's signed preview URL system (`create_signed_preview_url`) is secure and effective. However, agents commonly attempt standard HTTP port access first. Highlighting `create_signed_preview_url` and `public=True` directly in `llms.txt` and SDK quickstart snippets would prevent agents from spending exploratory inspection steps.
+Daytona's signed preview URL system (`create_signed_preview_url`) is secure and effective. However, agents commonly attempt standard HTTP port access first. *(Correction 2026-10-12: this was not observed in this benchmark. The Trial 4 prompt named the signed-URL method.)* Highlighting `create_signed_preview_url` and `public=True` directly in `llms.txt` and SDK quickstart snippets would prevent agents from spending exploratory inspection steps.
 
 ### O2. Front-Door Agent Readiness Scan (ARS 3.0 Audit)
 In the Phase 1 front-door automated scan of Daytona (`daytona.io`), the domain received a score of **48 / 85 (Grade C: Partial Agent Support)**.
@@ -426,7 +426,7 @@ cd research/benchmarks/sandboxes-edition-1
 echo "DAYTONA_API_KEY=your_daytona_api_key" > .env
 
 # Execute verification for any trial (e.g., Trial 4)
-cd transcripts/daytona/trial-4-serve
+cd harness/solutions/daytona/trial-4-serve   # corrected 2026-10-12: solution.py and verify.py live here, not under transcripts/
 python solution.py
 python verify.py
 ```
@@ -437,4 +437,4 @@ python verify.py
 
 - **Synchronized Publication**: The Sandboxes Edition 1 benchmark report and all 30 underlying agent transcripts (across Daytona, Modal, E2B, boat.dev, and Vercel) are publicly available in the research repository.
 - **Commitment to Accuracy**: Glintbase invites feedback, corrections, and reproduction notes from the Daytona engineering team. Any confirmed factual corrections or SDK updates will be documented transparently in the public research changelog.
-- **Contact**: Reach the research team directly at `research@glintbase.com` or via GitHub Discussions at [`github.com/Glintbase/research`](https://github.com/Glintbase/research).
+- **Contact**: Reach the research team directly at `research@glintbase.dev` or via GitHub Discussions at [`github.com/Glintbase/research`](https://github.com/Glintbase/research).

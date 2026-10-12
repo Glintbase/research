@@ -46,13 +46,17 @@ def verify():
 
     print(f"[PASS] Successfully reached HTTP server: '{EXPECTED_OUTPUT}' returned!")
 
+    # Correction (2026-10-12): remaining sandboxes now FAIL the leak check (non-zero exit)
+    # before cleanup. Previously they were deleted with only a warning and the trial still passed.
+    leak_failed = False
     # Check for leaked sandboxes via e2b if available
     try:
         from e2b import Sandbox
         p = Sandbox.list()
         active = p.next_items() if hasattr(p, 'next_items') else []
         if len(active) > 0:
-            print(f"[WARN] Warning: Detected {len(active)} active sandboxes after execution!")
+            print(f"[FAIL] Leak check FAILED: {len(active)} sandbox(es) still active after execution. Cleaning up after reporting.")
+            leak_failed = True
             for s in active:
                 try:
                     s.kill()
@@ -61,7 +65,12 @@ def verify():
         else:
             print("[PASS] Clean-Up Check PASSED: 0 leaked sandboxes.")
     except Exception as e:
-        print(f"[INFO] Could not check e2b.Sandbox.list() directly: {e}")
+        print(f"[FAIL] Leak check could not run (e2b.Sandbox.list() raised): {e}")
+        leak_failed = True
+
+    if leak_failed:
+        print("\n>>> TRIAL 4 VERIFICATION FAILED (leak check) <<<\n")
+        sys.exit(1)
 
     print("\n>>> TRIAL 4 VERIFICATION PASSED! <<<\n")
 

@@ -12,6 +12,16 @@
 > - `visual4_integration_tax_leaderboard.png` (Integration Tax Bar Chart)
 > - `visual5_provider_challenge_heatmap.png` (Provider × Challenge Friction Heatmap Matrix)
 
+> [!CAUTION]
+> **Do not publish this kit as written (Correction 2026-10-12).** Several claims below are contradicted by the published data. Each affected passage is annotated with **[Correction 2026-10-12]**, and the evidence is in [`../ERRATA.md`](../ERRATA.md). Key facts for any rewrite:
+> - Pass rate is **28/30 (93.3%)**, not 100%. Modal and boat ran no tests in Trial 6.
+> - Prompts were **not identical** across providers, so the ranking is indicative only.
+> - Tokens, steps and time are agent **self-reports**.
+> - **No human stops** are recorded for any provider.
+> - The boat **402 card gate**, Modal **malformed-token** error, Vercel **human stop** and Daytona **401** are **not captured** in the transcripts.
+> - "0 leaks" is **not verifiable**. The published verifier deleted leftovers silently, and Daytona Trial 4 had one.
+> - The visuals show the originally published values.
+
 ---
 
 # TABLE OF CONTENTS
@@ -87,7 +97,7 @@ Yet in live execution? Modal dominated the cohort.
 - 3.0 median agent tool turns
 - Native TLS port ingress with zero reverse-proxy boilerplate
 
-The inverse happened to boat.dev. They led the entire field in machine discoverability (82/100, Grade B), with stellar RFC metadata and clean curl examples. But at runtime, an unexpected payment gate tripped the agent into an autonomous retry loop that burned 26,598 tokens.
+The inverse happened to boat.dev. They led the entire field in machine discoverability (82/100, Grade B), with stellar RFC metadata and clean curl examples. But at runtime, an unexpected payment gate tripped the agent into an autonomous retry loop that burned 26,598 tokens. **[Correction 2026-10-12]** 26,598 is boat's self-reported total across all six trials, not a retry loop. No 402 payment gate is captured in the transcripts.
 
 Clean documentation is no guarantee of runtime smoothness.
 
@@ -98,12 +108,12 @@ If Modal is the raw horsepower champion of container execution, E2B is the textb
 
 E2B achieved:
 - The lowest token consumption in the entire benchmark: 1,865 median tokens
-- Exactly 0 human stops across all 6 challenge tiers
+- Exactly 0 human stops across all 6 challenge tiers **[Correction 2026-10-12]** every provider recorded 0 human stops. This is not specific to E2B.
 - Zero authentication ambiguity
 
 Their Python and TypeScript SDKs are designed specifically around LLM tool calling primitives. When an agent calls `sandbox.commands.run()`, the type signatures are clean enough that the model doesn't hallucinate arguments or trigger parameter retries.
 
-The trade-off? Execution latency on heavy compute tasks was higher than Modal (40.0s vs 26.0s on full test suite runs). But if token efficiency is your north star, E2B set the baseline.
+The trade-off? Execution latency on heavy compute tasks was higher than Modal (40.0s vs 26.0s on full test suite runs). **[Correction 2026-10-12]** Modal's Trial 6 ran no tests, so this is not a like-for-like comparison. Both times are self-reported. But if token efficiency is your north star, E2B set the baseline.
 
 ---
 
@@ -115,6 +125,8 @@ Every infra lead we spoke with shared the same recurring nightmare:
 After every single trial, our harness ran strict post-flight teardown audits. We probed process tables, checked container runtimes, and monitored dangling network listeners.
 
 The result: across 30 deterministic trials and 5 providers, we recorded **zero leaked cloud microVMs**.
+
+**[Correction 2026-10-12]** False. The verifier only called each provider's sandbox-listing API. No process tables, container runtimes or network listeners were inspected. It deleted any sandbox still listed and passed anyway, so it could not report a leak. Daytona Trial 4 had one leftover sandbox, removed silently.
 
 Every provider cleanly isolated and destroyed their compute instances on process exit. The sandboxing primitives themselves are rock-solid. The friction lies entirely in the developer API surface.
 
@@ -151,8 +163,8 @@ When you replace that human developer with an autonomous coding agent, those "co
 
 Over 30 empirical integration runs across Modal, E2B, boat.dev, Vercel, and Daytona, we watched this play out in real time:
 
-- Vercel Sandbox requires a triad of credentials: an OIDC token, a Project ID, and a Team ID. A human copies them in 30 seconds. An autonomous agent has no eyes to look at a dashboard settings tab, resulting in a complete stall.
-- Daytona's proxy architecture enforces authenticated pre-signed URLs on port forwarding. To a security architect, that’s great posture. To an agent that spun up an HTTP server and tried to curl port 8000, it’s an unexplained `401 Unauthorized` that ballooned tool turns from 4 to 9.
+- Vercel Sandbox requires a triad of credentials: an OIDC token, a Project ID, and a Team ID. A human copies them in 30 seconds. An autonomous agent has no eyes to look at a dashboard settings tab, resulting in a complete stall. **[Correction 2026-10-12]** the trials used `VERCEL_TOKEN` (an access token), not an OIDC token. All three values were named in the prompt and present in `.env`, and no stall or human stop is recorded.
+- Daytona's proxy architecture enforces authenticated pre-signed URLs on port forwarding. To a security architect, that’s great posture. To an agent that spun up an HTTP server and tried to curl port 8000, it’s an unexplained `401 Unauthorized` that ballooned tool turns from 4 to 9. **[Correction 2026-10-12]** no 401 is captured. The Trial 4 prompt named `create_signed_preview_url`, and the extra steps were SDK introspection.
 - Modal didn't bother publishing public web OpenAPI docs (scoring 36/100 on machine discovery), yet crushed runtime execution with a 1.03x Integration Tax because their container caching and TLS ingress tunnels require zero setup steps.
 
 If you are choosing cloud infrastructure for autonomous agents based on how pleasant the marketing landing page feels to a human, you are benchmarking the wrong variable.
@@ -179,7 +191,7 @@ Most infrastructure teams are completely unprepared for what that actually means
 When a human developer uses your API and runs into friction, they forgive it. If an endpoint requires an undocumented Project ID, they look at the URL in their browser address bar. If a package requires a virtualenv, they instinctively create one. If a credit card is needed, they pull out their wallet.
 
 When an autonomous AI agent encounters those exact same hurdles, the outcome is fundamentally different:
-- An unannounced payment gate doesn't prompt a payment modal—it triggers a recursive retry loop that burns \$35 of LLM tokens in 90 seconds.
+- An unannounced payment gate doesn't prompt a payment modal—it triggers a recursive retry loop that burns \$35 of LLM tokens in 90 seconds. **[Correction 2026-10-12]** no data in this benchmark supports the \$35 / 90-second figure, and no payment gate is captured.
 - An undocumented credential triad doesn't prompt an email to support—it terminates the agent's task run with a fatal exit code.
 - An ingress reverse-proxy requirement doesn't lead to reading docs—it inflates agent tool turns from 3 to 10 steps, tripling end-to-end task latency.
 
@@ -193,13 +205,13 @@ Here are the macro takeaways every engineering leader should study:
 Despite scoring the lowest on front-door web discoverability due to the absence of public web REST endpoints, Modal’s container execution primitives, automatic caching, and zero-config TLS ingress tunnels (`sb.tunnels()`) allowed agents to complete tasks in a cohort-leading 19.5s median latency.
 
 **2. E2B set the standard for token efficiency (1.17x Integration Tax).**
-With exactly zero human stops across all 30 trials and the lowest token consumption of any provider (1,865 median tokens), E2B demonstrated what API design looks like when built from first principles for LLM tool calling.
+With exactly zero human stops across all 30 trials and the lowest token consumption of any provider (1,865 median tokens), **[Correction 2026-10-12]** E2B ran 6 trials, not 30. Every provider recorded zero human stops, and token counts are self-reported. E2B demonstrated what API design looks like when built from first principles for LLM tool calling.
 
 **3. The "Discovery vs. Runtime" gap is real.**
-boat.dev scored the highest machine-discoverability grade on paper (82/100) thanks to rich MCP metadata and RFC protocols, but dropped to #3 at runtime due to an unhandled payment gate on Debian package installations.
+boat.dev scored the highest machine-discoverability grade on paper (82/100) thanks to rich MCP metadata and RFC protocols, but dropped to #3 at runtime due to an unhandled payment gate on Debian package installations. **[Correction 2026-10-12]** no payment gate is captured. The recorded Trial 2 failure was a PEP 668 pip error. The Integration Tax does not include human stops or gates.
 
 **4. Teardown integrity is solved.**
-Across all 30 trials, we recorded **zero leaked cloud microVMs**. Modern virtualization layers (Firecracker, gVisor, custom containers) destroy workloads cleanly. The barrier to production agents is not virtualization security—it is API handoff ergonomics.
+Across all 30 trials, we recorded **zero leaked cloud microVMs**. Modern virtualization layers (Firecracker, gVisor, custom containers) destroy workloads cleanly. **[Correction 2026-10-12]** leaks were not verifiable with the published verifier. The barrier to production agents is not virtualization security—it is API handoff ergonomics.
 
 Developer Experience was about making humans feel productive. 
 Agent Experience is about making software deterministic.
@@ -230,7 +242,7 @@ We tracked every tool turn, every burned token, and every unexpected runtime err
 3. State persistence across command boundaries
 4. HTTP web server ingress
 5. Error recovery & crash resilience
-6. Real-world SWE test suite execution (`bottlepy` git clone + pytest)
+6. Real-world SWE test suite execution (`bottlepy` git clone + pytest) **[Correction 2026-10-12]** only E2B ran pytest. Vercel and Daytona ran agent-written unittest runners, and Modal and boat ran no tests.
 
 The heatmap below maps the exact friction profile of each provider across all 30 runs:
 
@@ -239,10 +251,10 @@ The heatmap below maps the exact friction profile of each provider across all 30
 Three key architectural observations from the data:
 
 🔹 **The Ingress Divide (Challenge 4)**
-Running a local web server is simple. Verifying that server over the public internet from an autonomous agent is where platforms diverge. Modal provisions an instant external tunnel with one line (`sb.tunnels()`). Daytona requires explicit signed URL generation (`sb.create_signed_preview_url`), which caught the agent in an unauthenticated 401 loop and pushed execution to 9 tool steps.
+Running a local web server is simple. Verifying that server over the public internet from an autonomous agent is where platforms diverge. Modal provisions an instant external tunnel with one line (`sb.tunnels()`). Daytona requires explicit signed URL generation (`sb.create_signed_preview_url`), which caught the agent in an unauthenticated 401 loop and pushed execution to 9 tool steps. **[Correction 2026-10-12]** no 401 loop is recorded, and the method was named in the prompt.
 
 🔹 **The Credential Toll (Challenge 1)**
-E2B and boat require a single API key. Vercel Sandbox requires a triad: an OIDC token, a Project ID, and a Team ID. Because an agent in an isolated workspace cannot inspect a team dashboard, this forced an immediate "Human Stop" before line 1 of user code could execute.
+E2B and boat require a single API key. Vercel Sandbox requires a triad: an OIDC token, a Project ID, and a Team ID. Because an agent in an isolated workspace cannot inspect a team dashboard, this forced an immediate "Human Stop" before line 1 of user code could execute. **[Correction 2026-10-12]** the trials used `VERCEL_TOKEN`, not an OIDC token. No human stop is recorded.
 
 🔹 **Predictability Over Peak Speed**
 Notice Modal's consistency: 3 to 4 steps across all six challenges, regardless of complexity. Daytona and Vercel escalated from 3 steps on basic scripts up to 8–10 steps once ingress and git cloning entered the picture. In production agentic pipelines, step variance is dangerous because each extra turn increases the probability of an agent hallucination or timeout.
@@ -289,6 +301,8 @@ Why? Daytona's reverse proxy requires an authenticated session by default unless
 
 Because this wasn't explicit in the agent's prompt context, the agent spent 5 extra tool turns inspecting process tables, curling `localhost`, and checking firewall rules before discovering the method.
 
+**[Correction 2026-10-12]** the Trial 4 prompt named `sb.create_signed_preview_url(8000, 300)`. The second parameter is `expires_in_seconds`, not `duration`. No 401 is captured. The extra turns were SDK signature introspection, not process-table or firewall checks.
+
 Tool turns jumped from 4 to 9. End-to-end time hit 45.0s.
 
 ---
@@ -301,6 +315,8 @@ Supply one environment variable (`API_KEY`).
 
 Vercel Sandbox:
 If you pass `VERCEL_OIDC_TOKEN`, the SDK throws an authentication exception.
+
+**[Correction 2026-10-12]** not observed. The trials used `VERCEL_TOKEN`. `VERCEL_OIDC_TOKEN` appears only in SDK source the agent read.
 It demands:
 1. `VERCEL_OIDC_TOKEN`
 2. `VERCEL_PROJECT_ID`
@@ -308,7 +324,7 @@ It demands:
 
 An autonomous agent operating inside an isolated repository cannot discover your Vercel Project ID or Team ID without querying external management APIs.
 
-It triggered a mandatory **Human Stop (Hs)**: an operator had to intervene, open a browser, and supply the two missing IDs.
+It triggered a mandatory **Human Stop (Hs)**: an operator had to intervene, open a browser, and supply the two missing IDs. **[Correction 2026-10-12]** not recorded. The transcript has a single user turn, and the IDs were already in `.env` and named in the prompt.
 
 If your sandbox requires human eyes on a dashboard to retrieve metadata, it cannot be integrated autonomously.
 
@@ -321,7 +337,7 @@ When you configure credentials in Modal's web console, you can generate:
 - Webhook Keys (prefixed `wk-...`)
 - API Tokens (prefixed `ak-...` / `as-...`)
 
-In Trial 1, our harness initially loaded a `wk-...` key. When passed to `modal.App.lookup()`, the Python SDK failed with an unhandled token format exception.
+In Trial 1, our harness initially loaded a `wk-...` key. When passed to `modal.App.lookup()`, the Python SDK failed with an unhandled token format exception. **[Correction 2026-10-12]** not captured. Modal Trial 1 succeeded on its first run in the published transcript.
 
 To a human, the distinction between a webhook key and an API token is obvious. To an agent parsing an environment file, both look like valid credentials.
 
@@ -335,9 +351,11 @@ Once swapped to an `ak-...` key, Modal never stumbled again. Nomenclature precis
 In boat.dev, the agent invoked the command cleanly. The API responded with:
 `HTTP 402 Payment Required`.
 
+**[Correction 2026-10-12]** not captured in the published transcripts. The recorded error was `externally-managed-environment` (PEP 668).
+
 The agent’s control loop did what any good agent does when encountering an error: it inspected the response and attempted to retry with alternative execution strategies.
 
-Result: 26,598 total tokens burned across trials before human hands added a credit card to the web billing console.
+Result: 26,598 total tokens burned across trials before human hands added a credit card to the web billing console. **[Correction 2026-10-12]** 26,598 is the self-reported total for all six boat trials, not a pre-card retry loop. No human action is recorded.
 
 If an API can return a payment-gated 402 error, it needs machine-actionable error bodies that clearly tell the agent: "Halt. Human billing intervention required." Otherwise, it turns into a runaway token incinerator.
 
@@ -370,6 +388,8 @@ It's that the agent will crash at 3 AM, fail to execute its cleanup block, and l
 When we designed the Glintbase Integration Index, we made post-flight teardown audits a mandatory metric across all 30 trials.
 
 After every trial completed—whether it passed cleanly or crashed with an exception—we queried the provider control plane and inspected running instances:
+
+**[Correction 2026-10-12]** the verifier deleted any listed sandboxes and passed anyway, so the tally below could not show a leak. Daytona Trial 4 had one leftover sandbox, removed silently.
 
 The final tally:
 - Modal: 0 leaks
@@ -413,7 +433,7 @@ Full benchmark data: [link]
 - **Takeaway Callout**:
   - Modal Labs takes Rank #1 with a 1.03x Integration Tax.
   - E2B takes Rank #2 with zero human stops and lowest token burn (1,865 med).
-  - 100% pass rate and 0 cloud leaks across all 30 trials.
+  - 100% pass rate and 0 cloud leaks across all 30 trials. **[Correction 2026-10-12]** pass rate is 28/30 (93.3%), and leaks are not verifiable.
 
 ### Slide 4: The Metric: Integration Tax ($\text{IT}$)
 - **Header**: How We Measure Agent Friction
@@ -429,21 +449,21 @@ Full benchmark data: [link]
 
 ### Slide 6: The 4 Silent Agent Traps
 - **Header**: Anatomies of an Infrastructure Stall
-- **Point 1**: **Signed URL Gates** (Daytona required pre-signed preview URLs; unsigned requests threw 401).
+- **Point 1**: **Signed URL Gates** (Daytona required pre-signed preview URLs; unsigned requests threw 401). **[Correction 2026-10-12]** no 401 captured.
 - **Point 2**: **Credential Triads** (Vercel demanded Token + Project ID + Team ID).
-- **Point 3**: **Unannounced Card Gates** (boat.dev triggered an autonomous 26k token retry loop on payment gate).
+- **Point 3**: **Unannounced Card Gates** (boat.dev triggered an autonomous 26k token retry loop on payment gate). **[Correction 2026-10-12]** no 402 captured. 26k is the six-trial total.
 - **Point 4**: **Nomenclature Traps** (Modal Webhook keys vs. API tokens).
 
 ### Slide 7: The Zero-Leak Teardown Audit
 - **Header**: Did Any Provider Leak Cloud Compute?
-- **Stat**: **0 / 30 MicroVM Leaks Audited**
+- **Stat**: **0 / 30 MicroVM Leaks Audited** **[Correction 2026-10-12]** not verifiable with the published verifier.
 - **Body**: Despite runtime exceptions, crashes, and error recoveries, every single provider cleanly destroyed microVMs upon process termination. Your infrastructure won't leak background instances.
 
 ### Slide 8: The Verdict & Next Steps
 - **Header**: Key Takeaways for AI Engineering Teams
 - **Bullet 1**: Design APIs for machine callers, not just humans with web browsers.
 - **Bullet 2**: Token burn and step stability matter far more than synthetic sub-100ms boot times.
-- **Bullet 3**: Download the full 4,000-word Whitepaper and reproducible harness at **glintbase.com**.
+- **Bullet 3**: Download the full 4,000-word Whitepaper and reproducible harness at **glintbase.dev**. *(domain corrected 2026-10-12)*
 
 **Companion Post Copy for LinkedIn Carousel:**
 Swipe through the slide deck above to see what happened when we ran 30 live autonomous AI agent trials across Modal, E2B, boat.dev, Vercel, and Daytona.
@@ -485,11 +505,11 @@ Having run 30 live agent trials and audited 119 discovery checks across the top 
 ### Post 3 (E2B: The Agent-Native Workhorse)
 **When to choose E2B**:
 - Token efficiency is your primary KPI (lowest burn across all trials: 1,865 median tokens).
-- You want 100% autonomous operation with zero human intervention (0 human stops across all 6 challenges).
+- You want 100% autonomous operation with zero human intervention (0 human stops across all 6 challenges). **[Correction 2026-10-12]** all providers recorded 0 human stops.
 - You need dedicated, purpose-built agent sandboxing with typed TypeScript and Python SDKs.
 
 **What to watch out for**:
-- Slower on heavy compute test suites compared to Modal (40.0s vs 26.0s on repo pytest runs).
+- Slower on heavy compute test suites compared to Modal (40.0s vs 26.0s on repo pytest runs). **[Correction 2026-10-12]** Modal ran no tests in Trial 6, and times are self-reported.
 - Cold boots take slightly longer on unprimed templates.
 
 ---
@@ -501,7 +521,7 @@ Having run 30 live agent trials and audited 119 discovery checks across the top 
 - You are working in non-Python runtimes.
 
 **What to watch out for**:
-- Pre-fund your account with a credit card before launching agent workloads to prevent HTTP 402 retry loops.
+- Pre-fund your account with a credit card before launching agent workloads to prevent HTTP 402 retry loops. **[Correction 2026-10-12]** no 402 captured in this benchmark.
 - Default Debian images enforce PEP 668 on system pip.
 
 ---
@@ -525,7 +545,7 @@ Having run 30 live agent trials and audited 119 discovery checks across the top 
 - Clean process execution APIs.
 
 **What to watch out for**:
-- Ingress requires programmatic signed preview URL generation (`sb.create_signed_preview_url`), or requests will return 401.
+- Ingress requires programmatic signed preview URL generation (`sb.create_signed_preview_url`), or requests will return 401. **[Correction 2026-10-12]** per Daytona's docs. Not observed in this benchmark.
 - Ensure generous timeouts on git operations over large repositories.
 
 ---
