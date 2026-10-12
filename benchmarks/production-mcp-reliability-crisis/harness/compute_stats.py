@@ -175,7 +175,7 @@ def to_markdown(summary: dict) -> str:
               f"- Error returned in-channel: {fmt(s['rq5_error_in_channel'])}", ""]
     if "stability" in summary:
         st = summary["stability"]
-        lines += ["## RQ6 Stability", "", f"- Paired endpoints: {st['paired']}",
+        lines += ["## RQ6 Re-test reliability (back-to-back rounds; see Deviation 1)", "", f"- Paired endpoints: {st['paired']}",
                   f"- Same primary status: {fmt(st['same_status'])}", f"- Cohen's κ: {st['cohens_kappa']}", ""]
     return "\n".join(lines) + "\n"
 

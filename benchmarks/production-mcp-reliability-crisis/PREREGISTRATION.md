@@ -11,7 +11,7 @@
 - **RQ3:** Among auth-gated endpoints, what share present a challenge an agent can follow: a `Bearer` `WWW-Authenticate` challenge **and** valid RFC 9728 protected-resource metadata?
 - **RQ4:** Among endpoints that list tools anonymously, what share declare strict input schemas, safety annotations (`readOnlyHint`, `destructiveHint`) and descriptions?
 - **RQ5:** What share return an in-channel error (JSON-RPC `error` or `result.isError: true`) when asked to call a tool that doesn't exist?
-- **RQ6:** How stable is each endpoint's classification between two rounds at least 6 hours apart on the same day?
+- **RQ6:** How stable is each endpoint's classification between two rounds? *(See Deviation 1: rounds run back-to-back, so this is reported as re-test reliability.)*
 
 ## 2. Population and sampling
 
@@ -111,4 +111,6 @@ Secondary fields:
 
 ## Deviations
 
-*(none yet)*
+1. **2026-10-12, before round 2 started. Re-test interval shortened from ≥ 6 h to immediately after round 1 finishes.**
+   - **Reason:** the study timeline was compressed to one day at the researcher's request.
+   - **Consequence:** RQ6 is reported as **re-test reliability** (agreement between two back-to-back rounds, under ~1 h apart), not as same-day stability of servers. It mainly measures the repeatability of the probe and very short-term flakiness. No other part of the protocol changes.
