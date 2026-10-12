@@ -123,3 +123,12 @@ Secondary fields:
      - fixture tests were added for both cases.
    - **Impact found in round 1:** 271 endpoints (262 on one host) returned `404`/`-32601` and 2 returned `-32022`. All were classified `modern_rejected` without the legacy handshake being tried.
    - **Action:** the round-1 results and the partial round 2 (449 endpoints) were archived as discarded (`data/raw/_discarded/`), and both rounds were re-run in full on the same sample with the corrected harness. No result from the discarded runs was analysed.
+
+3. **2026-10-12, after the corrected round 1 re-run, before any analysis. Round 1 re-run discarded for network contamination; rounds renumbered.**
+   - **What happened:** the corrected round 1 re-run (16:42–17:24Z) overlapped with another study's crawl on the same residential connection (Silent Wall census, about 17:52–18:20 local). Its `unreachable` count was 271, against 140 in the isolated morning run, and 151 endpoints that were reachable in the morning failed.
+   - **Action:**
+     - the re-run is archived as discarded (`data/raw/_discarded/round_1_rerun_contaminated`);
+     - **round 2** (started 17:24Z, with the connection otherwise idle) becomes the **headline round**;
+     - a **round 3** in isolation, run immediately after it, is the re-test for RQ6;
+     - from here on, no other study's traffic runs during MCP rounds.
+   - **Scope:** no results were analysed before this decision; only the `unreachable` count was compared, as a contamination check against the morning run.
