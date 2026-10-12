@@ -106,6 +106,33 @@ async def legacy_old_version(request: web.Request):
     return rpc_error(rid, -32601, "Method not found")
 
 
+# --- legacy stateless JSON server that answers unknown methods with 404/-32601 ----
+async def legacy_404(request: web.Request):
+    body = await request.json()
+    rid = body.get("id")
+    m = body.get("method")
+    if m == "initialize":
+        return rpc_result(rid, {"protocolVersion": "2025-06-18", "capabilities": {"tools": {}}, "serverInfo": {"name": "fx-404"}})
+    if m == "notifications/initialized":
+        return web.Response(status=202)
+    if m == "tools/list":
+        return rpc_result(rid, {"tools": TOOLS})
+    if m == "tools/call":
+        return rpc_error(rid, -32602, "Unknown tool")
+    return rpc_error(rid, -32601, "Method not found", status=404)
+
+
+# --- stateful server refusing 2026-07-28 with UnsupportedProtocolVersion ------
+async def legacy_32022(request: web.Request):
+    body = await request.json()
+    rid = body.get("id")
+    m = body.get("method")
+    if m == "server/discover":
+        return web.json_response({"jsonrpc": "2.0", "id": rid, "error": {"code": -32022, "message": "Unsupported protocol version",
+                                  "data": {"supported": ["2025-11-25"], "requested": "2026-07-28"}}}, status=400)
+    return await legacy_404(request)
+
+
 # --- deprecated HTTP+SSE ------------------------------------------------------
 async def sse_only_post(request):
     return web.Response(status=405, text="Method Not Allowed")
@@ -157,6 +184,8 @@ EXPECTED = {
     "/modern": ("ok", "modern"),
     "/legacy-session": ("ok", "legacy"),
     "/legacy-old": ("ok", "legacy"),
+    "/legacy-404": ("ok", "legacy"),
+    "/legacy-32022": ("ok", "legacy"),
     "/sse-only": ("legacy_sse", "legacy_sse"),
     "/auth-ok": ("auth_compliant", None),
     "/auth-bad": ("auth_noncompliant", None),
@@ -172,6 +201,8 @@ async def main() -> int:
     app.router.add_post("/modern", modern)
     app.router.add_post("/legacy-session", legacy_session)
     app.router.add_post("/legacy-old", legacy_old_version)
+    app.router.add_post("/legacy-404", legacy_404)
+    app.router.add_post("/legacy-32022", legacy_32022)
     app.router.add_post("/sse-only", sse_only_post)
     app.router.add_get("/sse-only", sse_only_get)
     app.router.add_route("*", "/auth-ok", auth_ok)

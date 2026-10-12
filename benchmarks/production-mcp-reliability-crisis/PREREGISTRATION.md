@@ -39,7 +39,7 @@ The harness is `harness/probe.py`, version recorded in each output. It is a dual
 | Step | Request | Condition |
 |---|---|---|
 | 1 | `POST server/discover`, with `MCP-Protocol-Version: 2026-07-28`, `Mcp-Method` and `_meta` (`protocolVersion`, `clientInfo`, `clientCapabilities`) | always |
-| 2–3 | modern `tools/list`; modern `tools/call` on the non-existent tool `__glintbase_probe_nonexistent_tool__` | if step 1 shows a modern server: a `supportedVersions` result, an error code −32020/−32021/−32022, or 404 with −32601 |
+| 2–3 | modern `tools/list`; modern `tools/call` on the non-existent tool `__glintbase_probe_nonexistent_tool__` | if step 1 shows a modern-only server: a `supportedVersions` result, or error code −32020/−32021 *(corrected by Deviation 2)* |
 | 2 | legacy `initialize` (`protocolVersion: 2025-11-25`; retried once with `2025-03-26` if rejected with a JSON-RPC error) | otherwise |
 | 3–5 | `notifications/initialized`, `tools/list`, canary `tools/call`, with `Mcp-Session-Id` and `MCP-Protocol-Version` where the negotiated revision defines them | if `initialize` returned a result |
 | 6 | `GET` with `Accept: text/event-stream`, waiting ≤ 5 s for the HTTP+SSE `endpoint` event | if `initialize` got no JSON-RPC answer |
@@ -114,3 +114,12 @@ Secondary fields:
 1. **2026-10-12, before round 2 started. Re-test interval shortened from ≥ 6 h to immediately after round 1 finishes.**
    - **Reason:** the study timeline was compressed to one day at the researcher's request.
    - **Consequence:** RQ6 is reported as **re-test reliability** (agreement between two back-to-back rounds, under ~1 h apart), not as same-day stability of servers. It mainly measures the repeatability of the probe and very short-term flakiness. No other part of the protocol changes.
+
+2. **2026-10-12, after round 1, before any analysis. Era-detection rule corrected; both rounds re-run in full.**
+   - **What was wrong:** §3 treated `404` + JSON-RPC `-32601` on `server/discover` as a sign of a modern server. But MCP `2026-07-28` (Versioning §Protocol Version Negotiation) requires modern servers to implement `server/discover`, so that response identifies a **non-modern** server. The rule also stopped on `-32022` (UnsupportedProtocolVersion), where the spec tells a dual-era client to retry with a supported version.
+   - **Fix:**
+     - only a `DiscoverResult` or a `-32020`/`-32021` error marks a server as modern-only;
+     - `404`/`-32601` and `-32022` now fall back to the legacy `initialize` handshake;
+     - fixture tests were added for both cases.
+   - **Impact found in round 1:** 271 endpoints (262 on one host) returned `404`/`-32601` and 2 returned `-32022`. All were classified `modern_rejected` without the legacy handshake being tried.
+   - **Action:** the round-1 results and the partial round 2 (449 endpoints) were archived as discarded (`data/raw/_discarded/`), and both rounds were re-run in full on the same sample with the corrected harness. No result from the discarded runs was analysed.

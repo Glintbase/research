@@ -256,14 +256,19 @@ def is_auth_challenge(step: dict) -> bool:
 
 
 def is_modern(step: dict) -> bool:
+    """Is this server modern AND unwilling to talk legacy, judged from its server/discover reply?
+
+    - A DiscoverResult (supportedVersions) means modern.
+    - -32020 / -32021 are modern errors about our request; there is no legacy fallback for them.
+    - -32022 (UnsupportedProtocolVersion) means "retry with a supported version": a dual-era
+      client falls back to initialize, so it is NOT treated as modern-only here.
+    - 404 + -32601 on server/discover means the method is not implemented. Modern servers MUST
+      implement server/discover, so this identifies a legacy server (Deviation 2).
+    """
     j = step.get("json") or {}
     if isinstance(j.get("result"), dict) and "supportedVersions" in j["result"]:
         return True
-    code = err_code(step)
-    if code in MODERN_ERROR_CODES:
-        return True
-    # 404 + Method-not-found is the modern signal for an unimplemented RPC.
-    return step.get("status") == 404 and code == -32601
+    return err_code(step) in (MODERN_ERROR_CODES - {-32022})
 
 
 def network_failed(step: dict) -> bool:
@@ -406,6 +411,8 @@ async def probe_endpoint(client: httpx.AsyncClient, url: str) -> dict:
         return {"steps": steps, "obs": obs}
 
     # 2. Legacy initialize
+    if err_code(discover) == -32022:
+        obs["modern_version_unsupported"] = True  # modern error steering us to an older version
     init = await http_call(
         client, "POST", url,
         headers=legacy_headers(None, None),
