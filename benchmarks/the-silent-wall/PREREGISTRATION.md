@@ -112,4 +112,11 @@ Honest identities only; no CAPTCHA solving or bypassing (a challenge is recorded
    - **Action:** round 1 and the partial round 2 were archived (`data/edge/_discarded/`), and **both rounds were re-run in full, for all three identities**, so conditions are identical across identities.
    - **Disclosure:** this decision was made after round-1 outcome tables had been seen. The classification rules (§5) and analysis (§6) are unchanged.
 
+4. **Second connection outage during the round-2 re-run; affected domains re-probed (2026-10-13).**
+   - **What happened:** the per-minute connectivity log (`data/connectivity_log.txt`) shows the connection down from **02:44 UTC**, mostly failing until the round ended at 04:04 UTC (44 of 54 checks in that window failed).
+   - **Discarded:** the **71** round-2 domains where any identity started at or after 02:44:00 UTC (archived in `data/edge/_discarded/round_2_outage2/`).
+   - **Action:** connectivity was confirmed restored at 07:12 UTC, and those domains were re-probed with the unchanged harness. Round 1 (01:00–02:01 UTC) finished before the outage.
+   - **Consequence:** round 2 spans two sessions about 5 hours apart. Before this decision, only error timing and the round-to-round agreement figure were seen; the agreement figure was low because of the outage.
+
+
 
