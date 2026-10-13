@@ -45,7 +45,8 @@ python build_frame.py frame                   # frame.csv + exclusion counts
 python build_frame.py sample --n 3000 --seed 20261012
 python probe.py --sample ../data/frame/sample.csv --round 1
 python classify.py --round 1
-python compute_stats.py --round 1 [--retest 2]
+python compute_stats.py --round 2 --retest 3 --sensitivity-exclude-host gateway.pipeworx.io
+python figures.py                             # reports/figures/*.png from data/summary.json
 ```
 
 See [`PREREGISTRATION.md`](PREREGISTRATION.md) for the frozen protocol and [`../../BOT.md`](../../BOT.md) for what the probe does and how to opt out.

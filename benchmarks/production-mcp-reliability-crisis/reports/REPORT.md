@@ -66,6 +66,10 @@ All shares are of the 3,000 sampled endpoints unless stated otherwise. Intervals
 
 ### RQ1: Does the endpoint answer as an MCP server?
 
+![Horizontal bar chart: 56.9% of 3,000 endpoints work anonymously, 24.2% require auth with a followable challenge, 5.1% require auth without one, 4.7% unreachable, 4.1% not MCP, smaller shares for payment required, server errors and others.](figures/mcp_fig1_outcomes.png)
+
+*Figure 1. Primary outcome of the probe for each sampled endpoint. Whiskers are Wilson 95% intervals.*
+
 | Primary status | Endpoints | Share (95% CI) | Host-weighted |
 |---|---|---|---|
 | `ok`: handshake + anonymous `tools/list` | 1,708 | 56.9% (55.2–58.7) | 48.1% |
@@ -86,6 +90,10 @@ All shares are of the 3,000 sampled endpoints unless stated otherwise. Intervals
   - **sse:** of the 132 listed with the deprecated `sse` transport, only 10 were `ok` and 15 still served the legacy SSE handshake. 54 returned HTTP 402, mostly from paid deployments.
 
 ### RQ2: Which protocol revision do they speak?
+
+![Bar chart of protocol revisions among 1,772 completed handshakes: 2026-07-28 13.3% (highlighted), 2025-11-25 43.3%, 2025-06-18 10.6%, 2025-03-26 27.9%, 2024-11-05 4.1%, other 0.8%.](figures/mcp_fig2_protocol.png)
+
+*Figure 2. Protocol revision spoken by servers that completed a handshake. Shares are of all 1,772 handshakes, so they differ from the "share of legacy servers" figures below.*
 
 Among the 1,772 endpoints that completed a handshake:
 
@@ -113,6 +121,10 @@ Among the 1,772 endpoints that completed a handshake:
 
 ### RQ4: Is tool metadata usable?
 
+![Bar chart of protocol basics, each with its own base: reachable 95.3%, answers as MCP 87.1%, followable auth challenge 82.7%, every tool strictly typed 98.7%, errors in-channel 75.1%, readOnlyHint declared 56.7%, destructiveHint declared 50.5%.](figures/mcp_fig3_basics.png)
+
+*Figure 3. The protocol basics an agent relies on. Each row has its own base, stated under its label.*
+
 Among the 1,708 `ok` endpoints (percentages are of the 1,706 that listed at least one tool):
 
 | Metric | Value |
@@ -135,6 +147,11 @@ Among the 1,708 `ok` endpoints (percentages are of the 1,706 that listed at leas
 | Required auth to call a tool | 22 |
 | Rate-limited | 9 |
 | Other | 6 |
+
+
+![Bar chart of responses to a call to a non-existent tool: 75.1% JSON-RPC error or isError (highlighted), 15.3% HTTP 200 with no error signal, 7.5% bare HTTP 404, 1.2% auth required, 0.5% rate-limited, 0.3% other.](figures/mcp_fig4_errors.png)
+
+*Figure 4. How servers answered a call to a tool that does not exist (RQ5).*
 
 ### RQ6: Re-test reliability
 

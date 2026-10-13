@@ -65,6 +65,10 @@ Shares are of 150 domains unless stated otherwise. Intervals are Wilson 95%. Rou
 
 ### RQ2: Are honest agents treated differently? (homepage)
 
+![Bar chart: homepages challenged or blocked for the declared agent 16.0%, the unlabelled script 18.7% and the headless browser 18.7%, with overlapping 95% intervals.](figures/sw_fig1_identities.png)
+
+*Figure 1. Share of homepages challenged or blocked, by client. The intervals overlap heavily and no paired difference is significant.*
+
 | Outcome | agent | script | browser |
 |---|---|---|---|
 | **challenged or blocked** | **16.0%** (11.0–22.7) | **18.7%** (13.2–25.7) | **18.7%** (13.2–25.7) |
@@ -89,6 +93,10 @@ Shares are of 150 domains unless stated otherwise. Intervals are Wilson 95%. Rou
 - **Repeatability:** between rounds, outcomes agreed for 97.3% (agent), 98.0% (script) and 96.7% (browser) of domains (κ 0.93–0.96).
 
 ### RQ1: What do robots.txt files say about AI agents?
+
+![Bar chart of robots.txt disallow rates at / for 14 crawler tokens, coloured by purpose: training crawlers 11–19%, AI search crawlers 6–13%, user-initiated agents 8–9%, Googlebot 0%.](figures/sw_fig2_robots.png)
+
+*Figure 2. Share of sites whose robots.txt disallows each token at `/`, coloured by purpose.*
 
 `robots.txt` could be fetched for 140 sites; 121 of those had a non-empty file.
 
@@ -118,6 +126,10 @@ Sites disallowing **any** token of a purpose at `/`: training 23.6% (17.3–31.2
 - So the gap between policy and enforcement is mostly not aimed at AI: these edges stop non-human clients in general, whatever `robots.txt` says.
 
 ### RQ4: Where does blocking happen? (homepage challenged or blocked)
+
+![Two panels of grouped bars by sector and by edge vendor, with three bars per group (agent, script, browser). E-commerce and media are blocked most (23–33%); Akamai sites 33–44%; Vercel 0%. The three clients are similar within each group.](figures/sw_fig3_breakdown.png)
+
+*Figure 3. Homepages challenged or blocked by sector and by inferred edge vendor (vendors with at least 7 sites). The cells are small, so read this as descriptive.*
 
 | Sector | agent | script | browser |
 |---|---|---|---|
