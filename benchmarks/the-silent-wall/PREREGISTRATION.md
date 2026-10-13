@@ -95,7 +95,7 @@ Honest identities only; no CAPTCHA solving or bypassing (a challenge is recorded
    - **What happened:** the residential connection failed from about **19:09 UTC on 2026-10-12** until at least 20:10 UTC. From that point every request from every identity failed, including domains that had loaded moments earlier.
    - **Discarded:**
      - all of round 2 (19:42–20:10 UTC, every request an error);
-     - every round-1 domain where any identity started at or after 19:09:00 UTC (22 domains, mostly finance, the tail of the run order).
+     - every round-1 domain where any identity started at or after 19:09:00 UTC (18 domains, mostly finance, the tail of the run order).
      All of it is archived in `data/edge/_discarded/`.
    - **Action:** connectivity was confirmed restored at 00:51 UTC on 2026-10-13. Those round-1 domains were then re-probed with the unchanged harness, and round 2 was re-run in full.
    - **Consequence:** round 1 now spans two sessions about 6 hours apart. Before this decision, only error counts and timestamps were inspected.
