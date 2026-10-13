@@ -31,15 +31,15 @@ Our mission is to establish rigorous, empirical, and reproducible standards for 
 | **Integration Index · Sandboxes Edition 1** (latest) | [**The Glintbase Integration Index: Sandboxes Edition 1**](benchmarks/sandboxes-edition-1) | 5 Cloud Sandboxes (Modal, E2B, boat.dev, Vercel, Daytona) | October 2026 | Published pilot, corrected 2026-10-12 • 30 agent trials (n=1 each) • 119 front-door checks • 5 figures • Gotchas dossier. Corrected pass rate is 28/30. Prompts differed by provider, so the ranking is indicative only. |
 | **State of Agent Readiness 2026 · Edition 1** | [**State of Agent Readiness 2026 (ARS 2026)**](benchmarks/state-of-agent-readiness-2026) | 100 developer platforms across 10 categories | August 2026 | Published, corrected 2026-10-12 • 24-page PDF • dataset of 1,000 simulated Pathfinder traversals (100 platforms × 10 benchmarks). The PDF's 450 live-harness runs have no published data. |
 
-## Planned Studies (not yet run — no results)
+## Studies in Progress
 
-These folders hold pre-registered study designs only. Each README states the research question, design, and status; no data or findings exist until the status changes.
+Each study is pre-registered before data collection; its README states the research question, design and current status. Draft reports are not yet final publications.
 
 | Study | Question | Status |
 |---|---|---|
 | [**State of Agent Readiness 2026 — Edition 2**](benchmarks/state-of-agent-readiness-2026-edition-2) | Do measured runtime behaviours predict agent task success better than static discoverability signals? | Planned (paused at design) |
-| [**The Silent Wall**](benchmarks/the-silent-wall) | How do public bot policies and WAF behaviour treat declared AI agents vs. browsers? | Active (design) |
-| [**Remote MCP Server Reliability**](benchmarks/production-mcp-reliability-crisis) | How often do public remote MCP servers fail protocol, discovery, and error-signalling basics? | Active (design) |
+| [**The Silent Wall**](benchmarks/the-silent-wall) | How do public bot policies and WAF behaviour treat declared AI agents vs. browsers? | Data collected · [draft report](benchmarks/the-silent-wall/reports/REPORT.md) |
+| [**Remote MCP Server Reliability**](benchmarks/production-mcp-reliability-crisis) | How often do public remote MCP servers fail protocol, discovery, and error-signalling basics? | Data collected · [draft report](benchmarks/production-mcp-reliability-crisis/reports/REPORT.md) |
 | [**Beyond Self-Reporting**](benchmarks/beyond-self-reporting-execution-gap) | How far do agents' self-reported completions diverge from verified backend state in integration tasks? | Paused |
 
 ---
