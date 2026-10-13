@@ -1,6 +1,6 @@
 # The Silent Wall: How Bot Defences Treat AI Agents
 
-> **Status**: Active — protocol being finalised (2026-10-12). No data has been collected and no results exist yet.
+> **Status**: Data collected 2026-10-12/13. Draft report in [`reports/REPORT.md`](reports/REPORT.md); not yet published. Protocol and deviations: [`PREREGISTRATION.md`](PREREGISTRATION.md).
 > **Authors**: Glintbase Research
 
 ---

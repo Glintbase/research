@@ -1,6 +1,6 @@
 # Remote MCP Server Reliability
 
-> **Status**: Active — protocol being finalised (2026-10-12). No data has been collected and no results exist yet.
+> **Status**: Data collected 2026-10-12/13. Draft report in [`reports/REPORT.md`](reports/REPORT.md); not yet published. Protocol and deviations: [`PREREGISTRATION.md`](PREREGISTRATION.md).
 > **Authors**: Glintbase Research
 > *(Folder name retained for link stability; the study title is neutral until data exists.)*
 

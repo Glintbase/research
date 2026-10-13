@@ -1,0 +1,21 @@
+domain,identity,probe_outcome,reviewer_outcome,agree,method,note
+klarna.com,script,block,block,True,"stored status, headers, cookie names, markers, title, text length",Agree
+homedepot.com,browser,block,block,True,"stored status, headers, cookie names, markers, title, text length",Agree
+dailymail.com,script,block,block,True,"stored status, headers, cookie names, markers, title, text length",Agree
+ft.com,script,challenge,challenge,True,"stored status, headers, cookie names, markers, title, text length",Agree
+reuters.com,browser,challenge,challenge,True,"stored status, headers, cookie names, markers, title, text length",Agree
+etsy.com,agent,challenge,challenge,True,"stored status, headers, cookie names, markers, title, text length",Agree
+robinhood.com,browser,error,error,True,"stored status, headers, cookie names, markers, title, text length","Agree per rule (ERR_CONNECTION_RESET -> error); agent and script received 200, so this may be a fingerprint-based reset."
+kraken.com,browser,error,error,True,"stored status, headers, cookie names, markers, title, text length",Agree
+npr.org,agent,error,error,True,"stored status, headers, cookie names, markers, title, text length",Agree
+substack.com,script,ok,ok,True,"stored status, headers, cookie names, markers, title, text length",Agree
+alibaba.com,script,ok,ok,True,"stored status, headers, cookie names, markers, title, text length",Agree
+temu.com,browser,ok,ok,True,"stored status, headers, cookie names, markers, title, text length",Agree per rule (>=200 chars). Substantively a login wall: rule limitation.
+wildberries.ru,agent,other,other,True,"stored status, headers, cookie names, markers, title, text length",Agree per rule (498 -> other). Substantively a vendor anti-bot block (server wbaas): rule limitation.
+washingtonpost.com,browser,other,other,True,"stored status, headers, cookie names, markers, title, text length",Agree per rule (last navigation response 301; follow-up failed ERR_HTTP2_PROTOCOL_ERROR).
+telegraph.co.uk,agent,other,other,True,"stored status, headers, cookie names, markers, title, text length",Agree per rule (402 -> other). Substantively a payment-required gate for the agent.
+shop.app,script,rate_limited,rate_limited,True,"stored status, headers, cookie names, markers, title, text length",Agree
+shop.app,browser,rate_limited,rate_limited,True,"stored status, headers, cookie names, markers, title, text length",Agree
+target.com,script,rate_limited,rate_limited,True,"stored status, headers, cookie names, markers, title, text length",Agree
+reuters.com,agent,self_excluded,self_excluded,True,"stored status, headers, cookie names, markers, title, text length",Agree
+alipay.com,agent,thin,thin,True,"stored status, headers, cookie names, markers, title, text length",Agree

@@ -1,0 +1,9 @@
+{
+  "round": "2",
+  "finished_at": "2026-10-13T04:04:50.721467+00:00",
+  "domains": 150,
+  "harness_version": "1.0.0",
+  "agent_ua": "GlintbaseResearch/1.0 (+https://glintbase.dev/research/bot; research@glintbase.dev)",
+  "script_ua": "python-httpx/0.28.1",
+  "browser": "Chromium (Playwright, headless, default UA)"
+}

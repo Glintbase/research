@@ -1,0 +1,102 @@
+[
+ {
+  "domain": "klarna.com",
+  "identity": "script",
+  "probe_outcome": "block"
+ },
+ {
+  "domain": "homedepot.com",
+  "identity": "browser",
+  "probe_outcome": "block"
+ },
+ {
+  "domain": "dailymail.com",
+  "identity": "script",
+  "probe_outcome": "block"
+ },
+ {
+  "domain": "ft.com",
+  "identity": "script",
+  "probe_outcome": "challenge"
+ },
+ {
+  "domain": "reuters.com",
+  "identity": "browser",
+  "probe_outcome": "challenge"
+ },
+ {
+  "domain": "etsy.com",
+  "identity": "agent",
+  "probe_outcome": "challenge"
+ },
+ {
+  "domain": "robinhood.com",
+  "identity": "browser",
+  "probe_outcome": "error"
+ },
+ {
+  "domain": "kraken.com",
+  "identity": "browser",
+  "probe_outcome": "error"
+ },
+ {
+  "domain": "npr.org",
+  "identity": "agent",
+  "probe_outcome": "error"
+ },
+ {
+  "domain": "substack.com",
+  "identity": "script",
+  "probe_outcome": "ok"
+ },
+ {
+  "domain": "alibaba.com",
+  "identity": "script",
+  "probe_outcome": "ok"
+ },
+ {
+  "domain": "temu.com",
+  "identity": "browser",
+  "probe_outcome": "ok"
+ },
+ {
+  "domain": "wildberries.ru",
+  "identity": "agent",
+  "probe_outcome": "other"
+ },
+ {
+  "domain": "washingtonpost.com",
+  "identity": "browser",
+  "probe_outcome": "other"
+ },
+ {
+  "domain": "telegraph.co.uk",
+  "identity": "agent",
+  "probe_outcome": "other"
+ },
+ {
+  "domain": "shop.app",
+  "identity": "script",
+  "probe_outcome": "rate_limited"
+ },
+ {
+  "domain": "shop.app",
+  "identity": "browser",
+  "probe_outcome": "rate_limited"
+ },
+ {
+  "domain": "target.com",
+  "identity": "script",
+  "probe_outcome": "rate_limited"
+ },
+ {
+  "domain": "reuters.com",
+  "identity": "agent",
+  "probe_outcome": "self_excluded"
+ },
+ {
+  "domain": "alipay.com",
+  "identity": "agent",
+  "probe_outcome": "thin"
+ }
+]

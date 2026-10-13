@@ -1,0 +1,2533 @@
+{
+  "rounds": "round 1 + 2",
+  "round_1": {
+    "domains": 150,
+    "rq2_home_outcome": {
+      "agent": {
+        "block": {
+          "k": 13,
+          "n": 150,
+          "pct": 8.7,
+          "ci95": [
+            5.1,
+            14.3
+          ]
+        },
+        "challenge": {
+          "k": 11,
+          "n": 150,
+          "pct": 7.3,
+          "ci95": [
+            4.1,
+            12.7
+          ]
+        },
+        "rate_limited": {
+          "k": 2,
+          "n": 150,
+          "pct": 1.3,
+          "ci95": [
+            0.4,
+            4.7
+          ]
+        },
+        "error": {
+          "k": 11,
+          "n": 150,
+          "pct": 7.3,
+          "ci95": [
+            4.1,
+            12.7
+          ]
+        },
+        "thin": {
+          "k": 6,
+          "n": 150,
+          "pct": 4.0,
+          "ci95": [
+            1.8,
+            8.5
+          ]
+        },
+        "other": {
+          "k": 2,
+          "n": 150,
+          "pct": 1.3,
+          "ci95": [
+            0.4,
+            4.7
+          ]
+        },
+        "ok": {
+          "k": 104,
+          "n": 150,
+          "pct": 69.3,
+          "ci95": [
+            61.5,
+            76.2
+          ]
+        },
+        "self_excluded": {
+          "k": 1,
+          "n": 150,
+          "pct": 0.7,
+          "ci95": [
+            0.1,
+            3.7
+          ]
+        }
+      },
+      "script": {
+        "block": {
+          "k": 17,
+          "n": 150,
+          "pct": 11.3,
+          "ci95": [
+            7.2,
+            17.4
+          ]
+        },
+        "challenge": {
+          "k": 11,
+          "n": 150,
+          "pct": 7.3,
+          "ci95": [
+            4.1,
+            12.7
+          ]
+        },
+        "rate_limited": {
+          "k": 2,
+          "n": 150,
+          "pct": 1.3,
+          "ci95": [
+            0.4,
+            4.7
+          ]
+        },
+        "error": {
+          "k": 13,
+          "n": 150,
+          "pct": 8.7,
+          "ci95": [
+            5.1,
+            14.3
+          ]
+        },
+        "thin": {
+          "k": 7,
+          "n": 150,
+          "pct": 4.7,
+          "ci95": [
+            2.3,
+            9.3
+          ]
+        },
+        "other": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "ok": {
+          "k": 97,
+          "n": 150,
+          "pct": 64.7,
+          "ci95": [
+            56.7,
+            71.9
+          ]
+        },
+        "self_excluded": {
+          "k": 0,
+          "n": 150,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.5
+          ]
+        }
+      },
+      "browser": {
+        "block": {
+          "k": 17,
+          "n": 150,
+          "pct": 11.3,
+          "ci95": [
+            7.2,
+            17.4
+          ]
+        },
+        "challenge": {
+          "k": 11,
+          "n": 150,
+          "pct": 7.3,
+          "ci95": [
+            4.1,
+            12.7
+          ]
+        },
+        "rate_limited": {
+          "k": 2,
+          "n": 150,
+          "pct": 1.3,
+          "ci95": [
+            0.4,
+            4.7
+          ]
+        },
+        "error": {
+          "k": 10,
+          "n": 150,
+          "pct": 6.7,
+          "ci95": [
+            3.7,
+            11.8
+          ]
+        },
+        "thin": {
+          "k": 1,
+          "n": 150,
+          "pct": 0.7,
+          "ci95": [
+            0.1,
+            3.7
+          ]
+        },
+        "other": {
+          "k": 4,
+          "n": 150,
+          "pct": 2.7,
+          "ci95": [
+            1.0,
+            6.7
+          ]
+        },
+        "ok": {
+          "k": 105,
+          "n": 150,
+          "pct": 70.0,
+          "ci95": [
+            62.2,
+            76.8
+          ]
+        },
+        "self_excluded": {
+          "k": 0,
+          "n": 150,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.5
+          ]
+        }
+      }
+    },
+    "rq2_worst_outcome": {
+      "agent": {
+        "block": {
+          "k": 15,
+          "n": 150,
+          "pct": 10.0,
+          "ci95": [
+            6.2,
+            15.8
+          ]
+        },
+        "challenge": {
+          "k": 14,
+          "n": 150,
+          "pct": 9.3,
+          "ci95": [
+            5.6,
+            15.1
+          ]
+        },
+        "rate_limited": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "error": {
+          "k": 11,
+          "n": 150,
+          "pct": 7.3,
+          "ci95": [
+            4.1,
+            12.7
+          ]
+        },
+        "thin": {
+          "k": 12,
+          "n": 150,
+          "pct": 8.0,
+          "ci95": [
+            4.6,
+            13.5
+          ]
+        },
+        "other": {
+          "k": 5,
+          "n": 150,
+          "pct": 3.3,
+          "ci95": [
+            1.4,
+            7.6
+          ]
+        },
+        "ok": {
+          "k": 89,
+          "n": 150,
+          "pct": 59.3,
+          "ci95": [
+            51.3,
+            66.9
+          ]
+        },
+        "self_excluded": {
+          "k": 1,
+          "n": 150,
+          "pct": 0.7,
+          "ci95": [
+            0.1,
+            3.7
+          ]
+        }
+      },
+      "script": {
+        "block": {
+          "k": 20,
+          "n": 150,
+          "pct": 13.3,
+          "ci95": [
+            8.8,
+            19.7
+          ]
+        },
+        "challenge": {
+          "k": 14,
+          "n": 150,
+          "pct": 9.3,
+          "ci95": [
+            5.6,
+            15.1
+          ]
+        },
+        "rate_limited": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "error": {
+          "k": 13,
+          "n": 150,
+          "pct": 8.7,
+          "ci95": [
+            5.1,
+            14.3
+          ]
+        },
+        "thin": {
+          "k": 13,
+          "n": 150,
+          "pct": 8.7,
+          "ci95": [
+            5.1,
+            14.3
+          ]
+        },
+        "other": {
+          "k": 7,
+          "n": 150,
+          "pct": 4.7,
+          "ci95": [
+            2.3,
+            9.3
+          ]
+        },
+        "ok": {
+          "k": 80,
+          "n": 150,
+          "pct": 53.3,
+          "ci95": [
+            45.4,
+            61.1
+          ]
+        },
+        "self_excluded": {
+          "k": 0,
+          "n": 150,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.5
+          ]
+        }
+      },
+      "browser": {
+        "block": {
+          "k": 19,
+          "n": 150,
+          "pct": 12.7,
+          "ci95": [
+            8.3,
+            18.9
+          ]
+        },
+        "challenge": {
+          "k": 16,
+          "n": 150,
+          "pct": 10.7,
+          "ci95": [
+            6.7,
+            16.6
+          ]
+        },
+        "rate_limited": {
+          "k": 2,
+          "n": 150,
+          "pct": 1.3,
+          "ci95": [
+            0.4,
+            4.7
+          ]
+        },
+        "error": {
+          "k": 12,
+          "n": 150,
+          "pct": 8.0,
+          "ci95": [
+            4.6,
+            13.5
+          ]
+        },
+        "thin": {
+          "k": 6,
+          "n": 150,
+          "pct": 4.0,
+          "ci95": [
+            1.8,
+            8.5
+          ]
+        },
+        "other": {
+          "k": 5,
+          "n": 150,
+          "pct": 3.3,
+          "ci95": [
+            1.4,
+            7.6
+          ]
+        },
+        "ok": {
+          "k": 90,
+          "n": 150,
+          "pct": 60.0,
+          "ci95": [
+            52.0,
+            67.5
+          ]
+        },
+        "self_excluded": {
+          "k": 0,
+          "n": 150,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.5
+          ]
+        }
+      }
+    },
+    "rq2_challenged_or_blocked_home": {
+      "agent": {
+        "k": 24,
+        "n": 150,
+        "pct": 16.0,
+        "ci95": [
+          11.0,
+          22.7
+        ]
+      },
+      "script": {
+        "k": 28,
+        "n": 150,
+        "pct": 18.7,
+        "ci95": [
+          13.2,
+          25.7
+        ]
+      },
+      "browser": {
+        "k": 28,
+        "n": 150,
+        "pct": 18.7,
+        "ci95": [
+          13.2,
+          25.7
+        ]
+      }
+    },
+    "rq2_paired": {
+      "agent_vs_browser": {
+        "paired_domains": 137,
+        "only_agent_blocked": 2,
+        "only_browser_blocked": 5,
+        "mcnemar_exact_p": 0.4531
+      },
+      "agent_vs_script": {
+        "paired_domains": 135,
+        "only_agent_blocked": 2,
+        "only_script_blocked": 6,
+        "mcnemar_exact_p": 0.2891
+      },
+      "script_vs_browser": {
+        "paired_domains": 137,
+        "only_script_blocked": 5,
+        "only_browser_blocked": 4,
+        "mcnemar_exact_p": 1.0
+      }
+    },
+    "rq1_robots_fetched": {
+      "k": 140,
+      "n": 150,
+      "pct": 93.3,
+      "ci95": [
+        88.2,
+        96.3
+      ]
+    },
+    "rq1_robots_present": {
+      "k": 121,
+      "n": 140,
+      "pct": 86.4,
+      "ci95": [
+        79.8,
+        91.1
+      ]
+    },
+    "rq1_tokens": {
+      "GPTBot": {
+        "vendor": "OpenAI",
+        "purpose": "training",
+        "named": {
+          "k": 32,
+          "n": 140,
+          "pct": 22.9,
+          "ci95": [
+            16.7,
+            30.5
+          ]
+        },
+        "root_disallowed": {
+          "k": 20,
+          "n": 140,
+          "pct": 14.3,
+          "ci95": [
+            9.4,
+            21.0
+          ]
+        }
+      },
+      "OAI-SearchBot": {
+        "vendor": "OpenAI",
+        "purpose": "search",
+        "named": {
+          "k": 23,
+          "n": 140,
+          "pct": 16.4,
+          "ci95": [
+            11.2,
+            23.4
+          ]
+        },
+        "root_disallowed": {
+          "k": 8,
+          "n": 140,
+          "pct": 5.7,
+          "ci95": [
+            2.9,
+            10.9
+          ]
+        }
+      },
+      "ChatGPT-User": {
+        "vendor": "OpenAI",
+        "purpose": "user",
+        "named": {
+          "k": 25,
+          "n": 140,
+          "pct": 17.9,
+          "ci95": [
+            12.4,
+            25.0
+          ]
+        },
+        "root_disallowed": {
+          "k": 11,
+          "n": 140,
+          "pct": 7.9,
+          "ci95": [
+            4.4,
+            13.5
+          ]
+        }
+      },
+      "ClaudeBot": {
+        "vendor": "Anthropic",
+        "purpose": "training",
+        "named": {
+          "k": 35,
+          "n": 140,
+          "pct": 25.0,
+          "ci95": [
+            18.6,
+            32.8
+          ]
+        },
+        "root_disallowed": {
+          "k": 24,
+          "n": 140,
+          "pct": 17.1,
+          "ci95": [
+            11.8,
+            24.2
+          ]
+        }
+      },
+      "Claude-SearchBot": {
+        "vendor": "Anthropic",
+        "purpose": "search",
+        "named": {
+          "k": 17,
+          "n": 140,
+          "pct": 12.1,
+          "ci95": [
+            7.7,
+            18.6
+          ]
+        },
+        "root_disallowed": {
+          "k": 11,
+          "n": 140,
+          "pct": 7.9,
+          "ci95": [
+            4.4,
+            13.5
+          ]
+        }
+      },
+      "Claude-User": {
+        "vendor": "Anthropic",
+        "purpose": "user",
+        "named": {
+          "k": 19,
+          "n": 140,
+          "pct": 13.6,
+          "ci95": [
+            8.9,
+            20.2
+          ]
+        },
+        "root_disallowed": {
+          "k": 13,
+          "n": 140,
+          "pct": 9.3,
+          "ci95": [
+            5.5,
+            15.2
+          ]
+        }
+      },
+      "PerplexityBot": {
+        "vendor": "Perplexity",
+        "purpose": "search",
+        "named": {
+          "k": 32,
+          "n": 140,
+          "pct": 22.9,
+          "ci95": [
+            16.7,
+            30.5
+          ]
+        },
+        "root_disallowed": {
+          "k": 18,
+          "n": 140,
+          "pct": 12.9,
+          "ci95": [
+            8.3,
+            19.4
+          ]
+        }
+      },
+      "Perplexity-User": {
+        "vendor": "Perplexity",
+        "purpose": "user",
+        "named": {
+          "k": 20,
+          "n": 140,
+          "pct": 14.3,
+          "ci95": [
+            9.4,
+            21.0
+          ]
+        },
+        "root_disallowed": {
+          "k": 12,
+          "n": 140,
+          "pct": 8.6,
+          "ci95": [
+            5.0,
+            14.4
+          ]
+        }
+      },
+      "Google-Extended": {
+        "vendor": "Google",
+        "purpose": "training",
+        "named": {
+          "k": 26,
+          "n": 140,
+          "pct": 18.6,
+          "ci95": [
+            13.0,
+            25.8
+          ]
+        },
+        "root_disallowed": {
+          "k": 16,
+          "n": 140,
+          "pct": 11.4,
+          "ci95": [
+            7.2,
+            17.8
+          ]
+        }
+      },
+      "Googlebot": {
+        "vendor": "Google",
+        "purpose": "search-control",
+        "named": {
+          "k": 20,
+          "n": 140,
+          "pct": 14.3,
+          "ci95": [
+            9.4,
+            21.0
+          ]
+        },
+        "root_disallowed": {
+          "k": 0,
+          "n": 140,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.7
+          ]
+        }
+      },
+      "Applebot-Extended": {
+        "vendor": "Apple",
+        "purpose": "training",
+        "named": {
+          "k": 27,
+          "n": 140,
+          "pct": 19.3,
+          "ci95": [
+            13.6,
+            26.6
+          ]
+        },
+        "root_disallowed": {
+          "k": 20,
+          "n": 140,
+          "pct": 14.3,
+          "ci95": [
+            9.4,
+            21.0
+          ]
+        }
+      },
+      "CCBot": {
+        "vendor": "Common Crawl",
+        "purpose": "training",
+        "named": {
+          "k": 31,
+          "n": 140,
+          "pct": 22.1,
+          "ci95": [
+            16.1,
+            29.7
+          ]
+        },
+        "root_disallowed": {
+          "k": 26,
+          "n": 140,
+          "pct": 18.6,
+          "ci95": [
+            13.0,
+            25.8
+          ]
+        }
+      },
+      "Meta-ExternalAgent": {
+        "vendor": "Meta",
+        "purpose": "training",
+        "named": {
+          "k": 26,
+          "n": 140,
+          "pct": 18.6,
+          "ci95": [
+            13.0,
+            25.8
+          ]
+        },
+        "root_disallowed": {
+          "k": 19,
+          "n": 140,
+          "pct": 13.6,
+          "ci95": [
+            8.9,
+            20.2
+          ]
+        }
+      },
+      "Bytespider": {
+        "vendor": "ByteDance",
+        "purpose": "training",
+        "named": {
+          "k": 32,
+          "n": 140,
+          "pct": 22.9,
+          "ci95": [
+            16.7,
+            30.5
+          ]
+        },
+        "root_disallowed": {
+          "k": 27,
+          "n": 140,
+          "pct": 19.3,
+          "ci95": [
+            13.6,
+            26.6
+          ]
+        }
+      }
+    },
+    "rq1_any_token_disallowed_by_purpose": {
+      "training": {
+        "k": 33,
+        "n": 140,
+        "pct": 23.6,
+        "ci95": [
+          17.3,
+          31.2
+        ]
+      },
+      "search": {
+        "k": 19,
+        "n": 140,
+        "pct": 13.6,
+        "ci95": [
+          8.9,
+          20.2
+        ]
+      },
+      "user": {
+        "k": 17,
+        "n": 140,
+        "pct": 12.1,
+        "ci95": [
+          7.7,
+          18.6
+        ]
+      },
+      "search-control": {
+        "k": 0,
+        "n": 140,
+        "pct": 0.0,
+        "ci95": [
+          0,
+          2.7
+        ]
+      }
+    },
+    "rq3_policy_allows_but_edge_blocks_agent": {
+      "k": 23,
+      "n": 137,
+      "pct": 16.8,
+      "ci95": [
+        11.5,
+        23.9
+      ]
+    },
+    "rq3_same_but_browser_passes": {
+      "k": 2,
+      "n": 137,
+      "pct": 1.5,
+      "ci95": [
+        0.4,
+        5.2
+      ]
+    },
+    "rq4_by_sector": {
+      "devtools": {
+        "agent": {
+          "k": 2,
+          "n": 30,
+          "pct": 6.7,
+          "ci95": [
+            1.8,
+            21.3
+          ]
+        },
+        "script": {
+          "k": 3,
+          "n": 30,
+          "pct": 10.0,
+          "ci95": [
+            3.5,
+            25.6
+          ]
+        },
+        "browser": {
+          "k": 1,
+          "n": 30,
+          "pct": 3.3,
+          "ci95": [
+            0.6,
+            16.7
+          ]
+        }
+      },
+      "ecommerce": {
+        "agent": {
+          "k": 9,
+          "n": 30,
+          "pct": 30.0,
+          "ci95": [
+            16.7,
+            47.9
+          ]
+        },
+        "script": {
+          "k": 9,
+          "n": 30,
+          "pct": 30.0,
+          "ci95": [
+            16.7,
+            47.9
+          ]
+        },
+        "browser": {
+          "k": 9,
+          "n": 30,
+          "pct": 30.0,
+          "ci95": [
+            16.7,
+            47.9
+          ]
+        }
+      },
+      "finance": {
+        "agent": {
+          "k": 2,
+          "n": 30,
+          "pct": 6.7,
+          "ci95": [
+            1.8,
+            21.3
+          ]
+        },
+        "script": {
+          "k": 2,
+          "n": 30,
+          "pct": 6.7,
+          "ci95": [
+            1.8,
+            21.3
+          ]
+        },
+        "browser": {
+          "k": 2,
+          "n": 30,
+          "pct": 6.7,
+          "ci95": [
+            1.8,
+            21.3
+          ]
+        }
+      },
+      "media": {
+        "agent": {
+          "k": 7,
+          "n": 30,
+          "pct": 23.3,
+          "ci95": [
+            11.8,
+            40.9
+          ]
+        },
+        "script": {
+          "k": 10,
+          "n": 30,
+          "pct": 33.3,
+          "ci95": [
+            19.2,
+            51.2
+          ]
+        },
+        "browser": {
+          "k": 10,
+          "n": 30,
+          "pct": 33.3,
+          "ci95": [
+            19.2,
+            51.2
+          ]
+        }
+      },
+      "saas": {
+        "agent": {
+          "k": 4,
+          "n": 30,
+          "pct": 13.3,
+          "ci95": [
+            5.3,
+            29.7
+          ]
+        },
+        "script": {
+          "k": 4,
+          "n": 30,
+          "pct": 13.3,
+          "ci95": [
+            5.3,
+            29.7
+          ]
+        },
+        "browser": {
+          "k": 6,
+          "n": 30,
+          "pct": 20.0,
+          "ci95": [
+            9.5,
+            37.3
+          ]
+        }
+      }
+    },
+    "rq4_by_vendor": {
+      "akamai": {
+        "agent": {
+          "k": 9,
+          "n": 27,
+          "pct": 33.3,
+          "ci95": [
+            18.6,
+            52.2
+          ]
+        },
+        "script": {
+          "k": 11,
+          "n": 27,
+          "pct": 40.7,
+          "ci95": [
+            24.5,
+            59.3
+          ]
+        },
+        "browser": {
+          "k": 12,
+          "n": 27,
+          "pct": 44.4,
+          "ci95": [
+            27.6,
+            62.7
+          ]
+        }
+      },
+      "cloudflare": {
+        "agent": {
+          "k": 6,
+          "n": 34,
+          "pct": 17.6,
+          "ci95": [
+            8.3,
+            33.5
+          ]
+        },
+        "script": {
+          "k": 7,
+          "n": 34,
+          "pct": 20.6,
+          "ci95": [
+            10.3,
+            36.8
+          ]
+        },
+        "browser": {
+          "k": 6,
+          "n": 34,
+          "pct": 17.6,
+          "ci95": [
+            8.3,
+            33.5
+          ]
+        }
+      },
+      "cloudfront": {
+        "agent": {
+          "k": 3,
+          "n": 22,
+          "pct": 13.6,
+          "ci95": [
+            4.7,
+            33.3
+          ]
+        },
+        "script": {
+          "k": 3,
+          "n": 22,
+          "pct": 13.6,
+          "ci95": [
+            4.7,
+            33.3
+          ]
+        },
+        "browser": {
+          "k": 3,
+          "n": 22,
+          "pct": 13.6,
+          "ci95": [
+            4.7,
+            33.3
+          ]
+        }
+      },
+      "datadome": {
+        "agent": {
+          "k": 2,
+          "n": 3,
+          "pct": 66.7,
+          "ci95": [
+            20.8,
+            93.9
+          ]
+        },
+        "script": {
+          "k": 2,
+          "n": 3,
+          "pct": 66.7,
+          "ci95": [
+            20.8,
+            93.9
+          ]
+        },
+        "browser": {
+          "k": 2,
+          "n": 3,
+          "pct": 66.7,
+          "ci95": [
+            20.8,
+            93.9
+          ]
+        }
+      },
+      "fastly": {
+        "agent": {
+          "k": 2,
+          "n": 11,
+          "pct": 18.2,
+          "ci95": [
+            5.1,
+            47.7
+          ]
+        },
+        "script": {
+          "k": 2,
+          "n": 11,
+          "pct": 18.2,
+          "ci95": [
+            5.1,
+            47.7
+          ]
+        },
+        "browser": {
+          "k": 2,
+          "n": 11,
+          "pct": 18.2,
+          "ci95": [
+            5.1,
+            47.7
+          ]
+        }
+      },
+      "other/unknown": {
+        "agent": {
+          "k": 2,
+          "n": 46,
+          "pct": 4.3,
+          "ci95": [
+            1.2,
+            14.5
+          ]
+        },
+        "script": {
+          "k": 3,
+          "n": 46,
+          "pct": 6.5,
+          "ci95": [
+            2.2,
+            17.5
+          ]
+        },
+        "browser": {
+          "k": 3,
+          "n": 46,
+          "pct": 6.5,
+          "ci95": [
+            2.2,
+            17.5
+          ]
+        }
+      },
+      "vercel": {
+        "agent": {
+          "k": 0,
+          "n": 7,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            35.4
+          ]
+        },
+        "script": {
+          "k": 0,
+          "n": 7,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            35.4
+          ]
+        },
+        "browser": {
+          "k": 0,
+          "n": 7,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            35.4
+          ]
+        }
+      }
+    },
+    "unreachable_all_identities": [
+      "alfabank.ru",
+      "bancodevenezuela.com",
+      "binance.com",
+      "coinbase.com",
+      "kraken.com",
+      "robinhood.com",
+      "sberbank.ru",
+      "tbank.ru",
+      "vtb.ru"
+    ]
+  },
+  "round_2": {
+    "domains": 150,
+    "rq2_home_outcome": {
+      "agent": {
+        "block": {
+          "k": 13,
+          "n": 150,
+          "pct": 8.7,
+          "ci95": [
+            5.1,
+            14.3
+          ]
+        },
+        "challenge": {
+          "k": 11,
+          "n": 150,
+          "pct": 7.3,
+          "ci95": [
+            4.1,
+            12.7
+          ]
+        },
+        "rate_limited": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "error": {
+          "k": 12,
+          "n": 150,
+          "pct": 8.0,
+          "ci95": [
+            4.6,
+            13.5
+          ]
+        },
+        "thin": {
+          "k": 6,
+          "n": 150,
+          "pct": 4.0,
+          "ci95": [
+            1.8,
+            8.5
+          ]
+        },
+        "other": {
+          "k": 2,
+          "n": 150,
+          "pct": 1.3,
+          "ci95": [
+            0.4,
+            4.7
+          ]
+        },
+        "ok": {
+          "k": 102,
+          "n": 150,
+          "pct": 68.0,
+          "ci95": [
+            60.2,
+            74.9
+          ]
+        },
+        "self_excluded": {
+          "k": 1,
+          "n": 150,
+          "pct": 0.7,
+          "ci95": [
+            0.1,
+            3.7
+          ]
+        }
+      },
+      "script": {
+        "block": {
+          "k": 17,
+          "n": 150,
+          "pct": 11.3,
+          "ci95": [
+            7.2,
+            17.4
+          ]
+        },
+        "challenge": {
+          "k": 11,
+          "n": 150,
+          "pct": 7.3,
+          "ci95": [
+            4.1,
+            12.7
+          ]
+        },
+        "rate_limited": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "error": {
+          "k": 13,
+          "n": 150,
+          "pct": 8.7,
+          "ci95": [
+            5.1,
+            14.3
+          ]
+        },
+        "thin": {
+          "k": 7,
+          "n": 150,
+          "pct": 4.7,
+          "ci95": [
+            2.3,
+            9.3
+          ]
+        },
+        "other": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "ok": {
+          "k": 96,
+          "n": 150,
+          "pct": 64.0,
+          "ci95": [
+            56.1,
+            71.2
+          ]
+        },
+        "self_excluded": {
+          "k": 0,
+          "n": 150,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.5
+          ]
+        }
+      },
+      "browser": {
+        "block": {
+          "k": 17,
+          "n": 150,
+          "pct": 11.3,
+          "ci95": [
+            7.2,
+            17.4
+          ]
+        },
+        "challenge": {
+          "k": 11,
+          "n": 150,
+          "pct": 7.3,
+          "ci95": [
+            4.1,
+            12.7
+          ]
+        },
+        "rate_limited": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "error": {
+          "k": 8,
+          "n": 150,
+          "pct": 5.3,
+          "ci95": [
+            2.7,
+            10.2
+          ]
+        },
+        "thin": {
+          "k": 2,
+          "n": 150,
+          "pct": 1.3,
+          "ci95": [
+            0.4,
+            4.7
+          ]
+        },
+        "other": {
+          "k": 4,
+          "n": 150,
+          "pct": 2.7,
+          "ci95": [
+            1.0,
+            6.7
+          ]
+        },
+        "ok": {
+          "k": 105,
+          "n": 150,
+          "pct": 70.0,
+          "ci95": [
+            62.2,
+            76.8
+          ]
+        },
+        "self_excluded": {
+          "k": 0,
+          "n": 150,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.5
+          ]
+        }
+      }
+    },
+    "rq2_worst_outcome": {
+      "agent": {
+        "block": {
+          "k": 15,
+          "n": 150,
+          "pct": 10.0,
+          "ci95": [
+            6.2,
+            15.8
+          ]
+        },
+        "challenge": {
+          "k": 14,
+          "n": 150,
+          "pct": 9.3,
+          "ci95": [
+            5.6,
+            15.1
+          ]
+        },
+        "rate_limited": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "error": {
+          "k": 12,
+          "n": 150,
+          "pct": 8.0,
+          "ci95": [
+            4.6,
+            13.5
+          ]
+        },
+        "thin": {
+          "k": 12,
+          "n": 150,
+          "pct": 8.0,
+          "ci95": [
+            4.6,
+            13.5
+          ]
+        },
+        "other": {
+          "k": 5,
+          "n": 150,
+          "pct": 3.3,
+          "ci95": [
+            1.4,
+            7.6
+          ]
+        },
+        "ok": {
+          "k": 88,
+          "n": 150,
+          "pct": 58.7,
+          "ci95": [
+            50.7,
+            66.2
+          ]
+        },
+        "self_excluded": {
+          "k": 1,
+          "n": 150,
+          "pct": 0.7,
+          "ci95": [
+            0.1,
+            3.7
+          ]
+        }
+      },
+      "script": {
+        "block": {
+          "k": 19,
+          "n": 150,
+          "pct": 12.7,
+          "ci95": [
+            8.3,
+            18.9
+          ]
+        },
+        "challenge": {
+          "k": 14,
+          "n": 150,
+          "pct": 9.3,
+          "ci95": [
+            5.6,
+            15.1
+          ]
+        },
+        "rate_limited": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "error": {
+          "k": 14,
+          "n": 150,
+          "pct": 9.3,
+          "ci95": [
+            5.6,
+            15.1
+          ]
+        },
+        "thin": {
+          "k": 13,
+          "n": 150,
+          "pct": 8.7,
+          "ci95": [
+            5.1,
+            14.3
+          ]
+        },
+        "other": {
+          "k": 7,
+          "n": 150,
+          "pct": 4.7,
+          "ci95": [
+            2.3,
+            9.3
+          ]
+        },
+        "ok": {
+          "k": 80,
+          "n": 150,
+          "pct": 53.3,
+          "ci95": [
+            45.4,
+            61.1
+          ]
+        },
+        "self_excluded": {
+          "k": 0,
+          "n": 150,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.5
+          ]
+        }
+      },
+      "browser": {
+        "block": {
+          "k": 19,
+          "n": 150,
+          "pct": 12.7,
+          "ci95": [
+            8.3,
+            18.9
+          ]
+        },
+        "challenge": {
+          "k": 16,
+          "n": 150,
+          "pct": 10.7,
+          "ci95": [
+            6.7,
+            16.6
+          ]
+        },
+        "rate_limited": {
+          "k": 3,
+          "n": 150,
+          "pct": 2.0,
+          "ci95": [
+            0.7,
+            5.7
+          ]
+        },
+        "error": {
+          "k": 9,
+          "n": 150,
+          "pct": 6.0,
+          "ci95": [
+            3.2,
+            11.0
+          ]
+        },
+        "thin": {
+          "k": 7,
+          "n": 150,
+          "pct": 4.7,
+          "ci95": [
+            2.3,
+            9.3
+          ]
+        },
+        "other": {
+          "k": 6,
+          "n": 150,
+          "pct": 4.0,
+          "ci95": [
+            1.8,
+            8.5
+          ]
+        },
+        "ok": {
+          "k": 90,
+          "n": 150,
+          "pct": 60.0,
+          "ci95": [
+            52.0,
+            67.5
+          ]
+        },
+        "self_excluded": {
+          "k": 0,
+          "n": 150,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.5
+          ]
+        }
+      }
+    },
+    "rq2_challenged_or_blocked_home": {
+      "agent": {
+        "k": 24,
+        "n": 150,
+        "pct": 16.0,
+        "ci95": [
+          11.0,
+          22.7
+        ]
+      },
+      "script": {
+        "k": 28,
+        "n": 150,
+        "pct": 18.7,
+        "ci95": [
+          13.2,
+          25.7
+        ]
+      },
+      "browser": {
+        "k": 28,
+        "n": 150,
+        "pct": 18.7,
+        "ci95": [
+          13.2,
+          25.7
+        ]
+      }
+    },
+    "rq2_paired": {
+      "agent_vs_browser": {
+        "paired_domains": 136,
+        "only_agent_blocked": 2,
+        "only_browser_blocked": 5,
+        "mcnemar_exact_p": 0.4531
+      },
+      "agent_vs_script": {
+        "paired_domains": 134,
+        "only_agent_blocked": 2,
+        "only_script_blocked": 6,
+        "mcnemar_exact_p": 0.2891
+      },
+      "script_vs_browser": {
+        "paired_domains": 136,
+        "only_script_blocked": 5,
+        "only_browser_blocked": 4,
+        "mcnemar_exact_p": 1.0
+      }
+    },
+    "rq1_robots_fetched": {
+      "k": 140,
+      "n": 150,
+      "pct": 93.3,
+      "ci95": [
+        88.2,
+        96.3
+      ]
+    },
+    "rq1_robots_present": {
+      "k": 121,
+      "n": 140,
+      "pct": 86.4,
+      "ci95": [
+        79.8,
+        91.1
+      ]
+    },
+    "rq1_tokens": {
+      "GPTBot": {
+        "vendor": "OpenAI",
+        "purpose": "training",
+        "named": {
+          "k": 32,
+          "n": 140,
+          "pct": 22.9,
+          "ci95": [
+            16.7,
+            30.5
+          ]
+        },
+        "root_disallowed": {
+          "k": 20,
+          "n": 140,
+          "pct": 14.3,
+          "ci95": [
+            9.4,
+            21.0
+          ]
+        }
+      },
+      "OAI-SearchBot": {
+        "vendor": "OpenAI",
+        "purpose": "search",
+        "named": {
+          "k": 23,
+          "n": 140,
+          "pct": 16.4,
+          "ci95": [
+            11.2,
+            23.4
+          ]
+        },
+        "root_disallowed": {
+          "k": 8,
+          "n": 140,
+          "pct": 5.7,
+          "ci95": [
+            2.9,
+            10.9
+          ]
+        }
+      },
+      "ChatGPT-User": {
+        "vendor": "OpenAI",
+        "purpose": "user",
+        "named": {
+          "k": 25,
+          "n": 140,
+          "pct": 17.9,
+          "ci95": [
+            12.4,
+            25.0
+          ]
+        },
+        "root_disallowed": {
+          "k": 11,
+          "n": 140,
+          "pct": 7.9,
+          "ci95": [
+            4.4,
+            13.5
+          ]
+        }
+      },
+      "ClaudeBot": {
+        "vendor": "Anthropic",
+        "purpose": "training",
+        "named": {
+          "k": 35,
+          "n": 140,
+          "pct": 25.0,
+          "ci95": [
+            18.6,
+            32.8
+          ]
+        },
+        "root_disallowed": {
+          "k": 24,
+          "n": 140,
+          "pct": 17.1,
+          "ci95": [
+            11.8,
+            24.2
+          ]
+        }
+      },
+      "Claude-SearchBot": {
+        "vendor": "Anthropic",
+        "purpose": "search",
+        "named": {
+          "k": 17,
+          "n": 140,
+          "pct": 12.1,
+          "ci95": [
+            7.7,
+            18.6
+          ]
+        },
+        "root_disallowed": {
+          "k": 11,
+          "n": 140,
+          "pct": 7.9,
+          "ci95": [
+            4.4,
+            13.5
+          ]
+        }
+      },
+      "Claude-User": {
+        "vendor": "Anthropic",
+        "purpose": "user",
+        "named": {
+          "k": 19,
+          "n": 140,
+          "pct": 13.6,
+          "ci95": [
+            8.9,
+            20.2
+          ]
+        },
+        "root_disallowed": {
+          "k": 13,
+          "n": 140,
+          "pct": 9.3,
+          "ci95": [
+            5.5,
+            15.2
+          ]
+        }
+      },
+      "PerplexityBot": {
+        "vendor": "Perplexity",
+        "purpose": "search",
+        "named": {
+          "k": 32,
+          "n": 140,
+          "pct": 22.9,
+          "ci95": [
+            16.7,
+            30.5
+          ]
+        },
+        "root_disallowed": {
+          "k": 18,
+          "n": 140,
+          "pct": 12.9,
+          "ci95": [
+            8.3,
+            19.4
+          ]
+        }
+      },
+      "Perplexity-User": {
+        "vendor": "Perplexity",
+        "purpose": "user",
+        "named": {
+          "k": 20,
+          "n": 140,
+          "pct": 14.3,
+          "ci95": [
+            9.4,
+            21.0
+          ]
+        },
+        "root_disallowed": {
+          "k": 12,
+          "n": 140,
+          "pct": 8.6,
+          "ci95": [
+            5.0,
+            14.4
+          ]
+        }
+      },
+      "Google-Extended": {
+        "vendor": "Google",
+        "purpose": "training",
+        "named": {
+          "k": 26,
+          "n": 140,
+          "pct": 18.6,
+          "ci95": [
+            13.0,
+            25.8
+          ]
+        },
+        "root_disallowed": {
+          "k": 16,
+          "n": 140,
+          "pct": 11.4,
+          "ci95": [
+            7.2,
+            17.8
+          ]
+        }
+      },
+      "Googlebot": {
+        "vendor": "Google",
+        "purpose": "search-control",
+        "named": {
+          "k": 20,
+          "n": 140,
+          "pct": 14.3,
+          "ci95": [
+            9.4,
+            21.0
+          ]
+        },
+        "root_disallowed": {
+          "k": 0,
+          "n": 140,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            2.7
+          ]
+        }
+      },
+      "Applebot-Extended": {
+        "vendor": "Apple",
+        "purpose": "training",
+        "named": {
+          "k": 27,
+          "n": 140,
+          "pct": 19.3,
+          "ci95": [
+            13.6,
+            26.6
+          ]
+        },
+        "root_disallowed": {
+          "k": 20,
+          "n": 140,
+          "pct": 14.3,
+          "ci95": [
+            9.4,
+            21.0
+          ]
+        }
+      },
+      "CCBot": {
+        "vendor": "Common Crawl",
+        "purpose": "training",
+        "named": {
+          "k": 31,
+          "n": 140,
+          "pct": 22.1,
+          "ci95": [
+            16.1,
+            29.7
+          ]
+        },
+        "root_disallowed": {
+          "k": 26,
+          "n": 140,
+          "pct": 18.6,
+          "ci95": [
+            13.0,
+            25.8
+          ]
+        }
+      },
+      "Meta-ExternalAgent": {
+        "vendor": "Meta",
+        "purpose": "training",
+        "named": {
+          "k": 26,
+          "n": 140,
+          "pct": 18.6,
+          "ci95": [
+            13.0,
+            25.8
+          ]
+        },
+        "root_disallowed": {
+          "k": 19,
+          "n": 140,
+          "pct": 13.6,
+          "ci95": [
+            8.9,
+            20.2
+          ]
+        }
+      },
+      "Bytespider": {
+        "vendor": "ByteDance",
+        "purpose": "training",
+        "named": {
+          "k": 32,
+          "n": 140,
+          "pct": 22.9,
+          "ci95": [
+            16.7,
+            30.5
+          ]
+        },
+        "root_disallowed": {
+          "k": 27,
+          "n": 140,
+          "pct": 19.3,
+          "ci95": [
+            13.6,
+            26.6
+          ]
+        }
+      }
+    },
+    "rq1_any_token_disallowed_by_purpose": {
+      "training": {
+        "k": 33,
+        "n": 140,
+        "pct": 23.6,
+        "ci95": [
+          17.3,
+          31.2
+        ]
+      },
+      "search": {
+        "k": 19,
+        "n": 140,
+        "pct": 13.6,
+        "ci95": [
+          8.9,
+          20.2
+        ]
+      },
+      "user": {
+        "k": 17,
+        "n": 140,
+        "pct": 12.1,
+        "ci95": [
+          7.7,
+          18.6
+        ]
+      },
+      "search-control": {
+        "k": 0,
+        "n": 140,
+        "pct": 0.0,
+        "ci95": [
+          0,
+          2.7
+        ]
+      }
+    },
+    "rq3_policy_allows_but_edge_blocks_agent": {
+      "k": 23,
+      "n": 136,
+      "pct": 16.9,
+      "ci95": [
+        11.5,
+        24.1
+      ]
+    },
+    "rq3_same_but_browser_passes": {
+      "k": 1,
+      "n": 136,
+      "pct": 0.7,
+      "ci95": [
+        0.1,
+        4.0
+      ]
+    },
+    "rq4_by_sector": {
+      "devtools": {
+        "agent": {
+          "k": 2,
+          "n": 30,
+          "pct": 6.7,
+          "ci95": [
+            1.8,
+            21.3
+          ]
+        },
+        "script": {
+          "k": 3,
+          "n": 30,
+          "pct": 10.0,
+          "ci95": [
+            3.5,
+            25.6
+          ]
+        },
+        "browser": {
+          "k": 1,
+          "n": 30,
+          "pct": 3.3,
+          "ci95": [
+            0.6,
+            16.7
+          ]
+        }
+      },
+      "ecommerce": {
+        "agent": {
+          "k": 9,
+          "n": 30,
+          "pct": 30.0,
+          "ci95": [
+            16.7,
+            47.9
+          ]
+        },
+        "script": {
+          "k": 9,
+          "n": 30,
+          "pct": 30.0,
+          "ci95": [
+            16.7,
+            47.9
+          ]
+        },
+        "browser": {
+          "k": 9,
+          "n": 30,
+          "pct": 30.0,
+          "ci95": [
+            16.7,
+            47.9
+          ]
+        }
+      },
+      "finance": {
+        "agent": {
+          "k": 2,
+          "n": 30,
+          "pct": 6.7,
+          "ci95": [
+            1.8,
+            21.3
+          ]
+        },
+        "script": {
+          "k": 2,
+          "n": 30,
+          "pct": 6.7,
+          "ci95": [
+            1.8,
+            21.3
+          ]
+        },
+        "browser": {
+          "k": 2,
+          "n": 30,
+          "pct": 6.7,
+          "ci95": [
+            1.8,
+            21.3
+          ]
+        }
+      },
+      "media": {
+        "agent": {
+          "k": 7,
+          "n": 30,
+          "pct": 23.3,
+          "ci95": [
+            11.8,
+            40.9
+          ]
+        },
+        "script": {
+          "k": 10,
+          "n": 30,
+          "pct": 33.3,
+          "ci95": [
+            19.2,
+            51.2
+          ]
+        },
+        "browser": {
+          "k": 10,
+          "n": 30,
+          "pct": 33.3,
+          "ci95": [
+            19.2,
+            51.2
+          ]
+        }
+      },
+      "saas": {
+        "agent": {
+          "k": 4,
+          "n": 30,
+          "pct": 13.3,
+          "ci95": [
+            5.3,
+            29.7
+          ]
+        },
+        "script": {
+          "k": 4,
+          "n": 30,
+          "pct": 13.3,
+          "ci95": [
+            5.3,
+            29.7
+          ]
+        },
+        "browser": {
+          "k": 6,
+          "n": 30,
+          "pct": 20.0,
+          "ci95": [
+            9.5,
+            37.3
+          ]
+        }
+      }
+    },
+    "rq4_by_vendor": {
+      "akamai": {
+        "agent": {
+          "k": 9,
+          "n": 27,
+          "pct": 33.3,
+          "ci95": [
+            18.6,
+            52.2
+          ]
+        },
+        "script": {
+          "k": 11,
+          "n": 27,
+          "pct": 40.7,
+          "ci95": [
+            24.5,
+            59.3
+          ]
+        },
+        "browser": {
+          "k": 12,
+          "n": 27,
+          "pct": 44.4,
+          "ci95": [
+            27.6,
+            62.7
+          ]
+        }
+      },
+      "cloudflare": {
+        "agent": {
+          "k": 6,
+          "n": 34,
+          "pct": 17.6,
+          "ci95": [
+            8.3,
+            33.5
+          ]
+        },
+        "script": {
+          "k": 7,
+          "n": 34,
+          "pct": 20.6,
+          "ci95": [
+            10.3,
+            36.8
+          ]
+        },
+        "browser": {
+          "k": 6,
+          "n": 34,
+          "pct": 17.6,
+          "ci95": [
+            8.3,
+            33.5
+          ]
+        }
+      },
+      "cloudfront": {
+        "agent": {
+          "k": 3,
+          "n": 23,
+          "pct": 13.0,
+          "ci95": [
+            4.5,
+            32.1
+          ]
+        },
+        "script": {
+          "k": 3,
+          "n": 23,
+          "pct": 13.0,
+          "ci95": [
+            4.5,
+            32.1
+          ]
+        },
+        "browser": {
+          "k": 3,
+          "n": 23,
+          "pct": 13.0,
+          "ci95": [
+            4.5,
+            32.1
+          ]
+        }
+      },
+      "datadome": {
+        "agent": {
+          "k": 2,
+          "n": 3,
+          "pct": 66.7,
+          "ci95": [
+            20.8,
+            93.9
+          ]
+        },
+        "script": {
+          "k": 2,
+          "n": 3,
+          "pct": 66.7,
+          "ci95": [
+            20.8,
+            93.9
+          ]
+        },
+        "browser": {
+          "k": 2,
+          "n": 3,
+          "pct": 66.7,
+          "ci95": [
+            20.8,
+            93.9
+          ]
+        }
+      },
+      "fastly": {
+        "agent": {
+          "k": 2,
+          "n": 11,
+          "pct": 18.2,
+          "ci95": [
+            5.1,
+            47.7
+          ]
+        },
+        "script": {
+          "k": 2,
+          "n": 11,
+          "pct": 18.2,
+          "ci95": [
+            5.1,
+            47.7
+          ]
+        },
+        "browser": {
+          "k": 2,
+          "n": 11,
+          "pct": 18.2,
+          "ci95": [
+            5.1,
+            47.7
+          ]
+        }
+      },
+      "other/unknown": {
+        "agent": {
+          "k": 2,
+          "n": 45,
+          "pct": 4.4,
+          "ci95": [
+            1.2,
+            14.8
+          ]
+        },
+        "script": {
+          "k": 3,
+          "n": 45,
+          "pct": 6.7,
+          "ci95": [
+            2.3,
+            17.9
+          ]
+        },
+        "browser": {
+          "k": 3,
+          "n": 45,
+          "pct": 6.7,
+          "ci95": [
+            2.3,
+            17.9
+          ]
+        }
+      },
+      "vercel": {
+        "agent": {
+          "k": 0,
+          "n": 7,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            35.4
+          ]
+        },
+        "script": {
+          "k": 0,
+          "n": 7,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            35.4
+          ]
+        },
+        "browser": {
+          "k": 0,
+          "n": 7,
+          "pct": 0.0,
+          "ci95": [
+            0,
+            35.4
+          ]
+        }
+      }
+    },
+    "unreachable_all_identities": [
+      "alfabank.ru",
+      "bancodevenezuela.com",
+      "coinbase.com",
+      "kraken.com",
+      "sberbank.ru",
+      "tbank.ru",
+      "vtb.ru"
+    ]
+  },
+  "stability": {
+    "agent": {
+      "same": {
+        "k": 146,
+        "n": 150,
+        "pct": 97.3,
+        "ci95": [
+          93.3,
+          99.0
+        ]
+      },
+      "kappa": 0.947
+    },
+    "script": {
+      "same": {
+        "k": 147,
+        "n": 150,
+        "pct": 98.0,
+        "ci95": [
+          94.3,
+          99.3
+        ]
+      },
+      "kappa": 0.964
+    },
+    "browser": {
+      "same": {
+        "k": 145,
+        "n": 150,
+        "pct": 96.7,
+        "ci95": [
+          92.4,
+          98.6
+        ]
+      },
+      "kappa": 0.932
+    }
+  }
+}
