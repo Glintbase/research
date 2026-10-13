@@ -49,7 +49,7 @@
   - identity order is randomised per domain and round (seeded by SHA-256 of `domain|round`);
   - fresh cookies for each (domain, identity);
   - ≤ 1 request/s within an identity, and ≥ 30 s between identities on the same domain;
-  - up to 6 domains in parallel;
+  - up to 4 domains in parallel (Deviation 3);
   - never concurrently with another study's traffic on the same connection.
 - **Rounds:** two, run back-to-back on 2026-10-12 (a one-day schedule).
 - **Vantage point:** one residential connection (AS36873 Airtel Networks, Nigeria). **Limitation:** edge decisions depend on IP reputation and geography; all identities share the IP, so the comparison between identities is controlled, but absolute rates may differ elsewhere.
@@ -99,4 +99,17 @@ Honest identities only; no CAPTCHA solving or bypassing (a challenge is recorded
      All of it is archived in `data/edge/_discarded/`.
    - **Action:** connectivity was confirmed restored at 00:51 UTC on 2026-10-13. Those round-1 domains were then re-probed with the unchanged harness, and round 2 was re-run in full.
    - **Consequence:** round 1 now spans two sessions about 6 hours apart. Before this decision, only error counts and timestamps were inspected.
+
+3. **Browser-identity measurement defects found after round 1; both rounds re-run in full (2026-10-13).**
+   - **How it was found:** a first analysis of round 1 showed a 22% homepage error rate for `browser`, against 9–10% for `agent` and `script`. Checking the cases where only the browser failed revealed two harness defects:
+     - **Timeouts:** with 6 domains in parallel on the residential link, full page loads exceeded the 20 s limit. Loaded one at a time, the same pages took 5–8 s.
+     - **Hidden error responses:** when a site returns an error status with an empty body, Chromium raises `net::ERR_HTTP_RESPONSE_CODE_FAILURE` instead of returning the response, so those were recorded as `error` instead of e.g. `block`.
+   - **Fix:**
+     - the main-document response is captured even when navigation raises;
+     - the browser page-load timeout is 45 s (HTTP clients unchanged at 20 s);
+     - up to **4** domains in parallel;
+     - the first line of each error message is stored.
+   - **Action:** round 1 and the partial round 2 were archived (`data/edge/_discarded/`), and **both rounds were re-run in full, for all three identities**, so conditions are identical across identities.
+   - **Disclosure:** this decision was made after round-1 outcome tables had been seen. The classification rules (§5) and analysis (§6) are unchanged.
+
 

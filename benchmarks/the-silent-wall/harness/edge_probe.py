@@ -34,6 +34,8 @@ from common import (
     PAUSE_BETWEEN_REQUESTS_S, TIMEOUT_S, chromium_executable, read_jsonl,
 )
 
+BROWSER_TIMEOUT_S = 45.0  # full page loads are slower than single HTTP fetches on a residential link
+
 IDENTITIES = ["agent", "script", "browser"]
 KEEP_HEADERS = {
     "server", "via", "cf-ray", "cf-mitigated", "cf-cache-status", "x-amzn-waf-action", "x-amz-cf-id",
@@ -89,6 +91,7 @@ async def http_fetch(client: httpx.AsyncClient, url: str) -> dict:
         rec["error"] = "tls_error" if "ssl" in str(e).lower() or "certificate" in str(e).lower() else "connect_error"
     except Exception as e:
         rec["error"] = f"error:{type(e).__name__}"
+        rec["error_detail"] = str(e).splitlines()[0][:200] if str(e) else None
     rec["latency_ms"] = round((time.perf_counter() - t0) * 1000)
     return rec
 
@@ -97,18 +100,36 @@ async def browser_fetch(browser, url: str, context) -> dict:
     t0 = time.perf_counter()
     rec = {"url": url}
     page = await context.new_page()
+    # Chromium raises (e.g. net::ERR_HTTP_RESPONSE_CODE_FAILURE) instead of returning a response when
+    # an error status arrives with an empty body, so the main-document response is captured here.
+    nav: list = []
+    page.on("response", lambda r: nav.append(r) if r.request.is_navigation_request() and r.frame == page.main_frame else None)
     try:
-        resp = await page.goto(url, wait_until="domcontentloaded", timeout=TIMEOUT_S * 1000)
+        resp = await page.goto(url, wait_until="domcontentloaded", timeout=BROWSER_TIMEOUT_S * 1000)
         await page.wait_for_timeout(5000)  # let automatic JS challenges resolve, as for a real visitor
         html = await page.content()
         text = await page.evaluate("document.body ? document.body.innerText : ''")
-        rec.update(status=resp.status if resp else None, final_url=page.url,
-                   headers=pick_headers(await resp.all_headers()) if resp else {},
+        final = nav[-1] if nav else resp
+        rec.update(status=final.status if final else None, final_url=page.url,
+                   headers=pick_headers(await final.all_headers()) if final else {},
                    text_len=len(re.sub(r"\s+", " ", text or "").strip()), markers=marker_hits(html),
                    title=(await page.title())[:120])
     except Exception as e:
-        msg = str(e).lower()
-        rec["error"] = "timeout" if "timeout" in msg else ("tls_error" if "cert" in msg or "ssl" in msg else f"error:{type(e).__name__}")
+        msg = str(e)
+        rec["error_detail"] = msg.splitlines()[0][:200]
+        if nav:  # an HTTP response did arrive: record it rather than a generic error
+            last = nav[-1]
+            body = ""
+            try:
+                body = (await last.text())[:200_000]
+            except Exception:
+                pass
+            rec.update(status=last.status, final_url=last.url, headers=pick_headers(await last.all_headers()),
+                       text_len=visible_text_len(body), markers=marker_hits(body),
+                       title=(TITLE.search(body).group(1).strip()[:120] if TITLE.search(body) else None))
+        else:
+            low = msg.lower()
+            rec["error"] = "timeout" if "timeout" in low else ("tls_error" if "cert" in low or "ssl" in low else f"error:{type(e).__name__}")
     finally:
         await page.close()
     rec["latency_ms"] = round((time.perf_counter() - t0) * 1000)
@@ -158,7 +179,7 @@ async def probe_domain(row: dict, round_name: str, browser, out_dir) -> None:
 async def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--round", required=True)
-    ap.add_argument("--workers", type=int, default=10)
+    ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--pages", help="alternate pages.jsonl (tests only)")
     ap.add_argument("--fast", action="store_true", help="skip pauses (local tests only)")
