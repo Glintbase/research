@@ -90,3 +90,13 @@ Honest identities only; no CAPTCHA solving or bypassing (a challenge is recorded
    - **What happened:** the first census run (concurrency 8, no retry) produced 83/150 fetch failures. 58 of those succeeded when fetched sequentially, so the failures were mostly self-inflicted load on the residential connection.
    - **Action:** the census was re-run in full with concurrency 2 and one retry (`data/robots/census_run.log`), and that run is the one reported. Before freezing, only fetch-status counts and one token count (`GPTBot` named on 18 domains in the discarded first run) were looked at; no policy analysis was done.
    - **Result:** 10 domains remain unreachable from this vantage point for every client, including a headless browser (`coinbase.com`, `kraken.com`, `binance.com`, `sberbank.ru`, `vtb.ru`, `tbank.ru`, `alfabank.ru`, `bancodevenezuela.com`, `wsj.com`, `npr.org`). They are reported as such.
+
+2. **Connection outage during Part 2; affected results discarded and re-probed (2026-10-13, before any analysis of Part 2).**
+   - **What happened:** the residential connection failed from about **19:09 UTC on 2026-10-12** until at least 20:10 UTC. From that point every request from every identity failed, including domains that had loaded moments earlier.
+   - **Discarded:**
+     - all of round 2 (19:42–20:10 UTC, every request an error);
+     - every round-1 domain where any identity started at or after 19:09:00 UTC (22 domains, mostly finance, the tail of the run order).
+     All of it is archived in `data/edge/_discarded/`.
+   - **Action:** connectivity was confirmed restored at 00:51 UTC on 2026-10-13. Those round-1 domains were then re-probed with the unchanged harness, and round 2 was re-run in full.
+   - **Consequence:** round 1 now spans two sessions about 6 hours apart. Before this decision, only error counts and timestamps were inspected.
+
