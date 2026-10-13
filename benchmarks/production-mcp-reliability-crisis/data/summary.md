@@ -60,5 +60,5 @@ Completed handshakes: 1772
 - Same primary status: 93.4% (2801/3000; 95% CI 92.4–94.2)
 - Cohen's κ: 0.895
 
-Excluding gateway.pipeworx.io: same status 99.6% (2796/2806; 95% CI 99.3–99.8), κ 0.994
+Excluding sha256:54b786edf0f9: same status 99.6% (2796/2806; 95% CI 99.3–99.8), κ 0.994
 

@@ -10,6 +10,7 @@ Writes data/summary.json and data/summary.md. The report must only quote numbers
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import statistics
@@ -77,7 +78,11 @@ def analyse(rows: list[dict]) -> dict:
         by_host.setdefault(r.get("host") or "", []).append(r)
     s["hosts"] = len(by_host)
     s["endpoints_per_host_max"] = max((len(v) for v in by_host.values()), default=0)
-    s["top_hosts_share_of_sample"] = {h: len(v) for h, v in sorted(by_host.items(), key=lambda kv: -len(kv[1]))[:10]}
+    # Hashed so summaries don't name individual hosts (per-endpoint data still lists URLs).
+    s["top_hosts_share_of_sample"] = {
+        "sha256:" + hashlib.sha256(h.encode()).hexdigest()[:12]: len(v)
+        for h, v in sorted(by_host.items(), key=lambda kv: -len(kv[1]))[:10]
+    }
     s["rq1_primary_status_host_weighted_pct"] = {
         st: round(100 * statistics.mean(sum(r["primary_status"] == st for r in v) / len(v) for v in by_host.values()), 1)
         for st in STATUS_ORDER
@@ -187,8 +192,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--round", required=True)
     ap.add_argument("--retest")
-    ap.add_argument("--sensitivity-exclude-host", action="append", default=[],
-                    help="also report stability without these hosts (e.g. a host whose anonymous quota our probing exhausted)")
+    ap.add_argument("--sensitivity-exclude-host-sha256", action="append", default=[],
+                    help="also report stability without hosts whose SHA-256 (hex) starts with this prefix "
+                         "(e.g. a host whose anonymous quota our probing exhausted; hashed so reports don't name it)")
     a = ap.parse_args()
     r1 = read_jsonl(DATA_DIR / f"round_{a.round}.jsonl")
     summary = {"rounds": f"round {a.round}" + (f" + retest {a.retest}" if a.retest else ""), "round_1": analyse(r1)}
@@ -196,11 +202,13 @@ def main():
         r2 = read_jsonl(DATA_DIR / f"round_{a.retest}.jsonl")
         summary["round_2"] = analyse(r2)
         summary["stability"] = stability(r1, r2)
-        if a.sensitivity_exclude_host:
-            ex = set(a.sensitivity_exclude_host)
+        if a.sensitivity_exclude_host_sha256:
+            prefixes = tuple(a.sensitivity_exclude_host_sha256)
+            hashed = lambda h: hashlib.sha256((h or "").encode()).hexdigest()  # noqa: E731
+            keep = lambda rows: [r for r in rows if not hashed(r.get("host")).startswith(prefixes)]  # noqa: E731
             summary["stability_excluding_hosts"] = {
-                "excluded_hosts": sorted(ex),
-                **stability([r for r in r1 if r.get("host") not in ex], [r for r in r2 if r.get("host") not in ex]),
+                "excluded_hosts": [f"sha256:{p}" for p in prefixes],
+                **stability(keep(r1), keep(r2)),
             }
     (DATA_DIR / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf8")
     md = to_markdown(summary)

@@ -330,16 +330,16 @@
     "hosts": 2245,
     "endpoints_per_host_max": 261,
     "top_hosts_share_of_sample": {
-      "agent-observatory-sensor.nolimit-observatory.workers.dev": 261,
-      "gateway.pipeworx.io": 194,
-      "api.mcp.ai": 132,
-      "api.m2mcent.com": 36,
-      "server.smithery.ai": 19,
-      "mcp.zovo.one": 18,
-      "a2awire.com": 17,
-      "api.lazy-mac.com": 9,
-      "tooloracle.io": 8,
-      "nexgendata-mcp-proxy.steve-corbeil.workers.dev": 6
+      "sha256:3c1f5cd21f40": 261,
+      "sha256:54b786edf0f9": 194,
+      "sha256:d69cd6d4ee93": 132,
+      "sha256:d00601e3156a": 36,
+      "sha256:7a35f371a2e0": 19,
+      "sha256:da7a4ded5a25": 18,
+      "sha256:e49412b2efd9": 17,
+      "sha256:1ff241fbfe82": 9,
+      "sha256:a6cec324e13e": 8,
+      "sha256:a1951ed3136c": 6
     },
     "rq1_primary_status_host_weighted_pct": {
       "ok": 48.1,
@@ -904,16 +904,16 @@
     "hosts": 2245,
     "endpoints_per_host_max": 261,
     "top_hosts_share_of_sample": {
-      "agent-observatory-sensor.nolimit-observatory.workers.dev": 261,
-      "gateway.pipeworx.io": 194,
-      "api.mcp.ai": 132,
-      "api.m2mcent.com": 36,
-      "server.smithery.ai": 19,
-      "mcp.zovo.one": 18,
-      "a2awire.com": 17,
-      "api.lazy-mac.com": 9,
-      "tooloracle.io": 8,
-      "nexgendata-mcp-proxy.steve-corbeil.workers.dev": 6
+      "sha256:3c1f5cd21f40": 261,
+      "sha256:54b786edf0f9": 194,
+      "sha256:d69cd6d4ee93": 132,
+      "sha256:d00601e3156a": 36,
+      "sha256:7a35f371a2e0": 19,
+      "sha256:da7a4ded5a25": 18,
+      "sha256:e49412b2efd9": 17,
+      "sha256:1ff241fbfe82": 9,
+      "sha256:a6cec324e13e": 8,
+      "sha256:a1951ed3136c": 6
     },
     "rq1_primary_status_host_weighted_pct": {
       "ok": 48.0,
@@ -1174,7 +1174,7 @@
   },
   "stability_excluding_hosts": {
     "excluded_hosts": [
-      "gateway.pipeworx.io"
+      "sha256:54b786edf0f9"
     ],
     "paired": 2806,
     "same_status": {
