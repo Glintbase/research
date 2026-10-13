@@ -5,7 +5,7 @@ dailymail.com,script,block,block,True,"stored status, headers, cookie names, mar
 ft.com,script,challenge,challenge,True,"stored status, headers, cookie names, markers, title, text length",Agree
 reuters.com,browser,challenge,challenge,True,"stored status, headers, cookie names, markers, title, text length",Agree
 etsy.com,agent,challenge,challenge,True,"stored status, headers, cookie names, markers, title, text length",Agree
-robinhood.com,browser,error,error,True,"stored status, headers, cookie names, markers, title, text length","Agree per rule (ERR_CONNECTION_RESET -> error); agent and script received 200, so this may be a fingerprint-based reset."
+robinhood.com,browser,error,error,True,"stored status, headers, cookie names, markers, title, text length","Agree per rule (ERR_CONNECTION_RESET -> error). The domain was unreachable for all three identities in this round (agent connect error, script timeout)."
 kraken.com,browser,error,error,True,"stored status, headers, cookie names, markers, title, text length",Agree
 npr.org,agent,error,error,True,"stored status, headers, cookie names, markers, title, text length",Agree
 substack.com,script,ok,ok,True,"stored status, headers, cookie names, markers, title, text length",Agree
