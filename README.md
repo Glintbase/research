@@ -33,12 +33,12 @@ Our mission is to establish rigorous, empirical, and reproducible standards for 
 
 ## Studies in Progress
 
-Each study is pre-registered before data collection; its README states the research question, design and current status. Draft reports are not yet final publications.
+Each study is pre-registered before data collection; its README states the research question, design and current status. Reports marked "draft" are not yet final publications.
 
 | Study | Question | Status |
 |---|---|---|
 | [**State of Agent Readiness 2026 — Edition 2**](benchmarks/state-of-agent-readiness-2026-edition-2) | Do measured runtime behaviours predict agent task success better than static discoverability signals? | Planned (paused at design) |
-| [**The Silent Wall**](benchmarks/the-silent-wall) | How do public bot policies and WAF behaviour treat declared AI agents vs. browsers? | Data collected · [draft report](benchmarks/the-silent-wall/reports/REPORT.md) |
+| [**The Silent Wall**](benchmarks/the-silent-wall) | How do public bot policies and WAF behaviour treat declared AI agents vs. browsers? | Published 2026-10-23 · [report](benchmarks/the-silent-wall/reports/REPORT.md) |
 | [**Remote MCP Server Reliability**](benchmarks/production-mcp-reliability-crisis) | How often do public remote MCP servers fail protocol, discovery, and error-signalling basics? | Data collected · [draft report](benchmarks/production-mcp-reliability-crisis/reports/REPORT.md) |
 | [**Beyond Self-Reporting**](benchmarks/beyond-self-reporting-execution-gap) | How far do agents' self-reported completions diverge from verified backend state in integration tasks? | Paused |
 
