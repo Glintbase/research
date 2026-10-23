@@ -2,7 +2,7 @@
 
 *A census of remote endpoints in the official MCP Registry*
 
-**Glintbase Research · October 2026 · DRAFT, not yet published**
+**Glintbase Research · October 2026 · Final report, published 2026-10-23**
 Pre-registration: [`PREREGISTRATION.md`](../PREREGISTRATION.md) (frozen in commit `6112785` before data collection) · Data: [`data/`](../data) · Harness: [`harness/`](../harness)
 
 ---
