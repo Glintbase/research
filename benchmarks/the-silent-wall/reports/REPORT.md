@@ -2,7 +2,7 @@
 
 *How popular websites' bot policies and edge defences treat a self-declared AI agent*
 
-**Glintbase Research · October 2026 · DRAFT, not yet published**
+**Glintbase Research · October 2026 · Final report, published 2026-10-23**
 Pre-registration: [`PREREGISTRATION.md`](../PREREGISTRATION.md) (frozen in commit `7113eda` before Part 2; three logged deviations) · Data: [`data/`](../data) · Harness: [`harness/`](../harness)
 
 ---

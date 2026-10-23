@@ -1,6 +1,6 @@
 # The Silent Wall: How Bot Defences Treat AI Agents
 
-> **Status**: Data collected 2026-10-12/13. Draft report in [`reports/REPORT.md`](reports/REPORT.md); not yet published. Protocol and deviations: [`PREREGISTRATION.md`](PREREGISTRATION.md).
+> **Status**: Published 2026-10-23. Data collected 2026-10-12/13; final report in [`reports/REPORT.md`](reports/REPORT.md). The pre-registered validation gate passed (20/20 hand-checked results agreed, ≥ 90% required). Protocol and deviations: [`PREREGISTRATION.md`](PREREGISTRATION.md).
 > **Authors**: Glintbase Research
 
 ---
