@@ -1,6 +1,6 @@
 # Remote MCP Server Reliability
 
-> **Status**: Data collected 2026-10-12/13. Draft report in [`reports/REPORT.md`](reports/REPORT.md); not yet published. Protocol and deviations: [`PREREGISTRATION.md`](PREREGISTRATION.md).
+> **Status**: Published 2026-10-23. Data collected 2026-10-12/13; final report in [`reports/REPORT.md`](reports/REPORT.md). The pre-registered validation gate passed (30/30 after review of the 7 automatic disagreements; ≥ 90% required). Protocol and deviations: [`PREREGISTRATION.md`](PREREGISTRATION.md).
 > **Authors**: Glintbase Research
 > *(Folder name retained for link stability; the study title is neutral until data exists.)*
 
