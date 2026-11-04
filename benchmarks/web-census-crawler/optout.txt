@@ -1,0 +1,2 @@
+# Hosts that asked not to be fetched (one per line; subdomains included). Merged with
+# ../production-mcp-reliability-crisis/optout.txt at run time.
