@@ -1,0 +1,6 @@
+{
+  "error": "Connection timed out after 8000ms",
+  "target": "https://browser-use.com/",
+  "unreachable": true,
+  "status": "timeout"
+}

@@ -1,0 +1,6 @@
+{
+  "error": "Connection timed out after 8000ms",
+  "target": "https://n8n.io/",
+  "unreachable": true,
+  "status": "timeout"
+}

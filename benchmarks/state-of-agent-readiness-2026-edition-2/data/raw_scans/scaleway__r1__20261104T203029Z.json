@@ -1,0 +1,6 @@
+{
+  "error": "Connection timed out after 8000ms",
+  "target": "https://www.scaleway.com/",
+  "unreachable": true,
+  "status": "timeout"
+}

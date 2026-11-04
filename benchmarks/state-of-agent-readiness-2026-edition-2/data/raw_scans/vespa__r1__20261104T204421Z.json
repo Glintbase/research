@@ -1,0 +1,6 @@
+{
+  "error": "Connection timed out after 8000ms",
+  "target": "https://vespa.ai/",
+  "unreachable": true,
+  "status": "timeout"
+}

@@ -1,0 +1,2770 @@
+{
+  "score_version": "ars-3.3.1",
+  "cli_version": "3.5.0",
+  "version": "ars-3.3.1",
+  "spec": "ars",
+  "score": 66,
+  "grade": "C",
+  "gradeLabel": "Partial Agent Support",
+  "archetype": {
+    "archetype": "devtool",
+    "canonicalArchetype": "api_devtool",
+    "label": "Developer Platform & API",
+    "description": "Optimized for developer onboarding, OpenAPI execution, SDKs, and tool calling.",
+    "confidence": 0.6,
+    "reasons": [
+      "Defaulted to Developer Platform based on domain baseline"
+    ],
+    "activeLayers": [
+      "discovery",
+      "access",
+      "usability"
+    ],
+    "layerWeights": {
+      "discovery": 20,
+      "access": 30,
+      "usability": 35,
+      "payments": 0
+    },
+    "baseDenominator": 85,
+    "totalDenominator": 85,
+    "excludedLayers": [
+      {
+        "layer": "Payments",
+        "reason": "Excluded from denominator for Developer Platform & API (not an e-commerce storefront)."
+      }
+    ]
+  },
+  "baseEarned": 53,
+  "bonusEarned": 10,
+  "totalEarned": 63,
+  "baseDenominator": 85,
+  "activeDenominator": 95,
+  "pillars": {
+    "discoverability": {
+      "score": 64,
+      "grade": "C",
+      "description": "Measures how easily autonomous agents find, parse, and ingest documentation, sitemaps, and machine surfaces without hallucination."
+    },
+    "runtimeMeasured": {
+      "score": 64,
+      "grade": "C",
+      "checksCounted": 5,
+      "description": "Runtime pillar from live and content checks only: what the scanner observed MCP servers and API specs actually do."
+    },
+    "runtimeErgonomics": {
+      "score": 69,
+      "grade": "C",
+      "description": "Measures live tool reliability, in-channel error diagnostics, protocol compliance (MCP 2026-07-28), and mutating idempotency."
+    }
+  },
+  "layers": {
+    "discovery": {
+      "layer": "discovery",
+      "name": "Layer 1: Discovery",
+      "baseEarned": 13,
+      "bonusEarned": 6,
+      "totalEarned": 19,
+      "baseMax": 20,
+      "statusText": "Needs attention",
+      "applicable": true,
+      "coverage": 0.38095238095238093,
+      "lowConfidence": true,
+      "checks": [
+        {
+          "checkId": "robots-ai-policy-quality",
+          "status": "pass",
+          "earnedPoints": 2,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "robots.txt permits AI answer engines (claudebot, gptbot, perplexitybot, google-extended, anthropic-ai, cohere-ai, oai-searchbot)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "robots-oai-searchbot",
+          "status": "pass",
+          "earnedPoints": 2,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "robots.txt explicitly permits or does not restrict OAI-SearchBot for search-indexed agent answers",
+          "measurement": "content"
+        },
+        {
+          "checkId": "ard-catalog",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Missing /.well-known/ard.json (ARD v0.91) specification",
+          "evidence": {},
+          "remediation": {
+            "title": "Generate Agent Resource Discovery (ard.json)",
+            "file": "public/.well-known/ard.json",
+            "diffSnippet": [
+              "+ {",
+              "+   \"$schema\": \"https://agentcard.org/v0.91/ard.json\",",
+              "+   \"id\": \"urn:air:stripe.com:main\",",
+              "+   \"name\": \"stripe\",",
+              "+   \"capabilities\": [\"tools\", \"context\"]",
+              "+ }"
+            ],
+            "fixCommand": "glintbase remediate ard.json"
+          },
+          "measurement": "presence"
+        },
+        {
+          "checkId": "ai-catalog-published",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Agent-Card WG ai-catalog.json not published (bonus skipped)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "poppy-discovery",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 0,
+          "isBonus": true,
+          "message": "No /.well-known/poppy.json (emerging; not scored)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "ard-entries-valid",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "Catalog entries validation skipped (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "ard-trust-manifest",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "No cryptographic trust manifest declared (bonus skipped)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "registry-branding",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "MCP manifest branding missing or incomplete at /.well-known/mcp/manifest.json",
+          "measurement": "content"
+        },
+        {
+          "checkId": "wikipedia-presence",
+          "status": "pass",
+          "earnedPoints": 4,
+          "maxPoints": 4,
+          "isBonus": true,
+          "message": "Wikidata official website claim (P856) confirmed mapped to stripe.com",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "npm-sdk-package",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Official SDK/CLI package \"stripe\" links back to stripe.com",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "agent-rules-repo",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Agent rules files are only checked when scanning a local codebase",
+          "measurement": "declared"
+        },
+        {
+          "checkId": "agent-plugins-repo",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "No agent-plugins.org manifest declared (bonus skipped)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "brand-search-accuracy",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 3,
+          "isBonus": false,
+          "message": "External brand search accuracy not yet probed (excluded from score)",
+          "measurement": "live"
+        },
+        {
+          "checkId": "agentic-search-specific",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 3,
+          "isBonus": false,
+          "message": "External agentic search index not yet probed (excluded from score)",
+          "measurement": "live"
+        },
+        {
+          "checkId": "chatgpt-app-listed",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "ChatGPT App Directory listing unverified (bonus skipped)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "mcp-registry-listed",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Listed in the official MCP Registry as com.stripe/mcp",
+          "evidence": {
+            "server": "com.stripe/mcp"
+          },
+          "measurement": "presence"
+        },
+        {
+          "checkId": "skills-sh-listed",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Agent skills listed on skills.sh (stripe/ai/stripe-best-practices)",
+          "evidence": {
+            "skill": "stripe/ai/stripe-best-practices"
+          },
+          "measurement": "presence"
+        },
+        {
+          "checkId": "agentic-search-usecase",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 6,
+          "isBonus": false,
+          "message": "Held at N/A (unscored) pending noise reduction per ARS 3.0 spec",
+          "measurement": "live"
+        }
+      ]
+    },
+    "access": {
+      "layer": "access",
+      "name": "Layer 2: Access & Understanding",
+      "baseEarned": 16,
+      "bonusEarned": 3,
+      "totalEarned": 19,
+      "baseMax": 30,
+      "statusText": "Needs attention",
+      "applicable": true,
+      "coverage": 0.8235294117647058,
+      "lowConfidence": false,
+      "checks": [
+        {
+          "checkId": "content-no-js",
+          "status": "pass",
+          "earnedPoints": 3,
+          "maxPoints": 3,
+          "isBonus": false,
+          "message": "Zero-JS readability confirmed (13536 chars prose, 2% density, valid h1)",
+          "evidence": {
+            "proseChars": 13536,
+            "jsDependent": true
+          },
+          "measurement": "content"
+        },
+        {
+          "checkId": "page-token-budget",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Extracted text (13536 chars) stays within 100k character budget",
+          "measurement": "content"
+        },
+        {
+          "checkId": "anti-spa-404",
+          "status": "pass",
+          "earnedPoints": 2,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "Authentic HTTP 404 returned for nonexistent canary URL (no SPA leak)",
+          "evidence": {
+            "canaryStatus": 404
+          },
+          "measurement": "live"
+        },
+        {
+          "checkId": "llms-txt-exists",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Found /llms.txt documentation context index",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "llms-txt-formatting",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "llms.txt formatting does not meet ARS 3.0 standards (# heading, >=5 lines, markdown links, 100-30000 chars)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "llms-txt-links-resolve",
+          "status": "pass",
+          "earnedPoints": 2,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "7/8 sampled llms.txt links resolve to real content",
+          "evidence": {
+            "sampled": 8,
+            "resolved": 7,
+            "broken": [
+              "https://stripe.com/payments/payment-methods"
+            ]
+          },
+          "measurement": "live"
+        },
+        {
+          "checkId": "llms-txt-graph-reachability",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "llms.txt is present as an orphan file but not linked from navigation/footer (crawlers frequently bypass orphan indexes)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "markdown-negotiation",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Server does not return markdown when requested via Accept: text/markdown",
+          "measurement": "live"
+        },
+        {
+          "checkId": "markdown-negotiation-vary",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Vary: Accept header not present (bonus skipped)",
+          "measurement": "live"
+        },
+        {
+          "checkId": "markdown-url-fallback",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "Direct .md URL twin not detected (bonus skipped)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "markdown-alternate-link",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "No <link rel=\"alternate\" type=\"text/markdown\"> on the homepage (bonus skipped)",
+          "measurement": "live"
+        },
+        {
+          "checkId": "markdown-html-parity",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "Markdown negotiation not active (parity check skipped)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "crosspage-policy-consistency",
+          "status": "pass",
+          "earnedPoints": 2,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "Cross-page policies and constraints are semantically consistent (no conflicting terms detected)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "nojs-fact-integrity",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "API endpoints or authentication credentials require client-side JavaScript execution to render",
+          "measurement": "content"
+        },
+        {
+          "checkId": "code-fence-validity",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Markdown code fences are balanced and properly closed",
+          "measurement": "content"
+        },
+        {
+          "checkId": "openapi-spec",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 7,
+          "isBonus": false,
+          "message": "Missing OpenAPI 3.x machine specification (/openapi.json)",
+          "remediation": {
+            "title": "Generate OpenAPI 3.1 Specification",
+            "file": "public/openapi.json",
+            "diffSnippet": [
+              "+ {",
+              "+   \"openapi\": \"3.1.0\",",
+              "+   \"info\": { \"title\": \"Acme API\", \"version\": \"1.0.0\" },",
+              "+   \"paths\": {}",
+              "+ }"
+            ],
+            "fixCommand": "glintbase remediate openapi.json"
+          },
+          "measurement": "presence"
+        },
+        {
+          "checkId": "developer-portal",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 6,
+          "isBonus": false,
+          "message": "No self-serve developer portal (/developers or /docs) detected",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "api-catalog-rfc9727",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "RFC 9727 API catalog not published (bonus skipped)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "ssl-tls-enforced",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "HTTPS enforced with TLS",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "http2-support",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "HTTP/2 ALPN transport not yet probed (excluded from score)",
+          "measurement": "live"
+        },
+        {
+          "checkId": "cors-headers",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "CORS Access-Control-Allow-Origin header not present on root",
+          "measurement": "content"
+        },
+        {
+          "checkId": "compression-gzip-br",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Payload compression enabled (gzip)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "clean-semantic-html",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Clean semantic HTML landmarks present",
+          "measurement": "content"
+        },
+        {
+          "checkId": "heading-hierarchy",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Valid heading progression",
+          "measurement": "content"
+        },
+        {
+          "checkId": "meta-description-quality",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Authoritative meta description found",
+          "measurement": "content"
+        },
+        {
+          "checkId": "json-ld-structured-data",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "JSON-LD schema.org structured metadata found",
+          "measurement": "content"
+        },
+        {
+          "checkId": "sitemap-xml-present",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "sitemap.xml not accessible at root",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "charset-utf8-declared",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Explicit UTF-8 charset declaration verified",
+          "measurement": "content"
+        },
+        {
+          "checkId": "canonical-url-present",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Canonical URL tag verified",
+          "measurement": "content"
+        },
+        {
+          "checkId": "content-type-charset",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Accurate Content-Type header with charset: text/html; charset=utf-8",
+          "measurement": "content"
+        },
+        {
+          "checkId": "etag-caching",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "ETag caching header missing on response",
+          "measurement": "content"
+        },
+        {
+          "checkId": "cache-control-headers",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Cache-Control headers not configured",
+          "measurement": "content"
+        },
+        {
+          "checkId": "response-latency-p95",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "TTFB response time: 1283ms",
+          "measurement": "live"
+        },
+        {
+          "checkId": "status-code-accuracy",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "HTTP response code 200 accurately reflects available resource",
+          "measurement": "live"
+        },
+        {
+          "checkId": "text-density-ratio",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Text density ratio: 2%",
+          "measurement": "content"
+        },
+        {
+          "checkId": "pagination-rel-links",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Collection pagination rel links not yet probed (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "link-header-canonical",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Link header machine twin not declared (bonus skipped)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "dns-caa-record",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "DNS CAA security records not yet probed (excluded from score)",
+          "measurement": "live"
+        },
+        {
+          "checkId": "security-headers-csp",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Security headers present (CSP/nosniff/referrer-policy)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "security-txt-rfc9116",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "RFC 9116 security.txt not published (bonus skipped)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "llms-full-txt-present",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Optional llms-full.txt omitted (bonus)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "markdown-table-syntax",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Markdown table syntax compliance not yet probed (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "relative-link-resolution",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Relative link crawler traversal not yet probed (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "image-alt-prose",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Image alt text coverage not yet probed (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "plain-text-accessible",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "Plain text documentation representation not yet probed (excluded from score)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "anti-crawler-challenge-free",
+          "status": "pass",
+          "earnedPoints": 2,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "Homepage served content without a captcha or JS challenge",
+          "measurement": "live"
+        },
+        {
+          "checkId": "robots-edge-consistency",
+          "earnedPoints": 0,
+          "maxPoints": 0,
+          "isBonus": true,
+          "status": "pass",
+          "message": "The edge served the homepage, as robots.txt allows",
+          "measurement": "live"
+        }
+      ]
+    },
+    "usability": {
+      "layer": "usability",
+      "name": "Layer 3: Usability & Interoperability",
+      "baseEarned": 24,
+      "bonusEarned": 1,
+      "totalEarned": 25,
+      "baseMax": 35,
+      "statusText": "Needs attention",
+      "applicable": true,
+      "coverage": 0.3170731707317073,
+      "lowConfidence": true,
+      "checks": [
+        {
+          "checkId": "mcp-server-card",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "No MCP Server Card found (AI Catalog, <endpoint>/server-card or legacy well-known path)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-server-manifest",
+          "status": "pass",
+          "earnedPoints": 2,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "MCP server endpoint found at https://mcp.stripe.com",
+          "evidence": {
+            "endpoint": "https://mcp.stripe.com",
+            "rpcEndpoint": "https://mcp.stripe.com",
+            "hasServerCard": false,
+            "authGated": true
+          },
+          "measurement": "presence"
+        },
+        {
+          "checkId": "mcp-tools-listing",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 3,
+          "isBonus": false,
+          "message": "tools/list requires authentication; agents cannot discover tools before signing in",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-tools-breadth",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 3,
+          "isBonus": false,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-tools-focus",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 3,
+          "isBonus": true,
+          "message": "Skipped for Product archetype (Product MCP requires breadth)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-tools-schema-strict",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-tools-readonly-hint",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-tools-destructive-hint",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-tools-menu-size",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-tools-schema-dialect",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-auth-scope-challenge",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "WWW-Authenticate challenge does not name a scope",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-auth-requirement",
+          "status": "pass",
+          "earnedPoints": 2,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "Product MCP requires auth and advertises it via WWW-Authenticate",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-transport-streamable",
+          "status": "pass",
+          "earnedPoints": 3,
+          "maxPoints": 3,
+          "isBonus": false,
+          "message": "Streamable HTTP endpoint at https://mcp.stripe.com answered with an auth challenge",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-transport-sse",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "No legacy SSE stream served on GET",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-app-registry",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 4,
+          "isBonus": true,
+          "message": "MCP App UI resource schemas not probed (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-apps-ui-quality",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 4,
+          "isBonus": true,
+          "message": "MCP App HTML profile compliance not probed (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-view-csp",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 4,
+          "isBonus": true,
+          "message": "MCP View CSP frame-ancestors not yet probed (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-prompts-listing",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-resources-listing",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-logging-notifications",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 0,
+          "isBonus": true,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-protocol-version",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-protocol-modern",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-wire-compatibility",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-error-reporting",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "MCP server requires authentication; tools could not be inspected anonymously",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-honest-schemas",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "No zero-argument tool annotated readOnlyHint: true to exercise safely",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-ssrf-guard",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "SSRF guard not probed (requires sending private-network URLs to the server)",
+          "measurement": "live"
+        },
+        {
+          "checkId": "mcp-sampling-support",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 0,
+          "isBonus": true,
+          "message": "MCP sampling is a client capability; not probed (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "mcp-roots-support",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 0,
+          "isBonus": true,
+          "message": "MCP roots is a client capability; not probed (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-structure",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "auth.md not published (bonus skipped)",
+          "remediation": {
+            "title": "Generate WorkOS auth.md Handbook",
+            "file": "public/auth.md",
+            "diffSnippet": [
+              "+ # Machine Authentication Guide",
+              "+ ## 1. Discover Endpoints",
+              "+ ## 2. Pick a Method (service_auth / bearer)",
+              "+ ## 3. Register Machine Client",
+              "+ ## 4. Token Claim Protocol",
+              "+ ## 5. Token Exchange Grant",
+              "+ ## 6. Use Bearer Token",
+              "+ ## 7. Auth Errors",
+              "+ ## 8. Token Revocation"
+            ],
+            "fixCommand": "glintbase remediate auth.md"
+          },
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-stage-discover",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Stage 1 (Discover Endpoints) missing (no auth.md published)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-stage-methods",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Stage 2 (Pick a Method) missing (no auth.md published)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-stage-register",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Stage 3 (Client Registration with curl/JSON) missing (no auth.md published)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-stage-claim",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Stage 4 (Token Claim Protocol) missing (no auth.md published)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-stage-exchange",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Stage 5 (Token Exchange) missing (no auth.md published)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-stage-use",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Stage 6 (Bearer Token Usage) missing (no auth.md published)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-stage-errors",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Stage 7 (Auth Errors) missing (no auth.md published)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-stage-revocation",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Stage 8 (Revocation) missing (no auth.md published)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-md-walkthrough-simulation",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "PRM -> AS metadata walkthrough not available (bonus skipped)",
+          "measurement": "live"
+        },
+        {
+          "checkId": "agent-auth-www-authenticate",
+          "status": "pass",
+          "earnedPoints": 1,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "WWW-Authenticate challenge links resource metadata (RFC 9728)",
+          "measurement": "live"
+        },
+        {
+          "checkId": "oauth-rfc8414-metadata",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "RFC 8414 metadata not found (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "oauth-rfc9728-prm",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "RFC 9728 PRM not published (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-bearer-token-support",
+          "status": "pass",
+          "earnedPoints": 2,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "Authorization: Bearer usage declared (PRM, WWW-Authenticate, or auth.md)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "auth-scoped-permissions",
+          "status": "warn",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "No scopes_supported declared in OAuth metadata",
+          "measurement": "content"
+        },
+        {
+          "checkId": "webmcp",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 5,
+          "isBonus": true,
+          "message": "WebMCP in-browser tools not declared (bonus skipped)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "webmcp-model-context",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "modelContext omitted (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "webmcp-form-attributes",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "Form tool attributes omitted (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "webmcp-js-registration",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "WebMCP top-level JS registration omitted (bonus skipped)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-operation-ids",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-json-schemas",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-error-schemas",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-idempotency-keys",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-rate-limit-headers",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-curl-examples",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-code-samples",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-versioning-in-uri",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-search-endpoint",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-rfc7807-problem-details",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-pagination-cursor",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-webhook-declarations",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-openapi-3-1-strict",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-sdk-documentation",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": false,
+          "message": "OpenAPI specification not detected (excluded from score)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-error-actionability",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "Error payload actionability not yet probed (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-bulk-batch-operations",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "Bulk batch endpoints not probed (bonus)",
+          "measurement": "content"
+        },
+        {
+          "checkId": "api-sandbox-environment",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "Public testnet sandbox URL not probed (bonus)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "api-graphql-schema",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "GraphQL schema not probed (bonus)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "api-grpc-reflection",
+          "status": "na",
+          "earnedPoints": 0,
+          "maxPoints": 1,
+          "isBonus": true,
+          "message": "gRPC reflection not probed (bonus)",
+          "measurement": "presence"
+        }
+      ]
+    },
+    "payments": {
+      "layer": "payments",
+      "name": "Layer 4: Payments & Machine Commerce",
+      "baseEarned": 0,
+      "bonusEarned": 0,
+      "totalEarned": 0,
+      "baseMax": 0,
+      "statusText": "Remediate",
+      "applicable": false,
+      "coverage": 1,
+      "lowConfidence": false,
+      "checks": [
+        {
+          "checkId": "acp-support",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 3,
+          "isBonus": true,
+          "message": "Skipped for devtool archetype (non-commerce)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "acp-delegate-payment",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 3,
+          "isBonus": true,
+          "message": "Skipped for devtool archetype (non-commerce)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "ucp-support",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 3,
+          "isBonus": true,
+          "message": "Skipped for devtool archetype (non-commerce)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "ap2-support",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 3,
+          "isBonus": true,
+          "message": "Skipped for devtool archetype (non-commerce)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "x402-support",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "Skipped for devtool archetype (non-commerce)",
+          "measurement": "presence"
+        },
+        {
+          "checkId": "mpp-support",
+          "status": "skip",
+          "earnedPoints": 0,
+          "maxPoints": 2,
+          "isBonus": true,
+          "message": "Skipped for devtool archetype (non-commerce)",
+          "measurement": "presence"
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "checkId": "robots-ai-policy-quality",
+      "status": "pass",
+      "earnedPoints": 2,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "robots.txt permits AI answer engines (claudebot, gptbot, perplexitybot, google-extended, anthropic-ai, cohere-ai, oai-searchbot)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "robots-oai-searchbot",
+      "status": "pass",
+      "earnedPoints": 2,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "robots.txt explicitly permits or does not restrict OAI-SearchBot for search-indexed agent answers",
+      "measurement": "content"
+    },
+    {
+      "checkId": "ard-catalog",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Missing /.well-known/ard.json (ARD v0.91) specification",
+      "evidence": {},
+      "remediation": {
+        "title": "Generate Agent Resource Discovery (ard.json)",
+        "file": "public/.well-known/ard.json",
+        "diffSnippet": [
+          "+ {",
+          "+   \"$schema\": \"https://agentcard.org/v0.91/ard.json\",",
+          "+   \"id\": \"urn:air:stripe.com:main\",",
+          "+   \"name\": \"stripe\",",
+          "+   \"capabilities\": [\"tools\", \"context\"]",
+          "+ }"
+        ],
+        "fixCommand": "glintbase remediate ard.json"
+      },
+      "measurement": "presence"
+    },
+    {
+      "checkId": "ai-catalog-published",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Agent-Card WG ai-catalog.json not published (bonus skipped)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "poppy-discovery",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 0,
+      "isBonus": true,
+      "message": "No /.well-known/poppy.json (emerging; not scored)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "ard-entries-valid",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "Catalog entries validation skipped (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "ard-trust-manifest",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "No cryptographic trust manifest declared (bonus skipped)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "registry-branding",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "MCP manifest branding missing or incomplete at /.well-known/mcp/manifest.json",
+      "measurement": "content"
+    },
+    {
+      "checkId": "wikipedia-presence",
+      "status": "pass",
+      "earnedPoints": 4,
+      "maxPoints": 4,
+      "isBonus": true,
+      "message": "Wikidata official website claim (P856) confirmed mapped to stripe.com",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "npm-sdk-package",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Official SDK/CLI package \"stripe\" links back to stripe.com",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "agent-rules-repo",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Agent rules files are only checked when scanning a local codebase",
+      "measurement": "declared"
+    },
+    {
+      "checkId": "agent-plugins-repo",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "No agent-plugins.org manifest declared (bonus skipped)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "brand-search-accuracy",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 3,
+      "isBonus": false,
+      "message": "External brand search accuracy not yet probed (excluded from score)",
+      "measurement": "live"
+    },
+    {
+      "checkId": "agentic-search-specific",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 3,
+      "isBonus": false,
+      "message": "External agentic search index not yet probed (excluded from score)",
+      "measurement": "live"
+    },
+    {
+      "checkId": "chatgpt-app-listed",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "ChatGPT App Directory listing unverified (bonus skipped)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "mcp-registry-listed",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Listed in the official MCP Registry as com.stripe/mcp",
+      "evidence": {
+        "server": "com.stripe/mcp"
+      },
+      "measurement": "presence"
+    },
+    {
+      "checkId": "skills-sh-listed",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Agent skills listed on skills.sh (stripe/ai/stripe-best-practices)",
+      "evidence": {
+        "skill": "stripe/ai/stripe-best-practices"
+      },
+      "measurement": "presence"
+    },
+    {
+      "checkId": "agentic-search-usecase",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 6,
+      "isBonus": false,
+      "message": "Held at N/A (unscored) pending noise reduction per ARS 3.0 spec",
+      "measurement": "live"
+    },
+    {
+      "checkId": "content-no-js",
+      "status": "pass",
+      "earnedPoints": 3,
+      "maxPoints": 3,
+      "isBonus": false,
+      "message": "Zero-JS readability confirmed (13536 chars prose, 2% density, valid h1)",
+      "evidence": {
+        "proseChars": 13536,
+        "jsDependent": true
+      },
+      "measurement": "content"
+    },
+    {
+      "checkId": "page-token-budget",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Extracted text (13536 chars) stays within 100k character budget",
+      "measurement": "content"
+    },
+    {
+      "checkId": "anti-spa-404",
+      "status": "pass",
+      "earnedPoints": 2,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "Authentic HTTP 404 returned for nonexistent canary URL (no SPA leak)",
+      "evidence": {
+        "canaryStatus": 404
+      },
+      "measurement": "live"
+    },
+    {
+      "checkId": "llms-txt-exists",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Found /llms.txt documentation context index",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "llms-txt-formatting",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "llms.txt formatting does not meet ARS 3.0 standards (# heading, >=5 lines, markdown links, 100-30000 chars)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "llms-txt-links-resolve",
+      "status": "pass",
+      "earnedPoints": 2,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "7/8 sampled llms.txt links resolve to real content",
+      "evidence": {
+        "sampled": 8,
+        "resolved": 7,
+        "broken": [
+          "https://stripe.com/payments/payment-methods"
+        ]
+      },
+      "measurement": "live"
+    },
+    {
+      "checkId": "llms-txt-graph-reachability",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "llms.txt is present as an orphan file but not linked from navigation/footer (crawlers frequently bypass orphan indexes)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "markdown-negotiation",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Server does not return markdown when requested via Accept: text/markdown",
+      "measurement": "live"
+    },
+    {
+      "checkId": "markdown-negotiation-vary",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Vary: Accept header not present (bonus skipped)",
+      "measurement": "live"
+    },
+    {
+      "checkId": "markdown-url-fallback",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "Direct .md URL twin not detected (bonus skipped)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "markdown-alternate-link",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "No <link rel=\"alternate\" type=\"text/markdown\"> on the homepage (bonus skipped)",
+      "measurement": "live"
+    },
+    {
+      "checkId": "markdown-html-parity",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "Markdown negotiation not active (parity check skipped)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "crosspage-policy-consistency",
+      "status": "pass",
+      "earnedPoints": 2,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "Cross-page policies and constraints are semantically consistent (no conflicting terms detected)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "nojs-fact-integrity",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "API endpoints or authentication credentials require client-side JavaScript execution to render",
+      "measurement": "content"
+    },
+    {
+      "checkId": "code-fence-validity",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Markdown code fences are balanced and properly closed",
+      "measurement": "content"
+    },
+    {
+      "checkId": "openapi-spec",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 7,
+      "isBonus": false,
+      "message": "Missing OpenAPI 3.x machine specification (/openapi.json)",
+      "remediation": {
+        "title": "Generate OpenAPI 3.1 Specification",
+        "file": "public/openapi.json",
+        "diffSnippet": [
+          "+ {",
+          "+   \"openapi\": \"3.1.0\",",
+          "+   \"info\": { \"title\": \"Acme API\", \"version\": \"1.0.0\" },",
+          "+   \"paths\": {}",
+          "+ }"
+        ],
+        "fixCommand": "glintbase remediate openapi.json"
+      },
+      "measurement": "presence"
+    },
+    {
+      "checkId": "developer-portal",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 6,
+      "isBonus": false,
+      "message": "No self-serve developer portal (/developers or /docs) detected",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "api-catalog-rfc9727",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "RFC 9727 API catalog not published (bonus skipped)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "ssl-tls-enforced",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "HTTPS enforced with TLS",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "http2-support",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "HTTP/2 ALPN transport not yet probed (excluded from score)",
+      "measurement": "live"
+    },
+    {
+      "checkId": "cors-headers",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "CORS Access-Control-Allow-Origin header not present on root",
+      "measurement": "content"
+    },
+    {
+      "checkId": "compression-gzip-br",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Payload compression enabled (gzip)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "clean-semantic-html",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Clean semantic HTML landmarks present",
+      "measurement": "content"
+    },
+    {
+      "checkId": "heading-hierarchy",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Valid heading progression",
+      "measurement": "content"
+    },
+    {
+      "checkId": "meta-description-quality",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Authoritative meta description found",
+      "measurement": "content"
+    },
+    {
+      "checkId": "json-ld-structured-data",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "JSON-LD schema.org structured metadata found",
+      "measurement": "content"
+    },
+    {
+      "checkId": "sitemap-xml-present",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "sitemap.xml not accessible at root",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "charset-utf8-declared",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Explicit UTF-8 charset declaration verified",
+      "measurement": "content"
+    },
+    {
+      "checkId": "canonical-url-present",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Canonical URL tag verified",
+      "measurement": "content"
+    },
+    {
+      "checkId": "content-type-charset",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Accurate Content-Type header with charset: text/html; charset=utf-8",
+      "measurement": "content"
+    },
+    {
+      "checkId": "etag-caching",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "ETag caching header missing on response",
+      "measurement": "content"
+    },
+    {
+      "checkId": "cache-control-headers",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Cache-Control headers not configured",
+      "measurement": "content"
+    },
+    {
+      "checkId": "response-latency-p95",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "TTFB response time: 1283ms",
+      "measurement": "live"
+    },
+    {
+      "checkId": "status-code-accuracy",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "HTTP response code 200 accurately reflects available resource",
+      "measurement": "live"
+    },
+    {
+      "checkId": "text-density-ratio",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Text density ratio: 2%",
+      "measurement": "content"
+    },
+    {
+      "checkId": "pagination-rel-links",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Collection pagination rel links not yet probed (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "link-header-canonical",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Link header machine twin not declared (bonus skipped)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "dns-caa-record",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "DNS CAA security records not yet probed (excluded from score)",
+      "measurement": "live"
+    },
+    {
+      "checkId": "security-headers-csp",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Security headers present (CSP/nosniff/referrer-policy)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "security-txt-rfc9116",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "RFC 9116 security.txt not published (bonus skipped)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "llms-full-txt-present",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Optional llms-full.txt omitted (bonus)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "markdown-table-syntax",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Markdown table syntax compliance not yet probed (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "relative-link-resolution",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Relative link crawler traversal not yet probed (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "image-alt-prose",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Image alt text coverage not yet probed (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "plain-text-accessible",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "Plain text documentation representation not yet probed (excluded from score)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "anti-crawler-challenge-free",
+      "status": "pass",
+      "earnedPoints": 2,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "Homepage served content without a captcha or JS challenge",
+      "measurement": "live"
+    },
+    {
+      "checkId": "robots-edge-consistency",
+      "earnedPoints": 0,
+      "maxPoints": 0,
+      "isBonus": true,
+      "status": "pass",
+      "message": "The edge served the homepage, as robots.txt allows",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-server-card",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "No MCP Server Card found (AI Catalog, <endpoint>/server-card or legacy well-known path)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-server-manifest",
+      "status": "pass",
+      "earnedPoints": 2,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "MCP server endpoint found at https://mcp.stripe.com",
+      "evidence": {
+        "endpoint": "https://mcp.stripe.com",
+        "rpcEndpoint": "https://mcp.stripe.com",
+        "hasServerCard": false,
+        "authGated": true
+      },
+      "measurement": "presence"
+    },
+    {
+      "checkId": "mcp-tools-listing",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 3,
+      "isBonus": false,
+      "message": "tools/list requires authentication; agents cannot discover tools before signing in",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-tools-breadth",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 3,
+      "isBonus": false,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-tools-focus",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 3,
+      "isBonus": true,
+      "message": "Skipped for Product archetype (Product MCP requires breadth)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-tools-schema-strict",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-tools-readonly-hint",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-tools-destructive-hint",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-tools-menu-size",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-tools-schema-dialect",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-auth-scope-challenge",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "WWW-Authenticate challenge does not name a scope",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-auth-requirement",
+      "status": "pass",
+      "earnedPoints": 2,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "Product MCP requires auth and advertises it via WWW-Authenticate",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-transport-streamable",
+      "status": "pass",
+      "earnedPoints": 3,
+      "maxPoints": 3,
+      "isBonus": false,
+      "message": "Streamable HTTP endpoint at https://mcp.stripe.com answered with an auth challenge",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-transport-sse",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "No legacy SSE stream served on GET",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-app-registry",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 4,
+      "isBonus": true,
+      "message": "MCP App UI resource schemas not probed (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-apps-ui-quality",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 4,
+      "isBonus": true,
+      "message": "MCP App HTML profile compliance not probed (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-view-csp",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 4,
+      "isBonus": true,
+      "message": "MCP View CSP frame-ancestors not yet probed (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-prompts-listing",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-resources-listing",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-logging-notifications",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 0,
+      "isBonus": true,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-protocol-version",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-protocol-modern",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-wire-compatibility",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-error-reporting",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "MCP server requires authentication; tools could not be inspected anonymously",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-honest-schemas",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "No zero-argument tool annotated readOnlyHint: true to exercise safely",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-ssrf-guard",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "SSRF guard not probed (requires sending private-network URLs to the server)",
+      "measurement": "live"
+    },
+    {
+      "checkId": "mcp-sampling-support",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 0,
+      "isBonus": true,
+      "message": "MCP sampling is a client capability; not probed (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "mcp-roots-support",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 0,
+      "isBonus": true,
+      "message": "MCP roots is a client capability; not probed (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-structure",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "auth.md not published (bonus skipped)",
+      "remediation": {
+        "title": "Generate WorkOS auth.md Handbook",
+        "file": "public/auth.md",
+        "diffSnippet": [
+          "+ # Machine Authentication Guide",
+          "+ ## 1. Discover Endpoints",
+          "+ ## 2. Pick a Method (service_auth / bearer)",
+          "+ ## 3. Register Machine Client",
+          "+ ## 4. Token Claim Protocol",
+          "+ ## 5. Token Exchange Grant",
+          "+ ## 6. Use Bearer Token",
+          "+ ## 7. Auth Errors",
+          "+ ## 8. Token Revocation"
+        ],
+        "fixCommand": "glintbase remediate auth.md"
+      },
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-stage-discover",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Stage 1 (Discover Endpoints) missing (no auth.md published)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-stage-methods",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Stage 2 (Pick a Method) missing (no auth.md published)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-stage-register",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Stage 3 (Client Registration with curl/JSON) missing (no auth.md published)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-stage-claim",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Stage 4 (Token Claim Protocol) missing (no auth.md published)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-stage-exchange",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Stage 5 (Token Exchange) missing (no auth.md published)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-stage-use",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Stage 6 (Bearer Token Usage) missing (no auth.md published)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-stage-errors",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Stage 7 (Auth Errors) missing (no auth.md published)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-stage-revocation",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Stage 8 (Revocation) missing (no auth.md published)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-md-walkthrough-simulation",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "PRM -> AS metadata walkthrough not available (bonus skipped)",
+      "measurement": "live"
+    },
+    {
+      "checkId": "agent-auth-www-authenticate",
+      "status": "pass",
+      "earnedPoints": 1,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "WWW-Authenticate challenge links resource metadata (RFC 9728)",
+      "measurement": "live"
+    },
+    {
+      "checkId": "oauth-rfc8414-metadata",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "RFC 8414 metadata not found (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "oauth-rfc9728-prm",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "RFC 9728 PRM not published (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-bearer-token-support",
+      "status": "pass",
+      "earnedPoints": 2,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "Authorization: Bearer usage declared (PRM, WWW-Authenticate, or auth.md)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "auth-scoped-permissions",
+      "status": "warn",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "No scopes_supported declared in OAuth metadata",
+      "measurement": "content"
+    },
+    {
+      "checkId": "webmcp",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 5,
+      "isBonus": true,
+      "message": "WebMCP in-browser tools not declared (bonus skipped)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "webmcp-model-context",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "modelContext omitted (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "webmcp-form-attributes",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "Form tool attributes omitted (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "webmcp-js-registration",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "WebMCP top-level JS registration omitted (bonus skipped)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-operation-ids",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-json-schemas",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-error-schemas",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-idempotency-keys",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-rate-limit-headers",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-curl-examples",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-code-samples",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-versioning-in-uri",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-search-endpoint",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-rfc7807-problem-details",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-pagination-cursor",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-webhook-declarations",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-openapi-3-1-strict",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-sdk-documentation",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": false,
+      "message": "OpenAPI specification not detected (excluded from score)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-error-actionability",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "Error payload actionability not yet probed (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-bulk-batch-operations",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "Bulk batch endpoints not probed (bonus)",
+      "measurement": "content"
+    },
+    {
+      "checkId": "api-sandbox-environment",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "Public testnet sandbox URL not probed (bonus)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "api-graphql-schema",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "GraphQL schema not probed (bonus)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "api-grpc-reflection",
+      "status": "na",
+      "earnedPoints": 0,
+      "maxPoints": 1,
+      "isBonus": true,
+      "message": "gRPC reflection not probed (bonus)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "acp-support",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 3,
+      "isBonus": true,
+      "message": "Skipped for devtool archetype (non-commerce)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "acp-delegate-payment",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 3,
+      "isBonus": true,
+      "message": "Skipped for devtool archetype (non-commerce)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "ucp-support",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 3,
+      "isBonus": true,
+      "message": "Skipped for devtool archetype (non-commerce)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "ap2-support",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 3,
+      "isBonus": true,
+      "message": "Skipped for devtool archetype (non-commerce)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "x402-support",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "Skipped for devtool archetype (non-commerce)",
+      "measurement": "presence"
+    },
+    {
+      "checkId": "mpp-support",
+      "status": "skip",
+      "earnedPoints": 0,
+      "maxPoints": 2,
+      "isBonus": true,
+      "message": "Skipped for devtool archetype (non-commerce)",
+      "measurement": "presence"
+    }
+  ],
+  "remediations": [
+    {
+      "id": "ard-catalog",
+      "layer": "discovery",
+      "severity": "high",
+      "title": "Generate Agent Resource Discovery (ard.json)",
+      "description": "Missing /.well-known/ard.json (ARD v0.91) specification",
+      "fixCommand": "glintbase remediate ard.json",
+      "targetFile": "public/.well-known/ard.json",
+      "diffSnippet": "+ {\n+   \"$schema\": \"https://agentcard.org/v0.91/ard.json\",\n+   \"id\": \"urn:air:stripe.com:main\",\n+   \"name\": \"stripe\",\n+   \"capabilities\": [\"tools\", \"context\"]\n+ }"
+    },
+    {
+      "id": "openapi-spec",
+      "layer": "access",
+      "severity": "high",
+      "title": "Generate OpenAPI 3.1 Specification",
+      "description": "Missing OpenAPI 3.x machine specification (/openapi.json)",
+      "fixCommand": "glintbase remediate openapi.json",
+      "targetFile": "public/openapi.json",
+      "diffSnippet": "+ {\n+   \"openapi\": \"3.1.0\",\n+   \"info\": { \"title\": \"Acme API\", \"version\": \"1.0.0\" },\n+   \"paths\": {}\n+ }"
+    }
+  ],
+  "evidence": {
+    "targetReachable": true,
+    "checksRegistered": 137,
+    "checksEvaluated": 57,
+    "baseCoverage": 0.5575221238938053,
+    "lowConfidenceLayers": [
+      "discovery",
+      "usability"
+    ],
+    "homepageBlocked": false
+  },
+  "gates": [],
+  "uncappedScore": 66,
+  "aiEvaluations": {
+    "llms.txt": {
+      "passed": true,
+      "score": 100,
+      "evaluatedWithAi": false,
+      "summary": "llms.txt adheres to structural format requirements.",
+      "issues": [],
+      "recommendations": []
+    }
+  },
+  "intelligence": "Deterministic AST & Probes Engine (Offline)",
+  "durationMs": 51698
+}
