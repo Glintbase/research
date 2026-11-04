@@ -3,7 +3,9 @@
  * SOAR Edition 2 cohort rule (PREREGISTRATION.md §2).
  *
  *   node harness/cohort_snapshot.mjs snapshot   # GitHub stars for every candidate owner, dated
- *   node harness/cohort_snapshot.mjs select     # top 15 per category -> data/cohort/cohort.csv
+ *   node harness/cohort_snapshot.mjs correct    # re-query owner handles fixed under replacement rule 1
+ *   node harness/cohort_snapshot.mjs select     # ranking.csv: top 15 per category selected, rest reserve
+ *   node harness/cohort_snapshot.mjs build      # cohort.csv after logged replacements, with docs roots
  *
  * Stars = the most-starred public, non-fork repository owned by the candidate's official GitHub
  * account, from the GitHub search API (`user:<owner> fork:false`, sorted by stars).
@@ -11,7 +13,7 @@
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const STUDY = join(dirname(fileURLToPath(import.meta.url)), "..");
 const COHORT = join(STUDY, "data", "cohort");
@@ -95,10 +97,31 @@ async function snapshot() {
   console.log(`snapshot: ${rows.length} candidates -> ${SNAP}`);
 }
 
+/**
+ * Replacement rule 1: a declared owner handle that does not exist or does not match is corrected once,
+ * from data/cohort/owner_corrections.csv, and the corrected handle is looked up by the same query.
+ */
+async function correct() {
+  const fixes = readCsv(join(COHORT, "owner_corrections.csv"));
+  const snap = JSON.parse(readFileSync(SNAP, "utf8"));
+  snap.corrections ??= [];
+  for (const f of fixes) {
+    if (snap.corrections.some((c) => c.platform_id === f.platform_id && c.github_owner === f.corrected_owner && c.http_status === 200)) continue;
+    const r = await topRepo(f.corrected_owner);
+    const row = snap.rows.find((x) => x.platform_id === f.platform_id);
+    snap.corrections.push({ platform_id: f.platform_id, category: row?.category, github_owner: f.corrected_owner, corrected_from: f.declared_owner, fetched_at: new Date().toISOString(), ...r });
+    console.log(`${f.platform_id}: ${f.declared_owner} -> ${f.corrected_owner}: ${r.stars} ${r.repo}`);
+    await new Promise((res) => setTimeout(res, 7000));
+  }
+  writeFileSync(SNAP, JSON.stringify(snap, null, 2));
+}
+
 function select() {
   const pool = readCsv(join(COHORT, "candidate_pool.csv"));
   const snap = JSON.parse(readFileSync(SNAP, "utf8"));
   const byId = new Map(snap.rows.map((r) => [r.platform_id, r]));
+  for (const c of snap.corrections ?? []) byId.set(c.platform_id, c);
+  for (const c of pool) if (byId.get(c.platform_id)?.corrected_from) c.github_owner = byId.get(c.platform_id).github_owner;
   const out = [];
   for (const cat of [...new Set(pool.map((c) => c.category))]) {
     const ranked = pool
@@ -129,11 +152,34 @@ function select() {
   if (bad.length) console.log("no valid owner:", bad.map((r) => r.platform_id).join(", "));
 }
 
-const cmd = process.argv[2];
-mkdirSync(COHORT, { recursive: true });
-if (cmd === "snapshot") await snapshot();
-else if (cmd === "select") select();
-else {
-  console.error("usage: cohort_snapshot.mjs snapshot|select");
-  process.exit(1);
+/**
+ * cohort.csv = per category, the first 15 ranked candidates not removed in data/cohort/replacements.csv
+ * (rules 2-4, logged with evidence), with the docs entry point from data/cohort/docs_roots.csv.
+ */
+function build() {
+  const ranking = readCsv(join(COHORT, "ranking.csv"));
+  const repl = existsSync(join(COHORT, "replacements.csv")) ? readCsv(join(COHORT, "replacements.csv")) : [];
+  const removed = new Set(repl.map((r) => r.platform_id));
+  const docs = new Map(readCsv(join(COHORT, "docs_roots.csv")).map((d) => [d.platform_id, d.docs_root]));
+  const out = [];
+  for (const cat of [...new Set(ranking.map((r) => r.category))]) {
+    const picked = ranking.filter((r) => r.category === cat && r.status !== "no_valid_owner" && !removed.has(r.platform_id)).slice(0, PER_CATEGORY);
+    for (const r of picked) out.push({ platform_id: r.platform_id, name: r.name, category: cat, rank: r.rank, stars: r.stars, homepage: r.homepage, docs_root: docs.get(r.platform_id) ?? "", replacement: r.status === "reserve" ? "yes" : "" });
+  }
+  const cols = Object.keys(out[0]);
+  writeFileSync(join(COHORT, "cohort.csv"), [cols.join(","), ...out.map((r) => cols.map((c) => csvCell(r[c])).join(","))].join("\n") + "\n");
+  console.log(`cohort: ${out.length} platforms (${out.filter((r) => r.replacement).length} replacements); missing docs_root: ${out.filter((r) => !r.docs_root).map((r) => r.platform_id).join(", ") || "none"}`);
+}
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const cmd = process.argv[2];
+  mkdirSync(COHORT, { recursive: true });
+  if (cmd === "snapshot") await snapshot();
+  else if (cmd === "correct") await correct();
+  else if (cmd === "select") select();
+  else if (cmd === "build") build();
+  else {
+    console.error("usage: cohort_snapshot.mjs snapshot|correct|select|build");
+    process.exit(1);
+  }
 }

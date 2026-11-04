@@ -1,0 +1,162 @@
+category,rank,platform_id,name,homepage,github_owner,top_repo,stars,stars_fetched_at,status
+sandboxes_compute,1,daytona,Daytona,https://www.daytona.io,daytonaio,daytonaio/daytona,71383,2026-11-04T06:32:36.592Z,selected
+sandboxes_compute,2,e2b,E2B,https://e2b.dev,e2b-dev,e2b-dev/awesome-ai-agents,30783,2026-11-04T06:32:20.648Z,selected
+sandboxes_compute,3,digitalocean,DigitalOcean,https://www.digitalocean.com,digitalocean,digitalocean/nginxconfig.io,28250,2026-11-04T06:34:46.513Z,selected
+sandboxes_compute,4,gitpod,Ona (Gitpod),https://ona.com,gitpod-io,gitpod-io/gitpod,13803,2026-11-04T06:35:34.921Z,selected
+sandboxes_compute,5,codesandbox,CodeSandbox,https://codesandbox.io,codesandbox,codesandbox/codesandbox-client,13660,2026-11-04T06:34:14.886Z,selected
+sandboxes_compute,6,fly,Fly.io,https://fly.io,superfly,superfly/litefs,4914,2026-11-04T06:32:52.383Z,selected
+sandboxes_compute,7,linode,Akamai Cloud (Linode),https://www.linode.com,linode,linode/apl-core,2255,2026-11-04T06:35:11.262Z,selected
+sandboxes_compute,8,hetzner,Hetzner Cloud,https://www.hetzner.com,hetznercloud,hetznercloud/cli,1858,2026-11-04T06:34:54.394Z,selected
+sandboxes_compute,9,beam,Beam,https://www.beam.cloud,beam-cloud,beam-cloud/beta9,1843,2026-11-04T06:33:24.288Z,selected
+sandboxes_compute,10,modal,Modal,https://modal.com,modal-labs,modal-labs/modal-examples,1290,2026-11-04T06:32:28.773Z,selected
+sandboxes_compute,11,baseten,Baseten,https://www.baseten.co,basetenlabs,basetenlabs/truss,1228,2026-11-04T06:33:16.321Z,selected
+sandboxes_compute,12,scaleway,Scaleway,https://www.scaleway.com,scaleway,scaleway/scaleway-cli,1020,2026-11-04T06:35:19.137Z,selected
+sandboxes_compute,13,fal,fal,https://fal.ai,fal-ai,fal-ai/fal,980,2026-11-04T06:33:08.264Z,selected
+sandboxes_compute,14,freestyle,Freestyle,https://www.freestyle.sh,freestyle-sh,freestyle-sh/Adorable,832,2026-11-04T06:35:27.018Z,selected
+sandboxes_compute,15,vultr,Vultr,https://www.vultr.com,vultr,vultr/vultr-cli,563,2026-11-04T06:35:02.340Z,selected
+sandboxes_compute,16,cerebrium,Cerebrium,https://www.cerebrium.ai,CerebriumAI,CerebriumAI/examples,526,2026-11-04T06:33:32.309Z,reserve
+sandboxes_compute,17,runpod,RunPod,https://www.runpod.io,runpod,runpod/runpodctl,464,2026-11-04T06:33:00.339Z,reserve
+sandboxes_compute,18,lambda,Lambda,https://lambda.ai,lambdal,lambdal/deeplearning-benchmark,286,2026-11-04T06:33:58.910Z,reserve
+sandboxes_compute,19,valtown,Val Town,https://www.val.town,val-town,val-town/codemirror-ts,242,2026-11-04T06:34:38.767Z,reserve
+sandboxes_compute,20,vastai,Vast.ai,https://vast.ai,vast-ai,vast-ai/vast-cli,230,2026-11-04T06:34:06.867Z,reserve
+sandboxes_compute,21,koyeb,Koyeb,https://www.koyeb.com,koyeb,koyeb/koyeb-cli,75,2026-11-04T06:33:40.345Z,reserve
+sandboxes_compute,22,northflank,Northflank,https://northflank.com,northflank,northflank/skills,39,2026-11-04T06:33:49.760Z,reserve
+sandboxes_compute,23,runloop,Runloop,https://www.runloop.ai,runloopai,runloopai/api-client-ts,34,2026-11-04T06:32:44.465Z,reserve
+sandboxes_compute,24,blaxel,Blaxel,https://blaxel.ai,blaxel-ai,blaxel-ai/sandbox,30,2026-11-04T06:34:30.929Z,reserve
+sandboxes_compute,25,morph,Morph Cloud,https://cloud.morph.so,morph-labs,morph-labs/morph-typescript-sdk,4,2026-11-04T06:34:23.102Z,reserve
+llm_apis,1,deepseek,DeepSeek,https://www.deepseek.com,deepseek-ai,deepseek-ai/deepseek-harness,271553,2026-11-04T06:36:38.758Z,selected
+llm_apis,2,huggingface,Hugging Face Inference Providers,https://huggingface.co,huggingface,huggingface/transformers,168519,2026-11-04T06:37:18.022Z,selected
+llm_apis,3,openai,OpenAI,https://openai.com,openai,openai/codex,133071,2026-11-04T06:35:42.769Z,selected
+llm_apis,4,gemini,Google Gemini API,https://ai.google.dev,google-gemini,google-gemini/gemini-cli,108713,2026-11-04T06:35:50.569Z,selected
+llm_apis,5,xai,xAI,https://x.ai,xai-org,xai-org/grok-1,52219,2026-11-04T06:36:46.833Z,selected
+llm_apis,6,zai,Z.ai,https://z.ai,zai-org,zai-org/ChatGLM-6B,40881,2026-11-04T06:37:58.260Z,selected
+llm_apis,7,alibaba,Alibaba Cloud Model Studio (Qwen),https://www.alibabacloud.com,QwenLM,QwenLM/qwen-code,28987,2026-11-04T06:39:31.650Z,selected
+llm_apis,8,moonshot,Moonshot AI (Kimi),https://platform.moonshot.ai,MoonshotAI,MoonshotAI/kimi-cli,11422,2026-11-04T06:37:50.448Z,selected
+llm_apis,9,mistral,Mistral AI,https://mistral.ai,mistralai,mistralai/mistral-inference,10823,2026-11-04T06:35:58.344Z,selected
+llm_apis,10,replicate,Replicate,https://replicate.com,replicate,replicate/cog,9495,2026-11-04T06:37:10.175Z,selected
+llm_apis,11,together,Together AI,https://www.together.ai,togethercomputer,togethercomputer/OpenChatKit,8979,2026-11-04T06:36:23.052Z,selected
+llm_apis,12,perplexity,Perplexity API,https://www.perplexity.ai,perplexityai,perplexityai/bumblebee,5137,2026-11-04T20:23:59.609Z,selected
+llm_apis,13,cohere,Cohere,https://cohere.com,cohere-ai,cohere-ai/cohere-toolkit,3171,2026-11-04T06:36:06.181Z,selected
+llm_apis,14,writer,Writer,https://writer.com,writer,writer/writer-framework,1450,2026-11-04T06:39:23.747Z,selected
+llm_apis,15,groq,Groq,https://groq.com,groq,groq/groq-api-cookbook,1433,2026-11-04T06:36:15.204Z,selected
+llm_apis,16,cerebras,Cerebras Inference,https://www.cerebras.ai,Cerebras,Cerebras/modelzoo,1210,2026-11-04T06:37:34.892Z,reserve
+llm_apis,17,novita,Novita AI,https://novita.ai,novitalabs,novitalabs/AnimateAnyone,787,2026-11-04T06:38:06.277Z,reserve
+llm_apis,18,openrouter,OpenRouter,https://openrouter.ai,OpenRouterTeam,OpenRouterTeam/ai-sdk-provider,694,2026-11-04T06:37:02.400Z,reserve
+llm_apis,19,sambanova,SambaNova Cloud,https://sambanova.ai,sambanova,sambanova/bloomchat,581,2026-11-04T06:38:52.601Z,reserve
+llm_apis,20,nebius,Nebius AI Studio,https://nebius.com,nebius,nebius/soperator,456,2026-11-04T06:39:00.339Z,reserve
+llm_apis,21,ai21,AI21 Labs,https://www.ai21.com,AI21Labs,AI21Labs/in-context-ralm,295,2026-11-04T06:37:27.097Z,reserve
+llm_apis,22,fireworks,Fireworks AI,https://fireworks.ai,fw-ai-external,fw-ai-external/cookbook,239,2026-11-04T20:23:50.792Z,reserve
+llm_apis,23,voyage,Voyage AI,https://www.voyageai.com,voyage-ai,voyage-ai/voyageai-python,114,2026-11-04T06:39:15.926Z,reserve
+llm_apis,24,hyperbolic,Hyperbolic,https://hyperbolic.xyz,HyperbolicLabs,HyperbolicLabs/Hyperbolic-AgentKit,112,2026-11-04T06:39:08.151Z,reserve
+llm_apis,25,deepinfra,DeepInfra,https://deepinfra.com,deepinfra,deepinfra/deepctl,39,2026-11-04T06:37:42.672Z,reserve
+vector_search,1,elastic,Elastic Cloud,https://www.elastic.co,elastic,elastic/elasticsearch,78483,2026-11-04T06:40:36.080Z,selected
+vector_search,2,meilisearch,Meilisearch,https://www.meilisearch.com,meilisearch,meilisearch/meilisearch,59773,2026-11-04T06:40:59.820Z,selected
+vector_search,3,zilliz,Zilliz Cloud (Milvus),https://zilliz.com,milvus-io,milvus-io/milvus,46580,2026-11-04T06:40:03.685Z,selected
+vector_search,4,qdrant,Qdrant,https://qdrant.tech,qdrant,qdrant/qdrant,35420,2026-11-04T06:39:55.471Z,selected
+vector_search,5,chroma,Chroma,https://www.trychroma.com,chroma-core,chroma-core/chroma,29628,2026-11-04T06:40:11.638Z,selected
+vector_search,6,typesense,Typesense,https://typesense.org,typesense,typesense/typesense,27076,2026-11-04T06:40:51.873Z,selected
+vector_search,7,brave,Brave Search API,https://brave.com/search/api,brave,brave/brave-browser,24097,2026-11-04T06:41:54.385Z,selected
+vector_search,8,jina,Jina AI,https://jina.ai,jina-ai,jina-ai/serve,21849,2026-11-04T06:41:46.642Z,selected
+vector_search,9,weaviate,Weaviate,https://weaviate.io,weaviate,weaviate/weaviate,16936,2026-11-04T06:39:47.441Z,selected
+vector_search,10,lancedb,LanceDB,https://lancedb.com,lancedb,lancedb/lancedb,11841,2026-11-04T06:40:19.415Z,selected
+vector_search,11,orama,Orama,https://orama.com,oramasearch,oramasearch/orama,10596,2026-11-04T06:42:18.333Z,selected
+vector_search,12,activeloop,Activeloop Deep Lake,https://www.activeloop.ai,activeloopai,activeloopai/deeplake,9264,2026-11-04T06:42:49.902Z,selected
+vector_search,13,vespa,Vespa Cloud,https://vespa.ai,vespa-engine,vespa-engine/vespa,7159,2026-11-04T06:41:07.645Z,selected
+vector_search,14,algolia,Algolia,https://www.algolia.com,algolia,algolia/places,5288,2026-11-04T06:40:43.909Z,selected
+vector_search,15,exa,Exa,https://exa.ai,exa-labs,exa-labs/exa-mcp-server,5209,2026-11-04T06:41:31.043Z,selected
+vector_search,16,marqo,Marqo,https://www.marqo.ai,marqo-ai,marqo-ai/marqo,5025,2026-11-04T06:41:15.504Z,reserve
+vector_search,17,mixedbread,Mixedbread,https://www.mixedbread.com,mixedbread-ai,mixedbread-ai/mgrep,4430,2026-11-04T06:42:41.924Z,reserve
+vector_search,18,vectara,Vectara,https://www.vectara.com,vectara,vectara/hallucination-leaderboard,3324,2026-11-04T06:41:23.229Z,reserve
+vector_search,19,pinecone,Pinecone,https://www.pinecone.io,pinecone-io,pinecone-io/examples,3050,2026-11-04T06:39:39.675Z,reserve
+vector_search,20,trieve,Trieve,https://trieve.ai,devflowinc,devflowinc/trieve,2723,2026-11-04T06:42:10.268Z,reserve
+vector_search,21,tavily,Tavily,https://www.tavily.com,tavily-ai,tavily-ai/tavily-mcp,2476,2026-11-04T06:41:38.823Z,reserve
+vector_search,22,kagi,Kagi Search API,https://kagi.com,kagisearch,kagisearch/smallweb,1726,2026-11-04T06:42:34.100Z,reserve
+vector_search,23,serpapi,SerpApi,https://serpapi.com,serpapi,serpapi/awesome-seo-tools,1142,2026-11-04T06:42:02.367Z,reserve
+vector_search,24,turbopuffer,turbopuffer,https://turbopuffer.com,turbopuffer,turbopuffer/turbopuffer-python,186,2026-11-04T06:40:27.243Z,reserve
+vector_search,25,youcom,You.com API,https://you.com,youdotcom-oss,youdotcom-oss/agent-skills,98,2026-11-04T06:42:26.209Z,reserve
+backend_infra,1,vercel,Vercel,https://vercel.com,vercel,vercel/next.js,143254,2026-11-04T06:44:23.504Z,selected
+backend_infra,2,supabase,Supabase,https://supabase.com,supabase,supabase/supabase,114497,2026-11-04T06:42:57.768Z,selected
+backend_infra,3,redis,Redis Cloud,https://redis.io,redis,redis/redis,77172,2026-11-04T06:45:28.697Z,selected
+backend_infra,4,upstash,Upstash,https://upstash.com,upstash,upstash/context7,64159,2026-11-04T06:43:39.788Z,selected
+backend_infra,5,cloudflare,Cloudflare,https://www.cloudflare.com,cloudflare,cloudflare/security-audit-skill,58374,2026-11-04T06:44:45.258Z,selected
+backend_infra,6,appwrite,Appwrite,https://appwrite.io,appwrite,appwrite/appwrite,57860,2026-11-04T06:43:58.231Z,selected
+backend_infra,7,prisma,Prisma Postgres,https://www.prisma.io,prisma,prisma/orm,47662,2026-11-04T06:46:01.592Z,selected
+backend_infra,8,sentry,Sentry,https://sentry.io,getsentry,getsentry/sentry,45705,2026-11-04T06:46:10.419Z,selected
+backend_infra,9,posthog,PostHog,https://posthog.com,PostHog,PostHog/posthog,40631,2026-11-04T06:46:19.582Z,selected
+backend_infra,10,hasura,Hasura,https://hasura.io,hasura,hasura/graphql-engine,32125,2026-11-04T06:45:53.685Z,selected
+backend_infra,11,mongodb,MongoDB Atlas,https://www.mongodb.com,mongodb,mongodb/mongo,28672,2026-11-04T06:45:20.747Z,selected
+backend_infra,12,turso,Turso,https://turso.tech,tursodatabase,tursodatabase/turso,25144,2026-11-04T06:43:30.389Z,selected
+backend_infra,13,neon,Neon,https://neon.com,neondatabase,neondatabase/neon,23294,2026-11-04T06:43:13.424Z,selected
+backend_infra,14,auth0,Auth0,https://auth0.com,auth0,auth0/node-jsonwebtoken,18182,2026-11-04T06:44:14.231Z,selected
+backend_infra,15,trigger,Trigger.dev,https://trigger.dev,triggerdotdev,triggerdotdev/trigger.dev,16706,2026-11-04T06:46:38.220Z,selected
+backend_infra,16,convex,Convex,https://www.convex.dev,convex,convex/convex-backend,12776,2026-11-04T20:23:42.940Z,reserve
+backend_infra,17,firebase,Firebase,https://firebase.google.com,firebase,firebase/functions-samples,12212,2026-11-04T06:43:05.670Z,reserve
+backend_infra,18,nhost,Nhost,https://nhost.io,nhost,nhost/nhost,9375,2026-11-04T06:45:44.558Z,reserve
+backend_infra,19,xata,Xata,https://xata.io,xataio,xataio/pgroll,6613,2026-11-04T06:45:36.543Z,reserve
+backend_infra,20,inngest,Inngest,https://www.inngest.com,inngest,inngest/inngest,6017,2026-11-04T06:46:28.234Z,reserve
+backend_infra,21,netlify,Netlify,https://www.netlify.com,netlify,netlify/gotrue,4502,2026-11-04T06:44:36.221Z,reserve
+backend_infra,22,railway,Railway,https://railway.com,railwayapp,railwayapp/nixpacks,3557,2026-11-04T06:44:53.524Z,reserve
+backend_infra,23,heroku,Heroku,https://www.heroku.com,heroku,heroku/react-refetch,3398,2026-11-04T06:45:12.608Z,reserve
+backend_infra,24,workos,WorkOS,https://workos.com,workos,workos/authkit,3358,2026-11-04T06:46:46.541Z,reserve
+backend_infra,25,clerk,Clerk,https://clerk.com,clerk,clerk/javascript,1776,2026-11-04T06:44:06.139Z,reserve
+backend_infra,26,planetscale,PlanetScale,https://planetscale.com,planetscale,planetscale/database-js,1207,2026-11-04T06:43:21.557Z,reserve
+backend_infra,27,render,Render,https://render.com,render-oss,render-oss/render-mcp-server,185,2026-11-04T06:45:04.366Z,reserve
+backend_infra,28,stytch,Stytch,https://stytch.com,stytchauth,stytchauth/sqx,128,2026-11-04T06:46:54.446Z,reserve
+agent_tooling,1,n8n,n8n,https://n8n.io,n8n-io,n8n-io/n8n,209503,2026-11-04T06:49:55.077Z,selected
+agent_tooling,2,firecrawl,Firecrawl,https://www.firecrawl.dev,firecrawl,firecrawl/firecrawl,198395,2026-11-04T06:47:44.336Z,selected
+agent_tooling,3,dify,Dify,https://dify.ai,langgenius,langgenius/dify,160366,2026-11-04T06:49:47.074Z,selected
+agent_tooling,4,langchain,LangChain (LangSmith API),https://www.langchain.com,langchain-ai,langchain-ai/langchain,148982,2026-11-04T06:47:03.717Z,selected
+agent_tooling,5,browseruse,Browser Use Cloud,https://browser-use.com,browser-use,browser-use/browser-use,119976,2026-11-04T06:47:52.506Z,selected
+agent_tooling,6,composio,Composio,https://composio.dev,ComposioHQ,ComposioHQ/awesome-claude-skills,78693,2026-11-04T06:47:27.574Z,selected
+agent_tooling,7,mem0,Mem0,https://mem0.ai,mem0ai,mem0ai/mem0,68364,2026-11-04T06:48:08.554Z,selected
+agent_tooling,8,crewai,CrewAI,https://www.crewai.com,crewAIInc,crewAIInc/crewAI,60471,2026-11-04T06:47:19.500Z,selected
+agent_tooling,9,flowise,Flowise,https://flowiseai.com,FlowiseAI,FlowiseAI/Flowise,55546,2026-11-04T06:50:04.356Z,selected
+agent_tooling,10,llamaindex,LlamaIndex (LlamaCloud),https://www.llamaindex.ai,run-llama,run-llama/llama_index,52798,2026-11-04T06:47:11.660Z,selected
+agent_tooling,11,langfuse,Langfuse,https://langfuse.com,langfuse,langfuse/langfuse,36979,2026-11-04T06:48:34.895Z,selected
+agent_tooling,12,zep,Zep,https://www.getzep.com,getzep,getzep/graphiti,32501,2026-11-04T06:48:18.051Z,selected
+agent_tooling,13,deepset,deepset (Haystack),https://www.deepset.ai,deepset-ai,deepset-ai/haystack,26924,2026-11-04T06:50:22.277Z,selected
+agent_tooling,14,apify,Apify,https://apify.com,apify,apify/crawlee,26327,2026-11-04T06:49:14.257Z,selected
+agent_tooling,15,browserbase,Browserbase,https://www.browserbase.com,browserbase,browserbase/stagehand,25936,2026-11-04T06:47:36.305Z,selected
+agent_tooling,16,letta,Letta,https://www.letta.com,letta-ai,letta-ai/letta,25344,2026-11-04T06:48:00.571Z,reserve
+agent_tooling,17,wandb,Weights & Biases,https://wandb.ai,wandb,wandb/openui,22728,2026-11-04T06:48:58.488Z,reserve
+agent_tooling,18,arize,Arize AI (Phoenix),https://arize.com,Arize-ai,Arize-ai/phoenix,12129,2026-11-04T06:48:50.648Z,reserve
+agent_tooling,19,steel,Steel,https://steel.dev,steel-dev,steel-dev/steel-browser,7918,2026-11-04T06:49:21.998Z,reserve
+agent_tooling,20,helicone,Helicone,https://www.helicone.ai,Helicone,Helicone/helicone,6259,2026-11-04T06:48:42.680Z,reserve
+agent_tooling,21,agentops,AgentOps,https://www.agentops.ai,AgentOps-AI,AgentOps-AI/agentops,5941,2026-11-04T06:48:26.016Z,reserve
+agent_tooling,22,hyperbrowser,Hyperbrowser,https://www.hyperbrowser.ai,hyperbrowserai,hyperbrowserai/hyperbrowser-app-examples,1945,2026-11-04T06:49:30.297Z,reserve
+agent_tooling,23,arcade,Arcade,https://www.arcade.dev,ArcadeAI,ArcadeAI/arcade-mcp,1078,2026-11-04T06:49:38.554Z,reserve
+agent_tooling,24,braintrust,Braintrust,https://www.braintrust.dev,braintrustdata,braintrustdata/autoevals,1070,2026-11-04T06:49:06.443Z,reserve
+agent_tooling,25,relevanceai,Relevance AI,https://relevanceai.com,RelevanceAI,RelevanceAI/vectorhub,560,2026-11-04T20:17:31.996Z,reserve
+agent_tooling,26,toolhouse,Toolhouse,https://toolhouse.ai,toolhouseai,toolhouseai/toolhouse-sdk-python,40,2026-11-04T20:17:23.398Z,reserve
+agent_tooling,27,smithery,Smithery,https://smithery.ai,smithery-ai,,,2026-11-04T06:50:13.340Z,no_valid_owner
+payments_comms,1,novu,Novu,https://novu.co,novuhq,novuhq/novu,40268,2026-11-04T20:21:19.527Z,selected
+payments_comms,2,square,Square,https://squareup.com,square,square/leakcanary,30004,2026-11-04T20:18:01.025Z,selected
+payments_comms,3,resend,Resend,https://resend.com,resend,resend/react-email,19910,2026-11-04T20:19:27.200Z,selected
+payments_comms,4,polar,Polar,https://polar.sh,polarsource,polarsource/polar,10462,2026-11-04T20:23:25.454Z,selected
+payments_comms,5,stream,Stream,https://getstream.io,GetStream,GetStream/Winds,9085,2026-11-04T20:21:52.212Z,selected
+payments_comms,6,mailgun,Mailgun,https://www.mailgun.com,mailgun,mailgun/transactional-email-templates,6918,2026-11-04T20:19:42.958Z,selected
+payments_comms,7,discord,Discord API,https://discord.com/developers,discord,discord/discord-api-docs,6527,2026-11-04T20:21:02.035Z,selected
+payments_comms,8,stripe,Stripe,https://stripe.com,stripe,stripe/stripe-node,4552,2026-11-04T20:17:41.072Z,selected
+payments_comms,9,slack,Slack Web API,https://api.slack.com,slackapi,slackapi/python-slack-sdk,4016,2026-11-04T20:20:54.093Z,selected
+payments_comms,10,paypal,PayPal,https://www.paypal.com,paypal,paypal/glamorous,3614,2026-11-04T20:17:52.885Z,selected
+payments_comms,11,postmark,Postmark,https://postmarkapp.com,ActiveCampaign,ActiveCampaign/postmark-templates,3192,2026-11-04T20:19:35.131Z,selected
+payments_comms,12,sendgrid,SendGrid,https://sendgrid.com,sendgrid,sendgrid/sendgrid-nodejs,3053,2026-11-04T20:19:19.359Z,selected
+payments_comms,13,pusher,Pusher,https://pusher.com,pusher,pusher/pusher-js,2225,2026-11-04T20:22:00.855Z,selected
+payments_comms,14,twilio,Twilio,https://www.twilio.com,twilio,twilio/twilio-python,2084,2026-11-04T20:19:11.392Z,selected
+payments_comms,15,lemonsqueezy,Lemon Squeezy,https://www.lemonsqueezy.com,lmsqueezy,lmsqueezy/wedges,1528,2026-11-04T20:18:39.263Z,selected
+payments_comms,16,vonage,Vonage,https://www.vonage.com,Vonage,Vonage/vonage-php-sdk-core,929,2026-11-04T20:19:51.129Z,reserve
+payments_comms,17,plivo,Plivo,https://www.plivo.com,plivo,plivo/voicechat,814,2026-11-04T20:19:59.029Z,reserve
+payments_comms,18,plaid,Plaid,https://plaid.com,plaid,plaid/quickstart,763,2026-11-04T20:18:23.060Z,reserve
+payments_comms,19,razorpay,Razorpay,https://razorpay.com,razorpay,razorpay/blade,664,2026-11-04T20:19:03.583Z,reserve
+payments_comms,20,wise,Wise Platform API,https://wise.com,transferwise,transferwise/pipelinewise,663,2026-11-04T20:23:34.232Z,reserve
+payments_comms,21,mollie,Mollie,https://www.mollie.com,mollie,mollie/mollie-api-php,605,2026-11-04T20:18:47.138Z,reserve
+payments_comms,22,lob,Lob,https://www.lob.com,lob,lob/generate-changelog,560,2026-11-04T20:23:17.258Z,reserve
+payments_comms,23,ably,Ably,https://ably.com,ably,ably/ably-pubsub-js,368,2026-11-04T20:23:05.907Z,reserve
+payments_comms,24,paddle,Paddle,https://www.paddle.com,PaddleHQ,PaddleHQ/paddle-nextjs-starter-kit,360,2026-11-04T20:18:31.205Z,reserve
+payments_comms,25,adyen,Adyen,https://www.adyen.com,Adyen,Adyen/adyen-web,258,2026-11-04T20:18:08.840Z,reserve
+payments_comms,26,brevo,Brevo,https://www.brevo.com,getbrevo,getbrevo/brevo-node,123,2026-11-04T20:21:36.614Z,reserve
+payments_comms,27,checkout,Checkout.com,https://www.checkout.com,checkout,checkout/frames-ios,106,2026-11-04T20:18:55.531Z,reserve
+payments_comms,28,courier,Courier,https://www.courier.com,trycourier,trycourier/courier-node,63,2026-11-04T20:21:44.377Z,reserve
+payments_comms,29,knock,Knock,https://knock.app,knocklabs,knocklabs/one_and_done,51,2026-11-04T20:21:10.567Z,reserve
+payments_comms,30,sinch,Sinch,https://www.sinch.com,sinch,sinch/node-red-conversation-api,41,2026-11-04T20:20:45.247Z,reserve
+payments_comms,31,loops,Loops,https://loops.so,loops-so,loops-so/cli,15,2026-11-04T20:21:27.669Z,reserve

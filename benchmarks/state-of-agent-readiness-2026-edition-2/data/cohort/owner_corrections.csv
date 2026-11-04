@@ -1,0 +1,4 @@
+platform_id,declared_owner,corrected_owner,evidence
+convex,get-convex,convex,"GitHub API: user get-convex not found (search 422); github.com/get-convex/convex-backend redirects to github.com/convex/convex-backend; org convex lists blog convex.dev (2026-11-04)"
+fireworks,fw-ai,fw-ai-external,"fw-ai has 2 public repos (one fork, one .github); github.com/fw-ai/cookbook redirects to github.com/fw-ai-external/cookbook (2026-11-04)"
+perplexity,ppl-ai,perplexityai,"ppl-ai has 0 public repos; perplexityai is the org with Perplexity's public repos, e.g. perplexityai/modelcontextprotocol (2026-11-04)"
