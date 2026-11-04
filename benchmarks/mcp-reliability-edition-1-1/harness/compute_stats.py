@@ -114,6 +114,10 @@ def analyse(rows: list[dict]) -> dict:
             "skills_list_ok_among_declaring": prop(sum(bool(r.get("skills_list_ok")) for r in ext_rows if r.get("declares_skills")),
                                                    sum(bool(r.get("declares_skills")) for r in ext_rows)),
             "extension_ids": dict(ext_counter.most_common(20)),
+            "hosts_declaring_skills": len({r["host"] for r in ext_rows if r.get("declares_skills")}),
+            "hosts_handshaken": len({r["host"] for r in ext_rows}),
+            "modern_hosts": len({r["host"] for r in hs if r["era"] == "modern"}),
+            "handshaken_hosts": len({r["host"] for r in hs}),
         },
         "server_card": {
             "n_fetched": len(cards),
@@ -123,6 +127,10 @@ def analyse(rows: list[dict]) -> dict:
             "valid_v1": prop(sum(bool(r.get("server_card_valid_v1")) for r in cards), len(cards)),
             "valid_v1_among_ok": prop(sum(bool(r.get("server_card_valid_v1")) for r in ok if "server_card_status" in r),
                                       sum("server_card_status" in r for r in ok)),
+            "hosts_with_valid_v1": len({r["host"] for r in cards if r.get("server_card_valid_v1")}),
+            "hosts_fetched": len({r["host"] for r in cards}),
+            "valid_v1_host_weighted_pct": host_weighted(lambda r: bool(r.get("server_card_valid_v1"))),
+            "largest_host_share_of_valid": (Counter(r["host"] for r in cards if r.get("server_card_valid_v1")).most_common(1) or [(None, 0)])[0][1],
             "media_type_among_json": dict(Counter(r.get("server_card_content_type") for r in cards if r.get("server_card_json")).most_common()),
         },
         "tools": {

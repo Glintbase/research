@@ -181,7 +181,11 @@
         "io.modelcontextprotocol/ui": 29,
         "io.modelcontextprotocol/skills": 9,
         "io.modelcontextprotocol/tasks": 3
-      }
+      },
+      "hosts_declaring_skills": 9,
+      "hosts_handshaken": 1052,
+      "modern_hosts": 231,
+      "handshaken_hosts": 1052
     },
     "server_card": {
       "n_fetched": 2834,
@@ -224,6 +228,10 @@
           14.2
         ]
       },
+      "hosts_with_valid_v1": 60,
+      "hosts_fetched": 2085,
+      "valid_v1_host_weighted_pct": 2.6,
+      "largest_host_share_of_valid": 184,
       "media_type_among_json": {
         "application/mcp-server-card+json": 242,
         "application/json": 42
