@@ -74,4 +74,7 @@ Public paths only, honest identity, robots obeyed, ≤ 15 requests per site, ≤
 
 ## Deviations
 
-*(none yet)*
+1. **2026-11-04, ~3 minutes into the crawl, before any analysis. Unreachable sites stop early; 32 sites in parallel instead of 16.**
+   - **Why:** the first 28 sites showed throughput of about 10 sites a minute (an ~11 h crawl), mostly because sites whose host doesn't resolve (e.g. bare CDN or API domains in the Tranco list) still received every planned request, each failing.
+   - **Change (crawler 1.0.1):** if `robots.txt` and the homepage both fail below HTTP (DNS, TLS, connect or timeout), the site's remaining requests are not sent. Such sites were already "unreachable" and excluded from every denominator, so no outcome changes. Parallelism went from 16 to 32 sites; the per-site limit (sequential, ≥ 1 s apart) is unchanged.
+   - **Data:** the 28 sites completed under 1.0.0 are kept (their records are a superset of what 1.0.1 would send). Only request outcome counts (error types) were looked at before this change.

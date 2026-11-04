@@ -56,7 +56,7 @@ DATA_DIR = CRAWL_DIR / "data"
 RAW_DIR = DATA_DIR / "raw"
 BENCH = CRAWL_DIR.parent
 
-HARNESS_VERSION = "1.0.0"
+HARNESS_VERSION = "1.0.1"  # 1.0.1: stop after robots + homepage fail below HTTP (Deviation 1)
 USER_AGENT = "GlintbaseResearch/1.0 (+https://glintbase.dev/research/bot; research@glintbase.dev)"
 TOKEN = "GlintbaseResearch"
 TIMEOUT_S = 15.0
@@ -65,6 +65,7 @@ RETRY_PAUSE_S = 10.0
 MAX_BODY = 1_000_000
 KEEP_BODY = 256_000
 E1_MAX, E3_MAX = 8, 15
+UNREACHABLE_ERRORS = {"dns_error", "tls_error", "connect_error", "timeout"}
 
 HTML_ACCEPT = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
 MD_ACCEPT = "text/markdown"
@@ -239,6 +240,16 @@ class Site:
         host = self.site
         await self.load_robots(host, both, "robots")
         home = await self.get("home_html", f"{self.origin}/", HTML_ACCEPT, both)
+        robots_rec = next(r for r in self.requests if r["step"] == "robots")
+        if "status" not in home and "status" not in robots_rec and not home.get("self_excluded") \
+                and home.get("error") in UNREACHABLE_ERRORS and robots_rec.get("error") in UNREACHABLE_ERRORS:
+            # Deviation 1: robots.txt and the homepage both failed below HTTP, so the site is unreachable
+            # and excluded from every denominator; its remaining requests are not sent.
+            for r in self.requests:
+                r.pop("_body", None)
+            return {"site": self.site, "in_e1": self.in_e1, "in_e3": self.in_e3, "requests": self.requests,
+                    "counts": self.counts, "harness_version": HARNESS_VERSION, "stopped_unreachable": True,
+                    "crawled_at": datetime.now(timezone.utc).isoformat()}
         home_body = home.get("_body", b"")
         lp = LinkParser()
         if home.get("status") and "html" in home.get("headers", {}).get("content-type", "").lower():
