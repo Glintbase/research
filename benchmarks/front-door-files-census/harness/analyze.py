@@ -78,7 +78,8 @@ def valid(name: str, body: str | None, site: str) -> tuple[bool, list[str]]:
         first = next((l for l in body.splitlines() if l.strip()), "")
         return first.startswith("# "), ([] if first.startswith("# ") else ["first line not '# '"])
     if name == "sitemap":
-        s = re.sub(r"^﻿?\s*(<\?xml[^>]*\?>\s*)?(<!--.*?-->\s*)*", "", body[:5000], flags=re.S)
+        # skip the XML prolog: declaration, processing instructions (e.g. xml-stylesheet) and comments
+        s = re.sub(r"^﻿?\s*((<\?[^>]*\?>|<!--.*?-->)\s*)*", "", body[:5000], flags=re.S)
         ok = s.startswith("<urlset") or s.startswith("<sitemapindex")
         return ok, ([] if ok else ["not urlset/sitemapindex"])
     return False, ["unknown"]
@@ -98,7 +99,10 @@ def outcome(name: str, kind: str, r: dict, control: dict | None) -> tuple[str, l
     is_html = "html" in ctype or bool(body and HTMLISH.match(body))
     if body is None:
         # bodies over 256 KB are not kept: a large XML sitemap is judged on its content type
-        ok, problems = (name == "sitemap" and "xml" in ctype and not is_html), ["body not kept"]
+        # (llms.txt: text/plain or text/markdown and not HTML; the first line can't be checked)
+        ok = (not is_html) and (("xml" in ctype) if name == "sitemap" else
+                                ctype.startswith(("text/plain", "text/markdown")) if name == "llms_txt" else False)
+        problems = ["body over 256 KB, judged on media type"]
     else:
         ok, problems = valid(name, body, "")
     if is_html:

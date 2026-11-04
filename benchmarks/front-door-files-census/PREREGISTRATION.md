@@ -78,3 +78,9 @@ Public paths only, honest identity, robots obeyed, ≤ 15 requests per site, ≤
    - **Why:** the first 28 sites showed throughput of about 10 sites a minute (an ~11 h crawl), mostly because sites whose host doesn't resolve (e.g. bare CDN or API domains in the Tranco list) still received every planned request, each failing.
    - **Change (crawler 1.0.1):** if `robots.txt` and the homepage both fail below HTTP (DNS, TLS, connect or timeout), the site's remaining requests are not sent. Such sites were already "unreachable" and excluded from every denominator, so no outcome changes. Parallelism went from 16 to 32 sites; the per-site limit (sequential, ≥ 1 s apart) is unchanged.
    - **Data:** the 28 sites completed under 1.0.0 were set aside (`data/raw_discarded_v1_0_0/`, unpublished) and re-crawled under 1.0.1 at the end of the crawl, because the connectivity log shows a total failure at 21:11:22Z during that first start. Only request outcome counts (error types) were looked at before this change.
+
+2. **2026-11-04, during the crawl, on partial data (~450 sites), before any analysis of results. Two validity-rule implementation fixes.** A spot-check of `invalid` outcomes found implementation errors against §4's rules, not rule changes:
+   - `sitemap.xml`: the XML prolog skip handled only the declaration, so sitemaps starting with an `<?xml-stylesheet …?>` processing instruction (common in WordPress) were marked invalid. The prolog skip now covers any processing instruction and comment.
+   - `llms.txt` over 256 KB: the crawler doesn't keep bodies over 256 KB, so these were marked invalid. They're now judged on media type (`text/plain` or `text/markdown`, not HTML) and flagged "body over 256 KB, judged on media type"; their count is reported.
+   The independent checker was given the same corrections.
+

@@ -96,7 +96,7 @@ function validFile(file, body) {
     case 'agent_card': return obj && !!j.name?.trim?.() && !!j.description?.trim?.() && Array.isArray(j.skills);
     case 'sig_directory': return obj && Array.isArray(j.keys) && j.keys.length > 0 && j.keys.every((k) => k && k.kty);
     case 'llms_txt': return !HTMLISH.test(body) && (body.split(/\r?\n/).find((l) => l.trim()) || '').startsWith('# ');
-    case 'sitemap': return /^\s*(<\?xml[^>]*\?>\s*)?(<!--[\s\S]*?-->\s*)*<(urlset|sitemapindex)/.test(body.replace(/^﻿/, '').slice(0, 5000));
+    case 'sitemap': return /^\s*((<\?[^>]*\?>|<!--[\s\S]*?-->)\s*)*<(urlset|sitemapindex)/.test(body.replace(/^﻿/, '').slice(0, 5000));
   }
   return false;
 }
@@ -113,7 +113,7 @@ async function e3(row) {
   else if (f.ctype.includes('html') || HTMLISH.test(f.body)) verdict = 'soft_404';
   else if (c.status === 200 && c.body === f.body) verdict = 'soft_404';
   else {
-    const ok = f.len > 300000 && row.file === 'sitemap' ? f.ctype.includes('xml') : validFile(row.file, f.body);
+    const ok = f.len > 300000 && row.file === 'sitemap' ? f.ctype.includes('xml') : f.len > 300000 && row.file === 'llms_txt' ? /^text\/(plain|markdown)/.test(f.ctype) : validFile(row.file, f.body);
     verdict = ok ? 'valid' : (c.status === 200 && c.ctype.split(';')[0] === f.ctype.split(';')[0] ? 'soft_404' : 'invalid');
   }
   return { verdict, status: f.status, ctype: f.ctype, control_status: c.status, note: f.error || '' };
