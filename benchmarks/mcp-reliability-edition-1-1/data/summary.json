@@ -1,0 +1,461 @@
+{
+  "round": "1",
+  "round_stats": {
+    "endpoints_total": 3000,
+    "excluded": 1,
+    "classified": 2999,
+    "distinct_hosts": 2244,
+    "largest_host_count": 261,
+    "primary_status": {
+      "ok": {
+        "k": 1665,
+        "n": 2999,
+        "pct": 55.5,
+        "ci95": [
+          53.7,
+          57.3
+        ]
+      },
+      "auth_compliant": {
+        "k": 720,
+        "n": 2999,
+        "pct": 24.0,
+        "ci95": [
+          22.5,
+          25.6
+        ]
+      },
+      "unreachable": {
+        "k": 165,
+        "n": 2999,
+        "pct": 5.5,
+        "ci95": [
+          4.7,
+          6.4
+        ]
+      },
+      "not_mcp": {
+        "k": 149,
+        "n": 2999,
+        "pct": 5.0,
+        "ci95": [
+          4.2,
+          5.8
+        ]
+      },
+      "auth_noncompliant": {
+        "k": 135,
+        "n": 2999,
+        "pct": 4.5,
+        "ci95": [
+          3.8,
+          5.3
+        ]
+      },
+      "payment_required": {
+        "k": 65,
+        "n": 2999,
+        "pct": 2.2,
+        "ci95": [
+          1.7,
+          2.8
+        ]
+      },
+      "server_error": {
+        "k": 49,
+        "n": 2999,
+        "pct": 1.6,
+        "ci95": [
+          1.2,
+          2.2
+        ]
+      },
+      "jsonrpc_error": {
+        "k": 21,
+        "n": 2999,
+        "pct": 0.7,
+        "ci95": [
+          0.5,
+          1.1
+        ]
+      },
+      "legacy_sse": {
+        "k": 16,
+        "n": 2999,
+        "pct": 0.5,
+        "ci95": [
+          0.3,
+          0.9
+        ]
+      },
+      "handshake_only": {
+        "k": 12,
+        "n": 2999,
+        "pct": 0.4,
+        "ci95": [
+          0.2,
+          0.7
+        ]
+      },
+      "modern_rejected": {
+        "k": 2,
+        "n": 2999,
+        "pct": 0.1,
+        "ci95": [
+          0.0,
+          0.2
+        ]
+      }
+    },
+    "primary_status_host_weighted_pct": {
+      "auth_compliant": 30.3,
+      "auth_noncompliant": 5.7,
+      "not_mcp": 5.5,
+      "ok": 46.3,
+      "unreachable": 7.1,
+      "payment_required": 1.3,
+      "server_error": 2.1,
+      "handshake_only": 0.3,
+      "jsonrpc_error": 0.6,
+      "modern_rejected": 0.1,
+      "legacy_sse": 0.7
+    },
+    "handshake": {
+      "n": 1677,
+      "modern": {
+        "k": 234,
+        "n": 1677,
+        "pct": 14.0,
+        "ci95": [
+          12.4,
+          15.7
+        ]
+      },
+      "dual_era_among_modern": {
+        "k": 63,
+        "n": 234,
+        "pct": 26.9,
+        "ci95": [
+          21.6,
+          32.9
+        ]
+      },
+      "protocol_versions_legacy": {
+        "2025-11-25": 706,
+        "2025-03-26": 483,
+        "2025-06-18": 170,
+        "2024-11-05": 69,
+        "2026-07-28": 15
+      }
+    },
+    "extensions": {
+      "n_handshaken_with_capabilities": 1677,
+      "any_extension": {
+        "k": 41,
+        "n": 1677,
+        "pct": 2.4,
+        "ci95": [
+          1.8,
+          3.3
+        ]
+      },
+      "declares_skills": {
+        "k": 9,
+        "n": 1677,
+        "pct": 0.5,
+        "ci95": [
+          0.3,
+          1.0
+        ]
+      },
+      "skills_list_ok_among_declaring": {
+        "k": 9,
+        "n": 9,
+        "pct": 100.0,
+        "ci95": [
+          70.1,
+          100.0
+        ]
+      },
+      "extension_ids": {
+        "io.modelcontextprotocol/ui": 29,
+        "io.modelcontextprotocol/skills": 9,
+        "io.modelcontextprotocol/tasks": 3
+      }
+    },
+    "server_card": {
+      "n_fetched": 2834,
+      "skipped": {
+        "unreachable": 165
+      },
+      "http_200": {
+        "k": 354,
+        "n": 2834,
+        "pct": 12.5,
+        "ci95": [
+          11.3,
+          13.8
+        ]
+      },
+      "json_object": {
+        "k": 284,
+        "n": 2834,
+        "pct": 10.0,
+        "ci95": [
+          9.0,
+          11.2
+        ]
+      },
+      "valid_v1": {
+        "k": 245,
+        "n": 2834,
+        "pct": 8.6,
+        "ci95": [
+          7.7,
+          9.7
+        ]
+      },
+      "valid_v1_among_ok": {
+        "k": 209,
+        "n": 1665,
+        "pct": 12.6,
+        "ci95": [
+          11.0,
+          14.2
+        ]
+      },
+      "media_type_among_json": {
+        "application/mcp-server-card+json": 242,
+        "application/json": 42
+      }
+    },
+    "tools": {
+      "endpoints_with_tools": 1663,
+      "tools_total": 30014,
+      "endpoints_all_tools_annotated": {
+        "k": 943,
+        "n": 1663,
+        "pct": 56.7,
+        "ci95": [
+          54.3,
+          59.1
+        ]
+      },
+      "endpoints_any_tool_annotated": {
+        "k": 969,
+        "n": 1663,
+        "pct": 58.3,
+        "ci95": [
+          55.9,
+          60.6
+        ]
+      },
+      "tools_annotated_pooled": {
+        "k": 17921,
+        "n": 30014,
+        "pct": 59.7,
+        "ci95": [
+          59.2,
+          60.3
+        ]
+      },
+      "endpoints_any_output_schema": {
+        "k": 519,
+        "n": 1663,
+        "pct": 31.2,
+        "ci95": [
+          29.0,
+          33.5
+        ]
+      },
+      "schema_bytes_per_tool": {
+        "n": 30014,
+        "median": 721,
+        "p90": 1202,
+        "max": 22977
+      },
+      "schema_bytes_per_endpoint_total": {
+        "median": 4390,
+        "p90": 41222
+      },
+      "error_in_channel_among_ok": {
+        "k": 1249,
+        "n": 1660,
+        "pct": 75.2,
+        "ci95": [
+          73.1,
+          77.3
+        ]
+      }
+    },
+    "max_requests_per_endpoint": 8
+  },
+  "paired_vs_edition1": {
+    "edition1_round": "production-mcp-reliability-crisis/data/round_2.jsonl (2026-10-12, headline)",
+    "ok": {
+      "outcome": "ok",
+      "n_pairs": 2999,
+      "edition1": {
+        "k": 1708,
+        "n": 2999,
+        "pct": 57.0,
+        "ci95": [
+          55.2,
+          58.7
+        ]
+      },
+      "edition1_1": {
+        "k": 1665,
+        "n": 2999,
+        "pct": 55.5,
+        "ci95": [
+          53.7,
+          57.3
+        ]
+      },
+      "lost_ed1_yes_now_no": 78,
+      "gained_ed1_no_now_yes": 35,
+      "mcnemar_exact_p": 0.0001
+    },
+    "modern_era": {
+      "outcome": "modern era among handshaken in both",
+      "n_pairs": 1648,
+      "edition1": {
+        "k": 208,
+        "n": 1648,
+        "pct": 12.6,
+        "ci95": [
+          11.1,
+          14.3
+        ]
+      },
+      "edition1_1": {
+        "k": 226,
+        "n": 1648,
+        "pct": 13.7,
+        "ci95": [
+          12.1,
+          15.5
+        ]
+      },
+      "lost_ed1_yes_now_no": 1,
+      "gained_ed1_no_now_yes": 19,
+      "mcnemar_exact_p": 0.0
+    },
+    "error_in_channel": {
+      "outcome": "in-channel canary error",
+      "n_pairs": 1698,
+      "edition1": {
+        "k": 1263,
+        "n": 1698,
+        "pct": 74.4,
+        "ci95": [
+          72.3,
+          76.4
+        ]
+      },
+      "edition1_1": {
+        "k": 1263,
+        "n": 1698,
+        "pct": 74.4,
+        "ci95": [
+          72.3,
+          76.4
+        ]
+      },
+      "lost_ed1_yes_now_no": 0,
+      "gained_ed1_no_now_yes": 0,
+      "mcnemar_exact_p": null
+    },
+    "auth_compliant": {
+      "outcome": "auth compliant among auth-gated in both",
+      "n_pairs": 837,
+      "edition1": {
+        "k": 694,
+        "n": 837,
+        "pct": 82.9,
+        "ci95": [
+          80.2,
+          85.3
+        ]
+      },
+      "edition1_1": {
+        "k": 705,
+        "n": 837,
+        "pct": 84.2,
+        "ci95": [
+          81.6,
+          86.5
+        ]
+      },
+      "lost_ed1_yes_now_no": 1,
+      "gained_ed1_no_now_yes": 12,
+      "mcnemar_exact_p": 0.0034
+    },
+    "unreachable": {
+      "outcome": "unreachable",
+      "n_pairs": 2999,
+      "edition1": {
+        "k": 142,
+        "n": 2999,
+        "pct": 4.7,
+        "ci95": [
+          4.0,
+          5.6
+        ]
+      },
+      "edition1_1": {
+        "k": 165,
+        "n": 2999,
+        "pct": 5.5,
+        "ci95": [
+          4.7,
+          6.4
+        ]
+      },
+      "lost_ed1_yes_now_no": 27,
+      "gained_ed1_no_now_yes": 50,
+      "mcnemar_exact_p": 0.0117
+    },
+    "transitions": {
+      "ok -> unreachable": 27,
+      "ok -> not_mcp": 23,
+      "unreachable -> ok": 15,
+      "auth_compliant -> unreachable": 13,
+      "auth_noncompliant -> auth_compliant": 12,
+      "auth_compliant -> not_mcp": 8,
+      "ok -> handshake_only": 8,
+      "ok -> server_error": 7,
+      "ok -> jsonrpc_error": 7,
+      "auth_compliant -> ok": 6,
+      "server_error -> ok": 6,
+      "unreachable -> auth_compliant": 6,
+      "handshake_only -> ok": 6,
+      "ok -> auth_compliant": 5,
+      "not_mcp -> unreachable": 4,
+      "auth_noncompliant -> unreachable": 4,
+      "auth_compliant -> server_error": 4,
+      "not_mcp -> auth_compliant": 3,
+      "unreachable -> not_mcp": 2,
+      "unreachable -> auth_noncompliant": 2,
+      "auth_noncompliant -> not_mcp": 2,
+      "auth_noncompliant -> server_error": 2,
+      "jsonrpc_error -> unreachable": 1,
+      "not_mcp -> modern_rejected": 1,
+      "server_error -> auth_compliant": 1,
+      "legacy_sse -> not_mcp": 1,
+      "not_mcp -> ok": 1,
+      "auth_compliant -> jsonrpc_error": 1,
+      "jsonrpc_error -> not_mcp": 1,
+      "ok -> payment_required": 1,
+      "jsonrpc_error -> ok": 1,
+      "unreachable -> legacy_sse": 1,
+      "auth_compliant -> auth_noncompliant": 1,
+      "unreachable -> payment_required": 1,
+      "handshake_only -> auth_noncompliant": 1,
+      "not_mcp -> server_error": 1,
+      "server_error -> legacy_sse": 1,
+      "payment_required -> unreachable": 1
+    }
+  }
+}

@@ -24,7 +24,7 @@ N = 30
 # Map the checker's coarser verdicts onto primary statuses it can confirm.
 VERDICT_OK = {
     "ok": {"ok"}, "handshake_only": {"handshake_only"}, "auth": {"auth_compliant", "auth_noncompliant"},
-    "unreachable": {"unreachable"}, "jsonrpc_error": {"jsonrpc_error", "modern_rejected"},
+    "unreachable": {"unreachable"}, "jsonrpc_error": {"jsonrpc_error"}, "modern_rejected": {"modern_rejected"},
     "payment_required": {"payment_required"}, "server_error": {"server_error"},
     "not_mcp_or_sse": {"not_mcp", "legacy_sse"},
 }

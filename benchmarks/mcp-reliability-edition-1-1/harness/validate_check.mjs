@@ -94,6 +94,12 @@ async function check(url) {
     else if (i.error) out.verdict = 'unreachable';
     else out.verdict = 'not_mcp_or_sse';
   }
+  if (era === 'modern' && !d.json?.result) {
+    // a -32020/-32021 rejection with no DiscoverResult: no handshake happened
+    out.era = era;
+    out.verdict = 'modern_rejected';
+    era = null;
+  }
   if (era) {
     out.era = era;
     out.extensions = caps && typeof caps.extensions === 'object' ? Object.keys(caps.extensions) : [];

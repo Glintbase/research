@@ -1,0 +1,182 @@
+[
+  {
+    "url": "https://gateway.pipeworx.io/arcgis-stlouiscounty/mcp",
+    "primary_status": "ok",
+    "declares_skills": false,
+    "server_card_valid_v1": true
+  },
+  {
+    "url": "https://gateway.pipeworx.io/leadconnector/mcp",
+    "primary_status": "ok",
+    "declares_skills": false,
+    "server_card_valid_v1": true
+  },
+  {
+    "url": "https://gateway.pipeworx.io/arcgis-tallahassee/mcp",
+    "primary_status": "ok",
+    "declares_skills": false,
+    "server_card_valid_v1": true
+  },
+  {
+    "url": "https://api.delx.ai/v1/mcp/protocol?src=registry",
+    "primary_status": "ok",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://gateway.pipeworx.io/arcgis-tampa/mcp",
+    "primary_status": "ok",
+    "declares_skills": false,
+    "server_card_valid_v1": true
+  },
+  {
+    "url": "https://gateway.pipeworx.io/itunes-search/mcp",
+    "primary_status": "ok",
+    "declares_skills": false,
+    "server_card_valid_v1": true
+  },
+  {
+    "url": "https://ausca.com/mcp",
+    "primary_status": "ok",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://api.heynimo.com/mcp-server",
+    "primary_status": "auth_compliant",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://bio.vet/mcp",
+    "primary_status": "unreachable",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://api.yliuai.com/mcp-apikey",
+    "primary_status": "not_mcp",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://mcp.textmine.com/mcp",
+    "primary_status": "auth_noncompliant",
+    "declares_skills": false,
+    "server_card_valid_v1": true
+  },
+  {
+    "url": "https://cyre-fraud-prediction.onrender.com/mcp",
+    "primary_status": "payment_required",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://mcp-auth.chirpwireless.io/mcp",
+    "primary_status": "server_error",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://gateway.pipeworx.io/passive-aggression/mcp",
+    "primary_status": "jsonrpc_error",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://mcp.nostos.market/sse",
+    "primary_status": "legacy_sse",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://agent-observatory-sensor.nolimit-observatory.workers.dev/s/notion-url-shape/mcp",
+    "primary_status": "handshake_only",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://axenomia.cl/mcp",
+    "primary_status": "modern_rejected",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://texaswaterdamagecost.com/mcp",
+    "primary_status": "ok",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://noon-ai.dyndns-server.com/video-anonymization-mcp",
+    "primary_status": "auth_compliant",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://determines-product-administration-farmer.trycloudflare.com",
+    "primary_status": "unreachable",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://crashstory-mcp-production.up.railway.app/sse",
+    "primary_status": "not_mcp",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://busymail.app/mcp",
+    "primary_status": "auth_noncompliant",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://api.m2mcent.com/defillama-tvl-tracker-mcp/sse",
+    "primary_status": "payment_required",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://mcp.midasprotocol.org/mcp",
+    "primary_status": "server_error",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://ask-ai-mcp-710575177112.asia-south1.run.app/mcp/",
+    "primary_status": "jsonrpc_error",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://yoauto.md/api/mcp/sse",
+    "primary_status": "legacy_sse",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://tttkmbb.com/mcp",
+    "primary_status": "handshake_only",
+    "declares_skills": false,
+    "server_card_valid_v1": true
+  },
+  {
+    "url": "https://jobily.gr/mcp",
+    "primary_status": "modern_rejected",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  },
+  {
+    "url": "https://gateway.pipeworx.io/arcgis-charleston/mcp",
+    "primary_status": "ok",
+    "declares_skills": false,
+    "server_card_valid_v1": true
+  },
+  {
+    "url": "https://glasp.co/api/mcp",
+    "primary_status": "auth_compliant",
+    "declares_skills": false,
+    "server_card_valid_v1": false
+  }
+]
