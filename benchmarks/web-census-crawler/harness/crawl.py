@@ -308,7 +308,8 @@ class Site:
         for key, (path, accept) in WELL_KNOWN.items():
             await self.get(f"wk_{key}", f"{self.origin}{path}", accept, ("e3",), keep_body=True)
         await self.get("llms_txt", f"{self.origin}/llms.txt", "text/plain, text/markdown;q=0.9, */*;q=0.1", ("e3",), keep_body=True)
-        await self.get("sitemap", f"{self.origin}/sitemap.xml", "application/xml, text/xml;q=0.9, */*;q=0.1", ("e3",))
+        await self.get("sitemap", f"{self.origin}/sitemap.xml", "application/xml, text/xml;q=0.9, */*;q=0.1", ("e3",),
+                       keep_body=True)
         tok = secrets.token_hex(8)
         await self.get("control_wk", f"{self.origin}/.well-known/glintbase-control-{tok}", "application/json, */*;q=0.1",
                        ("e3",), keep_body=True)
