@@ -1,6 +1,6 @@
 # State of Agent Readiness 2026 — Edition 2
 
-> **Status**: **Planned**, not started. Paused at design stage (2026-10-12) pending budget for ~900 agent runs. No data has been collected, no data files exist in this folder, and there are no results.
+> **Status**: **Pre-registered 2026-11-04** ([PREREGISTRATION.md](PREREGISTRATION.md)). Cohort snapshot, frozen scans and agent runs follow. There are no results yet.
 > **Authors**: Glintbase Research
 
 ---
@@ -28,7 +28,7 @@ Null and negative results will be published with the same prominence as positive
 | Repetitions | 3 per task × 2 current frontier models |
 | Analysis | Spearman ρ with bootstrap CIs; mixed-effects logistic regression (platform random effect); pre-specified exclusions |
 
-The full protocol lives in the internal research plan and will be copied here, frozen, before the first scan.
+The frozen protocol is [PREREGISTRATION.md](PREREGISTRATION.md). It supersedes the design summary above where they differ (Task A only, ARS `ars-3.3.1` predictors, 3 harnesses × 2 repetitions on Claude Haiku 5.5 plus a 30-platform Sonnet 5.5 arm).
 
 ## Related Work (third-party, not Glintbase work)
 

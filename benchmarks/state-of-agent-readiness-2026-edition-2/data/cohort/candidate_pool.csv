@@ -1,0 +1,162 @@
+category,platform_id,name,homepage,github_owner
+sandboxes_compute,e2b,E2B,https://e2b.dev,e2b-dev
+sandboxes_compute,modal,Modal,https://modal.com,modal-labs
+sandboxes_compute,daytona,Daytona,https://www.daytona.io,daytonaio
+sandboxes_compute,runloop,Runloop,https://www.runloop.ai,runloopai
+sandboxes_compute,fly,Fly.io,https://fly.io,superfly
+sandboxes_compute,runpod,RunPod,https://www.runpod.io,runpod
+sandboxes_compute,fal,fal,https://fal.ai,fal-ai
+sandboxes_compute,baseten,Baseten,https://www.baseten.co,basetenlabs
+sandboxes_compute,beam,Beam,https://www.beam.cloud,beam-cloud
+sandboxes_compute,cerebrium,Cerebrium,https://www.cerebrium.ai,CerebriumAI
+sandboxes_compute,koyeb,Koyeb,https://www.koyeb.com,koyeb
+sandboxes_compute,northflank,Northflank,https://northflank.com,northflank
+sandboxes_compute,lambda,Lambda,https://lambda.ai,lambdal
+sandboxes_compute,vastai,Vast.ai,https://vast.ai,vast-ai
+sandboxes_compute,codesandbox,CodeSandbox,https://codesandbox.io,codesandbox
+sandboxes_compute,morph,Morph Cloud,https://cloud.morph.so,morph-labs
+sandboxes_compute,blaxel,Blaxel,https://blaxel.ai,blaxel-ai
+sandboxes_compute,valtown,Val Town,https://www.val.town,val-town
+sandboxes_compute,digitalocean,DigitalOcean,https://www.digitalocean.com,digitalocean
+sandboxes_compute,hetzner,Hetzner Cloud,https://www.hetzner.com,hetznercloud
+sandboxes_compute,vultr,Vultr,https://www.vultr.com,vultr
+sandboxes_compute,linode,Akamai Cloud (Linode),https://www.linode.com,linode
+sandboxes_compute,scaleway,Scaleway,https://www.scaleway.com,scaleway
+sandboxes_compute,freestyle,Freestyle,https://www.freestyle.sh,freestyle-sh
+sandboxes_compute,gitpod,Ona (Gitpod),https://ona.com,gitpod-io
+llm_apis,openai,OpenAI,https://openai.com,openai
+llm_apis,gemini,Google Gemini API,https://ai.google.dev,google-gemini
+llm_apis,mistral,Mistral AI,https://mistral.ai,mistralai
+llm_apis,cohere,Cohere,https://cohere.com,cohere-ai
+llm_apis,groq,Groq,https://groq.com,groq
+llm_apis,together,Together AI,https://www.together.ai,togethercomputer
+llm_apis,fireworks,Fireworks AI,https://fireworks.ai,fw-ai
+llm_apis,deepseek,DeepSeek,https://www.deepseek.com,deepseek-ai
+llm_apis,xai,xAI,https://x.ai,xai-org
+llm_apis,perplexity,Perplexity API,https://www.perplexity.ai,ppl-ai
+llm_apis,openrouter,OpenRouter,https://openrouter.ai,OpenRouterTeam
+llm_apis,replicate,Replicate,https://replicate.com,replicate
+llm_apis,huggingface,Hugging Face Inference Providers,https://huggingface.co,huggingface
+llm_apis,ai21,AI21 Labs,https://www.ai21.com,AI21Labs
+llm_apis,cerebras,Cerebras Inference,https://www.cerebras.ai,Cerebras
+llm_apis,deepinfra,DeepInfra,https://deepinfra.com,deepinfra
+llm_apis,moonshot,Moonshot AI (Kimi),https://platform.moonshot.ai,MoonshotAI
+llm_apis,zai,Z.ai,https://z.ai,zai-org
+llm_apis,novita,Novita AI,https://novita.ai,novitalabs
+llm_apis,sambanova,SambaNova Cloud,https://sambanova.ai,sambanova
+llm_apis,nebius,Nebius AI Studio,https://nebius.com,nebius
+llm_apis,hyperbolic,Hyperbolic,https://hyperbolic.xyz,HyperbolicLabs
+llm_apis,voyage,Voyage AI,https://www.voyageai.com,voyage-ai
+llm_apis,writer,Writer,https://writer.com,writer
+llm_apis,alibaba,Alibaba Cloud Model Studio (Qwen),https://www.alibabacloud.com,QwenLM
+vector_search,pinecone,Pinecone,https://www.pinecone.io,pinecone-io
+vector_search,weaviate,Weaviate,https://weaviate.io,weaviate
+vector_search,qdrant,Qdrant,https://qdrant.tech,qdrant
+vector_search,zilliz,Zilliz Cloud (Milvus),https://zilliz.com,milvus-io
+vector_search,chroma,Chroma,https://www.trychroma.com,chroma-core
+vector_search,lancedb,LanceDB,https://lancedb.com,lancedb
+vector_search,turbopuffer,turbopuffer,https://turbopuffer.com,turbopuffer
+vector_search,elastic,Elastic Cloud,https://www.elastic.co,elastic
+vector_search,algolia,Algolia,https://www.algolia.com,algolia
+vector_search,typesense,Typesense,https://typesense.org,typesense
+vector_search,meilisearch,Meilisearch,https://www.meilisearch.com,meilisearch
+vector_search,vespa,Vespa Cloud,https://vespa.ai,vespa-engine
+vector_search,marqo,Marqo,https://www.marqo.ai,marqo-ai
+vector_search,vectara,Vectara,https://www.vectara.com,vectara
+vector_search,exa,Exa,https://exa.ai,exa-labs
+vector_search,tavily,Tavily,https://www.tavily.com,tavily-ai
+vector_search,jina,Jina AI,https://jina.ai,jina-ai
+vector_search,brave,Brave Search API,https://brave.com/search/api,brave
+vector_search,serpapi,SerpApi,https://serpapi.com,serpapi
+vector_search,trieve,Trieve,https://trieve.ai,devflowinc
+vector_search,orama,Orama,https://orama.com,oramasearch
+vector_search,youcom,You.com API,https://you.com,youdotcom-oss
+vector_search,kagi,Kagi Search API,https://kagi.com,kagisearch
+vector_search,mixedbread,Mixedbread,https://www.mixedbread.com,mixedbread-ai
+vector_search,activeloop,Activeloop Deep Lake,https://www.activeloop.ai,activeloopai
+backend_infra,supabase,Supabase,https://supabase.com,supabase
+backend_infra,firebase,Firebase,https://firebase.google.com,firebase
+backend_infra,neon,Neon,https://neon.com,neondatabase
+backend_infra,planetscale,PlanetScale,https://planetscale.com,planetscale
+backend_infra,turso,Turso,https://turso.tech,tursodatabase
+backend_infra,upstash,Upstash,https://upstash.com,upstash
+backend_infra,convex,Convex,https://www.convex.dev,get-convex
+backend_infra,appwrite,Appwrite,https://appwrite.io,appwrite
+backend_infra,clerk,Clerk,https://clerk.com,clerk
+backend_infra,auth0,Auth0,https://auth0.com,auth0
+backend_infra,vercel,Vercel,https://vercel.com,vercel
+backend_infra,netlify,Netlify,https://www.netlify.com,netlify
+backend_infra,cloudflare,Cloudflare,https://www.cloudflare.com,cloudflare
+backend_infra,railway,Railway,https://railway.com,railwayapp
+backend_infra,render,Render,https://render.com,render-oss
+backend_infra,heroku,Heroku,https://www.heroku.com,heroku
+backend_infra,mongodb,MongoDB Atlas,https://www.mongodb.com,mongodb
+backend_infra,redis,Redis Cloud,https://redis.io,redis
+backend_infra,xata,Xata,https://xata.io,xataio
+backend_infra,nhost,Nhost,https://nhost.io,nhost
+backend_infra,hasura,Hasura,https://hasura.io,hasura
+backend_infra,prisma,Prisma Postgres,https://www.prisma.io,prisma
+backend_infra,sentry,Sentry,https://sentry.io,getsentry
+backend_infra,posthog,PostHog,https://posthog.com,PostHog
+backend_infra,inngest,Inngest,https://www.inngest.com,inngest
+backend_infra,trigger,Trigger.dev,https://trigger.dev,triggerdotdev
+backend_infra,workos,WorkOS,https://workos.com,workos
+backend_infra,stytch,Stytch,https://stytch.com,stytchauth
+agent_tooling,langchain,LangChain (LangSmith API),https://www.langchain.com,langchain-ai
+agent_tooling,llamaindex,LlamaIndex (LlamaCloud),https://www.llamaindex.ai,run-llama
+agent_tooling,crewai,CrewAI,https://www.crewai.com,crewAIInc
+agent_tooling,composio,Composio,https://composio.dev,ComposioHQ
+agent_tooling,browserbase,Browserbase,https://www.browserbase.com,browserbase
+agent_tooling,firecrawl,Firecrawl,https://www.firecrawl.dev,firecrawl
+agent_tooling,browseruse,Browser Use Cloud,https://browser-use.com,browser-use
+agent_tooling,letta,Letta,https://www.letta.com,letta-ai
+agent_tooling,mem0,Mem0,https://mem0.ai,mem0ai
+agent_tooling,zep,Zep,https://www.getzep.com,getzep
+agent_tooling,agentops,AgentOps,https://www.agentops.ai,AgentOps-AI
+agent_tooling,langfuse,Langfuse,https://langfuse.com,langfuse
+agent_tooling,helicone,Helicone,https://www.helicone.ai,Helicone
+agent_tooling,arize,Arize AI (Phoenix),https://arize.com,Arize-ai
+agent_tooling,wandb,Weights & Biases,https://wandb.ai,wandb
+agent_tooling,braintrust,Braintrust,https://www.braintrust.dev,braintrustdata
+agent_tooling,apify,Apify,https://apify.com,apify
+agent_tooling,steel,Steel,https://steel.dev,steel-dev
+agent_tooling,hyperbrowser,Hyperbrowser,https://www.hyperbrowser.ai,hyperbrowserai
+agent_tooling,arcade,Arcade,https://www.arcade.dev,ArcadeAI
+agent_tooling,dify,Dify,https://dify.ai,langgenius
+agent_tooling,n8n,n8n,https://n8n.io,n8n-io
+agent_tooling,flowise,Flowise,https://flowiseai.com,FlowiseAI
+agent_tooling,smithery,Smithery,https://smithery.ai,smithery-ai
+agent_tooling,deepset,deepset (Haystack),https://www.deepset.ai,deepset-ai
+agent_tooling,toolhouse,Toolhouse,https://toolhouse.ai,toolhouseai
+agent_tooling,relevanceai,Relevance AI,https://relevanceai.com,RelevanceAI
+payments_comms,stripe,Stripe,https://stripe.com,stripe
+payments_comms,paypal,PayPal,https://www.paypal.com,paypal
+payments_comms,square,Square,https://squareup.com,square
+payments_comms,adyen,Adyen,https://www.adyen.com,Adyen
+payments_comms,plaid,Plaid,https://plaid.com,plaid
+payments_comms,paddle,Paddle,https://www.paddle.com,PaddleHQ
+payments_comms,lemonsqueezy,Lemon Squeezy,https://www.lemonsqueezy.com,lmsqueezy
+payments_comms,mollie,Mollie,https://www.mollie.com,mollie
+payments_comms,checkout,Checkout.com,https://www.checkout.com,checkout
+payments_comms,razorpay,Razorpay,https://razorpay.com,razorpay
+payments_comms,twilio,Twilio,https://www.twilio.com,twilio
+payments_comms,sendgrid,SendGrid,https://sendgrid.com,sendgrid
+payments_comms,resend,Resend,https://resend.com,resend
+payments_comms,postmark,Postmark,https://postmarkapp.com,ActiveCampaign
+payments_comms,mailgun,Mailgun,https://www.mailgun.com,mailgun
+payments_comms,vonage,Vonage,https://www.vonage.com,Vonage
+payments_comms,plivo,Plivo,https://www.plivo.com,plivo
+payments_comms,sinch,Sinch,https://www.sinch.com,sinch
+payments_comms,slack,Slack Web API,https://api.slack.com,slackapi
+payments_comms,discord,Discord API,https://discord.com/developers,discord
+payments_comms,knock,Knock,https://knock.app,knocklabs
+payments_comms,novu,Novu,https://novu.co,novuhq
+payments_comms,loops,Loops,https://loops.so,loops-so
+payments_comms,brevo,Brevo,https://www.brevo.com,getbrevo
+payments_comms,courier,Courier,https://www.courier.com,trycourier
+payments_comms,stream,Stream,https://getstream.io,GetStream
+payments_comms,pusher,Pusher,https://pusher.com,pusher
+payments_comms,ably,Ably,https://ably.com,ably
+payments_comms,lob,Lob,https://www.lob.com,lob
+payments_comms,polar,Polar,https://polar.sh,polarsource
+payments_comms,wise,Wise Platform API,https://wise.com,transferwise
