@@ -465,5 +465,317 @@
       "server_error -> legacy_sse": 1,
       "payment_required -> unreachable": 1
     }
+  },
+  "retest": {
+    "round": "2",
+    "n": 2999,
+    "agreement": {
+      "k": 2922,
+      "n": 2999,
+      "pct": 97.4,
+      "ci95": [
+        96.8,
+        97.9
+      ]
+    },
+    "cohens_kappa": 0.959,
+    "round_stats": {
+      "endpoints_total": 2999,
+      "excluded": 0,
+      "classified": 2999,
+      "distinct_hosts": 2244,
+      "largest_host_count": 261,
+      "primary_status": {
+        "ok": {
+          "k": 1677,
+          "n": 2999,
+          "pct": 55.9,
+          "ci95": [
+            54.1,
+            57.7
+          ]
+        },
+        "auth_compliant": {
+          "k": 729,
+          "n": 2999,
+          "pct": 24.3,
+          "ci95": [
+            22.8,
+            25.9
+          ]
+        },
+        "not_mcp": {
+          "k": 151,
+          "n": 2999,
+          "pct": 5.0,
+          "ci95": [
+            4.3,
+            5.9
+          ]
+        },
+        "unreachable": {
+          "k": 146,
+          "n": 2999,
+          "pct": 4.9,
+          "ci95": [
+            4.2,
+            5.7
+          ]
+        },
+        "auth_noncompliant": {
+          "k": 135,
+          "n": 2999,
+          "pct": 4.5,
+          "ci95": [
+            3.8,
+            5.3
+          ]
+        },
+        "payment_required": {
+          "k": 68,
+          "n": 2999,
+          "pct": 2.3,
+          "ci95": [
+            1.8,
+            2.9
+          ]
+        },
+        "server_error": {
+          "k": 50,
+          "n": 2999,
+          "pct": 1.7,
+          "ci95": [
+            1.3,
+            2.2
+          ]
+        },
+        "jsonrpc_error": {
+          "k": 17,
+          "n": 2999,
+          "pct": 0.6,
+          "ci95": [
+            0.4,
+            0.9
+          ]
+        },
+        "legacy_sse": {
+          "k": 15,
+          "n": 2999,
+          "pct": 0.5,
+          "ci95": [
+            0.3,
+            0.8
+          ]
+        },
+        "handshake_only": {
+          "k": 9,
+          "n": 2999,
+          "pct": 0.3,
+          "ci95": [
+            0.2,
+            0.6
+          ]
+        },
+        "modern_rejected": {
+          "k": 2,
+          "n": 2999,
+          "pct": 0.1,
+          "ci95": [
+            0.0,
+            0.2
+          ]
+        }
+      },
+      "primary_status_host_weighted_pct": {
+        "auth_compliant": 30.7,
+        "auth_noncompliant": 5.6,
+        "not_mcp": 5.5,
+        "ok": 46.5,
+        "unreachable": 6.4,
+        "payment_required": 1.4,
+        "server_error": 2.1,
+        "handshake_only": 0.4,
+        "jsonrpc_error": 0.6,
+        "modern_rejected": 0.1,
+        "legacy_sse": 0.6
+      },
+      "handshake": {
+        "n": 1686,
+        "modern": {
+          "k": 238,
+          "n": 1686,
+          "pct": 14.1,
+          "ci95": [
+            12.5,
+            15.9
+          ]
+        },
+        "dual_era_among_modern": {
+          "k": 67,
+          "n": 238,
+          "pct": 28.2,
+          "ci95": [
+            22.8,
+            34.2
+          ]
+        },
+        "protocol_versions_legacy": {
+          "2025-11-25": 709,
+          "2025-03-26": 487,
+          "2025-06-18": 170,
+          "2024-11-05": 67,
+          "2026-07-28": 15
+        }
+      },
+      "extensions": {
+        "n_handshaken_with_capabilities": 1686,
+        "any_extension": {
+          "k": 41,
+          "n": 1686,
+          "pct": 2.4,
+          "ci95": [
+            1.8,
+            3.3
+          ]
+        },
+        "declares_skills": {
+          "k": 9,
+          "n": 1686,
+          "pct": 0.5,
+          "ci95": [
+            0.3,
+            1.0
+          ]
+        },
+        "skills_list_ok_among_declaring": {
+          "k": 9,
+          "n": 9,
+          "pct": 100.0,
+          "ci95": [
+            70.1,
+            100.0
+          ]
+        },
+        "extension_ids": {
+          "io.modelcontextprotocol/ui": 29,
+          "io.modelcontextprotocol/skills": 9,
+          "io.modelcontextprotocol/tasks": 3
+        },
+        "hosts_declaring_skills": 9,
+        "hosts_handshaken": 1055,
+        "modern_hosts": 233,
+        "handshaken_hosts": 1055
+      },
+      "server_card": {
+        "n_fetched": 2853,
+        "skipped": {
+          "unreachable": 146
+        },
+        "http_200": {
+          "k": 357,
+          "n": 2853,
+          "pct": 12.5,
+          "ci95": [
+            11.3,
+            13.8
+          ]
+        },
+        "json_object": {
+          "k": 289,
+          "n": 2853,
+          "pct": 10.1,
+          "ci95": [
+            9.1,
+            11.3
+          ]
+        },
+        "valid_v1": {
+          "k": 250,
+          "n": 2853,
+          "pct": 8.8,
+          "ci95": [
+            7.8,
+            9.9
+          ]
+        },
+        "valid_v1_among_ok": {
+          "k": 217,
+          "n": 1677,
+          "pct": 12.9,
+          "ci95": [
+            11.4,
+            14.6
+          ]
+        },
+        "hosts_with_valid_v1": 61,
+        "hosts_fetched": 2101,
+        "valid_v1_host_weighted_pct": 2.7,
+        "largest_host_share_of_valid": 188,
+        "media_type_among_json": {
+          "application/mcp-server-card+json": 247,
+          "application/json": 42
+        }
+      },
+      "tools": {
+        "endpoints_with_tools": 1675,
+        "tools_total": 30333,
+        "endpoints_all_tools_annotated": {
+          "k": 955,
+          "n": 1675,
+          "pct": 57.0,
+          "ci95": [
+            54.6,
+            59.4
+          ]
+        },
+        "endpoints_any_tool_annotated": {
+          "k": 983,
+          "n": 1675,
+          "pct": 58.7,
+          "ci95": [
+            56.3,
+            61.0
+          ]
+        },
+        "tools_annotated_pooled": {
+          "k": 18226,
+          "n": 30333,
+          "pct": 60.1,
+          "ci95": [
+            59.5,
+            60.6
+          ]
+        },
+        "endpoints_any_output_schema": {
+          "k": 528,
+          "n": 1675,
+          "pct": 31.5,
+          "ci95": [
+            29.3,
+            33.8
+          ]
+        },
+        "schema_bytes_per_tool": {
+          "n": 30333,
+          "median": 723,
+          "p90": 1208,
+          "max": 19619
+        },
+        "schema_bytes_per_endpoint_total": {
+          "median": 4501,
+          "p90": 41312
+        },
+        "error_in_channel_among_ok": {
+          "k": 1258,
+          "n": 1676,
+          "pct": 75.1,
+          "ci95": [
+            72.9,
+            77.1
+          ]
+        }
+      },
+      "max_requests_per_endpoint": 8
+    }
   }
 }
