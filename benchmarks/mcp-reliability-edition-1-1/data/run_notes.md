@@ -10,3 +10,4 @@
   - checker v1 had a bug (labelled -32020 rejections as handshake_only); its output is kept as validation_check_v1_checker_bug.json; fixed and re-run in full
   - result: primary status 28/30 (93.3%), server_card_valid_v1 29/30, declares_skills 30/30; both disagreements are server-side changes (see validation.csv). Gate (≥ 90%) passed, pending founder spot-check of 5.
 - Other lanes: L3 reported degraded network to E2B from this host on Nov 4; it may have run E2B traffic during round 1's second session.
+- Round 2 started: 2026-11-09T06:19:48Z (4.4 days after round 1 instead of ~24 h: the session was halted Nov 5–9; Deviation 2). Connectivity log: data/connectivity_round2.txt
