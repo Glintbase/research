@@ -3,7 +3,8 @@
 Follows draft-meunier-webbotauth-httpsig-protocol-02 (2026-08-18) §5.2:
   - covered components: "@authority" and "signature-agent";key="<label>"
   - @signature-params: created, expires, keyid (base64url JWK SHA-256 thumbprint, RFC 7638/8037),
-    alg="ed25519", nonce (random, 32 bytes base64), tag="web-bot-auth"
+    alg="ed25519", nonce (random, 64 bytes base64: Cloudflare's reference verifier, web-bot-auth 0.2.0,
+    rejects other lengths), tag="web-bot-auth"
   - Signature-Agent sent in the dictionary form keyed by the signature label
 
 The public key is published as a JWK Set at
@@ -38,6 +39,7 @@ SIGNATURE_AGENT = "https://glintbase.dev"
 LABEL = "sig1"
 TAG = "web-bot-auth"
 VALIDITY_S = 300
+NONCE_BYTES = 64
 KEY_PATH = Path(os.environ.get("GLINTBASE_WBA_KEY", Path.home() / ".glintbase" / "web-bot-auth" / "ed25519.pem"))
 
 
@@ -75,7 +77,7 @@ def authority(url: str) -> str:
 def sign_headers(key: Ed25519PrivateKey, url: str, now: int | None = None, nonce: str | None = None) -> dict:
     """Headers to add to one request for `url`."""
     created = int(now if now is not None else time.time())
-    nonce = nonce or base64.b64encode(secrets.token_bytes(32)).decode()
+    nonce = nonce or base64.b64encode(secrets.token_bytes(NONCE_BYTES)).decode()
     kid = thumbprint(public_jwk(key.public_key()))
     agent_value = f'"{SIGNATURE_AGENT}"'
     params = (f'("@authority" "signature-agent";key="{LABEL}");created={created};expires={created + VALIDITY_S}'
