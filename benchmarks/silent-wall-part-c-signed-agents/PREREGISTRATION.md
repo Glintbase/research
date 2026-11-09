@@ -66,8 +66,6 @@ Honest identities only; the signature asserts who we are and nothing else. No CA
 
 ## Deviations
 
-*(none yet)*
-
 1. **2026-11-09, before any E6 request. U-rounds dropped; S-rounds start directly; nonce length set to 64 bytes.**
    - **Why:** the research session was halted 2026-11-04 to 2026-11-09, and the key directory went live (07:02:54Z on 2026-11-09) before any U-round could run. Running all three arms in the same session (S-rounds) is the pre-registered primary design, so the U-rounds, whose purpose was to use time before the directory was live, are not run.
    - **Rounds:** `S1` on 2026-11-09 (after the E1/E3 re-crawl finishes; never concurrently), `S2` on 2026-11-10.

@@ -8,3 +8,4 @@
 - Crawl finished: 2026-11-04T22:31:49Z (crawler 1.0.1; data/raw/_run_meta.json)
 - Connectivity log: total failures at 21:35:31, 22:18:40–22:20:41 and 22:30:26–22:31:27Z during the crawl (Deviation 3 in the E1/E3 pre-registrations)
 - Research session halted 2026-11-04 ~22:30Z – 2026-11-09 ~06:15Z (account session limit); the connectivity monitor kept running alone and its later lines are outside the crawl
+- Re-crawl (pass 2, all 6,908 sites) started: 2026-11-09T06:48:35Z, crawler 1.0.1, workers 12; connectivity log data/connectivity_recrawl.txt
