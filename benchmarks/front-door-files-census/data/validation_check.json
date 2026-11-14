@@ -1,0 +1,386 @@
+[
+  {
+    "site": "bio.vet",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/json; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "oklahomaautoquotes.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/json; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "coworkingview.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/json",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "pontofato.com",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/linkset+json; profile=\"https://www.rfc-editor.org/info/rfc9727\"",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "livaglow.de",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/linkset+json; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "clipboardo.com",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/linkset+json",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "synapticrelay.com",
+    "file": "ard",
+    "path": "/.well-known/ard.json",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/json; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "aisenseapi.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/json",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "lyntahq.com",
+    "file": "ai_catalog",
+    "path": "/.well-known/ai-catalog.json",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/ai-catalog+json; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "transportial.com",
+    "file": "ai_catalog",
+    "path": "/.well-known/ai-catalog.json",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/json",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "ipwho.is",
+    "file": "ard",
+    "path": "/.well-known/ard.json",
+    "harness_outcome": "absent",
+    "check": {
+      "verdict": "absent",
+      "status": 404,
+      "ctype": "application/json",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "gumroad.com",
+    "file": "llms_txt",
+    "path": "/llms.txt",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "text/plain; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "blackrussia.online",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "soft_404",
+    "check": {
+      "verdict": "soft_404",
+      "status": 200,
+      "ctype": "text/html",
+      "control_status": 200,
+      "note": ""
+    }
+  },
+  {
+    "site": "intentiq.com",
+    "file": "llms_txt",
+    "path": "/llms.txt",
+    "harness_outcome": "invalid",
+    "check": {
+      "verdict": "invalid",
+      "status": 200,
+      "ctype": "text/plain",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "quickconnect.to",
+    "file": "ard",
+    "path": "/.well-known/ard.json",
+    "harness_outcome": "error",
+    "check": {
+      "verdict": "error",
+      "note": "ENOTFOUND"
+    }
+  },
+  {
+    "site": "nfl.com",
+    "file": "ai_catalog",
+    "path": "/.well-known/ai-catalog.json",
+    "harness_outcome": "absent",
+    "check": {
+      "verdict": "absent",
+      "status": 404,
+      "ctype": "text/html",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "ownvscharter.com",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/linkset+json",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "hotstar.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "soft_404",
+    "check": {
+      "verdict": "soft_404",
+      "status": 200,
+      "ctype": "text/html",
+      "control_status": 200,
+      "note": ""
+    }
+  },
+  {
+    "site": "t3ratech.co.zw",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "invalid",
+    "check": {
+      "verdict": "invalid",
+      "status": 200,
+      "ctype": "application/json; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "index.hu",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "error",
+    "check": {
+      "verdict": "absent",
+      "status": 404,
+      "ctype": "text/html; charset=utf-8;",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "agoda.com",
+    "file": "ard",
+    "path": "/.well-known/ard.json",
+    "harness_outcome": "absent",
+    "check": {
+      "verdict": "absent",
+      "status": 404,
+      "ctype": "text/html; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "olx.com.br",
+    "file": "sitemap",
+    "path": "/sitemap.xml",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "absent",
+      "status": 404,
+      "ctype": "text/html; charset=utf-8",
+      "control_status": 403,
+      "note": ""
+    }
+  },
+  {
+    "site": "chatgpt.site",
+    "file": "ai_catalog",
+    "path": "/.well-known/ai-catalog.json",
+    "harness_outcome": "soft_404",
+    "check": {
+      "verdict": "soft_404",
+      "status": 200,
+      "ctype": "text/html; charset=utf-8",
+      "control_status": 200,
+      "note": ""
+    }
+  },
+  {
+    "site": "shopify.com",
+    "file": "sig_directory",
+    "path": "/.well-known/http-message-signatures-directory",
+    "harness_outcome": "invalid",
+    "check": {
+      "verdict": "invalid",
+      "status": 200,
+      "ctype": "application/http-message-signatures-directory+json",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "awin1.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "error",
+    "check": {
+      "verdict": "error",
+      "note": "AbortError"
+    }
+  },
+  {
+    "site": "flashscore.fr",
+    "file": "sig_directory",
+    "path": "/.well-known/http-message-signatures-directory",
+    "harness_outcome": "absent",
+    "check": {
+      "verdict": "absent",
+      "status": 404,
+      "ctype": "text/html; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "databutler.dev",
+    "file": "sitemap",
+    "path": "/sitemap.xml",
+    "harness_outcome": "valid",
+    "check": {
+      "verdict": "valid",
+      "status": 200,
+      "ctype": "application/xml",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "memoryapi.org",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "soft_404",
+    "check": {
+      "verdict": "soft_404",
+      "status": 200,
+      "ctype": "text/html",
+      "control_status": 200,
+      "note": ""
+    }
+  },
+  {
+    "site": "lusha.com",
+    "file": "llms_txt",
+    "path": "/llms.txt",
+    "harness_outcome": "invalid",
+    "check": {
+      "verdict": "invalid",
+      "status": 200,
+      "ctype": "text/plain; charset=utf-8",
+      "control_status": 404,
+      "note": ""
+    }
+  },
+  {
+    "site": "abc.net.au",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "error",
+    "check": {
+      "verdict": "absent",
+      "status": 404,
+      "ctype": "text/html",
+      "control_status": 404,
+      "note": ""
+    }
+  }
+]

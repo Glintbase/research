@@ -1,0 +1,182 @@
+[
+  {
+    "site": "replicate.com",
+    "harness_class": "conflict",
+    "harness_md_served": true,
+    "harness_has_docs_headers": true
+  },
+  {
+    "site": "wa.me",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "tastelabs.com",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "bitdefender.net",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "cloudflare.com",
+    "harness_class": "agree",
+    "harness_md_served": true,
+    "harness_has_docs_headers": true
+  },
+  {
+    "site": "ea.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "twilio.com",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "zendesk.com",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "mailtrap.io",
+    "harness_class": "agree",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "intel.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "att.com",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "glean.com",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "oxylabs.io",
+    "harness_class": "agree",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "me.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "corriere.it",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "netlify.app",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": true
+  },
+  {
+    "site": "telnyx.com",
+    "harness_class": "agree",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "robinhood.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "unesco.org",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "pages.dev",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": true
+  },
+  {
+    "site": "tripadvisor.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "cookielaw.org",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "together.ai",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "adtrafficquality.google",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "zernio.com",
+    "harness_class": "robots_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "coreweave.com",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "executor.sh",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "llamaindex.ai",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "hosting24.com",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false
+  },
+  {
+    "site": "miui.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false
+  }
+]

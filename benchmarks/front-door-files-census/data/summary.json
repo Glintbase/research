@@ -1,0 +1,1093 @@
+{
+  "sites_in_sample": 6908,
+  "reachable": 5257,
+  "unreachable_or_excluded": 1651,
+  "catch_all_wk": {
+    "k": 586,
+    "n": 5257,
+    "pct": 11.15,
+    "ci95": [
+      10.32,
+      12.03
+    ]
+  },
+  "catch_all_root": {
+    "k": 641,
+    "n": 5257,
+    "pct": 12.19,
+    "ci95": [
+      11.34,
+      13.11
+    ]
+  },
+  "overall": {
+    "ai_catalog": {
+      "outcomes": {
+        "valid": {
+          "k": 197,
+          "n": 5257,
+          "pct": 3.75,
+          "ci95": [
+            3.27,
+            4.3
+          ]
+        },
+        "invalid": {
+          "k": 15,
+          "n": 5257,
+          "pct": 0.29,
+          "ci95": [
+            0.17,
+            0.47
+          ]
+        },
+        "soft_404": {
+          "k": 540,
+          "n": 5257,
+          "pct": 10.27,
+          "ci95": [
+            9.48,
+            11.12
+          ]
+        },
+        "absent": {
+          "k": 4424,
+          "n": 5257,
+          "pct": 84.15,
+          "ci95": [
+            83.14,
+            85.12
+          ]
+        },
+        "error": {
+          "k": 16,
+          "n": 5257,
+          "pct": 0.3,
+          "ci95": [
+            0.19,
+            0.49
+          ]
+        },
+        "self_excluded": {
+          "k": 65,
+          "n": 5257,
+          "pct": 1.24,
+          "ci95": [
+            0.97,
+            1.57
+          ]
+        }
+      },
+      "soft_404_among_200": {
+        "k": 540,
+        "n": 752,
+        "pct": 71.81,
+        "ci95": [
+          68.49,
+          74.91
+        ]
+      },
+      "media_type_ok_among_valid": {
+        "k": 79,
+        "n": 197,
+        "pct": 40.1,
+        "ci95": [
+          33.51,
+          47.07
+        ]
+      },
+      "content_types_valid": {
+        "application/json": 118,
+        "application/ai-catalog+json": 79
+      }
+    },
+    "ard": {
+      "outcomes": {
+        "valid": {
+          "k": 78,
+          "n": 5257,
+          "pct": 1.48,
+          "ci95": [
+            1.19,
+            1.85
+          ]
+        },
+        "invalid": {
+          "k": 1,
+          "n": 5257,
+          "pct": 0.02,
+          "ci95": [
+            0.0,
+            0.11
+          ]
+        },
+        "soft_404": {
+          "k": 542,
+          "n": 5257,
+          "pct": 10.31,
+          "ci95": [
+            9.52,
+            11.16
+          ]
+        },
+        "absent": {
+          "k": 4558,
+          "n": 5257,
+          "pct": 86.7,
+          "ci95": [
+            85.76,
+            87.59
+          ]
+        },
+        "error": {
+          "k": 14,
+          "n": 5257,
+          "pct": 0.27,
+          "ci95": [
+            0.16,
+            0.45
+          ]
+        },
+        "self_excluded": {
+          "k": 64,
+          "n": 5257,
+          "pct": 1.22,
+          "ci95": [
+            0.95,
+            1.55
+          ]
+        }
+      },
+      "soft_404_among_200": {
+        "k": 542,
+        "n": 621,
+        "pct": 87.28,
+        "ci95": [
+          84.43,
+          89.67
+        ]
+      },
+      "media_type_ok_among_valid": {
+        "k": 1,
+        "n": 78,
+        "pct": 1.28,
+        "ci95": [
+          0.23,
+          6.91
+        ]
+      },
+      "content_types_valid": {
+        "application/json": 73,
+        "application/ai-catalog+json": 4,
+        "application/ard+json": 1
+      }
+    },
+    "api_catalog": {
+      "outcomes": {
+        "valid": {
+          "k": 394,
+          "n": 5257,
+          "pct": 7.49,
+          "ci95": [
+            6.81,
+            8.24
+          ]
+        },
+        "invalid": {
+          "k": 3,
+          "n": 5257,
+          "pct": 0.06,
+          "ci95": [
+            0.02,
+            0.17
+          ]
+        },
+        "soft_404": {
+          "k": 582,
+          "n": 5257,
+          "pct": 11.07,
+          "ci95": [
+            10.25,
+            11.95
+          ]
+        },
+        "absent": {
+          "k": 4214,
+          "n": 5257,
+          "pct": 80.16,
+          "ci95": [
+            79.06,
+            81.22
+          ]
+        },
+        "error": {
+          "k": 17,
+          "n": 5257,
+          "pct": 0.32,
+          "ci95": [
+            0.2,
+            0.52
+          ]
+        },
+        "self_excluded": {
+          "k": 47,
+          "n": 5257,
+          "pct": 0.89,
+          "ci95": [
+            0.67,
+            1.19
+          ]
+        }
+      },
+      "soft_404_among_200": {
+        "k": 582,
+        "n": 979,
+        "pct": 59.45,
+        "ci95": [
+          56.34,
+          62.48
+        ]
+      },
+      "media_type_ok_among_valid": {
+        "k": 382,
+        "n": 394,
+        "pct": 96.95,
+        "ci95": [
+          94.75,
+          98.25
+        ]
+      },
+      "content_types_valid": {
+        "application/linkset+json": 382,
+        "application/json": 4,
+        "application/octet-stream": 4,
+        "null": 3,
+        "text/plain": 1
+      }
+    },
+    "poppy": {
+      "outcomes": {
+        "valid": {
+          "k": 28,
+          "n": 5257,
+          "pct": 0.53,
+          "ci95": [
+            0.37,
+            0.77
+          ]
+        },
+        "invalid": {
+          "k": 1,
+          "n": 5257,
+          "pct": 0.02,
+          "ci95": [
+            0.0,
+            0.11
+          ]
+        },
+        "soft_404": {
+          "k": 546,
+          "n": 5257,
+          "pct": 10.39,
+          "ci95": [
+            9.59,
+            11.24
+          ]
+        },
+        "absent": {
+          "k": 4604,
+          "n": 5257,
+          "pct": 87.58,
+          "ci95": [
+            86.66,
+            88.44
+          ]
+        },
+        "error": {
+          "k": 14,
+          "n": 5257,
+          "pct": 0.27,
+          "ci95": [
+            0.16,
+            0.45
+          ]
+        },
+        "self_excluded": {
+          "k": 64,
+          "n": 5257,
+          "pct": 1.22,
+          "ci95": [
+            0.95,
+            1.55
+          ]
+        }
+      },
+      "soft_404_among_200": {
+        "k": 546,
+        "n": 575,
+        "pct": 94.96,
+        "ci95": [
+          92.85,
+          96.47
+        ]
+      },
+      "media_type_ok_among_valid": {
+        "k": 28,
+        "n": 28,
+        "pct": 100.0,
+        "ci95": [
+          87.94,
+          100.0
+        ]
+      },
+      "content_types_valid": {
+        "application/json": 28
+      }
+    },
+    "agent_card": {
+      "outcomes": {
+        "valid": {
+          "k": 177,
+          "n": 5257,
+          "pct": 3.37,
+          "ci95": [
+            2.91,
+            3.89
+          ]
+        },
+        "invalid": {
+          "k": 14,
+          "n": 5257,
+          "pct": 0.27,
+          "ci95": [
+            0.16,
+            0.45
+          ]
+        },
+        "soft_404": {
+          "k": 540,
+          "n": 5257,
+          "pct": 10.27,
+          "ci95": [
+            9.48,
+            11.12
+          ]
+        },
+        "absent": {
+          "k": 4449,
+          "n": 5257,
+          "pct": 84.63,
+          "ci95": [
+            83.63,
+            85.58
+          ]
+        },
+        "error": {
+          "k": 13,
+          "n": 5257,
+          "pct": 0.25,
+          "ci95": [
+            0.14,
+            0.42
+          ]
+        },
+        "self_excluded": {
+          "k": 64,
+          "n": 5257,
+          "pct": 1.22,
+          "ci95": [
+            0.95,
+            1.55
+          ]
+        }
+      },
+      "soft_404_among_200": {
+        "k": 540,
+        "n": 731,
+        "pct": 73.87,
+        "ci95": [
+          70.57,
+          76.93
+        ]
+      },
+      "media_type_ok_among_valid": {
+        "k": 173,
+        "n": 177,
+        "pct": 97.74,
+        "ci95": [
+          94.33,
+          99.12
+        ]
+      },
+      "content_types_valid": {
+        "application/json": 173,
+        "application/a2a+json": 2,
+        "application/a2a-agent-card+json": 2
+      }
+    },
+    "sig_directory": {
+      "outcomes": {
+        "valid": {
+          "k": 42,
+          "n": 5257,
+          "pct": 0.8,
+          "ci95": [
+            0.59,
+            1.08
+          ]
+        },
+        "invalid": {
+          "k": 6,
+          "n": 5257,
+          "pct": 0.11,
+          "ci95": [
+            0.05,
+            0.25
+          ]
+        },
+        "soft_404": {
+          "k": 587,
+          "n": 5257,
+          "pct": 11.17,
+          "ci95": [
+            10.34,
+            12.05
+          ]
+        },
+        "absent": {
+          "k": 4559,
+          "n": 5257,
+          "pct": 86.72,
+          "ci95": [
+            85.78,
+            87.61
+          ]
+        },
+        "error": {
+          "k": 17,
+          "n": 5257,
+          "pct": 0.32,
+          "ci95": [
+            0.2,
+            0.52
+          ]
+        },
+        "self_excluded": {
+          "k": 46,
+          "n": 5257,
+          "pct": 0.88,
+          "ci95": [
+            0.66,
+            1.17
+          ]
+        }
+      },
+      "soft_404_among_200": {
+        "k": 587,
+        "n": 635,
+        "pct": 92.44,
+        "ci95": [
+          90.12,
+          94.25
+        ]
+      },
+      "media_type_ok_among_valid": {
+        "k": 33,
+        "n": 42,
+        "pct": 78.57,
+        "ci95": [
+          64.06,
+          88.29
+        ]
+      },
+      "content_types_valid": {
+        "application/http-message-signatures-directory+json": 33,
+        "application/json": 7,
+        "application/jwk-set+json": 2
+      }
+    },
+    "llms_txt": {
+      "outcomes": {
+        "valid": {
+          "k": 1832,
+          "n": 5257,
+          "pct": 34.85,
+          "ci95": [
+            33.57,
+            36.15
+          ]
+        },
+        "invalid": {
+          "k": 83,
+          "n": 5257,
+          "pct": 1.58,
+          "ci95": [
+            1.28,
+            1.95
+          ]
+        },
+        "soft_404": {
+          "k": 489,
+          "n": 5257,
+          "pct": 9.3,
+          "ci95": [
+            8.55,
+            10.12
+          ]
+        },
+        "absent": {
+          "k": 2806,
+          "n": 5257,
+          "pct": 53.38,
+          "ci95": [
+            52.03,
+            54.72
+          ]
+        },
+        "error": {
+          "k": 23,
+          "n": 5257,
+          "pct": 0.44,
+          "ci95": [
+            0.29,
+            0.66
+          ]
+        },
+        "self_excluded": {
+          "k": 24,
+          "n": 5257,
+          "pct": 0.46,
+          "ci95": [
+            0.31,
+            0.68
+          ]
+        }
+      },
+      "soft_404_among_200": {
+        "k": 489,
+        "n": 2404,
+        "pct": 20.34,
+        "ci95": [
+          18.78,
+          22.0
+        ]
+      },
+      "media_type_ok_among_valid": {
+        "k": 1827,
+        "n": 1832,
+        "pct": 99.73,
+        "ci95": [
+          99.36,
+          99.88
+        ]
+      },
+      "content_types_valid": {
+        "text/plain": 1740,
+        "text/markdown": 87,
+        "text/plain, text/plain": 3,
+        "application/octet-stream": 2
+      }
+    },
+    "sitemap": {
+      "outcomes": {
+        "valid": {
+          "k": 2803,
+          "n": 5257,
+          "pct": 53.32,
+          "ci95": [
+            51.97,
+            54.67
+          ]
+        },
+        "invalid": {
+          "k": 12,
+          "n": 5257,
+          "pct": 0.23,
+          "ci95": [
+            0.13,
+            0.4
+          ]
+        },
+        "soft_404": {
+          "k": 415,
+          "n": 5257,
+          "pct": 7.89,
+          "ci95": [
+            7.2,
+            8.65
+          ]
+        },
+        "absent": {
+          "k": 1988,
+          "n": 5257,
+          "pct": 37.82,
+          "ci95": [
+            36.51,
+            39.14
+          ]
+        },
+        "error": {
+          "k": 19,
+          "n": 5257,
+          "pct": 0.36,
+          "ci95": [
+            0.23,
+            0.56
+          ]
+        },
+        "self_excluded": {
+          "k": 20,
+          "n": 5257,
+          "pct": 0.38,
+          "ci95": [
+            0.25,
+            0.59
+          ]
+        }
+      },
+      "soft_404_among_200": {
+        "k": 415,
+        "n": 3230,
+        "pct": 12.85,
+        "ci95": [
+          11.74,
+          14.05
+        ]
+      },
+      "media_type_ok_among_valid": {
+        "k": 2746,
+        "n": 2803,
+        "pct": 97.97,
+        "ci95": [
+          97.37,
+          98.43
+        ]
+      },
+      "content_types_valid": {
+        "application/xml": 1842,
+        "text/xml": 904,
+        "application/rss+xml": 51,
+        "null": 3,
+        "text/plain": 1
+      }
+    }
+  },
+  "by_source": {
+    "tranco_top1000": {
+      "n": 639,
+      "valid": {
+        "ai_catalog": {
+          "k": 6,
+          "n": 639,
+          "pct": 0.94,
+          "ci95": [
+            0.43,
+            2.03
+          ]
+        },
+        "ard": {
+          "k": 2,
+          "n": 639,
+          "pct": 0.31,
+          "ci95": [
+            0.09,
+            1.13
+          ]
+        },
+        "api_catalog": {
+          "k": 12,
+          "n": 639,
+          "pct": 1.88,
+          "ci95": [
+            1.08,
+            3.25
+          ]
+        },
+        "poppy": {
+          "k": 1,
+          "n": 639,
+          "pct": 0.16,
+          "ci95": [
+            0.03,
+            0.88
+          ]
+        },
+        "agent_card": {
+          "k": 2,
+          "n": 639,
+          "pct": 0.31,
+          "ci95": [
+            0.09,
+            1.13
+          ]
+        },
+        "sig_directory": {
+          "k": 6,
+          "n": 639,
+          "pct": 0.94,
+          "ci95": [
+            0.43,
+            2.03
+          ]
+        },
+        "llms_txt": {
+          "k": 104,
+          "n": 639,
+          "pct": 16.28,
+          "ci95": [
+            13.62,
+            19.34
+          ]
+        },
+        "sitemap": {
+          "k": 222,
+          "n": 639,
+          "pct": 34.74,
+          "ci95": [
+            31.15,
+            38.51
+          ]
+        }
+      }
+    },
+    "tranco_1001_5000": {
+      "n": 2797,
+      "valid": {
+        "ai_catalog": {
+          "k": 22,
+          "n": 2797,
+          "pct": 0.79,
+          "ci95": [
+            0.52,
+            1.19
+          ]
+        },
+        "ard": {
+          "k": 12,
+          "n": 2797,
+          "pct": 0.43,
+          "ci95": [
+            0.25,
+            0.75
+          ]
+        },
+        "api_catalog": {
+          "k": 37,
+          "n": 2797,
+          "pct": 1.32,
+          "ci95": [
+            0.96,
+            1.82
+          ]
+        },
+        "poppy": {
+          "k": 5,
+          "n": 2797,
+          "pct": 0.18,
+          "ci95": [
+            0.08,
+            0.42
+          ]
+        },
+        "agent_card": {
+          "k": 4,
+          "n": 2797,
+          "pct": 0.14,
+          "ci95": [
+            0.06,
+            0.37
+          ]
+        },
+        "sig_directory": {
+          "k": 2,
+          "n": 2797,
+          "pct": 0.07,
+          "ci95": [
+            0.02,
+            0.26
+          ]
+        },
+        "llms_txt": {
+          "k": 346,
+          "n": 2797,
+          "pct": 12.37,
+          "ci95": [
+            11.2,
+            13.64
+          ]
+        },
+        "sitemap": {
+          "k": 1164,
+          "n": 2797,
+          "pct": 41.62,
+          "ci95": [
+            39.8,
+            43.45
+          ]
+        }
+      }
+    },
+    "leaderboard": {
+      "n": 102,
+      "valid": {
+        "ai_catalog": {
+          "k": 7,
+          "n": 102,
+          "pct": 6.86,
+          "ci95": [
+            3.36,
+            13.49
+          ]
+        },
+        "ard": {
+          "k": 3,
+          "n": 102,
+          "pct": 2.94,
+          "ci95": [
+            1.01,
+            8.29
+          ]
+        },
+        "api_catalog": {
+          "k": 13,
+          "n": 102,
+          "pct": 12.75,
+          "ci95": [
+            7.6,
+            20.59
+          ]
+        },
+        "poppy": {
+          "k": 0,
+          "n": 102,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            3.63
+          ]
+        },
+        "agent_card": {
+          "k": 3,
+          "n": 102,
+          "pct": 2.94,
+          "ci95": [
+            1.01,
+            8.29
+          ]
+        },
+        "sig_directory": {
+          "k": 3,
+          "n": 102,
+          "pct": 2.94,
+          "ci95": [
+            1.01,
+            8.29
+          ]
+        },
+        "llms_txt": {
+          "k": 52,
+          "n": 102,
+          "pct": 50.98,
+          "ci95": [
+            41.42,
+            60.47
+          ]
+        },
+        "sitemap": {
+          "k": 76,
+          "n": 102,
+          "pct": 74.51,
+          "ci95": [
+            65.27,
+            81.97
+          ]
+        }
+      }
+    },
+    "mcp_registry": {
+      "n": 1764,
+      "valid": {
+        "ai_catalog": {
+          "k": 170,
+          "n": 1764,
+          "pct": 9.64,
+          "ci95": [
+            8.35,
+            11.1
+          ]
+        },
+        "ard": {
+          "k": 65,
+          "n": 1764,
+          "pct": 3.68,
+          "ci95": [
+            2.9,
+            4.67
+          ]
+        },
+        "api_catalog": {
+          "k": 344,
+          "n": 1764,
+          "pct": 19.5,
+          "ci95": [
+            17.72,
+            21.42
+          ]
+        },
+        "poppy": {
+          "k": 22,
+          "n": 1764,
+          "pct": 1.25,
+          "ci95": [
+            0.83,
+            1.88
+          ]
+        },
+        "agent_card": {
+          "k": 169,
+          "n": 1764,
+          "pct": 9.58,
+          "ci95": [
+            8.29,
+            11.04
+          ]
+        },
+        "sig_directory": {
+          "k": 31,
+          "n": 1764,
+          "pct": 1.76,
+          "ci95": [
+            1.24,
+            2.48
+          ]
+        },
+        "llms_txt": {
+          "k": 1351,
+          "n": 1764,
+          "pct": 76.59,
+          "ci95": [
+            74.55,
+            78.5
+          ]
+        },
+        "sitemap": {
+          "k": 1368,
+          "n": 1764,
+          "pct": 77.55,
+          "ci95": [
+            75.55,
+            79.44
+          ]
+        }
+      }
+    }
+  },
+  "any_agent_discovery_file_valid": {
+    "k": 562,
+    "n": 5257,
+    "pct": 10.69,
+    "ci95": [
+      9.88,
+      11.55
+    ]
+  },
+  "count_valid_agent_files": {
+    "0": 4695,
+    "3": 67,
+    "2": 105,
+    "6": 1,
+    "1": 355,
+    "5": 8,
+    "4": 26
+  },
+  "cooccurrence_valid": {
+    "ai_catalog+ard": 66,
+    "ai_catalog+api_catalog": 137,
+    "ai_catalog+poppy": 13,
+    "ai_catalog+agent_card": 52,
+    "ai_catalog+sig_directory": 20,
+    "ai_catalog+llms_txt": 184,
+    "ai_catalog+sitemap": 180,
+    "ard+api_catalog": 62,
+    "ard+poppy": 4,
+    "ard+agent_card": 27,
+    "ard+sig_directory": 8,
+    "ard+llms_txt": 70,
+    "ard+sitemap": 70,
+    "api_catalog+poppy": 16,
+    "api_catalog+agent_card": 87,
+    "api_catalog+sig_directory": 31,
+    "api_catalog+llms_txt": 377,
+    "api_catalog+sitemap": 292,
+    "poppy+agent_card": 8,
+    "poppy+sig_directory": 3,
+    "poppy+llms_txt": 27,
+    "poppy+sitemap": 23,
+    "agent_card+sig_directory": 23,
+    "agent_card+llms_txt": 170,
+    "agent_card+sitemap": 165,
+    "sig_directory+llms_txt": 36,
+    "sig_directory+sitemap": 37,
+    "llms_txt+sitemap": 1511
+  },
+  "link_header": {
+    "rel_ard": {
+      "k": 34,
+      "n": 5257,
+      "pct": 0.65,
+      "ci95": [
+        0.46,
+        0.9
+      ]
+    },
+    "describedby": {
+      "k": 238,
+      "n": 5257,
+      "pct": 4.53,
+      "ci95": [
+        4.0,
+        5.12
+      ]
+    },
+    "md_alternate": {
+      "k": 105,
+      "n": 5257,
+      "pct": 2.0,
+      "ci95": [
+        1.65,
+        2.41
+      ]
+    }
+  },
+  "ard_link_targets": {},
+  "catalog_cross_links": {
+    "fetched": 194,
+    "json_object": 155,
+    "server_card_valid_v1": 86
+  },
+  "ai_catalog_entry_types": {
+    "application/mcp-server-card+json": 169,
+    "application/json": 54,
+    "text/markdown": 45,
+    "application/vnd.oai.openapi+json": 45,
+    "text/plain": 30,
+    "application/a2a-agent-card+json": 27,
+    "application/openapi+json": 20,
+    "application/agent-skills+md": 16,
+    "application/linkset+json": 15,
+    "text/html": 13
+  },
+  "ard_top_keys": {
+    "entries": 77,
+    "specVersion": 63,
+    "host": 53,
+    "@context": 2,
+    "$comment": 1,
+    "publisher": 1,
+    "updatedAt": 1,
+    "error": 1,
+    "hint": 1,
+    "path": 1,
+    "valid_routes": 1
+  }
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "site": "bio.vet",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "oklahomaautoquotes.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "coworkingview.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "pontofato.com",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "livaglow.de",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "clipboardo.com",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "synapticrelay.com",
+    "file": "ard",
+    "path": "/.well-known/ard.json",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "aisenseapi.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "lyntahq.com",
+    "file": "ai_catalog",
+    "path": "/.well-known/ai-catalog.json",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "transportial.com",
+    "file": "ai_catalog",
+    "path": "/.well-known/ai-catalog.json",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "ipwho.is",
+    "file": "ard",
+    "path": "/.well-known/ard.json",
+    "harness_outcome": "absent"
+  },
+  {
+    "site": "gumroad.com",
+    "file": "llms_txt",
+    "path": "/llms.txt",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "blackrussia.online",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "soft_404"
+  },
+  {
+    "site": "intentiq.com",
+    "file": "llms_txt",
+    "path": "/llms.txt",
+    "harness_outcome": "invalid"
+  },
+  {
+    "site": "quickconnect.to",
+    "file": "ard",
+    "path": "/.well-known/ard.json",
+    "harness_outcome": "error"
+  },
+  {
+    "site": "nfl.com",
+    "file": "ai_catalog",
+    "path": "/.well-known/ai-catalog.json",
+    "harness_outcome": "absent"
+  },
+  {
+    "site": "ownvscharter.com",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "hotstar.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "soft_404"
+  },
+  {
+    "site": "t3ratech.co.zw",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "invalid"
+  },
+  {
+    "site": "index.hu",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "error"
+  },
+  {
+    "site": "agoda.com",
+    "file": "ard",
+    "path": "/.well-known/ard.json",
+    "harness_outcome": "absent"
+  },
+  {
+    "site": "olx.com.br",
+    "file": "sitemap",
+    "path": "/sitemap.xml",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "chatgpt.site",
+    "file": "ai_catalog",
+    "path": "/.well-known/ai-catalog.json",
+    "harness_outcome": "soft_404"
+  },
+  {
+    "site": "shopify.com",
+    "file": "sig_directory",
+    "path": "/.well-known/http-message-signatures-directory",
+    "harness_outcome": "invalid"
+  },
+  {
+    "site": "awin1.com",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "error"
+  },
+  {
+    "site": "flashscore.fr",
+    "file": "sig_directory",
+    "path": "/.well-known/http-message-signatures-directory",
+    "harness_outcome": "absent"
+  },
+  {
+    "site": "databutler.dev",
+    "file": "sitemap",
+    "path": "/sitemap.xml",
+    "harness_outcome": "valid"
+  },
+  {
+    "site": "memoryapi.org",
+    "file": "api_catalog",
+    "path": "/.well-known/api-catalog",
+    "harness_outcome": "soft_404"
+  },
+  {
+    "site": "lusha.com",
+    "file": "llms_txt",
+    "path": "/llms.txt",
+    "harness_outcome": "invalid"
+  },
+  {
+    "site": "abc.net.au",
+    "file": "agent_card",
+    "path": "/.well-known/agent-card.json",
+    "harness_outcome": "error"
+  }
+]
