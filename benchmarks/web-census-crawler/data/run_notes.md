@@ -9,3 +9,6 @@
 - Connectivity log: total failures at 21:35:31, 22:18:40–22:20:41 and 22:30:26–22:31:27Z during the crawl (Deviation 3 in the E1/E3 pre-registrations)
 - Research session halted 2026-11-04 ~22:30Z – 2026-11-09 ~06:15Z (account session limit); the connectivity monitor kept running alone and its later lines are outside the crawl
 - Re-crawl (pass 2, all 6,908 sites) started: 2026-11-09T06:48:35Z, crawler 1.0.1, workers 12; connectivity log data/connectivity_recrawl.txt
+- 2026-11-09 ~08:20–13:50Z: workstation slept mid-crawl; woke offline, 4,272 sites finished 13:50–13:58Z with DNS failures. Records archived to data/raw_discarded_pass2_tail/ (Deviation 3, third pass)
+- Third pass (4,272 sites) started: 2026-11-13T23:59:31Z, crawler 1.0.1, workers 12; connectivity log data/connectivity_pass3.txt; workstation held awake
+- Third pass finished: 2026-11-14T01:34:16Z (data/raw/_run_meta.json); connectivity_pass3.txt: 0 FAIL
