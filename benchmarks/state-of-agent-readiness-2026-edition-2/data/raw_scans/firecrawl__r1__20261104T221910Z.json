@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://www.firecrawl.dev/",
+  "unreachable": true,
+  "status": "failed"
+}

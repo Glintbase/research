@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://www.vultr.com/",
+  "unreachable": true,
+  "status": "failed"
+}

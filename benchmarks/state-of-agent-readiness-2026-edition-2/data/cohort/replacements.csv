@@ -1,0 +1,13 @@
+platform_id,rule,attempts,evidence
+codesandbox,4,2026-11-04T20:28:11.416Z ; 2026-11-09T06:17:27.015Z,"homepage_blocked=true in both valid attempts (scores 7, 11; files codesandbox__r1__20261104T202811Z.json, codesandbox__r1__20261109T061727Z.json)"
+vultr,4,2026-11-04T20:31:17.528Z ; 2026-11-09T06:18:01.174Z,"homepage_blocked=true in both valid attempts (scores 39, 39; files vultr__r1__20261104T203117Z.json, vultr__r1__20261109T061801Z.json)"
+openai,4,2026-11-04T20:32:34.267Z ; 2026-11-09T06:20:30.105Z,"homepage_blocked=true in both valid attempts (scores 22, 23; files openai__r1__20261104T203234Z.json, openai__r1__20261109T062030Z.json)"
+xai,4,2026-11-04T20:34:43.469Z ; 2026-11-09T06:21:00.354Z,"homepage_blocked=true in both valid attempts (scores 47, 47; files xai__r1__20261104T203443Z.json, xai__r1__20261109T062100Z.json)"
+perplexity,4,2026-11-04T20:38:42.212Z ; 2026-11-09T06:21:50.533Z,"homepage_blocked=true in both valid attempts (scores 47, 47; files perplexity__r1__20261104T203842Z.json, perplexity__r1__20261109T062150Z.json)"
+writer,4,2026-11-04T20:39:14.808Z ; 2026-11-09T06:22:08.375Z,"homepage_blocked=true in both valid attempts (scores 2, 2; files writer__r1__20261104T203914Z.json, writer__r1__20261109T062208Z.json)"
+algolia,4,2026-11-04T20:44:35.924Z ; 2026-11-09T06:23:26.606Z,"homepage_blocked=true in both valid attempts (scores 9, 7; files algolia__r1__20261104T204435Z.json, algolia__r1__20261109T062326Z.json)"
+mailgun,4,2026-11-04T20:56:51.585Z ; 2026-11-09T06:25:57.450Z,"homepage_blocked=true in both valid attempts (scores 20, 20; files mailgun__r1__20261104T205651Z.json, mailgun__r1__20261109T062557Z.json)"
+discord,4,2026-11-04T20:57:05.066Z ; 2026-11-09T06:26:27.249Z,"homepage_blocked=true in both valid attempts (scores 47, 47; files discord__r1__20261104T205705Z.json, discord__r1__20261109T062627Z.json)"
+lemonsqueezy,4,2026-11-04T20:59:39.552Z ; 2026-11-09T06:26:43.205Z,"homepage_blocked=true in both valid attempts (scores 16, 16; files lemonsqueezy__r1__20261104T205939Z.json, lemonsqueezy__r1__20261109T062643Z.json)"
+openrouter,4,2026-11-09T06:41:03.817Z ; 2026-11-09T07:44:32.442Z,"homepage_blocked=true in both valid attempts (scores 47, 47; files openrouter__r1__20261109T064103Z.json, openrouter__r1__20261109T074432Z.json)"
+vonage,4,2026-11-09T06:41:39.430Z ; 2026-11-09T07:44:32.488Z,"homepage_blocked=true in both valid attempts (scores 26, 26; files vonage__r1__20261109T064139Z.json, vonage__r1__20261109T074432Z.json)"

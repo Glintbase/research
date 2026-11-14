@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://www.algolia.com/",
+  "unreachable": true,
+  "status": "failed"
+}

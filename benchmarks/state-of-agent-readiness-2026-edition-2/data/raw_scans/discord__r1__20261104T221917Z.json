@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://discord.com/developers",
+  "unreachable": true,
+  "status": "failed"
+}

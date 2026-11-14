@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://www.lemonsqueezy.com/",
+  "unreachable": true,
+  "status": "failed"
+}

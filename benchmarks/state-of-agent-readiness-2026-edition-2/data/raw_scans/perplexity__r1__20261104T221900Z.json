@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://www.perplexity.ai/",
+  "unreachable": true,
+  "status": "failed"
+}

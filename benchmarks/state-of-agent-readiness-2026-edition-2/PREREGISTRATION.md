@@ -134,7 +134,16 @@ The report is published whatever the result. If ARS pillars do not predict succe
 
 ## 12. Deviations
 
-*(None yet. Each deviation is added here with its date and reason.)*
+Each deviation is listed with its date and reason. None changes the hypotheses, predictors, outcome or analysis.
+
+1. **Predictor scan dates span 2026-11-04 to 2026-11-09** (logged 2026-11-14). Round 1 began 2026-11-04 20:27 UTC; the second rule-4 attempts ran 2026-11-09 06:17–07:44 UTC because the workstation lost its network on 2026-11-04 and the session was then paused. Every predictor scan predates every agent run. Round-2 retests ran 2026-11-09 07:4x–08:2x UTC, plus resend, nebius and razorpay on 2026-11-14.
+2. **A failed retry batch is not counted as a rule-4 attempt** (2026-11-04 22:18–22:19 UTC). All 23 targets failed with `fetch failed` in 2–3 s, which points to a local outage. The files are kept; see `data/cohort/eligibility_checks.md`.
+3. **12 rule-4 replacements, two of them second-order.** Reserves openrouter and vonage were blocked in both of their attempts (06:41 and 07:44 UTC, 2026-11-09), so the next reserves (nebius, razorpay) went in. The rule is applied as written; it is logged because rule 4 reached into the reserve list. The resulting **selection effect** (bot-hostile homepages removed, including OpenAI) will be reported.
+4. **PayPal has no round-2 retest.** Its homepage was blocked on the retest; its round-1 scan is valid and stays its predictor. The test-retest analysis uses 89 platforms.
+5. **245 of 270 tasks have a drafted key** (2026-11-14). For 25 platform × family pairs, no key passed validation from the platform's public docs (reasons in the review sheet). §4 planned exactly one task per family; these 25 tasks are not run. A platform's success rate is computed over the tasks it has, and the per-family analysis uses the tasks that exist. Two platforms, Freestyle and Orama, have no key in any family. They are not run, and the analysis covers 88 platforms. Rule 4 does not cover missing keys, so they are not replaced. The Sonnet subset has 78 tasks on 29 platforms.
+6. **Some pages were located by a research agent.** For keys the automatic page ranking missed, research agents (and in the end the analyst) named candidate URLs. The key itself is still drafted only from the fetched page text and passes the same programmatic checks (verbatim quote on page, regex accepts the canonical answer and rejects a perturbation).
+7. **Labelling.** Claude-drafted tasks and Claude traces are evaluation-only under Glintbase's data policy (2026-11-04). Each task carries that label.
+8. **Weak keys are kept and flagged, not dropped.** Keys that are valid under the rule but look weak (Flowise localhost host, Hasura Cloud API, Deep Lake 401 fallback, error keys without a 429, and others) stay in the task set. Each is flagged for Victor in the review sheet. Under §6, his verdict decides whether a key is fixed or dropped before analysis.
 
 Known differences from the programme text, decided before freezing:
 - Predictors are at the live `ars-3.3.1`, not `ars-3.4.x`, so the study does not wait on the 3.4 release (programme §10.6).

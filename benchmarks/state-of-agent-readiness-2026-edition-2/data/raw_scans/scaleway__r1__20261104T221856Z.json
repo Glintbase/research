@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://www.scaleway.com/",
+  "unreachable": true,
+  "status": "failed"
+}

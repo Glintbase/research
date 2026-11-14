@@ -1,6 +1,6 @@
 # State of Agent Readiness 2026 — Edition 2
 
-> **Status**: **Pre-registered 2026-11-04** ([PREREGISTRATION.md](PREREGISTRATION.md)). Cohort snapshot, frozen scans and agent runs follow. There are no results yet.
+> **Status**: **Pre-registered 2026-11-04** ([PREREGISTRATION.md](PREREGISTRATION.md)). Cohort fixed (90 platforms, 12 rule-4 replacements). Predictors frozen at `ars-3.3.1` (`data/predictors_frozen.csv`). 245 task keys drafted and awaiting human verification. Agent runs are next. There are no results yet.
 > **Authors**: Glintbase Research
 
 ---

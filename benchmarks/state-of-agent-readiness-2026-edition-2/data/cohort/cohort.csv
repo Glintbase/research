@@ -3,7 +3,6 @@ daytona,Daytona,sandboxes_compute,1,71383,https://www.daytona.io,https://www.day
 e2b,E2B,sandboxes_compute,2,30783,https://e2b.dev,https://e2b.dev/docs,
 digitalocean,DigitalOcean,sandboxes_compute,3,28250,https://www.digitalocean.com,https://docs.digitalocean.com/reference/api/,
 gitpod,Ona (Gitpod),sandboxes_compute,4,13803,https://ona.com,https://ona.com/docs,
-codesandbox,CodeSandbox,sandboxes_compute,5,13660,https://codesandbox.io,https://codesandbox.io/docs/sdk,
 fly,Fly.io,sandboxes_compute,6,4914,https://fly.io,https://fly.io/docs/,
 linode,Akamai Cloud (Linode),sandboxes_compute,7,2255,https://www.linode.com,https://techdocs.akamai.com/linode-api/reference/api,
 hetzner,Hetzner Cloud,sandboxes_compute,8,1858,https://www.hetzner.com,https://docs.hetzner.cloud/,
@@ -13,22 +12,23 @@ baseten,Baseten,sandboxes_compute,11,1228,https://www.baseten.co,https://docs.ba
 scaleway,Scaleway,sandboxes_compute,12,1020,https://www.scaleway.com,https://www.scaleway.com/en/developers/api/,
 fal,fal,sandboxes_compute,13,980,https://fal.ai,https://docs.fal.ai/,
 freestyle,Freestyle,sandboxes_compute,14,832,https://www.freestyle.sh,https://docs.freestyle.sh/,
-vultr,Vultr,sandboxes_compute,15,563,https://www.vultr.com,https://www.vultr.com/api/,
+cerebrium,Cerebrium,sandboxes_compute,16,526,https://www.cerebrium.ai,https://docs.cerebrium.ai/,yes
+runpod,RunPod,sandboxes_compute,17,464,https://www.runpod.io,https://docs.runpod.io/,yes
 deepseek,DeepSeek,llm_apis,1,271553,https://www.deepseek.com,https://api-docs.deepseek.com/,
 huggingface,Hugging Face Inference Providers,llm_apis,2,168519,https://huggingface.co,https://huggingface.co/docs/inference-providers,
-openai,OpenAI,llm_apis,3,133071,https://openai.com,https://platform.openai.com/docs,
 gemini,Google Gemini API,llm_apis,4,108713,https://ai.google.dev,https://ai.google.dev/gemini-api/docs,
-xai,xAI,llm_apis,5,52219,https://x.ai,https://docs.x.ai/,
 zai,Z.ai,llm_apis,6,40881,https://z.ai,https://docs.z.ai/,
 alibaba,Alibaba Cloud Model Studio (Qwen),llm_apis,7,28987,https://www.alibabacloud.com,https://www.alibabacloud.com/help/en/model-studio/,
 moonshot,Moonshot AI (Kimi),llm_apis,8,11422,https://platform.moonshot.ai,https://platform.moonshot.ai/docs,
 mistral,Mistral AI,llm_apis,9,10823,https://mistral.ai,https://docs.mistral.ai/,
 replicate,Replicate,llm_apis,10,9495,https://replicate.com,https://replicate.com/docs,
 together,Together AI,llm_apis,11,8979,https://www.together.ai,https://docs.together.ai/,
-perplexity,Perplexity API,llm_apis,12,5137,https://www.perplexity.ai,https://docs.perplexity.ai/,
 cohere,Cohere,llm_apis,13,3171,https://cohere.com,https://docs.cohere.com/,
-writer,Writer,llm_apis,14,1450,https://writer.com,https://dev.writer.com/,
 groq,Groq,llm_apis,15,1433,https://groq.com,https://console.groq.com/docs,
+cerebras,Cerebras Inference,llm_apis,16,1210,https://www.cerebras.ai,https://inference-docs.cerebras.ai/,yes
+novita,Novita AI,llm_apis,17,787,https://novita.ai,https://novita.ai/docs,yes
+sambanova,SambaNova Cloud,llm_apis,19,581,https://sambanova.ai,https://docs.sambanova.ai/,yes
+nebius,Nebius AI Studio,llm_apis,20,456,https://nebius.com,https://docs.nebius.com/studio/inference,yes
 elastic,Elastic Cloud,vector_search,1,78483,https://www.elastic.co,https://www.elastic.co/docs/,
 meilisearch,Meilisearch,vector_search,2,59773,https://www.meilisearch.com,https://www.meilisearch.com/docs,
 zilliz,Zilliz Cloud (Milvus),vector_search,3,46580,https://zilliz.com,https://docs.zilliz.com/,
@@ -42,8 +42,8 @@ lancedb,LanceDB,vector_search,10,11841,https://lancedb.com,https://lancedb.com/d
 orama,Orama,vector_search,11,10596,https://orama.com,https://docs.orama.com/,
 activeloop,Activeloop Deep Lake,vector_search,12,9264,https://www.activeloop.ai,https://docs.deeplake.ai/,
 vespa,Vespa Cloud,vector_search,13,7159,https://vespa.ai,https://docs.vespa.ai/,
-algolia,Algolia,vector_search,14,5288,https://www.algolia.com,https://www.algolia.com/doc/,
 exa,Exa,vector_search,15,5209,https://exa.ai,https://docs.exa.ai/,
+marqo,Marqo,vector_search,16,5025,https://www.marqo.ai,https://docs.marqo.ai/,yes
 vercel,Vercel,backend_infra,1,143254,https://vercel.com,https://vercel.com/docs,
 supabase,Supabase,backend_infra,2,114497,https://supabase.com,https://supabase.com/docs,
 redis,Redis Cloud,backend_infra,3,77172,https://redis.io,https://redis.io/docs/latest/,
@@ -79,8 +79,6 @@ square,Square,payments_comms,2,30004,https://squareup.com,https://developer.squa
 resend,Resend,payments_comms,3,19910,https://resend.com,https://resend.com/docs/,
 polar,Polar,payments_comms,4,10462,https://polar.sh,https://polar.sh/docs,
 stream,Stream,payments_comms,5,9085,https://getstream.io,https://getstream.io/docs/,
-mailgun,Mailgun,payments_comms,6,6918,https://www.mailgun.com,https://documentation.mailgun.com/,
-discord,Discord API,payments_comms,7,6527,https://discord.com/developers,https://discord.com/developers/docs/,
 stripe,Stripe,payments_comms,8,4552,https://stripe.com,https://docs.stripe.com/,
 slack,Slack Web API,payments_comms,9,4016,https://api.slack.com,https://docs.slack.dev/,
 paypal,PayPal,payments_comms,10,3614,https://www.paypal.com,https://developer.paypal.com/docs/,
@@ -88,4 +86,6 @@ postmark,Postmark,payments_comms,11,3192,https://postmarkapp.com,https://postmar
 sendgrid,SendGrid,payments_comms,12,3053,https://sendgrid.com,https://www.twilio.com/docs/sendgrid,
 pusher,Pusher,payments_comms,13,2225,https://pusher.com,https://pusher.com/docs/,
 twilio,Twilio,payments_comms,14,2084,https://www.twilio.com,https://www.twilio.com/docs/,
-lemonsqueezy,Lemon Squeezy,payments_comms,15,1528,https://www.lemonsqueezy.com,https://docs.lemonsqueezy.com/,
+plivo,Plivo,payments_comms,17,814,https://www.plivo.com,https://www.plivo.com/docs/,yes
+plaid,Plaid,payments_comms,18,763,https://plaid.com,https://plaid.com/docs/,yes
+razorpay,Razorpay,payments_comms,19,664,https://razorpay.com,https://razorpay.com/docs/,yes

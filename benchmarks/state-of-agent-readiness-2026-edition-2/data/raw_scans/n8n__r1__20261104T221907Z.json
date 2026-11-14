@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://n8n.io/",
+  "unreachable": true,
+  "status": "failed"
+}

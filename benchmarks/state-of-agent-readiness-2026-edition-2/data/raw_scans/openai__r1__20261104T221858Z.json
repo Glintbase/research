@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://openai.com/",
+  "unreachable": true,
+  "status": "failed"
+}

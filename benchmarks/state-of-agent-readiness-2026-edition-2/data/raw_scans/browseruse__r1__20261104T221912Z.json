@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://browser-use.com/",
+  "unreachable": true,
+  "status": "failed"
+}

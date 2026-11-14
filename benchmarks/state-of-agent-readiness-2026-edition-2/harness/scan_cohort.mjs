@@ -59,7 +59,9 @@ async function scan() {
   if (!v.includes(EXPECTED_VERSION)) throw new Error(`CLI reports "${v}", expected ${EXPECTED_VERSION}`);
   mkdirSync(RAW, { recursive: true });
   const done = new Set(manifest().filter((m) => m.round === round && m.ok).map((m) => m.platform_id));
-  const todo = cohort().filter((c) => (!only || only.includes(c.platform_id)) && !done.has(c.platform_id));
+  // --reserves scans the named ranked reserves (contingency for replacement rule 4) without adding them to the cohort.
+  const pool = argv.includes("--reserves") ? readCsv(join(STUDY, "data", "cohort", "ranking.csv")) : cohort();
+  const todo = pool.filter((c) => (!only || only.includes(c.platform_id)) && !done.has(c.platform_id));
   console.log(`round ${round}: ${todo.length} to scan with ${v}`);
   let next = 0;
   await Promise.all(

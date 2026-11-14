@@ -1,0 +1,6 @@
+{
+  "error": "fetch failed",
+  "target": "https://apify.com/",
+  "unreachable": true,
+  "status": "failed"
+}
