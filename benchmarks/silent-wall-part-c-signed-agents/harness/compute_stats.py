@@ -99,7 +99,12 @@ def main():
     S["stability"] = {f"{x}->{y}": stability(built[x], built[y], ARMS) for x, y in pairs if x in built and y in built}
     ref = STUDY_DIR.parent / "the-silent-wall" / "data" / "summary.json"
     if ref.exists():
-        S["silent_wall_reference"] = {"file": "the-silent-wall/data/summary.json (October 2026, published)"}
+        sw_round1 = json.loads(ref.read_text(encoding="utf8"))["round_1"]
+        S["silent_wall_reference"] = {
+            "file": "the-silent-wall/data/summary.json, round_1 (October 2026, published; AS36873 vantage point)",
+            "challenged_or_blocked_home": sw_round1["rq2_challenged_or_blocked_home"],
+            "home_outcome": {k: v for k, v in sw_round1["rq2_home_outcome"].items() if k in ("agent", "browser")},
+        }
     (DATA / "summary.json").write_text(json.dumps(S, indent=2), encoding="utf8")
     for rnd, R in S["rounds"].items():
         print(rnd, {x: (v["challenged_or_blocked"]["k"], v["n"]) for x, v in R["per_arm"].items()},

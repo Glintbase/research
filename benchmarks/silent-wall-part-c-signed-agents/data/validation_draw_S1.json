@@ -1,0 +1,616 @@
+[
+  {
+    "domain": "hotjar.com",
+    "arm": "browser",
+    "harness_outcome": "ok",
+    "evidence": {
+      "url": "https://hotjar.com/",
+      "status": 200,
+      "error": null,
+      "error_detail": null,
+      "text_len": 5314,
+      "markers": [],
+      "title": "Official Hotjar Site \u2013 Sign up for free",
+      "final_url": "https://contentsquare.com/hotjar/?utm_campaign=exp__hj_hp_redirection",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "server": "Vercel",
+        "x-vercel-id": "fra1::7fsjv-1794660750559-d51e95ef830a"
+      }
+    }
+  },
+  {
+    "domain": "pusher.com",
+    "arm": "signed",
+    "harness_outcome": "ok",
+    "evidence": {
+      "url": "https://pusher.com/",
+      "status": 200,
+      "error": null,
+      "error_detail": null,
+      "text_len": 10295,
+      "markers": [],
+      "title": "Pusher | Leader In Realtime Technologies",
+      "final_url": "https://pusher.com/",
+      "headers": {
+        "content-type": "text/html",
+        "server": "nginx/1.27.5",
+        "x-cache": "Miss from cloudfront",
+        "via": "1.1 d464747d443d7370c69239599bc83b4a.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "LOS50-P2",
+        "x-amz-cf-id": "hTACxYeTgnzNjuzCsIaEn-2NaD7KtGwMoAiq9s7D8n4LFpJSE-lHQQ=="
+      }
+    }
+  },
+  {
+    "domain": "nike.com",
+    "arm": "unsigned",
+    "harness_outcome": "ok",
+    "evidence": {
+      "url": "https://nike.com/",
+      "status": 200,
+      "error": null,
+      "error_detail": null,
+      "text_len": 8983,
+      "markers": [
+        "kasada"
+      ],
+      "title": "Nike. Just Do It. Nike.com",
+      "final_url": "https://www.nike.com/",
+      "headers": {
+        "server": "unified-edge-router",
+        "content-type": "text/html; charset=UTF-8",
+        "akamai-grn": "0.09680317.1794661000.3ba5e7bf",
+        "x-akamai-transformed": "9 - 0 pmb=mNONE,1mRUM,3"
+      }
+    }
+  },
+  {
+    "domain": "accuweather.com",
+    "arm": "browser",
+    "harness_outcome": "block",
+    "evidence": {
+      "url": "https://accuweather.com/",
+      "status": 403,
+      "error": null,
+      "error_detail": null,
+      "text_len": 195,
+      "markers": [
+        "akamai_block"
+      ],
+      "title": "Access Denied",
+      "final_url": "https://accuweather.com/",
+      "headers": {
+        "content-type": "text/html",
+        "server": "AkamaiGHost"
+      }
+    }
+  },
+  {
+    "domain": "wsj.com",
+    "arm": "signed",
+    "harness_outcome": "challenge",
+    "evidence": {
+      "url": "https://wsj.com/",
+      "status": 401,
+      "error": null,
+      "error_detail": null,
+      "text_len": 51,
+      "markers": [
+        "datadome"
+      ],
+      "title": "wsj.com",
+      "final_url": "https://www.wsj.com/",
+      "headers": {
+        "server": "CloudFront",
+        "content-type": "text/html;charset=utf-8",
+        "x-datadome": "protected",
+        "x-cache": "LambdaGeneratedResponse from cloudfront",
+        "via": "1.1 dcabb20d60964b86ee6b06ae5fa1a5d4.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "LOS50-P5",
+        "x-amz-cf-id": "3HNmVilqpW2TvziSx9WnlwEIu57kJwG4Q3WkL4LGqNQhQMTRXbB5Ew=="
+      }
+    }
+  },
+  {
+    "domain": "allegro.pl",
+    "arm": "unsigned",
+    "harness_outcome": "challenge",
+    "evidence": {
+      "url": "https://allegro.pl/",
+      "status": 403,
+      "error": null,
+      "error_detail": null,
+      "text_len": 54,
+      "markers": [
+        "datadome"
+      ],
+      "title": "allegro.pl",
+      "final_url": "https://allegro.pl/",
+      "headers": {
+        "content-type": "text/html, text/html;charset=utf-8"
+      }
+    }
+  },
+  {
+    "domain": "hm.com",
+    "arm": "signed",
+    "harness_outcome": "block",
+    "evidence": {
+      "url": "https://hm.com/",
+      "status": 403,
+      "error": null,
+      "error_detail": null,
+      "text_len": 276,
+      "markers": [],
+      "title": "Access Denied",
+      "final_url": "https://hm.com/",
+      "headers": {
+        "server": "AkamaiGHost",
+        "content-type": "text/html"
+      }
+    }
+  },
+  {
+    "domain": "paypal.com",
+    "arm": "unsigned",
+    "harness_outcome": "block",
+    "evidence": {
+      "url": "https://paypal.com/",
+      "status": 403,
+      "error": null,
+      "error_detail": null,
+      "text_len": 54,
+      "markers": [],
+      "title": "paypal.com",
+      "final_url": "https://www.paypal.com/ng/home",
+      "headers": {
+        "content-type": "text/html;charset=utf-8",
+        "x-datadome": "protected",
+        "server": "cloudflare",
+        "cf-ray": "a5a5fab73a9466a9-AMS"
+      }
+    }
+  },
+  {
+    "domain": "etsy.com",
+    "arm": "browser",
+    "harness_outcome": "challenge",
+    "evidence": {
+      "url": "https://etsy.com/",
+      "status": 403,
+      "error": null,
+      "error_detail": null,
+      "text_len": 0,
+      "markers": [
+        "datadome"
+      ],
+      "title": "etsy.com",
+      "final_url": "https://www.etsy.com/",
+      "headers": {
+        "content-type": "text/html;charset=utf-8",
+        "server": "DataDome",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-datadome": "protected",
+        "x-served-by": "cache-toj-leto2350062-TOJ"
+      }
+    }
+  },
+  {
+    "domain": "sberbank.ru",
+    "arm": "signed",
+    "harness_outcome": "error",
+    "evidence": {
+      "url": "https://sberbank.ru/",
+      "status": null,
+      "error": "tls_error",
+      "error_detail": null,
+      "text_len": null,
+      "markers": null,
+      "title": null,
+      "final_url": null,
+      "headers": {}
+    }
+  },
+  {
+    "domain": "bancodevenezuela.com",
+    "arm": "unsigned",
+    "harness_outcome": "error",
+    "evidence": {
+      "url": "https://bancodevenezuela.com/",
+      "status": null,
+      "error": "tls_error",
+      "error_detail": null,
+      "text_len": null,
+      "markers": null,
+      "title": null,
+      "final_url": null,
+      "headers": {}
+    }
+  },
+  {
+    "domain": "rakuten.co.jp",
+    "arm": "signed",
+    "harness_outcome": "thin",
+    "evidence": {
+      "url": "https://rakuten.co.jp/",
+      "status": 200,
+      "error": null,
+      "error_detail": null,
+      "text_len": 150,
+      "markers": [],
+      "title": "\u3010\u697d\u5929\u5e02\u5834\u3011Shopping is Entertainment! \uff1a \u30a4\u30f3\u30bf\u30fc\u30cd\u30c3\u30c8\u6700\u5927\u7d1a\u306e\u901a\u4fe1\u8ca9\u58f2\u3001\u901a\u8ca9\u30aa\u30f3\u30e9\u30a4\u30f3\u30b7\u30e7\u30c3\u30d4\u30f3\u30b0\u30b3\u30df\u30e5\u30cb\u30c6\u30a3",
+      "final_url": "https://www.rakuten.co.jp/",
+      "headers": {
+        "server": "Apache",
+        "content-type": "text/html; charset=UTF-8"
+      }
+    }
+  },
+  {
+    "domain": "citi.com",
+    "arm": "unsigned",
+    "harness_outcome": "thin",
+    "evidence": {
+      "url": "https://citi.com/",
+      "status": 200,
+      "error": null,
+      "error_detail": null,
+      "text_len": 79,
+      "markers": [],
+      "title": "Online Banking, Mortgages, Personal Loans, Investing | Citi.com",
+      "final_url": "https://www.citi.com/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-akamai-transformed": "0 - 0 -"
+      }
+    }
+  },
+  {
+    "domain": "vtb.ru",
+    "arm": "browser",
+    "harness_outcome": "error",
+    "evidence": {
+      "url": "https://vtb.ru/",
+      "status": null,
+      "error": "tls_error",
+      "error_detail": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://vtb.ru/",
+      "text_len": null,
+      "markers": null,
+      "title": null,
+      "final_url": null,
+      "headers": {}
+    }
+  },
+  {
+    "domain": "washingtonpost.com",
+    "arm": "browser",
+    "harness_outcome": "other",
+    "evidence": {
+      "url": "https://washingtonpost.com/",
+      "status": 301,
+      "error": null,
+      "error_detail": "Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://washingtonpost.com/",
+      "text_len": 0,
+      "markers": [],
+      "title": null,
+      "final_url": "https://washingtonpost.com/",
+      "headers": {
+        "location": "https://www.washingtonpost.com/",
+        "server": "AmazonS3",
+        "via": "1.1 80ad73d9e8162f436b9f5199b04830b4.cloudfront.net (CloudFront)",
+        "x-amz-cf-id": "Fvnf6Y4StJFeUnJ4iYf_7H1fkPjmT_leY6Hw_1mRN57gps66Ji98XA==",
+        "x-amz-cf-pop": "LOS50-P2",
+        "x-cache": "Hit from cloudfront"
+      }
+    }
+  },
+  {
+    "domain": "telegraph.co.uk",
+    "arm": "signed",
+    "harness_outcome": "other",
+    "evidence": {
+      "url": "https://telegraph.co.uk/",
+      "status": 402,
+      "error": null,
+      "error_detail": null,
+      "text_len": 886,
+      "markers": [],
+      "title": null,
+      "final_url": "https://www.telegraph.co.uk/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      }
+    }
+  },
+  {
+    "domain": "telegraph.co.uk",
+    "arm": "unsigned",
+    "harness_outcome": "other",
+    "evidence": {
+      "url": "https://telegraph.co.uk/",
+      "status": 402,
+      "error": null,
+      "error_detail": null,
+      "text_len": 886,
+      "markers": [],
+      "title": null,
+      "final_url": "https://www.telegraph.co.uk/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      }
+    }
+  },
+  {
+    "domain": "intuit.com",
+    "arm": "browser",
+    "harness_outcome": "rate_limited",
+    "evidence": {
+      "url": "https://intuit.com/",
+      "status": 429,
+      "error": null,
+      "error_detail": "Page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://intuit.com/",
+      "text_len": 14,
+      "markers": [],
+      "title": "www.intuit.com",
+      "final_url": "https://www.intuit.com/",
+      "headers": {
+        "akamai-grn": "0.21680317.1794658813.3c8585ae",
+        "content-type": "text/xml",
+        "retry-after": "1",
+        "server": "istio-envoy"
+      }
+    }
+  },
+  {
+    "domain": "amazon.com",
+    "arm": "browser",
+    "harness_outcome": "thin",
+    "evidence": {
+      "url": "https://amazon.com/",
+      "status": 200,
+      "error": null,
+      "error_detail": null,
+      "text_len": 142,
+      "markers": [],
+      "title": "Amazon.com",
+      "final_url": "https://www.amazon.com/",
+      "headers": {
+        "content-type": "text/html",
+        "server": "Server",
+        "via": "1.1 5c9ff8ead1952d3f0c15a7b2b5d8b0c8.cloudfront.net (CloudFront)",
+        "x-amz-cf-id": "FHSFMwqc75O9G0MBBRLlNfv0VLg8jmmjmhe0J29T6eE_kgSbtdBv1Q==",
+        "x-amz-cf-pop": "LOS50-P4",
+        "x-cache": "Miss from cloudfront"
+      }
+    }
+  },
+  {
+    "domain": "target.com",
+    "arm": "signed",
+    "harness_outcome": "rate_limited",
+    "evidence": {
+      "url": "https://target.com/",
+      "status": 429,
+      "error": null,
+      "error_detail": null,
+      "text_len": 0,
+      "markers": [],
+      "title": null,
+      "final_url": "https://target.com/",
+      "headers": {
+        "server": "Varnish",
+        "retry-after": "0",
+        "via": "1.1 varnish",
+        "x-served-by": "cache-jnb-faor730033-JNB",
+        "x-cache": "MISS"
+      }
+    }
+  },
+  {
+    "domain": "target.com",
+    "arm": "unsigned",
+    "harness_outcome": "rate_limited",
+    "evidence": {
+      "url": "https://target.com/",
+      "status": 429,
+      "error": null,
+      "error_detail": null,
+      "text_len": 0,
+      "markers": [],
+      "title": null,
+      "final_url": "https://target.com/",
+      "headers": {
+        "server": "Varnish",
+        "retry-after": "0",
+        "via": "1.1 varnish",
+        "x-served-by": "cache-jnb-faor730023-JNB",
+        "x-cache": "MISS"
+      }
+    }
+  },
+  {
+    "domain": "reuters.com",
+    "arm": "signed",
+    "harness_outcome": "self_excluded",
+    "evidence": {
+      "url": "https://reuters.com/",
+      "status": null,
+      "error": null,
+      "error_detail": null,
+      "text_len": null,
+      "markers": null,
+      "title": null,
+      "final_url": null,
+      "headers": {}
+    }
+  },
+  {
+    "domain": "reuters.com",
+    "arm": "unsigned",
+    "harness_outcome": "self_excluded",
+    "evidence": {
+      "url": "https://reuters.com/",
+      "status": null,
+      "error": null,
+      "error_detail": null,
+      "text_len": null,
+      "markers": null,
+      "title": null,
+      "final_url": null,
+      "headers": {}
+    }
+  },
+  {
+    "domain": "jetbrains.com",
+    "arm": "browser",
+    "harness_outcome": "ok",
+    "evidence": {
+      "url": "https://jetbrains.com/",
+      "status": 200,
+      "error": null,
+      "error_detail": null,
+      "text_len": 5844,
+      "markers": [],
+      "title": "JetBrains: Essential tools for software developers and teams",
+      "final_url": "https://www.jetbrains.com/",
+      "headers": {
+        "content-type": "text/html",
+        "server": "nginx",
+        "via": "1.1 1146d9293f189a66b4c0e732ccfdd246.cloudfront.net (CloudFront)",
+        "x-amz-cf-id": "J89rY8lcU68w_yztc1B7SfermxoQuWej3qACk2BazPBJIMDVrhDeRA==",
+        "x-amz-cf-pop": "LOS50-P4",
+        "x-cache": "Hit from cloudfront"
+      }
+    }
+  },
+  {
+    "domain": "airbnb.com",
+    "arm": "signed",
+    "harness_outcome": "ok",
+    "evidence": {
+      "url": "https://airbnb.com/",
+      "status": 200,
+      "error": null,
+      "error_detail": null,
+      "text_len": 4064,
+      "markers": [],
+      "title": "Airbnb: Vacation Rentals, Cabins, Beach Houses, Unique Homes &amp; Experiences",
+      "final_url": "https://www.airbnb.com/",
+      "headers": {
+        "content-type": "text/html;charset=utf-8",
+        "server": "envoy"
+      }
+    }
+  },
+  {
+    "domain": "github.com",
+    "arm": "unsigned",
+    "harness_outcome": "ok",
+    "evidence": {
+      "url": "https://github.com/",
+      "status": 200,
+      "error": null,
+      "error_detail": null,
+      "text_len": 8216,
+      "markers": [],
+      "title": "GitHub \u00b7 Change is constant. GitHub keeps you ahead. \u00b7 GitHub \u00b7 GitHub",
+      "final_url": "https://github.com/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "server": "github.com"
+      }
+    }
+  },
+  {
+    "domain": "paypal.com",
+    "arm": "browser",
+    "harness_outcome": "block",
+    "evidence": {
+      "url": "https://paypal.com/",
+      "status": 403,
+      "error": null,
+      "error_detail": null,
+      "text_len": 0,
+      "markers": [],
+      "title": "paypal.com",
+      "final_url": "https://www.paypal.com/ng/home",
+      "headers": {
+        "content-type": "text/html;charset=utf-8",
+        "via": "1.1 varnish",
+        "x-cache": "MISS, MISS",
+        "x-datadome": "protected",
+        "x-served-by": "cache-lis1490020-LIS, cache-lis1490020-LIS, cache-lis1490020-LIS"
+      }
+    }
+  },
+  {
+    "domain": "booking.com",
+    "arm": "signed",
+    "harness_outcome": "challenge",
+    "evidence": {
+      "url": "https://booking.com/",
+      "status": 202,
+      "error": null,
+      "error_detail": null,
+      "text_len": 157,
+      "markers": [
+        "aws_waf"
+      ],
+      "title": "",
+      "final_url": "https://www.booking.com/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-cache": "Miss from cloudfront",
+        "via": "1.1 038dfe99ba3b123621104779e9c25162.cloudfront.net (CloudFront)",
+        "x-amz-cf-pop": "LOS50-P3",
+        "x-amz-cf-id": "VbhXWkq6a-Xg_hjLzOkUUc5nlhvCKQ72FkkdBfbLELd_arcDc0biKw=="
+      }
+    }
+  },
+  {
+    "domain": "etsy.com",
+    "arm": "unsigned",
+    "harness_outcome": "challenge",
+    "evidence": {
+      "url": "https://etsy.com/",
+      "status": 403,
+      "error": null,
+      "error_detail": null,
+      "text_len": 52,
+      "markers": [
+        "datadome"
+      ],
+      "title": "etsy.com",
+      "final_url": "https://www.etsy.com/",
+      "headers": {
+        "content-type": "text/html;charset=utf-8",
+        "server": "DataDome",
+        "x-datadome": "protected",
+        "via": "1.1 varnish",
+        "x-served-by": "cache-lis1490049-LIS",
+        "x-cache": "MISS"
+      }
+    }
+  },
+  {
+    "domain": "coupang.com",
+    "arm": "signed",
+    "harness_outcome": "block",
+    "evidence": {
+      "url": "https://coupang.com/",
+      "status": 403,
+      "error": null,
+      "error_detail": null,
+      "text_len": 287,
+      "markers": [],
+      "title": "Access Denied",
+      "final_url": "https://www.coupang.com/",
+      "headers": {
+        "server": "AkamaiGHost",
+        "content-type": "text/html"
+      }
+    }
+  }
+]

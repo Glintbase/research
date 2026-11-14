@@ -1,0 +1,16 @@
+{
+  "round": "S1",
+  "arms": [
+    "unsigned",
+    "signed",
+    "browser"
+  ],
+  "started_at": "2026-11-14T12:16:40.249940+00:00",
+  "finished_at": "2026-11-14T13:22:48.661161+00:00",
+  "domains": 150,
+  "harness_version": "1.0.0",
+  "agent_ua": "GlintbaseResearch/1.0 (+https://glintbase.dev/research/bot; research@glintbase.dev)",
+  "signature_agent": "https://glintbase.dev",
+  "keyid": "ZnRZwqhiD-BF30ZqAvc_CgLXsPIX1SsXKG9QJTHSrX0",
+  "browser": "Chromium (Playwright, headless, default UA)"
+}
