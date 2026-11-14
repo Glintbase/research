@@ -77,6 +77,27 @@ def main():
                                 "server_card_valid_v1": sum(c["server_card_valid_v1"] for c in cl)}
     S["ai_catalog_entry_types"] = dict(Counter(t for r in rows for t in r.get("ai_catalog_entry_types") or []).most_common(10))
     S["ard_top_keys"] = dict(Counter(k for r in rows for k in r.get("ard_top_keys") or []).most_common(15))
+
+    # Exploratory, not pre-registered: one operator's template cluster counted as a single site
+    # (the alphabetically first member stays, the others are dropped). The list was built after the
+    # census by grouping identical api-catalog documents (web-census-crawler/data/e3_template_cluster_api_catalog.json).
+    cluster_path = STUDY_DIR.parent / "web-census-crawler" / "data" / "e3_template_cluster_api_catalog.json"
+    if cluster_path.exists():
+        cluster = sorted(json.loads(cluster_path.read_text(encoding="utf8")))
+        drop = set(cluster[1:])
+        once = [r for r in rows if r["site"] not in drop]
+        mcp_once = [r for r in once if src(r, "mcp_registry")]
+        S["exploratory_operator_counted_once"] = {
+            "note": "Exploratory, not pre-registered. One operator's template cluster counted as one site.",
+            "cluster_sites": len(cluster),
+            "cluster_reachable": sum(r["site"] in set(cluster) for r in rows),
+            "cluster_with_valid_api_catalog": sum(r["site"] in set(cluster) and r["files"]["api_catalog"]["outcome"] == "valid" for r in rows),
+            "cluster_with_link_describedby": sum(r["site"] in set(cluster) and bool(r.get("link_describedby")) for r in rows),
+            "all_sites": {"n": len(once), "valid": {f: prop(sum(r["files"][f]["outcome"] == "valid" for r in once), len(once)) for f in FILES},
+                          "any_agent_discovery_file_valid": prop(sum(any(r["files"][f]["outcome"] == "valid" for f in agent_files) for r in once), len(once)),
+                          "link_describedby": prop(sum(bool(r.get("link_describedby")) for r in once), len(once))},
+            "mcp_registry": {"n": len(mcp_once), "valid": {f: prop(sum(r["files"][f]["outcome"] == "valid" for r in mcp_once), len(mcp_once)) for f in FILES}},
+        }
     (DATA / "summary.json").write_text(json.dumps(S, indent=2), encoding="utf8")
     print(json.dumps({"reachable": S["reachable"], "catch_all_wk": S["catch_all_wk"],
                       "valid": {f: S["overall"][f]["outcomes"]["valid"]["k"] for f in FILES},
