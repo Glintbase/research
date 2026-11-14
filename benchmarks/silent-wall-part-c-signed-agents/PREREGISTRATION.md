@@ -71,3 +71,8 @@ Honest identities only; the signature asserts who we are and nothing else. No CA
    - **Rounds:** `S1` on 2026-11-09 (after the E1/E3 re-crawl finishes; never concurrently), `S2` on 2026-11-10.
    - **Nonce:** §3 didn't fix the nonce length. The first build used 32 bytes, which Cloudflare's reference verifier (`web-bot-auth` 0.2.0) rejects; it is now 64 bytes. No signed request had been sent to any study site. Verification results are in `data/run_notes.md`.
    - **Consequence:** the study's comparison with The Silent Wall's October rates uses S-round `unsigned` and `browser` arms.
+
+2. **2026-11-14, before S1. Rounds moved to 2026-11-14 and later; different network vantage point.**
+   - **Why:** the research sessions were halted again between 2026-11-09 and 2026-11-14, so S1 didn't run on 2026-11-09 as planned.
+   - **Vantage point:** S1 runs from public IP 102.90.126.151 (Nigeria), in an AfriNIC allocation (102.88.0.0–102.95.255.255) registered to `ORG-MN1-AFRINIC`, **not** the AS36873 (Airtel) connection The Silent Wall used. The ASN wasn't confirmed (the lookup service was rate-limited).
+   - **Consequence:** the primary comparison (unsigned vs signed, same session, same IP) is unaffected. The descriptive comparison with The Silent Wall's October rates (RQ3) now also differs by network and is labelled so; IP reputation may differ.
