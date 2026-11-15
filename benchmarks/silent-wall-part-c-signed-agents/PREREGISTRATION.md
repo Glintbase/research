@@ -76,3 +76,12 @@ Honest identities only; the signature asserts who we are and nothing else. No CA
    - **Why:** the research sessions were halted again between 2026-11-09 and 2026-11-14, so S1 didn't run on 2026-11-09 as planned.
    - **Vantage point:** S1 runs from public IP 102.90.126.151 (Nigeria), in an AfriNIC allocation (102.88.0.0–102.95.255.255) registered to `ORG-MN1-AFRINIC`, **not** the AS36873 (Airtel) connection The Silent Wall used. The ASN wasn't confirmed (the lookup service was rate-limited).
    - **Consequence:** the primary comparison (unsigned vs signed, same session, same IP) is unaffected. The descriptive comparison with The Silent Wall's October rates (RQ3) now also differs by network and is labelled so; IP reputation may differ.
+
+3. **2026-11-14/15. An extra same-day re-test (`S1R`); S2 runs on 2026-11-15 as planned.**
+   - **What happened:** on 2026-11-14 the founder asked in-session for S2 to run immediately. It started at 13:39:42Z, 17 minutes after S1 finished, with the same harness, sample, arms, pacing and vantage point (102.90.126.151, NG); the signed arm was re-checked at the transport layer just before. The founder's relayed decision, "Tomorrow, as planned", arrived while it ran.
+   - **Action (2026-11-15, before any outcome of that run was looked at):** the 2026-11-14 run is relabelled **`S1R`**, an exploratory same-day re-test that is **not** the pre-registered replication. **S2 runs on 2026-11-15** as §4 says.
+   - **Reporting:** S1R appears only in a labelled exploratory section (same-day repeatability). The primary comparison is S1, and the replication is S2.
+
+4. **2026-11-14, during S1R. Connection outage; affected domains set aside.**
+   - **What happened:** the per-minute connectivity log failed three checks in a row, at 13:55:30, 13:56:30 and 13:57:31Z.
+   - **Rule (fixed before looking at outcomes):** every domain with any arm whose `started_at` falls between 13:50:30Z and 14:02:31Z (5 minutes either side of the failed checks) is set aside. That's 37 domains, moved to `data/edge/_discarded/round_S1R_outage/`. Because S1R is exploratory and S2 replaces it as the replication, they are not re-run; S1R covers the remaining 113 domains.

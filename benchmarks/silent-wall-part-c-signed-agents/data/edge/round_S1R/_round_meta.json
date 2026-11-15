@@ -1,0 +1,17 @@
+{
+  "round": "S1R",
+  "arms": [
+    "unsigned",
+    "signed",
+    "browser"
+  ],
+  "started_at": "2026-11-14T13:39:42.880574+00:00",
+  "finished_at": "2026-11-14T14:43:34.094491+00:00",
+  "domains": 150,
+  "harness_version": "1.0.0",
+  "agent_ua": "GlintbaseResearch/1.0 (+https://glintbase.dev/research/bot; research@glintbase.dev)",
+  "signature_agent": "https://glintbase.dev",
+  "keyid": "ZnRZwqhiD-BF30ZqAvc_CgLXsPIX1SsXKG9QJTHSrX0",
+  "browser": "Chromium (Playwright, headless, default UA)",
+  "note": "Run as S2 on 2026-11-14; relabelled S1R (same-day re-test) on 2026-11-15, see Deviations 3-4"
+}
