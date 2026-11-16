@@ -1,0 +1,14 @@
+{
+  "sites": 6908,
+  "e1_sites": 1121,
+  "e3_sites": 6908,
+  "by_source": {
+    "tranco": 5000,
+    "leaderboard": 103,
+    "silent_wall": 150,
+    "mcp_registry": 1854
+  },
+  "sha256": "0fd367c75cf92e945e0da3fe438566eacf8018e22432c32c5c7baa3042c0c9b3",
+  "tranco_list": "4672X (retrieved 2026-10-12)",
+  "tldextract": "5.4.0"
+}

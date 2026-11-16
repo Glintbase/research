@@ -1,0 +1,937 @@
+{
+  "sites_in_sample": 1121,
+  "unreachable_or_excluded": 367,
+  "homepage_self_excluded": 37,
+  "overall": {
+    "n": 754,
+    "class": {
+      "none": {
+        "k": 705,
+        "n": 754,
+        "pct": 93.5,
+        "ci95": [
+          91.5,
+          95.0
+        ]
+      },
+      "robots_only": {
+        "k": 27,
+        "n": 754,
+        "pct": 3.6,
+        "ci95": [
+          2.5,
+          5.2
+        ]
+      },
+      "header_only": {
+        "k": 17,
+        "n": 754,
+        "pct": 2.3,
+        "ci95": [
+          1.4,
+          3.6
+        ]
+      },
+      "agree": {
+        "k": 4,
+        "n": 754,
+        "pct": 0.5,
+        "ci95": [
+          0.2,
+          1.4
+        ]
+      },
+      "conflict": {
+        "k": 1,
+        "n": 754,
+        "pct": 0.1,
+        "ci95": [
+          0.0,
+          0.7
+        ]
+      }
+    },
+    "any_signal": {
+      "k": 49,
+      "n": 754,
+      "pct": 6.5,
+      "ci95": [
+        5.0,
+        8.5
+      ]
+    },
+    "robots_signal": {
+      "k": 32,
+      "n": 754,
+      "pct": 4.2,
+      "ci95": [
+        3.0,
+        5.9
+      ]
+    },
+    "header_signal": {
+      "k": 22,
+      "n": 754,
+      "pct": 2.9,
+      "ci95": [
+        1.9,
+        4.4
+      ]
+    },
+    "md_served": {
+      "k": 55,
+      "n": 754,
+      "pct": 7.3,
+      "ci95": [
+        5.6,
+        9.4
+      ]
+    },
+    "among_md_served": {
+      "n": 55,
+      "md_header_present": {
+        "k": 21,
+        "n": 55,
+        "pct": 38.2,
+        "ci95": [
+          26.5,
+          51.4
+        ]
+      },
+      "html_header_present": {
+        "k": 1,
+        "n": 55,
+        "pct": 1.8,
+        "ci95": [
+          0.3,
+          9.6
+        ]
+      },
+      "md_header_differs_from_html": {
+        "k": 22,
+        "n": 55,
+        "pct": 40.0,
+        "ci95": [
+          28.1,
+          53.2
+        ]
+      },
+      "vary_accept": {
+        "k": 53,
+        "n": 55,
+        "pct": 96.4,
+        "ci95": [
+          87.7,
+          99.0
+        ]
+      }
+    },
+    "conflict_among_both_present": {
+      "k": 1,
+      "n": 5,
+      "pct": 20.0,
+      "ci95": [
+        3.6,
+        62.4
+      ]
+    },
+    "ai_train_robots_no_header_yes": {
+      "k": 1,
+      "n": 754,
+      "pct": 0.1,
+      "ci95": [
+        0.0,
+        0.7
+      ]
+    }
+  },
+  "by_source": {
+    "leaderboard": {
+      "n": 102,
+      "class": {
+        "none": {
+          "k": 79,
+          "n": 102,
+          "pct": 77.5,
+          "ci95": [
+            68.4,
+            84.5
+          ]
+        },
+        "robots_only": {
+          "k": 14,
+          "n": 102,
+          "pct": 13.7,
+          "ci95": [
+            8.4,
+            21.7
+          ]
+        },
+        "header_only": {
+          "k": 5,
+          "n": 102,
+          "pct": 4.9,
+          "ci95": [
+            2.1,
+            11.0
+          ]
+        },
+        "agree": {
+          "k": 3,
+          "n": 102,
+          "pct": 2.9,
+          "ci95": [
+            1.0,
+            8.3
+          ]
+        },
+        "conflict": {
+          "k": 1,
+          "n": 102,
+          "pct": 1.0,
+          "ci95": [
+            0.2,
+            5.3
+          ]
+        }
+      },
+      "any_signal": {
+        "k": 23,
+        "n": 102,
+        "pct": 22.5,
+        "ci95": [
+          15.5,
+          31.6
+        ]
+      },
+      "robots_signal": {
+        "k": 18,
+        "n": 102,
+        "pct": 17.6,
+        "ci95": [
+          11.5,
+          26.2
+        ]
+      },
+      "header_signal": {
+        "k": 9,
+        "n": 102,
+        "pct": 8.8,
+        "ci95": [
+          4.7,
+          15.9
+        ]
+      },
+      "md_served": {
+        "k": 32,
+        "n": 102,
+        "pct": 31.4,
+        "ci95": [
+          23.2,
+          40.9
+        ]
+      },
+      "among_md_served": {
+        "n": 32,
+        "md_header_present": {
+          "k": 8,
+          "n": 32,
+          "pct": 25.0,
+          "ci95": [
+            13.3,
+            42.1
+          ]
+        },
+        "html_header_present": {
+          "k": 1,
+          "n": 32,
+          "pct": 3.1,
+          "ci95": [
+            0.6,
+            15.7
+          ]
+        },
+        "md_header_differs_from_html": {
+          "k": 9,
+          "n": 32,
+          "pct": 28.1,
+          "ci95": [
+            15.6,
+            45.4
+          ]
+        },
+        "vary_accept": {
+          "k": 31,
+          "n": 32,
+          "pct": 96.9,
+          "ci95": [
+            84.3,
+            99.4
+          ]
+        }
+      },
+      "conflict_among_both_present": {
+        "k": 1,
+        "n": 4,
+        "pct": 25.0,
+        "ci95": [
+          4.6,
+          69.9
+        ]
+      },
+      "ai_train_robots_no_header_yes": {
+        "k": 1,
+        "n": 102,
+        "pct": 1.0,
+        "ci95": [
+          0.2,
+          5.3
+        ]
+      }
+    },
+    "silent_wall": {
+      "n": 137,
+      "class": {
+        "none": {
+          "k": 126,
+          "n": 137,
+          "pct": 92.0,
+          "ci95": [
+            86.2,
+            95.5
+          ]
+        },
+        "robots_only": {
+          "k": 6,
+          "n": 137,
+          "pct": 4.4,
+          "ci95": [
+            2.0,
+            9.2
+          ]
+        },
+        "header_only": {
+          "k": 4,
+          "n": 137,
+          "pct": 2.9,
+          "ci95": [
+            1.1,
+            7.3
+          ]
+        },
+        "agree": {
+          "k": 1,
+          "n": 137,
+          "pct": 0.7,
+          "ci95": [
+            0.1,
+            4.0
+          ]
+        },
+        "conflict": {
+          "k": 0,
+          "n": 137,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            2.7
+          ]
+        }
+      },
+      "any_signal": {
+        "k": 11,
+        "n": 137,
+        "pct": 8.0,
+        "ci95": [
+          4.5,
+          13.8
+        ]
+      },
+      "robots_signal": {
+        "k": 7,
+        "n": 137,
+        "pct": 5.1,
+        "ci95": [
+          2.5,
+          10.2
+        ]
+      },
+      "header_signal": {
+        "k": 5,
+        "n": 137,
+        "pct": 3.6,
+        "ci95": [
+          1.6,
+          8.3
+        ]
+      },
+      "md_served": {
+        "k": 9,
+        "n": 137,
+        "pct": 6.6,
+        "ci95": [
+          3.5,
+          12.0
+        ]
+      },
+      "among_md_served": {
+        "n": 9,
+        "md_header_present": {
+          "k": 5,
+          "n": 9,
+          "pct": 55.6,
+          "ci95": [
+            26.7,
+            81.1
+          ]
+        },
+        "html_header_present": {
+          "k": 0,
+          "n": 9,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            29.9
+          ]
+        },
+        "md_header_differs_from_html": {
+          "k": 5,
+          "n": 9,
+          "pct": 55.6,
+          "ci95": [
+            26.7,
+            81.1
+          ]
+        },
+        "vary_accept": {
+          "k": 8,
+          "n": 9,
+          "pct": 88.9,
+          "ci95": [
+            56.5,
+            98.0
+          ]
+        }
+      },
+      "conflict_among_both_present": {
+        "k": 0,
+        "n": 1,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          79.3
+        ]
+      },
+      "ai_train_robots_no_header_yes": {
+        "k": 0,
+        "n": 137,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          2.7
+        ]
+      }
+    },
+    "tranco_top1000": {
+      "n": 639,
+      "class": {
+        "none": {
+          "k": 614,
+          "n": 639,
+          "pct": 96.1,
+          "ci95": [
+            94.3,
+            97.3
+          ]
+        },
+        "robots_only": {
+          "k": 12,
+          "n": 639,
+          "pct": 1.9,
+          "ci95": [
+            1.1,
+            3.3
+          ]
+        },
+        "header_only": {
+          "k": 11,
+          "n": 639,
+          "pct": 1.7,
+          "ci95": [
+            1.0,
+            3.1
+          ]
+        },
+        "agree": {
+          "k": 2,
+          "n": 639,
+          "pct": 0.3,
+          "ci95": [
+            0.1,
+            1.1
+          ]
+        },
+        "conflict": {
+          "k": 0,
+          "n": 639,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            0.6
+          ]
+        }
+      },
+      "any_signal": {
+        "k": 25,
+        "n": 639,
+        "pct": 3.9,
+        "ci95": [
+          2.7,
+          5.7
+        ]
+      },
+      "robots_signal": {
+        "k": 14,
+        "n": 639,
+        "pct": 2.2,
+        "ci95": [
+          1.3,
+          3.6
+        ]
+      },
+      "header_signal": {
+        "k": 13,
+        "n": 639,
+        "pct": 2.0,
+        "ci95": [
+          1.2,
+          3.4
+        ]
+      },
+      "md_served": {
+        "k": 22,
+        "n": 639,
+        "pct": 3.4,
+        "ci95": [
+          2.3,
+          5.2
+        ]
+      },
+      "among_md_served": {
+        "n": 22,
+        "md_header_present": {
+          "k": 13,
+          "n": 22,
+          "pct": 59.1,
+          "ci95": [
+            38.7,
+            76.7
+          ]
+        },
+        "html_header_present": {
+          "k": 0,
+          "n": 22,
+          "pct": 0.0,
+          "ci95": [
+            0.0,
+            14.9
+          ]
+        },
+        "md_header_differs_from_html": {
+          "k": 13,
+          "n": 22,
+          "pct": 59.1,
+          "ci95": [
+            38.7,
+            76.7
+          ]
+        },
+        "vary_accept": {
+          "k": 21,
+          "n": 22,
+          "pct": 95.5,
+          "ci95": [
+            78.2,
+            99.2
+          ]
+        }
+      },
+      "conflict_among_both_present": {
+        "k": 0,
+        "n": 2,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          65.8
+        ]
+      },
+      "ai_train_robots_no_header_yes": {
+        "k": 0,
+        "n": 639,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          0.6
+        ]
+      }
+    }
+  },
+  "by_cdn": {
+    "other/unknown": {
+      "n": 259,
+      "header_signal": {
+        "k": 1,
+        "n": 259,
+        "pct": 0.4,
+        "ci95": [
+          0.1,
+          2.2
+        ]
+      },
+      "md_served": {
+        "k": 6,
+        "n": 259,
+        "pct": 2.3,
+        "ci95": [
+          1.1,
+          5.0
+        ]
+      },
+      "conflict": {
+        "k": 0,
+        "n": 259,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          1.5
+        ]
+      },
+      "small_cell": false
+    },
+    "cloudflare": {
+      "n": 220,
+      "header_signal": {
+        "k": 21,
+        "n": 220,
+        "pct": 9.5,
+        "ci95": [
+          6.3,
+          14.2
+        ]
+      },
+      "md_served": {
+        "k": 30,
+        "n": 220,
+        "pct": 13.6,
+        "ci95": [
+          9.7,
+          18.8
+        ]
+      },
+      "conflict": {
+        "k": 1,
+        "n": 220,
+        "pct": 0.5,
+        "ci95": [
+          0.1,
+          2.5
+        ]
+      },
+      "small_cell": false
+    },
+    "cloudfront": {
+      "n": 100,
+      "header_signal": {
+        "k": 0,
+        "n": 100,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          3.7
+        ]
+      },
+      "md_served": {
+        "k": 4,
+        "n": 100,
+        "pct": 4.0,
+        "ci95": [
+          1.6,
+          9.8
+        ]
+      },
+      "conflict": {
+        "k": 0,
+        "n": 100,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          3.7
+        ]
+      },
+      "small_cell": false
+    },
+    "akamai": {
+      "n": 66,
+      "header_signal": {
+        "k": 0,
+        "n": 66,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          5.5
+        ]
+      },
+      "md_served": {
+        "k": 0,
+        "n": 66,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          5.5
+        ]
+      },
+      "conflict": {
+        "k": 0,
+        "n": 66,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          5.5
+        ]
+      },
+      "small_cell": false
+    },
+    "fastly": {
+      "n": 60,
+      "header_signal": {
+        "k": 0,
+        "n": 60,
+        "pct": 0.0,
+        "ci95": [
+          -0.0,
+          6.0
+        ]
+      },
+      "md_served": {
+        "k": 0,
+        "n": 60,
+        "pct": 0.0,
+        "ci95": [
+          -0.0,
+          6.0
+        ]
+      },
+      "conflict": {
+        "k": 0,
+        "n": 60,
+        "pct": 0.0,
+        "ci95": [
+          -0.0,
+          6.0
+        ]
+      },
+      "small_cell": false
+    },
+    "vercel": {
+      "n": 43,
+      "header_signal": {
+        "k": 0,
+        "n": 43,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          8.2
+        ]
+      },
+      "md_served": {
+        "k": 15,
+        "n": 43,
+        "pct": 34.9,
+        "ci95": [
+          22.4,
+          49.8
+        ]
+      },
+      "conflict": {
+        "k": 0,
+        "n": 43,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          8.2
+        ]
+      },
+      "small_cell": false
+    },
+    "azure": {
+      "n": 4,
+      "header_signal": {
+        "k": 0,
+        "n": 4,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          49.0
+        ]
+      },
+      "md_served": {
+        "k": 0,
+        "n": 4,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          49.0
+        ]
+      },
+      "conflict": {
+        "k": 0,
+        "n": 4,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          49.0
+        ]
+      },
+      "small_cell": true
+    },
+    "imperva": {
+      "n": 2,
+      "header_signal": {
+        "k": 0,
+        "n": 2,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          65.8
+        ]
+      },
+      "md_served": {
+        "k": 0,
+        "n": 2,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          65.8
+        ]
+      },
+      "conflict": {
+        "k": 0,
+        "n": 2,
+        "pct": 0.0,
+        "ci95": [
+          0.0,
+          65.8
+        ]
+      },
+      "small_cell": true
+    }
+  },
+  "robots_policy_values": {
+    "search": {
+      "yes": 30
+    },
+    "ai-input": {
+      "yes": 24,
+      "no": 2
+    },
+    "ai-train": {
+      "yes": 16,
+      "no": 13
+    }
+  },
+  "header_values": {
+    "ai-input=yes": 22,
+    "ai-train=yes": 22,
+    "search=yes": 22
+  },
+  "header_value_sets": {
+    "ai-input=yes, ai-train=yes, search=yes": 22
+  },
+  "conflict_keys": {
+    "ai-train": 1
+  },
+  "named_group_signals_sites": 8,
+  "header_on_md_only": {
+    "k": 21,
+    "n": 22,
+    "pct": 95.5,
+    "ci95": [
+      78.2,
+      99.2
+    ]
+  },
+  "md_header_by_cdn": {
+    "fastly": {
+      "k": 0,
+      "n": 0,
+      "pct": null,
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "other/unknown": {
+      "k": 1,
+      "n": 6,
+      "pct": 16.7,
+      "ci95": [
+        3.0,
+        56.4
+      ]
+    },
+    "cloudflare": {
+      "k": 20,
+      "n": 30,
+      "pct": 66.7,
+      "ci95": [
+        48.8,
+        80.8
+      ]
+    },
+    "cloudfront": {
+      "k": 0,
+      "n": 4,
+      "pct": 0.0,
+      "ci95": [
+        0.0,
+        49.0
+      ]
+    },
+    "akamai": {
+      "k": 0,
+      "n": 0,
+      "pct": null,
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "vercel": {
+      "k": 0,
+      "n": 15,
+      "pct": 0.0,
+      "ci95": [
+        -0.0,
+        20.4
+      ]
+    },
+    "azure": {
+      "k": 0,
+      "n": 0,
+      "pct": null,
+      "ci95": [
+        null,
+        null
+      ]
+    },
+    "imperva": {
+      "k": 0,
+      "n": 0,
+      "pct": null,
+      "ci95": [
+        null,
+        null
+      ]
+    }
+  }
+}

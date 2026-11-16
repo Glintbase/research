@@ -1,0 +1,539 @@
+{
+  "n_reachable": 754,
+  "robots_txt_status": {
+    "served_200": {
+      "k": 613,
+      "n": 754,
+      "pct": 81.3,
+      "ci95": [
+        78.4,
+        83.9
+      ]
+    },
+    "not_found_404": {
+      "k": 52,
+      "n": 754,
+      "pct": 6.9,
+      "ci95": [
+        5.3,
+        8.9
+      ]
+    }
+  },
+  "robots_policy_sets": {
+    "ai-input=yes, ai-train=yes, search=yes": 15,
+    "ai-input=yes, ai-train=no, search=yes": 6,
+    "ai-train=no, search=yes, use=reference": 4,
+    "ai-input=no, ai-train=no, search=yes": 2,
+    "ai-input=yes, search=yes": 1,
+    "/100049 search=yes, /100083 search=yes, /about search=yes, /ai-writing-assistant search=yes, /alternatives search=yes, /auth.md search=yes, /bing-api-alternative-exa search=yes, /bing-api-deprecation search=yes, /blog search=yes, /brand search=yes, /careers search=yes, /claude search=yes, /connect search=yes, /contact search=yes, /customers search=yes, /demos search=yes, /docs search=yes, /dpa search=yes, /enterprise search=yes, /eu-data-residency search=yes, /evals search=yes, /exa-for-sheets search=yes, /index.md search=yes, /integrations search=yes, /llms-full.txt search=yes, /llms.txt search=yes, /mcp search=yes, /msa search=yes, /partners search=yes, /pricing search=yes, /privacy-policy search=yes, /products search=yes, /research search=yes, /security search=yes, /use-cases search=yes, /versus search=yes, /webinars search=yes, /why search=yes, ai-input=yes, ai-train=yes, search=yes": 1,
+    "ai-input=yes, ai-train=no, search=yes, use=reference": 1
+  },
+  "robots_signals_named_groups_only": 2,
+  "robots_ai_train_no": {
+    "share": {
+      "k": 13,
+      "n": 754,
+      "pct": 1.7,
+      "ci95": [
+        1.0,
+        2.9
+      ]
+    },
+    "also_ai_input_yes": 7,
+    "also_search_yes": 13,
+    "sites": [
+      "att.com",
+      "cookielaw.org",
+      "corriere.it",
+      "forter.com",
+      "kick.com",
+      "launchpad.net",
+      "pxxl.app",
+      "replicate.com",
+      "tastelabs.com",
+      "trendmicro.com",
+      "twilio.com",
+      "unesco.org",
+      "zernio.com"
+    ]
+  },
+  "named_groups": {
+    "sites": 8,
+    "sites_with_any_no": 5,
+    "sites_with_different_policies_per_bot": 3,
+    "agents": {
+      "ccbot": {
+        "ai-input=yes, ai-train=yes, search=yes": 4,
+        "ai-input=no, ai-train=no, search=no": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "oai-searchbot": {
+        "ai-input=yes, ai-train=yes, search=yes": 3,
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "chatgpt-user": {
+        "ai-input=yes, ai-train=yes, search=yes": 3,
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "claudebot": {
+        "ai-input=yes, ai-train=yes, search=yes": 4,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "perplexitybot": {
+        "ai-input=yes, ai-train=yes, search=yes": 3,
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "perplexity-user": {
+        "ai-input=yes, ai-train=yes, search=yes": 3,
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "google-extended": {
+        "ai-input=yes, ai-train=yes, search=yes": 4,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "cohere-ai": {
+        "ai-input=yes, ai-train=yes, search=yes": 3,
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "gptbot": {
+        "ai-input=yes, ai-train=yes, search=yes": 4
+      },
+      "applebot-extended": {
+        "ai-input=yes, ai-train=yes, search=yes": 4
+      },
+      "meta-externalagent": {
+        "ai-input=yes, ai-train=yes, search=yes": 2,
+        "ai-input=no, ai-train=no, search=no": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "bytespider": {
+        "ai-input=no, ai-train=no, search=no": 3,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "claude-user": {
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=yes, search=yes": 2,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "claude-searchbot": {
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=yes, search=yes": 2,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "anthropic-ai": {
+        "ai-input=yes, ai-train=yes, search=yes": 3
+      },
+      "amazonbot": {
+        "ai-input=yes, ai-train=yes, search=yes": 1,
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "facebookbot": {
+        "ai-input=no, ai-train=no, search=no": 1,
+        "ai-input=yes, ai-train=yes, search=yes": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "googlebot": {
+        "ai-input=yes, ai-train=no, search=yes": 2
+      },
+      "deepseekbot": {
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "mistralai-user": {
+        "ai-input=yes, search=yes": 1,
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "imagesiftbot": {
+        "ai-input=no, ai-train=no, search=no": 2
+      },
+      "diffbot": {
+        "ai-input=no, ai-train=no, search=no": 2
+      },
+      "omgili": {
+        "ai-input=no, ai-train=no, search=no": 2
+      },
+      "claude-web": {
+        "ai-input=yes, ai-train=yes, search=yes": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "duckassistbot": {
+        "ai-input=yes, ai-train=yes, search=yes": 1,
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "openclaw": {
+        "ai-input=yes, search=yes": 1
+      },
+      "omgilibot": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "tiktokspider": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "webzio-extended": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "timpibot": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "meltwater": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "awario": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "brandwatch": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "prowly": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "semrushbot-ba": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "dotbot": {
+        "ai-input=no, ai-train=no, search=no": 1
+      },
+      "geminibot": {
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "ora-agent": {
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "chatgpt-plugins": {
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "qwen-agent": {
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "groqbot": {
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "bingai": {
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "youbot": {
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "ai2bot": {
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "seznambot": {
+        "ai-input=yes, ai-train=yes, search=yes": 1
+      },
+      "bingbot": {
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "applebot": {
+        "ai-input=yes, ai-train=no, search=yes": 1
+      },
+      "linkedinbot": {
+        "ai-input=yes, ai-train=no, search=yes": 1
+      }
+    }
+  },
+  "robots_path_scoped_sites": 1,
+  "robots_nonstandard_keys": {
+    "use": 5
+  },
+  "header": {
+    "sites": 22,
+    "on_markdown_only": 21,
+    "cdn": {
+      "cloudflare": 21,
+      "other/unknown": 1
+    },
+    "value_sets": {
+      "ai-input=yes, ai-train=yes, search=yes": 22
+    }
+  },
+  "markdown": {
+    "served": {
+      "k": 55,
+      "n": 754,
+      "pct": 7.3,
+      "ci95": [
+        5.6,
+        9.4
+      ]
+    },
+    "vary_accept_when_served": {
+      "k": 53,
+      "n": 55,
+      "pct": 96.4,
+      "ci95": [
+        87.7,
+        99.0
+      ]
+    },
+    "twin_advertised": {
+      "k": 30,
+      "n": 754,
+      "pct": 4.0,
+      "ci95": [
+        2.8,
+        5.6
+      ]
+    },
+    "docs_markdown_served_sites": 58,
+    "served_by_cdn": {
+      "cloudflare": 30,
+      "vercel": 15,
+      "other/unknown": 6,
+      "cloudfront": 4
+    },
+    "served_without_header": 33
+  },
+  "tranco_bands": {
+    "1-100": {
+      "any_signal": {
+        "k": 3,
+        "n": 62,
+        "pct": 4.8,
+        "ci95": [
+          1.7,
+          13.3
+        ]
+      },
+      "robots_signal": {
+        "k": 2,
+        "n": 62,
+        "pct": 3.2,
+        "ci95": [
+          0.9,
+          11.0
+        ]
+      },
+      "header_signal": {
+        "k": 2,
+        "n": 62,
+        "pct": 3.2,
+        "ci95": [
+          0.9,
+          11.0
+        ]
+      }
+    },
+    "101-500": {
+      "any_signal": {
+        "k": 10,
+        "n": 244,
+        "pct": 4.1,
+        "ci95": [
+          2.2,
+          7.4
+        ]
+      },
+      "robots_signal": {
+        "k": 4,
+        "n": 244,
+        "pct": 1.6,
+        "ci95": [
+          0.6,
+          4.1
+        ]
+      },
+      "header_signal": {
+        "k": 6,
+        "n": 244,
+        "pct": 2.5,
+        "ci95": [
+          1.1,
+          5.3
+        ]
+      }
+    },
+    "501-1000": {
+      "any_signal": {
+        "k": 12,
+        "n": 333,
+        "pct": 3.6,
+        "ci95": [
+          2.1,
+          6.2
+        ]
+      },
+      "robots_signal": {
+        "k": 8,
+        "n": 333,
+        "pct": 2.4,
+        "ci95": [
+          1.2,
+          4.7
+        ]
+      },
+      "header_signal": {
+        "k": 5,
+        "n": 333,
+        "pct": 1.5,
+        "ci95": [
+          0.6,
+          3.5
+        ]
+      }
+    }
+  },
+  "leaderboard_signal_sites": [
+    {
+      "site": "arrivl.ai",
+      "robots_policy": "",
+      "header": "",
+      "markdown_served": true,
+      "cdn": "other/unknown"
+    },
+    {
+      "site": "blackforestlabs.ai",
+      "robots_policy": "ai-input=yes, search=yes",
+      "header": "",
+      "markdown_served": false,
+      "cdn": "vercel"
+    },
+    {
+      "site": "cloudflare.com",
+      "robots_policy": "",
+      "header": "ai-input=yes, ai-train=yes, search=yes",
+      "markdown_served": true,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "comfy.org",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "",
+      "markdown_served": false,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "coreweave.com",
+      "robots_policy": "",
+      "header": "ai-input=yes, ai-train=yes, search=yes",
+      "markdown_served": true,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "cresta.com",
+      "robots_policy": "",
+      "header": "ai-input=yes, ai-train=yes, search=yes",
+      "markdown_served": true,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "dodopayments.com",
+      "robots_policy": "",
+      "header": "ai-input=yes, ai-train=yes, search=yes",
+      "markdown_served": true,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "elevenlabs.io",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "",
+      "markdown_served": true,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "exa.ai",
+      "robots_policy": "/100049 search=yes, /100083 search=yes, /about search=yes, /ai-writing-assistant search=yes, /alternatives search=yes, /auth.md search=yes, /bing-api-alternative-exa search=yes, /bing-api-deprecation search=yes, /blog search=yes, /brand search=yes, /careers search=yes, /claude search=yes, /connect search=yes, /contact search=yes, /customers search=yes, /demos search=yes, /docs search=yes, /dpa search=yes, /enterprise search=yes, /eu-data-residency search=yes, /evals search=yes, /exa-for-sheets search=yes, /index.md search=yes, /integrations search=yes, /llms-full.txt search=yes, /llms.txt search=yes, /mcp search=yes, /msa search=yes, /partners search=yes, /pricing search=yes, /privacy-policy search=yes, /products search=yes, /research search=yes, /security search=yes, /use-cases search=yes, /versus search=yes, /webinars search=yes, /why search=yes, ai-input=yes, ai-train=yes, search=yes",
+      "header": "",
+      "markdown_served": true,
+      "cdn": "vercel"
+    },
+    {
+      "site": "firecrawl.dev",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "",
+      "markdown_served": true,
+      "cdn": "vercel"
+    },
+    {
+      "site": "glean.com",
+      "robots_policy": "",
+      "header": "ai-input=yes, ai-train=yes, search=yes",
+      "markdown_served": true,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "llamaindex.ai",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "",
+      "markdown_served": false,
+      "cdn": "vercel"
+    },
+    {
+      "site": "mailtrap.io",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "ai-input=yes, ai-train=yes, search=yes",
+      "markdown_served": true,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "nvidia.com",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "",
+      "markdown_served": false,
+      "cdn": "cloudfront"
+    },
+    {
+      "site": "ora.ai",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "",
+      "markdown_served": true,
+      "cdn": "vercel"
+    },
+    {
+      "site": "pxxl.app",
+      "robots_policy": "ai-train=no, search=yes, use=reference",
+      "header": "",
+      "markdown_served": false,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "tastelabs.com",
+      "robots_policy": "ai-train=no, search=yes, use=reference",
+      "header": "",
+      "markdown_served": false,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "telnyx.com",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "ai-input=yes, ai-train=yes, search=yes",
+      "markdown_served": true,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "together.ai",
+      "robots_policy": "",
+      "header": "ai-input=yes, ai-train=yes, search=yes",
+      "markdown_served": true,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "wandb.ai",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "",
+      "markdown_served": false,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "x.ai",
+      "robots_policy": "ai-input=yes, ai-train=yes, search=yes",
+      "header": "",
+      "markdown_served": false,
+      "cdn": "cloudflare"
+    },
+    {
+      "site": "zernio.com",
+      "robots_policy": "ai-input=yes, ai-train=no, search=yes",
+      "header": "",
+      "markdown_served": true,
+      "cdn": "vercel"
+    }
+  ],
+  "leaderboard_conflict_sites_not_named": 1
+}

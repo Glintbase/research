@@ -1,0 +1,579 @@
+[
+  {
+    "site": "replicate.com",
+    "harness_class": "conflict",
+    "harness_md_served": true,
+    "harness_has_docs_headers": true,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "search": "yes",
+        "ai-train": "no",
+        "ai-input": "yes"
+      },
+      "robots_any": true,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "conflict",
+      "note": ""
+    }
+  },
+  {
+    "site": "wa.me",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {},
+      "md_served": false,
+      "class": "none",
+      "note": ""
+    }
+  },
+  {
+    "site": "tastelabs.com",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "search": "yes",
+        "ai-train": "no",
+        "use": "reference"
+      },
+      "robots_any": true,
+      "headers": {},
+      "md_served": false,
+      "class": "robots_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "bitdefender.net",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "header_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "cloudflare.com",
+    "harness_class": "agree",
+    "harness_md_served": true,
+    "harness_has_docs_headers": true,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": true,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "agree",
+      "note": ""
+    }
+  },
+  {
+    "site": "ea.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {},
+      "md_served": false,
+      "class": "none",
+      "note": ""
+    }
+  },
+  {
+    "site": "twilio.com",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "ai-train": "no",
+        "search": "yes",
+        "ai-input": "yes"
+      },
+      "robots_any": true,
+      "headers": {},
+      "md_served": false,
+      "class": "robots_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "zendesk.com",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "header_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "mailtrap.io",
+    "harness_class": "agree",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "ai-train": "yes",
+        "search": "yes",
+        "ai-input": "yes"
+      },
+      "robots_any": true,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "agree",
+      "note": ""
+    }
+  },
+  {
+    "site": "intel.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {},
+      "md_served": false,
+      "class": "none",
+      "note": ""
+    }
+  },
+  {
+    "site": "att.com",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "search": "yes",
+        "ai-input": "yes",
+        "ai-train": "no"
+      },
+      "robots_any": true,
+      "headers": {},
+      "md_served": false,
+      "class": "robots_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "glean.com",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "header_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "oxylabs.io",
+    "harness_class": "agree",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "search": "yes",
+        "ai-input": "yes",
+        "ai-train": "yes"
+      },
+      "robots_any": true,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "agree",
+      "note": ""
+    }
+  },
+  {
+    "site": "me.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {},
+      "md_served": false,
+      "class": "none",
+      "note": ""
+    }
+  },
+  {
+    "site": "corriere.it",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "search": "yes",
+        "ai-train": "no",
+        "ai-input": "no"
+      },
+      "robots_any": true,
+      "headers": {},
+      "md_served": false,
+      "class": "robots_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "netlify.app",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": true,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {
+        "md": {
+          "search": "yes",
+          "ai-input": "yes",
+          "ai-train": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "header_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "telnyx.com",
+    "harness_class": "agree",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "ai-train": "yes",
+        "search": "yes",
+        "ai-input": "yes"
+      },
+      "robots_any": true,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "agree",
+      "note": ""
+    }
+  },
+  {
+    "site": "robinhood.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {},
+      "md_served": false,
+      "class": "none",
+      "note": ""
+    }
+  },
+  {
+    "site": "unesco.org",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "search": "yes",
+        "ai-input": "yes",
+        "ai-train": "no",
+        "use": "reference"
+      },
+      "robots_any": true,
+      "headers": {},
+      "md_served": false,
+      "class": "robots_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "pages.dev",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": true,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "header_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "tripadvisor.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {},
+      "md_served": false,
+      "class": "none",
+      "note": ""
+    }
+  },
+  {
+    "site": "cookielaw.org",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "search": "yes",
+        "ai-train": "no",
+        "use": "reference"
+      },
+      "robots_any": true,
+      "headers": {},
+      "md_served": false,
+      "class": "robots_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "together.ai",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "header_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "adtrafficquality.google",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {},
+      "md_served": false,
+      "class": "none",
+      "note": ""
+    }
+  },
+  {
+    "site": "zernio.com",
+    "harness_class": "robots_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "search": "yes",
+        "ai-train": "no",
+        "ai-input": "yes"
+      },
+      "robots_any": true,
+      "headers": {},
+      "md_served": true,
+      "class": "robots_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "coreweave.com",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "header_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "executor.sh",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {},
+      "md_served": false,
+      "class": "none",
+      "note": ""
+    }
+  },
+  {
+    "site": "llamaindex.ai",
+    "harness_class": "robots_only",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {
+        "search": "yes",
+        "ai-input": "yes",
+        "ai-train": "yes"
+      },
+      "robots_any": true,
+      "headers": {},
+      "md_served": false,
+      "class": "robots_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "hosting24.com",
+    "harness_class": "header_only",
+    "harness_md_served": true,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {
+        "md": {
+          "ai-train": "yes",
+          "search": "yes",
+          "ai-input": "yes"
+        }
+      },
+      "md_served": true,
+      "class": "header_only",
+      "note": ""
+    }
+  },
+  {
+    "site": "miui.com",
+    "harness_class": "none",
+    "harness_md_served": false,
+    "harness_has_docs_headers": false,
+    "check": {
+      "reachable": true,
+      "robots_policy": {},
+      "robots_any": false,
+      "headers": {},
+      "md_served": false,
+      "class": "none",
+      "note": ""
+    }
+  }
+]
