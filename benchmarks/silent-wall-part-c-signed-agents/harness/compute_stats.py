@@ -95,7 +95,7 @@ def main():
         if "browser" in arms:
             R["unsigned_vs_browser"] = paired(rows, "unsigned", "browser")
         S["rounds"][rnd] = R
-    pairs = [("U1", "U2"), ("S1", "S2"), ("U1", "S1")]
+    pairs = [("U1", "U2"), ("S1", "S2"), ("U1", "S1"), ("S1", "S1R")]  # S1R: exploratory same-day re-test (Deviation 3)
     S["stability"] = {f"{x}->{y}": stability(built[x], built[y], ARMS) for x, y in pairs if x in built and y in built}
     ref = STUDY_DIR.parent / "the-silent-wall" / "data" / "summary.json"
     if ref.exists():
