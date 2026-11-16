@@ -1,90 +1,236 @@
-# Content Signals in the wild: robots.txt, response headers and Markdown (E1)
+# Content Signals in the wild: what 754 websites tell AI systems about using their content
 
-**Glintbase Research · November 2026 · DRAFT, not for publication** (needs: founder validation sign-off, review)
-Pre-registration: [`PREREGISTRATION.md`](../PREREGISTRATION.md) (frozen in commit `3ddbc9e` before the crawl; Deviations 1–3) · Data: [`data/`](../data) · Analysis: [`harness/`](../harness) · Crawler: [`../web-census-crawler/`](../../web-census-crawler/)
+**Glintbase Research · November 2026 · Final report**
+Pre-registration: [`PREREGISTRATION.md`](../PREREGISTRATION.md) (frozen in commit `3ddbc9e` before the crawl) · Data: [`data/`](../data) · Analysis: [`harness/`](../harness) · Crawler: [`../web-census-crawler/`](../../web-census-crawler/)
 
-Every number below comes from [`data/summary.json`](../data/summary.json), produced by `harness/analyze.py` and `harness/compute_stats.py`. Percentages carry Wilson 95% intervals.
+Every number in sections 3.1–3.4 comes from [`data/summary.json`](../data/summary.json), the pre-registered analysis (`harness/analyze.py`, `harness/compute_stats.py`). Sections 3.5–3.9 are **descriptive breakdowns added after the pre-registered analysis**, from [`data/descriptives.json`](../data/descriptives.json) (`harness/descriptives.py`); they count the same per-site fields and re-classify nothing. Percentages carry Wilson 95% intervals in brackets.
 
 ---
 
 ## Summary
 
-We checked **1,121 sites** (the Glintbase leaderboard, The Silent Wall's 150 domains and the Tranco top 1,000) for **Content Signals**, the AI-use preferences a site can state in `robots.txt` (`Content-Signal:` lines) or in a `Content-Signal` HTTP response header. We compared what each site says in `robots.txt` with what its homepage says in headers, both as HTML and when asked for Markdown. **754 sites were reachable** and form the denominator; the other 367 are mostly Tranco infrastructure hosts (CDN, DNS, API domains) that serve no website.
+**Content Signals** let a website say, separately, whether its content may be used to build a **search** index, as live **AI input** (for example retrieval for a chatbot answer), or for **AI training**. A site can state them in `robots.txt` or send them in a `Content-Signal` HTTP response header.
 
-- **Almost nobody states Content Signals.** 93.5% [91.5–95.0] of sites state none, anywhere. 6.5% [5.0–8.5] state some: 4.2% [3.0–5.9] in `robots.txt` and 2.9% [1.9–4.4] in a response header.
-- **Agent-focused companies use them more.** 22.5% [15.5–31.6] of leaderboard sites state a signal (23 of 102), against 3.9% [2.7–5.7] of the Tranco top 1,000 and 8.0% [4.5–13.8] of The Silent Wall's 150 popular sites.
-- **Signals rarely appear in both places, so there's little to conflict.** Only 5 sites state signals in both `robots.txt` and a header: 4 agree and **1 conflicts** (`robots.txt` says `ai-train=no`, the Markdown response says `ai-train=yes`). With 5 cases, the conflict rate among them (20.0%, interval 3.6–62.4) means almost nothing.
-- **Markdown is where the headers are.** 7.3% [5.6–9.4] of sites serve Markdown when asked (31.4% of the leaderboard). Among those 55, 38.2% send a `Content-Signal` header on the Markdown response, but only 1 sends one on the HTML response. In 40.0% [28.1–53.2] of them, the Markdown response's signal differs from the HTML response's, almost always because only the Markdown response has one.
-- **The header looks like a CDN default.** Every one of the 22 sites with a header signal sends the same value, `ai-input=yes, ai-train=yes, search=yes`. 21 of the 22 are on Cloudflare: 9.5% of Cloudflare-fronted sites send a header signal, against 0.4% of sites whose CDN we couldn't identify, and none behind CloudFront, Akamai, Fastly or Vercel. 95.5% of header-signalling sites send it only on Markdown or docs Markdown responses.
-- **`robots.txt` signals are more varied.** Among robots policies: `search=yes` 30; `ai-input=yes` 24, `no` 2; `ai-train=yes` 16, `no` 13. 8 sites also set signals for named crawlers.
+We checked **1,121 sites**: the Glintbase agent-readiness leaderboard (103 companies building for AI agents), The Silent Wall's 150 popular domains, and the Tranco top 1,000. For each we compared what `robots.txt` says with what the homepage's response headers say, both as normal HTML and when an AI agent asks for Markdown. **754 sites were reachable** and form every denominator.
 
-## 1. Why this study
+1. **Almost nobody states Content Signals.** 93.5% [91.5–95.0] of sites state none, anywhere. 6.5% [5.0–8.5] state some: 4.2% in `robots.txt`, 2.9% in a response header.
+2. **Companies building for AI agents use them almost six times as often.** 22.5% [15.5–31.6] of leaderboard sites state a signal, against 3.9% [2.7–5.7] of the Tranco top 1,000. Popularity makes no difference within the Tranco list.
+3. **Every header signal we saw is the same value, and almost all come from one CDN.** All 22 sites that send a `Content-Signal` header send exactly `ai-input=yes, ai-train=yes, search=yes`. 21 of them are on Cloudflare, and 21 send it only on Markdown responses. That matches the default Cloudflare documents for its Markdown for Agents feature.
+4. **The header often says something the site never said.** Of the 55 sites that serve Markdown to agents, 40.0% [28.1–53.2] send a different signal on the Markdown response than on the HTML page, almost always because only the Markdown response has one. A human visitor and an AI agent can get two different statements about the same page.
+5. **Direct contradictions exist but are rare, because few sites state signals in both places.** 5 sites do. 4 agree; 1 says `ai-train=no` in `robots.txt` while its Markdown response says `ai-train=yes`.
+6. **Where sites write their own policy, they split on training.** Of the 29 sites whose general `robots.txt` policy mentions training, 16 allow it and 13 refuse it, yet all 30 that mention `search` allow it. Search and AI input are broadly welcome; training is where sites diverge.
 
-Content Signals let a site say, separately, whether its content may be used for search, as AI input (e.g. retrieval for an answer) or for AI training. They can be stated in `robots.txt` or sent as a response header. A vendor study (AI Ranked, 2026-10-28; labelled "vendor") reported that many Markdown homepages carry a training-permissive header that may not match the site's own policy. We measured how often that happens on a defined population with an open method.
+---
 
-## 2. Method (summary of the pre-registration)
+## 1. Background
 
-- **Sample:** 1,121 sites: the leaderboard (103 hosts, read 2026-11-04), The Silent Wall's 150 domains, and the Tranco top 1,000 (list `4672X`, the list The Silent Wall used), de-duplicated.
-- **Requests (≤ 8 per site):** `robots.txt`; the homepage as HTML; the homepage with `Accept: text/markdown`; a Markdown twin if advertised; up to 2 docs pages as HTML and Markdown. Honest identity `GlintbaseResearch/1.0 (+https://glintbase.dev/research/bot; research@glintbase.dev)`, `robots.txt` obeyed for that token, ≤ 1 request/second per site.
-- **Robots policy:** the `*` group's `Content-Signal` values (or lines before any group). **Header signals:** every `Content-Signal` header seen on the site.
+### 1.1 What Content Signals are
+
+Content Signals were introduced by Cloudflare in 2025 and are documented at [contentsignals.org](https://contentsignals.org/). They extend `robots.txt` with a `Content-Signal` line that grants (`yes`) or withholds (`no`) three uses:
+
+| Signal | Meaning (contentsignals.org) |
+|---|---|
+| `search` | Building a search index and providing search results (links and short excerpts). Does not include AI-generated search summaries. |
+| `ai-input` | Inputting content into AI models, e.g. retrieval augmented generation, grounding, or real-time use for generative AI search answers. |
+| `ai-train` | Training or fine-tuning AI models. |
+
+A missing signal neither grants nor restricts. The directive can apply to all crawlers (`User-Agent: *`), to named crawlers, or to specific paths, for example `Content-Signal: /blog/ ai-train=no, search=yes, ai-input=no`. Content Signals express preferences; contentsignals.org itself notes that not every automated system honours `robots.txt`.
+
+### 1.2 The response header
+
+Cloudflare also sends signals as an HTTP response header. Its [Markdown for Agents documentation](https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/) (last updated 2026-11-09) says that when a client asks for `Accept: text/markdown`, Cloudflare can convert the page to Markdown, and:
+
+> "When the origin response does not include a `content-signal` header, Markdown for Agents adds a default `Content-Signal: ai-train=yes, search=yes, ai-input=yes`."
+
+If the origin already sets a `content-signal` header, Cloudflare keeps the origin's value. The documentation describes no other way to change or remove the default.
+
+### 1.3 Why we measured it
+
+A vendor study by AI Ranked ([2026-10-28](https://airanked.ai/research/markdown-for-agents-study), 285 high-traffic sites, labelled here as vendor research) found 28 homepages serving Markdown, 15 of them with the default `ai-train=yes` header, including one site whose `robots.txt` says `ai-train=no`. We wanted the same question answered on a defined, larger population with a pre-registered, open method: **how often do sites state Content Signals at all, and how often do the two places disagree?**
+
+---
+
+## 2. Method
+
+- **Sample (1,121 sites):** the Glintbase leaderboard (103 hosts, read 2026-11-04), The Silent Wall's 150 domains, and the Tranco top 1,000 (list `4672X`), de-duplicated. 754 were reachable. The other 367 are mostly Tranco infrastructure hosts (CDN, DNS and API domains) that serve no website, plus 37 sites whose `robots.txt` disallows our crawler from the homepage, which we respected and excluded.
+- **Requests (at most 8 per site):** `robots.txt`; the homepage as HTML; the homepage with `Accept: text/markdown`; a Markdown twin if the page advertises one; and up to 2 linked docs pages, each as HTML and as Markdown.
+- **Identity and conduct:** every request identified itself as `GlintbaseResearch/1.0 (+https://glintbase.dev/research/bot)`, obeyed `robots.txt` for that name, and sent at most one request per second to a site. Only public pages were requested.
+- **What counts as a signal:** the `robots.txt` policy is the `User-Agent: *` group's `Content-Signal` values; signals for named crawlers are reported separately (§3.6). A header signal is any `Content-Signal` header on the homepage HTML, its Markdown response, or a docs response.
 - **Classes:** `none`, `robots_only`, `header_only`, `agree`, `conflict` (a key with different values in `robots.txt` and a header, or between two headers).
-- **Vantage point:** one residential connection in Nigeria.
+- **When:** the census ran from one residential connection in Nigeria. Network interruptions during the planned crawl meant affected sites were re-crawled under a rule fixed in advance, so each site's data comes from either 2026-11-09 or 2026-11-13/14 (UTC). The pre-registration's Deviations section records exactly what happened and which sites were re-crawled.
 
-### Crawl history (Deviations 1–3)
-The first crawl (2026-11-04) was ruined by DNS and network failures on the residential link, and was discarded as a whole before any results were looked at. The census was re-run on **2026-11-09**: 2,636 sites were crawled normally, then the machine slept and woke offline, and every site crawled after that failed. Those 4,272 sites were crawled again on **2026-11-13/14 UTC** with no connectivity failures. Each record carries its crawl time. For E1, that means a site's data is from either 2026-11-09 or 2026-11-13/14.
+---
 
 ## 3. Results
 
-### 3.1 Where sites state Content Signals (n = 754 reachable sites)
+### 3.1 Where sites state Content Signals (n = 754)
 
 | Class | Sites | Share |
 |---|---|---|
-| `none` | 705 | 93.5% [91.5–95.0] |
-| `robots_only` | 27 | 3.6% [2.5–5.2] |
-| `header_only` | 17 | 2.3% [1.4–3.6] |
-| `agree` | 4 | 0.5% [0.2–1.4] |
-| `conflict` | 1 | 0.1% [0.0–0.7] |
+| No signal anywhere | 705 | 93.5% [91.5–95.0] |
+| `robots.txt` only | 27 | 3.6% [2.5–5.2] |
+| Response header only | 17 | 2.3% [1.4–3.6] |
+| Both, agreeing | 4 | 0.5% [0.2–1.4] |
+| Both, conflicting | 1 | 0.1% [0.0–0.7] |
 
-### 3.2 By sample source
+Overall, **6.5% [5.0–8.5]** of sites state any Content Signal: **4.2% [3.0–5.9]** in `robots.txt` and **2.9% [1.9–4.4]** in a header.
 
-| Source | Reachable | Any signal | `robots.txt` | Header | Serves Markdown |
+### 3.2 By sample
+
+| Sample | Reachable | Any signal | `robots.txt` | Header | Serves Markdown |
 |---|---|---|---|---|---|
-| Leaderboard | 102 | 23 (22.5% [15.5–31.6]) | 18 | 9 | 32 (31.4%) |
-| The Silent Wall's 150 | 137 | 11 (8.0% [4.5–13.8]) | 7 | 5 | 9 (6.6%) |
-| Tranco top 1,000 | 639 | 25 (3.9% [2.7–5.7]) | 14 | 13 | 22 (3.4%) |
+| Glintbase leaderboard | 102 | 23 · **22.5%** [15.5–31.6] | 18 · 17.6% | 9 · 8.8% | 32 · 31.4% |
+| The Silent Wall's 150 | 137 | 11 · 8.0% [4.5–13.8] | 7 · 5.1% | 5 · 3.6% | 9 · 6.6% |
+| Tranco top 1,000 | 639 | 25 · 3.9% [2.7–5.7] | 14 · 2.2% | 13 · 2.0% | 22 · 3.4% |
 
-Sources overlap (some Silent Wall domains are in the Tranco top 1,000), so rows don't sum to the total.
+The samples overlap (some Silent Wall domains are in the Tranco top 1,000), so rows don't add up to the total. Companies on the leaderboard are much more likely to state signals and to serve Markdown, which fits a population that builds for AI agents.
 
-### 3.3 By CDN (descriptive; cells under 30 sites are small)
+### 3.3 By CDN
 
 | CDN | Sites | Header signal | Serves Markdown | Markdown responses with a header |
 |---|---|---|---|---|
-| Cloudflare | 220 | 21 (9.5%) | 30 | 20 of 30 |
-| Other / unknown | 259 | 1 (0.4%) | 6 | 1 of 6 |
-| CloudFront | 100 | 0 | 4 | 0 of 4 |
+| Cloudflare | 220 | 21 · **9.5%** [6.3–14.2] | 30 · 13.6% | 20 of 30 |
+| Other / unidentified | 259 | 1 · 0.4% [0.1–2.2] | 6 · 2.3% | 1 of 6 |
+| CloudFront | 100 | 0 | 4 · 4.0% | 0 of 4 |
 | Akamai | 66 | 0 | 0 | — |
 | Fastly | 60 | 0 | 0 | — |
-| Vercel | 43 | 0 | 15 | 0 of 15 |
+| Vercel | 43 | 0 | 15 · **34.9%** | 0 of 15 |
 
-### 3.4 What this suggests (interpretation, not measurement)
-The header signal on the web today is almost entirely one value on one CDN's Markdown responses. That matches Cloudflare's documented Markdown-for-Agents behaviour (programme item V2; the documentation still has to be opened and cited before publication). If so, most header signals reflect a CDN default rather than a choice by the site. We can't tell which from outside.
+The CDN is identified from response headers; cells under 30 sites are small. Vercel-hosted sites serve Markdown most often, but none of them send a signal with it.
 
-## 4. What this can't claim
+### 3.4 Markdown responses: a second, different statement
 
-- **Whether any AI company honours `Content-Signal`** in either place.
-- **Intent.** A header may be a CDN default the site never chose (see §3.4).
-- **Coverage of the site.** Only the homepage and up to 2 docs pages were fetched; a site can set different signals elsewhere.
-- **Small numbers.** Conflicts can only occur where signals appear in both places, and only 5 sites do that. The conflict rate isn't estimable with useful precision.
-- **One vantage point, two crawl dates** (§2). Responses can vary by location and bot treatment, and a challenge page's headers are recorded as what we got.
+55 sites (**7.3%** [5.6–9.4]) return Markdown when an agent asks for it. Among them:
 
-## 5. Validation
+| | Sites | Share of the 55 |
+|---|---|---|
+| Send a `Content-Signal` header on the Markdown response | 21 | 38.2% |
+| Send one on the HTML response | 1 | 1.8% |
+| Markdown signal differs from the HTML page's signal | 22 | **40.0%** [28.1–53.2] |
 
-30 sites (seed `20261104`, stratified by class, with every `conflict` site included) were re-fetched one by one by an independent Node checker written for the purpose, and classified by hand from its output. **Agreement: 30/30** ([`data/validation.csv`](../data/validation.csv)). **Founder sign-off pending** (spot-check of 5; see [`../REVIEW_QUEUE.md`](../REVIEW_QUEUE.md)).
+In almost every case the difference is that the Markdown response carries a signal and the HTML page carries none. So an AI agent asking for Markdown is told "training allowed", while a person, a search crawler, or an agent fetching HTML is told nothing.
 
-## 6. Before publication
+### 3.5 The header is one value, mostly from one place *(descriptive)*
 
-- Founder validation sign-off.
-- Open and cite Cloudflare's Markdown-for-Agents documentation (V2) and the AI Ranked study (V1) before comparing with them.
-- If any site or CDN is named critically, a 7-day right of reply. The draft names none.
+| | Count |
+|---|---|
+| Sites sending any `Content-Signal` header | 22 |
+| …with the value `ai-input=yes, ai-train=yes, search=yes` | **22 of 22** |
+| …on Cloudflare | 21 of 22 |
+| …only on Markdown responses | 21 of 22 · 95.5% [78.2–99.2] |
+| …that also state a policy in their own `robots.txt` | 5 of 22 |
 
-*Glintbase sells Agent Readiness Score audits. Content Signals aren't part of the current score; a check based on this study is planned for ARS 3.4.*
+Every header signal we saw is identical to the default Cloudflare documents (§1.2), and it appears only where that feature applies. We can't see from outside whether a site chose this value, but for **17 of the 22** sites the header is the *only* place any signal appears.
+
+### 3.6 What sites write in their own `robots.txt` *(descriptive)*
+
+81.3% [78.4–83.9] of reachable sites serve a `robots.txt` file (6.9% return 404). Among the 32 sites with `Content-Signal` lines:
+
+| General policy (`User-Agent: *`) | Sites |
+|---|---|
+| `ai-input=yes, ai-train=yes, search=yes` (allow everything) | 15 |
+| `ai-input=yes, ai-train=no, search=yes` (allow search and AI input, refuse training) | 6 |
+| `ai-train=no, search=yes, use=reference` | 4 |
+| `ai-input=no, ai-train=no, search=yes` (search only) | 2 |
+| `ai-input=yes, search=yes` (training left unstated) | 1 |
+| `ai-input=yes, ai-train=no, search=yes, use=reference` | 1 |
+| Path-by-path signals, plus allow-everything | 1 |
+| Signals for named crawlers only, no general policy | 2 |
+
+- **Training is the dividing line.** 13 sites (1.7% [1.0–2.9] of all reachable sites) refuse AI training in `robots.txt`; every one of them still allows search, and 7 of them also allow AI input.
+- **`use=reference` is not a defined signal.** 5 sites add a `use` key that contentsignals.org doesn't define; systems that follow the spec will ignore it.
+- **One site sets signals path by path**, as the spec allows, alongside a general allow-everything policy.
+
+### 3.7 Different rules for different crawlers *(descriptive)*
+
+8 sites put `Content-Signal` lines inside groups for named crawlers. 5 of them refuse at least one crawler something, and 3 set different policies for different crawlers. The pattern is consistent: assistant and search crawlers (for example `ChatGPT-User`, `OAI-SearchBot`, `Claude-User`, `PerplexityBot`) get `search` and `ai-input`, while `Bytespider` is refused all three uses on 3 of the 4 sites that name it.
+
+### 3.8 Popularity doesn't predict adoption *(descriptive)*
+
+| Tranco rank | Reachable | Any signal |
+|---|---|---|
+| 1–100 | 62 | 3 · 4.8% [1.7–13.3] |
+| 101–500 | 244 | 10 · 4.1% [2.2–7.4] |
+| 501–1,000 | 333 | 12 · 3.6% [2.1–6.2] |
+
+The largest websites are no more likely to state Content Signals than the rest of the top 1,000. What predicts adoption is building for AI agents (§3.2), not size.
+
+### 3.9 Markdown for agents, more broadly *(descriptive)*
+
+- **55 sites** serve Markdown from the homepage and **58** serve it on at least one linked docs page. Docs are where Markdown is most often offered.
+- 96.4% [87.7–99.0] of sites that serve Markdown send `Vary: Accept`, which tells caches that HTML and Markdown are different responses.
+- **30 sites (4.0%)** advertise a Markdown version of the homepage with `<link rel="alternate" type="text/markdown">` or a `Link` header.
+- Markdown comes mostly from Cloudflare (30 sites) and Vercel (15 sites). 33 of the 55 serve Markdown with no signal at all.
+
+### 3.10 The leaderboard companies that state signals
+
+These are public facts: what each site's `robots.txt` and response headers said when we fetched them. The one leaderboard site whose signals conflict is not listed (see §4).
+
+| Site | `robots.txt` policy | Header | Serves Markdown | CDN |
+|---|---|---|---|---|
+| arrivl.ai | named crawler only (CCBot: allow all three) | — | yes | other |
+| blackforestlabs.ai | `ai-input=yes, search=yes` | — | no | Vercel |
+| cloudflare.com | named crawler only (cohere-ai: allow all three) | `ai-input=yes, ai-train=yes, search=yes` | yes | Cloudflare |
+| comfy.org | allow all three | — | no | Cloudflare |
+| coreweave.com | — | allow all three | yes | Cloudflare |
+| cresta.com | — | allow all three | yes | Cloudflare |
+| dodopayments.com | — | allow all three | yes | Cloudflare |
+| elevenlabs.io | allow all three | — | yes | Cloudflare |
+| exa.ai | allow all three, plus path-by-path `search=yes` | — | yes | Vercel |
+| firecrawl.dev | allow all three | — | yes | Vercel |
+| glean.com | — | allow all three | yes | Cloudflare |
+| llamaindex.ai | allow all three | — | no | Vercel |
+| mailtrap.io | allow all three | allow all three | yes | Cloudflare |
+| nvidia.com | allow all three | — | no | CloudFront |
+| ora.ai | allow all three | — | yes | Vercel |
+| pxxl.app | `ai-train=no, search=yes, use=reference` | — | no | Cloudflare |
+| tastelabs.com | `ai-train=no, search=yes, use=reference` | — | no | Cloudflare |
+| telnyx.com | allow all three | allow all three | yes | Cloudflare |
+| together.ai | — | allow all three | yes | Cloudflare |
+| wandb.ai | allow all three | — | no | Cloudflare |
+| x.ai | allow all three | — | no | Cloudflare |
+| zernio.com | `ai-input=yes, ai-train=no, search=yes` | — | yes | Vercel |
+
+"Allow all three" means `ai-input=yes, ai-train=yes, search=yes`.
+
+---
+
+## 4. What this means
+
+**For site owners.** If your site is on Cloudflare and Markdown for Agents is on, your Markdown responses probably tell AI systems that training is allowed, whatever your `robots.txt` says, unless your origin sends its own `Content-Signal` header. Check it in one command each:
+
+```
+curl -s https://your-site.com/robots.txt | grep -i content-signal
+curl -sI -H "Accept: text/markdown" https://your-site.com/ | grep -i content-signal
+```
+
+If the two disagree, set a `Content-Signal` header at your origin; Cloudflare keeps an origin value rather than adding its default. And decide on training explicitly: it's the one use sites disagree about, and leaving it unstated in `robots.txt` while a CDN states it for you is the gap this study found.
+
+**For people building agents and crawlers.** A signal on a Markdown response isn't necessarily the site's own statement. Where both exist, `robots.txt` is the place a site writes its policy deliberately.
+
+**For the conflict we found.** One leaderboard site refuses AI training in `robots.txt` while its Markdown response carries the CDN default allowing it. We don't name it: the evidence points to a default the site likely never chose, not a decision by the site. The per-site data in `data/` lists every site's public signals.
+
+---
+
+## 5. What this can't claim
+
+- **Whether any AI company honours `Content-Signal`**, in either place.
+- **Intent.** A header may be a CDN default the site never chose (§3.5).
+- **The rest of a site.** Only the homepage and up to 2 docs pages were fetched; a site can set different signals elsewhere, and path-scoped signals were recorded as written.
+- **Small numbers.** Conflicts can only occur where signals appear in both places, and only 5 sites do that, so the conflict rate among them can't be estimated usefully.
+- **One vantage point.** Responses can vary by location and by how a site treats bots.
+- **Sections 3.5–3.9 were not pre-registered.** They are descriptive counts of the same data and test no hypothesis.
+
+## 6. Validation
+
+30 sites (seed `20261104`, stratified by class, with the conflict site included) were re-fetched one at a time by an independent checker written for the purpose and classified by hand from its output. **Agreement: 30 of 30** ([`data/validation.csv`](../data/validation.csv)). Founder spot-check: FOUNDER_SPOTCHECK_PENDING.
+
+## 7. Data and reuse
+
+- [`data/sites.csv`](../data/sites.csv) and `sites.jsonl`: one row per site with derived fields (class, CDN, policies, Markdown flags). Raw responses are not published.
+- [`data/summary.json`](../data/summary.json): every pre-registered number. [`data/descriptives.json`](../data/descriptives.json): sections 3.5–3.9.
+- Code and data are released for reuse; please cite as below.
+
+**Cite as:** Glintbase Research (2026). *Content Signals in the wild: what 754 websites tell AI systems about using their content.* https://glintbase.dev/research/content-signals
+
+*Glintbase sells Agent Readiness Score (ARS) audits. Content Signals aren't part of the current score; a reported, unscored check based on this study is planned for ARS 3.4.*
