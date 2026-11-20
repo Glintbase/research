@@ -145,6 +145,14 @@ Each deviation is listed with its date and reason. None changes the hypotheses, 
 7. **Labelling.** Claude-drafted tasks and Claude traces are evaluation-only under Glintbase's data policy (2026-11-04). Each task carries that label.
 8. **Weak keys are kept and flagged, not dropped.** Keys that are valid under the rule but look weak (Flowise localhost host, Hasura Cloud API, Deep Lake 401 fallback, error keys without a 429, and others) stay in the task set. Each is flagged for Victor in the review sheet. Under §6, his verdict decides whether a key is fixed or dropped before analysis.
 
+9. **The pilot was run as its own experiment and not reused** (2026-11-15). The pilot used 49 stratified tasks (every 5th task by family and category) × 3 harnesses × 1 repetition, 147 episodes. It passed: 0 invalid runs, $0.011 and 33 s per episode. Its tasks are a subset of the full arm, so it is not "the first part of the run". The full Haiku arm was run in full and analysed without the pilot.
+10. **Runs were interrupted by workstation outages** (2026-11-15 to 2026-11-20). Episodes lost to the network or a host sleep were recorded as infrastructure errors and rerun under identical settings. The runner resumes automatically.
+    - Haiku arm: 20 lost in the 2026-11-15 outage, 602 between 2026-11-16 and 2026-11-20, then 12 more.
+    - Sonnet arm: the runner crashed on a network drop at 81/234 and was resumed.
+    - Final data: 0 infrastructure errors in 1,704 episodes, and no completed episode spanned a sleep or an offline period (checked).
+    - Politeness: at most 2 concurrent episodes per documentation host.
+11. **Episode-level rows (`data/runs.csv`) are git-ignored.** §10 publishes platform-level aggregates. `compute_stats.py collect` regenerates the file from the private run data.
+
 Known differences from the programme text, decided before freezing:
 - Predictors are at the live `ars-3.3.1`, not `ars-3.4.x`, so the study does not wait on the 3.4 release (programme §10.6).
 - Keys follow option (b): LLM-drafted from quoted sources, one human verifier, no κ (programme §10.5, decision D15).

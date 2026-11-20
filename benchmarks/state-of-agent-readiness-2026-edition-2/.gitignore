@@ -1,3 +1,6 @@
 # Answer keys never enter the public repository (PREREGISTRATION.md §10)
 REVIEW_QUEUE_keys.csv
 *keys*.csv
+
+# Episode-level rows are not published (PREREGISTRATION.md §10: platform-level aggregates only)
+data/runs.csv

@@ -1,0 +1,1925 @@
+{
+  "generated_at": "2026-11-20T18:22:04+00:00",
+  "synthetic": false,
+  "keys": {
+    "verified": false,
+    "n_verdicts": 0,
+    "counts": {}
+  },
+  "bootstrap": {
+    "resamples": 10000,
+    "seed": 20261105,
+    "ci": "95% percentile"
+  },
+  "runs": {
+    "total": 1704,
+    "by_arm": {
+      "haiku": 1470,
+      "sonnet": 234
+    },
+    "infra_error": 0
+  },
+  "haiku": {
+    "platforms": 88,
+    "excluded": [
+      {
+        "platform_id": "freestyle",
+        "reason": "no runs"
+      },
+      {
+        "platform_id": "orama",
+        "reason": "no runs"
+      }
+    ],
+    "outcome": {
+      "mean_success_rate": 0.8705808080808081,
+      "sd": 0.16569996164408962,
+      "share_platforms_ge_0.9": 0.6022727272727273,
+      "ceiling_flag": false
+    }
+  },
+  "hypotheses": {
+    "H1": {
+      "n": 88,
+      "rho": -0.029279952061962662,
+      "ci95": [
+        -0.24169659451303274,
+        0.18175897577533476
+      ],
+      "p_one_sided": 0.599040095990401,
+      "p_holm": 1.0,
+      "supported_ci": false,
+      "supported_holm_0.05": false
+    },
+    "H2": {
+      "n": 88,
+      "rho_runtime": -0.029279952061962662,
+      "rho_discoverability": -0.024607085782486528,
+      "diff": -0.004672866279476134,
+      "ci95": [
+        -0.28936079346753774,
+        0.2806737583733275
+      ],
+      "p_one_sided": 0.511948805119488,
+      "rho_between_predictors": 0.024372023101849768,
+      "p_holm": 1.0,
+      "supported_ci": false,
+      "supported_holm_0.05": false
+    },
+    "H3": {
+      "n": 88,
+      "rho": 0.035246299464646184,
+      "ci95": [
+        -0.1854927251014698,
+        0.2550537147033777
+      ],
+      "p_one_sided": 0.6284371562843716,
+      "p_holm": 1.0,
+      "supported_ci": false,
+      "supported_holm_0.05": false
+    }
+  },
+  "secondary": {
+    "other_predictors": {
+      "discoverability_measured": {
+        "n": 88,
+        "rho": -0.024607085782486528,
+        "ci95": [
+          -0.234446231674737,
+          0.18579225018925963
+        ]
+      },
+      "runtime_published": {
+        "n": 88,
+        "rho": -0.04701401576710066,
+        "ci95": [
+          -0.2555680561250902,
+          0.16218685787215845
+        ]
+      },
+      "discoverability_published": {
+        "n": 88,
+        "rho": -0.00626374883443979,
+        "ci95": [
+          -0.21127607227778722,
+          0.20595504999414788
+        ]
+      },
+      "ars_overall": {
+        "n": 88,
+        "rho": -0.05405233816982756,
+        "ci95": [
+          -0.264835160835922,
+          0.16714769590868764
+        ]
+      }
+    },
+    "by_family": {
+      "soar_auth_header": {
+        "runtime_measured": {
+          "n": 86,
+          "rho": 0.15215904221263207,
+          "ci95": [
+            -0.027393302375400826,
+            0.2989371044592702
+          ]
+        },
+        "discoverability_measured": {
+          "n": 86,
+          "rho": 0.10824334276714664,
+          "ci95": [
+            -0.15320196154430465,
+            0.3184356688775554
+          ]
+        }
+      },
+      "soar_first_request": {
+        "runtime_measured": {
+          "n": 84,
+          "rho": 0.05613834927252828,
+          "ci95": [
+            -0.15409537738300347,
+            0.2667665430277652
+          ]
+        },
+        "discoverability_measured": {
+          "n": 84,
+          "rho": -0.04683559307558507,
+          "ci95": [
+            -0.25270253581855423,
+            0.1618420136918903
+          ]
+        }
+      },
+      "soar_error_rate_limit": {
+        "runtime_measured": {
+          "n": 75,
+          "rho": -0.19670314416641854,
+          "ci95": [
+            -0.3841668991630665,
+            0.009578688771598341
+          ]
+        },
+        "discoverability_measured": {
+          "n": 75,
+          "rho": 0.04654681869090727,
+          "ci95": [
+            -0.14976630612202277,
+            0.24373844740301254
+          ]
+        }
+      }
+    },
+    "category_stratified": {
+      "runtime_measured": {
+        "rho_within_category": -0.034829890586371204,
+        "ci95": [
+          -0.2390482684872023,
+          0.16162329662054836
+        ]
+      },
+      "discoverability_measured": {
+        "rho_within_category": -0.05127842942954829,
+        "ci95": [
+          -0.25710246826157807,
+          0.15094450452873828
+        ]
+      }
+    },
+    "per_category": {
+      "agent_tooling": {
+        "runtime_measured": {
+          "n": 15,
+          "rho": 0.27131065466867327,
+          "ci95": [
+            -0.2791436676772305,
+            0.7957079663987925
+          ]
+        },
+        "discoverability_measured": {
+          "n": 15,
+          "rho": 0.10015048694348118,
+          "ci95": [
+            -0.4812613621499237,
+            0.6545347943358762
+          ]
+        }
+      },
+      "backend_infra": {
+        "runtime_measured": {
+          "n": 15,
+          "rho": -0.33962816778120236,
+          "ci95": [
+            -0.728396476352734,
+            0.16152761390411327
+          ]
+        },
+        "discoverability_measured": {
+          "n": 15,
+          "rho": -0.08734528275113014,
+          "ci95": [
+            -0.5798172992144582,
+            0.41085489865089814
+          ]
+        }
+      },
+      "llm_apis": {
+        "runtime_measured": {
+          "n": 15,
+          "rho": -0.3476664003067706,
+          "ci95": [
+            -0.8027743420514636,
+            0.2256895068816174
+          ]
+        },
+        "discoverability_measured": {
+          "n": 15,
+          "rho": -0.05327084619546783,
+          "ci95": [
+            -0.6092212641477444,
+            0.5338681590473128
+          ]
+        }
+      },
+      "payments_comms": {
+        "runtime_measured": {
+          "n": 15,
+          "rho": 0.15991230827114816,
+          "ci95": [
+            -0.5414944717382578,
+            0.7456352086986233
+          ]
+        },
+        "discoverability_measured": {
+          "n": 15,
+          "rho": 0.21145947951822178,
+          "ci95": [
+            -0.42670975757786456,
+            0.7198933886400433
+          ]
+        }
+      },
+      "sandboxes_compute": {
+        "runtime_measured": {
+          "n": 14,
+          "rho": 0.08919338783001443,
+          "ci95": [
+            -0.4332525318588131,
+            0.5895274102021457
+          ]
+        },
+        "discoverability_measured": {
+          "n": 14,
+          "rho": -0.11999201591976325,
+          "ci95": [
+            -0.6511491355461277,
+            0.4536038472276996
+          ]
+        }
+      },
+      "vector_search": {
+        "runtime_measured": {
+          "n": 14,
+          "rho": -0.031207856921028048,
+          "ci95": [
+            -0.6617171298494855,
+            0.505614494422417
+          ]
+        },
+        "discoverability_measured": {
+          "n": 14,
+          "rho": -0.4177234296160164,
+          "ci95": [
+            -0.7589506138883337,
+            0.11434978953446584
+          ]
+        }
+      }
+    },
+    "judge_graded_outcome": {
+      "n": 88,
+      "rho": -0.05272483725906381,
+      "ci95": [
+        -0.26159608952137464,
+        0.16282567985753782
+      ],
+      "p_one_sided": 0.6878312168783122
+    },
+    "per_harness_exploratory": {
+      "claude-code": {
+        "n": 88,
+        "rho": 0.055657386150225314,
+        "ci95": [
+          -0.1550810188493432,
+          0.26051959822732373
+        ]
+      },
+      "codex": {
+        "n": 88,
+        "rho": -0.10014396697010408,
+        "ci95": [
+          -0.30518864022477304,
+          0.106650990594476
+        ]
+      },
+      "opencode": {
+        "n": 88,
+        "rho": -0.06407299158935266,
+        "ci95": [
+          -0.2678535272085869,
+          0.14110473920175512
+        ]
+      }
+    }
+  },
+  "sonnet": {
+    "platforms": 29,
+    "excluded": [],
+    "rho_runtime": {
+      "n": 29,
+      "rho": -0.022327126006644302,
+      "ci95": [
+        -0.3925478740740651,
+        0.3575621748209666
+      ]
+    },
+    "rho_discoverability": {
+      "n": 29,
+      "rho": -0.04852164998757839,
+      "ci95": [
+        -0.454397839750656,
+        0.3746222266323849
+      ]
+    },
+    "mean_success_rate": 0.8965517241379312
+  },
+  "scan_retest": {
+    "runtime_measured": {
+      "n": 89,
+      "rho_scan1_scan2": 0.8376748760227121,
+      "share_identical": 0.8089887640449438
+    },
+    "discoverability_measured": {
+      "n": 89,
+      "rho_scan1_scan2": 0.8480212803068371,
+      "share_identical": 0.42696629213483145
+    },
+    "runtime_published": {
+      "n": 89,
+      "rho_scan1_scan2": 0.8377082843957618,
+      "share_identical": 0.7865168539325843
+    },
+    "discoverability_published": {
+      "n": 89,
+      "rho_scan1_scan2": 0.8549397477655142,
+      "share_identical": 0.3595505617977528
+    },
+    "ars_overall": {
+      "n": 89,
+      "rho_scan1_scan2": 0.8598180224099128,
+      "share_identical": 0.38202247191011235
+    }
+  },
+  "mixed_models": {
+    "n_runs": 1470,
+    "n_platforms": 88,
+    "bayes_mixed_glm": {
+      "method": "statsmodels BinomialBayesMixedGLM, fit_vb, default priors",
+      "fixed_effects": {
+        "Intercept": {
+          "log_odds": 6.111913639108318,
+          "sd": 0.10512161667067703,
+          "odds_ratio": 451.2013260446688,
+          "or_95": [
+            367.1884743925193,
+            554.4363476039844
+          ]
+        },
+        "C(family)[T.soar_error_rate_limit]": {
+          "log_odds": -2.1587519956571555,
+          "sd": 0.19131648205067764,
+          "odds_ratio": 0.11546913713762368,
+          "or_95": [
+            0.07936226302464981,
+            0.16800329430079497
+          ]
+        },
+        "C(family)[T.soar_first_request]": {
+          "log_odds": -4.305791984853006,
+          "sd": 0.13320883687022805,
+          "odds_ratio": 0.013490197277981182,
+          "or_95": [
+            0.010390313458065186,
+            0.017514911685132063
+          ]
+        },
+        "z_rt": {
+          "log_odds": -0.1557134408295444,
+          "sd": 0.11449508055179487,
+          "odds_ratio": 0.8558043938338594,
+          "or_95": [
+            0.6837767532916051,
+            1.0711115243091598
+          ]
+        },
+        "z_disc": {
+          "log_odds": -0.07938442761341231,
+          "sd": 0.10761200693549018,
+          "odds_ratio": 0.9236847662529167,
+          "or_95": [
+            0.7480361590448672,
+            1.140577948126343
+          ]
+        }
+      },
+      "random_effect_sd": {
+        "platform": {
+          "log_sd_mean": 0.882251701816221,
+          "sd": 2.416334450079712
+        },
+        "harness": {
+          "log_sd_mean": -1.3872996018053423,
+          "sd": 0.249748816099927
+        }
+      }
+    },
+    "gee_logit": {
+      "method": "GEE logit, exchangeable, clusters = platform, robust SE",
+      "fixed_effects": {
+        "Intercept": {
+          "log_odds": 4.533815688989042,
+          "odds_ratio": 93.11317502027227,
+          "or_95": [
+            36.34999319693339,
+            238.51623067393837
+          ],
+          "p": 3.484594890791231e-21
+        },
+        "C(family)[T.soar_error_rate_limit]": {
+          "log_odds": -2.2359152208988564,
+          "odds_ratio": 0.10689425321606363,
+          "or_95": [
+            0.034947842177413826,
+            0.3269552755965174
+          ],
+          "p": 8.860858965223995e-05
+        },
+        "C(family)[T.soar_first_request]": {
+          "log_odds": -3.7130430599968607,
+          "odds_ratio": 0.024403149918443227,
+          "or_95": [
+            0.009427428195781807,
+            0.06316820595976229
+          ],
+          "p": 1.9836573236945063e-14
+        },
+        "C(harness)[T.codex]": {
+          "log_odds": 0.12439824177668787,
+          "odds_ratio": 1.132466776789683,
+          "or_95": [
+            0.9231609569899415,
+            1.389227946461331
+          ],
+          "p": 0.23281835413373553
+        },
+        "C(harness)[T.opencode]": {
+          "log_odds": 0.1243982417766879,
+          "odds_ratio": 1.132466776789683,
+          "or_95": [
+            0.9232056322368809,
+            1.389160719725059
+          ],
+          "p": 0.23270770703652732
+        },
+        "z_rt": {
+          "log_odds": -0.09897071262041449,
+          "odds_ratio": 0.9057692352424996,
+          "or_95": [
+            0.6048972805299797,
+            1.356292934220129
+          ],
+          "p": 0.6308917409573906
+        },
+        "z_disc": {
+          "log_odds": -0.10345237634396034,
+          "odds_ratio": 0.9017189648731442,
+          "or_95": [
+            0.5958637085484068,
+            1.364568910552874
+          ],
+          "p": 0.6245432509192521
+        }
+      }
+    }
+  },
+  "platform_table": [
+    {
+      "platform_id": "daytona",
+      "category": "sandboxes_compute",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 32.0,
+      "discoverability_measured": 63.0,
+      "runtime_published": 29.0,
+      "discoverability_published": 67.0,
+      "ars_overall": 53.0
+    },
+    {
+      "platform_id": "e2b",
+      "category": "sandboxes_compute",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 80.0,
+      "discoverability_measured": 87.0,
+      "runtime_published": 84.0,
+      "discoverability_published": 83.0,
+      "ars_overall": 83.0
+    },
+    {
+      "platform_id": "digitalocean",
+      "category": "sandboxes_compute",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 3.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.0,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 69.0,
+      "discoverability_published": 63.0,
+      "ars_overall": 65.0
+    },
+    {
+      "platform_id": "gitpod",
+      "category": "sandboxes_compute",
+      "n_valid": 12,
+      "n_success": 8,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.3333333333333333,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 60.0,
+      "ars_overall": 77.0
+    },
+    {
+      "platform_id": "fly",
+      "category": "sandboxes_compute",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 57.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 70.0,
+      "discoverability_published": 81.0,
+      "ars_overall": 76.0
+    },
+    {
+      "platform_id": "linode",
+      "category": "sandboxes_compute",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 5.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 52.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 42.0,
+      "ars_overall": 26.0
+    },
+    {
+      "platform_id": "hetzner",
+      "category": "sandboxes_compute",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 6.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 79.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 54.0,
+      "ars_overall": 34.0
+    },
+    {
+      "platform_id": "beam",
+      "category": "sandboxes_compute",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 87.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 55.0,
+      "ars_overall": 74.0
+    },
+    {
+      "platform_id": "modal",
+      "category": "sandboxes_compute",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": null,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 78.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 66.0,
+      "ars_overall": 41.0
+    },
+    {
+      "platform_id": "baseten",
+      "category": "sandboxes_compute",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 5.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 55.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 55.0,
+      "ars_overall": 47.0
+    },
+    {
+      "platform_id": "scaleway",
+      "category": "sandboxes_compute",
+      "n_valid": 18,
+      "n_success": 17,
+      "success_rate": 0.9444444444444444,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 0.8333333333333334,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 32.0,
+      "discoverability_measured": 84.0,
+      "runtime_published": 29.0,
+      "discoverability_published": 81.0,
+      "ars_overall": 62.0
+    },
+    {
+      "platform_id": "fal",
+      "category": "sandboxes_compute",
+      "n_valid": 12,
+      "n_success": 7,
+      "success_rate": 0.5833333333333334,
+      "median_tool_calls_success": 7.0,
+      "success_soar_auth_header": null,
+      "success_soar_first_request": 0.16666666666666666,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 54.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 66.0,
+      "discoverability_published": 76.0,
+      "ars_overall": 72.0
+    },
+    {
+      "platform_id": "cerebrium",
+      "category": "sandboxes_compute",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 71.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 66.0,
+      "ars_overall": 80.0
+    },
+    {
+      "platform_id": "runpod",
+      "category": "sandboxes_compute",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 54.0,
+      "discoverability_measured": 75.0,
+      "runtime_published": 65.0,
+      "discoverability_published": 75.0,
+      "ars_overall": 71.0
+    },
+    {
+      "platform_id": "deepseek",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 1.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 72.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 49.0,
+      "ars_overall": 31.0
+    },
+    {
+      "platform_id": "huggingface",
+      "category": "llm_apis",
+      "n_valid": 12,
+      "n_success": 6,
+      "success_rate": 0.5,
+      "median_tool_calls_success": 1.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 63.0,
+      "discoverability_measured": 57.0,
+      "runtime_published": 77.0,
+      "discoverability_published": 77.0,
+      "ars_overall": 77.0
+    },
+    {
+      "platform_id": "gemini",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 79.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 65.0,
+      "ars_overall": 40.0
+    },
+    {
+      "platform_id": "zai",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 55.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 48.0,
+      "ars_overall": 47.0
+    },
+    {
+      "platform_id": "alibaba",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 6.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 52.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 28.0,
+      "ars_overall": 17.0
+    },
+    {
+      "platform_id": "moonshot",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 52.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 47.0,
+      "ars_overall": 70.0
+    },
+    {
+      "platform_id": "mistral",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 16,
+      "success_rate": 0.8888888888888888,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.6666666666666666,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 61.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 46.0,
+      "ars_overall": 28.0
+    },
+    {
+      "platform_id": "replicate",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 17,
+      "success_rate": 0.9444444444444444,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 0.8333333333333334,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 50.0,
+      "discoverability_measured": 59.0,
+      "runtime_published": 54.0,
+      "discoverability_published": 72.0,
+      "ars_overall": 66.0
+    },
+    {
+      "platform_id": "together",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 75.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 46.0,
+      "ars_overall": 69.0
+    },
+    {
+      "platform_id": "cohere",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 6.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 81.0,
+      "discoverability_measured": 58.0,
+      "runtime_published": 84.0,
+      "discoverability_published": 54.0,
+      "ars_overall": 66.0
+    },
+    {
+      "platform_id": "groq",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 17,
+      "success_rate": 0.9444444444444444,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 0.8333333333333334,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 59.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 45.0,
+      "ars_overall": 28.0
+    },
+    {
+      "platform_id": "cerebras",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 50.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 43.0,
+      "ars_overall": 27.0
+    },
+    {
+      "platform_id": "novita",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 17,
+      "success_rate": 0.9444444444444444,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.8333333333333334,
+      "runtime_measured": 58.0,
+      "discoverability_measured": 75.0,
+      "runtime_published": 75.0,
+      "discoverability_published": 69.0,
+      "ars_overall": 72.0
+    },
+    {
+      "platform_id": "sambanova",
+      "category": "llm_apis",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 4.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 63.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 52.0,
+      "ars_overall": 72.0
+    },
+    {
+      "platform_id": "nebius",
+      "category": "llm_apis",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 77.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 55.0,
+      "ars_overall": 75.0
+    },
+    {
+      "platform_id": "elastic",
+      "category": "vector_search",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 58.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 55.0,
+      "ars_overall": 34.0
+    },
+    {
+      "platform_id": "meilisearch",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 77.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 71.0,
+      "ars_overall": 83.0
+    },
+    {
+      "platform_id": "zilliz",
+      "category": "vector_search",
+      "n_valid": 12,
+      "n_success": 6,
+      "success_rate": 0.5,
+      "median_tool_calls_success": 2.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 53.0,
+      "ars_overall": 33.0
+    },
+    {
+      "platform_id": "qdrant",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 50.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 30.0,
+      "ars_overall": 18.0
+    },
+    {
+      "platform_id": "chroma",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 61.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 54.0,
+      "ars_overall": 74.0
+    },
+    {
+      "platform_id": "typesense",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 55.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 61.0,
+      "ars_overall": 39.0
+    },
+    {
+      "platform_id": "brave",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 15,
+      "success_rate": 0.8333333333333334,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.5,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 76.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 61.0,
+      "ars_overall": 38.0
+    },
+    {
+      "platform_id": "jina",
+      "category": "vector_search",
+      "n_valid": 12,
+      "n_success": 5,
+      "success_rate": 0.4166666666666667,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 0.8333333333333334,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 69.0,
+      "discoverability_measured": 72.0,
+      "runtime_published": 74.0,
+      "discoverability_published": 65.0,
+      "ars_overall": 69.0
+    },
+    {
+      "platform_id": "weaviate",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 17,
+      "success_rate": 0.9444444444444444,
+      "median_tool_calls_success": 5.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.8333333333333334,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 83.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 64.0,
+      "ars_overall": 41.0
+    },
+    {
+      "platform_id": "lancedb",
+      "category": "vector_search",
+      "n_valid": 12,
+      "n_success": 8,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 6.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.3333333333333333,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 55.0,
+      "discoverability_measured": 78.0,
+      "runtime_published": 65.0,
+      "discoverability_published": 58.0,
+      "ars_overall": 60.0
+    },
+    {
+      "platform_id": "activeloop",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 5.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 68.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 44.0,
+      "ars_overall": 68.0
+    },
+    {
+      "platform_id": "vespa",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 5.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 56.0,
+      "ars_overall": 35.0
+    },
+    {
+      "platform_id": "exa",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 3.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 68.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 81.0,
+      "discoverability_published": 80.0,
+      "ars_overall": 80.0
+    },
+    {
+      "platform_id": "marqo",
+      "category": "vector_search",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 55.0,
+      "ars_overall": 35.0
+    },
+    {
+      "platform_id": "vercel",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 69.0,
+      "discoverability_published": 77.0,
+      "ars_overall": 74.0
+    },
+    {
+      "platform_id": "supabase",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 47.0,
+      "discoverability_measured": 72.0,
+      "runtime_published": 54.0,
+      "discoverability_published": 86.0,
+      "ars_overall": 75.0
+    },
+    {
+      "platform_id": "redis",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 14,
+      "success_rate": 0.7777777777777778,
+      "median_tool_calls_success": 3.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.3333333333333333,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 70.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 37.0,
+      "ars_overall": 65.0
+    },
+    {
+      "platform_id": "upstash",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 79.0,
+      "runtime_published": 69.0,
+      "discoverability_published": 55.0,
+      "ars_overall": 61.0
+    },
+    {
+      "platform_id": "cloudflare",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 5.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 39.0,
+      "discoverability_measured": 66.0,
+      "runtime_published": 63.0,
+      "discoverability_published": 77.0,
+      "ars_overall": 70.0
+    },
+    {
+      "platform_id": "appwrite",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 4.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 71.0,
+      "runtime_published": 71.0,
+      "discoverability_published": 74.0,
+      "ars_overall": 73.0
+    },
+    {
+      "platform_id": "prisma",
+      "category": "backend_infra",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 60.0,
+      "discoverability_measured": 88.0,
+      "runtime_published": 64.0,
+      "discoverability_published": 87.0,
+      "ars_overall": 79.0
+    },
+    {
+      "platform_id": "sentry",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 15,
+      "success_rate": 0.8333333333333334,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.5,
+      "runtime_measured": 45.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 61.0,
+      "discoverability_published": 58.0,
+      "ars_overall": 59.0
+    },
+    {
+      "platform_id": "posthog",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 58.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 51.0,
+      "ars_overall": 32.0
+    },
+    {
+      "platform_id": "hasura",
+      "category": "backend_infra",
+      "n_valid": 6,
+      "n_success": 6,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 5.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": null,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 72.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 54.0,
+      "ars_overall": 34.0
+    },
+    {
+      "platform_id": "mongodb",
+      "category": "backend_infra",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 6.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": null,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 55.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 61.0,
+      "ars_overall": 39.0
+    },
+    {
+      "platform_id": "turso",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 47.0,
+      "discoverability_measured": 71.0,
+      "runtime_published": 53.0,
+      "discoverability_published": 63.0,
+      "ars_overall": 59.0
+    },
+    {
+      "platform_id": "neon",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 2.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 47.0,
+      "discoverability_measured": 84.0,
+      "runtime_published": 60.0,
+      "discoverability_published": 81.0,
+      "ars_overall": 73.0
+    },
+    {
+      "platform_id": "auth0",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 2.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 90.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 80.0,
+      "ars_overall": 88.0
+    },
+    {
+      "platform_id": "trigger",
+      "category": "backend_infra",
+      "n_valid": 18,
+      "n_success": 17,
+      "success_rate": 0.9444444444444444,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.8333333333333334,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 50.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 27.0,
+      "ars_overall": 60.0
+    },
+    {
+      "platform_id": "n8n",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 68.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 58.0,
+      "ars_overall": 75.0
+    },
+    {
+      "platform_id": "firecrawl",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 55.0,
+      "discoverability_measured": 78.0,
+      "runtime_published": 71.0,
+      "discoverability_published": 82.0,
+      "ars_overall": 77.0
+    },
+    {
+      "platform_id": "dify",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 5.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 71.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 52.0,
+      "ars_overall": 73.0
+    },
+    {
+      "platform_id": "langchain",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 5.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 50.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 39.0,
+      "ars_overall": 65.0
+    },
+    {
+      "platform_id": "browseruse",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 71.0,
+      "discoverability_measured": 84.0,
+      "runtime_published": 81.0,
+      "discoverability_published": 82.0,
+      "ars_overall": 82.0
+    },
+    {
+      "platform_id": "composio",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 5.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 50.0,
+      "discoverability_measured": 78.0,
+      "runtime_published": 57.0,
+      "discoverability_published": 77.0,
+      "ars_overall": 69.0
+    },
+    {
+      "platform_id": "mem0",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 11,
+      "success_rate": 0.6111111111111112,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 0.8333333333333334,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 69.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 59.0,
+      "ars_overall": 75.0
+    },
+    {
+      "platform_id": "crewai",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 15,
+      "success_rate": 0.8333333333333334,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.5,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 63.0,
+      "discoverability_measured": 69.0,
+      "runtime_published": 71.0,
+      "discoverability_published": 65.0,
+      "ars_overall": 68.0
+    },
+    {
+      "platform_id": "flowise",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 5.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 45.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 26.0,
+      "ars_overall": 59.0
+    },
+    {
+      "platform_id": "llamaindex",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.0,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 74.0,
+      "runtime_published": 69.0,
+      "discoverability_published": 50.0,
+      "ars_overall": 57.0
+    },
+    {
+      "platform_id": "langfuse",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 17,
+      "success_rate": 0.9444444444444444,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.8333333333333334,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 74.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 61.0,
+      "ars_overall": 76.0
+    },
+    {
+      "platform_id": "zep",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 6.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 25.0,
+      "discoverability_measured": 80.0,
+      "runtime_published": 40.0,
+      "discoverability_published": 61.0,
+      "ars_overall": 54.0
+    },
+    {
+      "platform_id": "deepset",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 63.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 36.0,
+      "ars_overall": 22.0
+    },
+    {
+      "platform_id": "apify",
+      "category": "agent_tooling",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": null,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 81.0,
+      "discoverability_measured": 88.0,
+      "runtime_published": 89.0,
+      "discoverability_published": 91.0,
+      "ars_overall": 90.0
+    },
+    {
+      "platform_id": "browserbase",
+      "category": "agent_tooling",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 4.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 75.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 62.0,
+      "ars_overall": 78.0
+    },
+    {
+      "platform_id": "novu",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 68.0,
+      "discoverability_measured": 79.0,
+      "runtime_published": 79.0,
+      "discoverability_published": 72.0,
+      "ars_overall": 75.0
+    },
+    {
+      "platform_id": "square",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 17,
+      "success_rate": 0.9444444444444444,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.8333333333333334,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 56.0,
+      "runtime_published": 69.0,
+      "discoverability_published": 48.0,
+      "ars_overall": 56.0
+    },
+    {
+      "platform_id": "resend",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 13,
+      "success_rate": 0.7222222222222222,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.16666666666666666,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 63.0,
+      "discoverability_measured": 88.0,
+      "runtime_published": 78.0,
+      "discoverability_published": 88.0,
+      "ars_overall": 83.0
+    },
+    {
+      "platform_id": "polar",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 16,
+      "success_rate": 0.8888888888888888,
+      "median_tool_calls_success": 4.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.6666666666666666,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 95.0,
+      "discoverability_measured": 68.0,
+      "runtime_published": 96.0,
+      "discoverability_published": 54.0,
+      "ars_overall": 74.0
+    },
+    {
+      "platform_id": "stream",
+      "category": "payments_comms",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": null,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 86.0,
+      "runtime_published": 69.0,
+      "discoverability_published": 71.0,
+      "ars_overall": 71.0
+    },
+    {
+      "platform_id": "stripe",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 77.0,
+      "runtime_published": 69.0,
+      "discoverability_published": 64.0,
+      "ars_overall": 66.0
+    },
+    {
+      "platform_id": "slack",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 78.0,
+      "runtime_published": 69.0,
+      "discoverability_published": 66.0,
+      "ars_overall": 67.0
+    },
+    {
+      "platform_id": "paypal",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 11,
+      "success_rate": 0.6111111111111112,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 0.8333333333333334,
+      "runtime_measured": 25.0,
+      "discoverability_measured": 61.0,
+      "runtime_published": 40.0,
+      "discoverability_published": 56.0,
+      "ars_overall": 51.0
+    },
+    {
+      "platform_id": "postmark",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 27.0,
+      "discoverability_measured": 81.0,
+      "runtime_published": 41.0,
+      "discoverability_published": 76.0,
+      "ars_overall": 62.0
+    },
+    {
+      "platform_id": "sendgrid",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 11,
+      "success_rate": 0.6111111111111112,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 0.8333333333333334,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 31.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 33.0,
+      "ars_overall": 20.0
+    },
+    {
+      "platform_id": "pusher",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 18,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 2.5,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 0.0,
+      "discoverability_measured": 69.0,
+      "runtime_published": 0.0,
+      "discoverability_published": 61.0,
+      "ars_overall": 38.0
+    },
+    {
+      "platform_id": "twilio",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 12,
+      "success_rate": 0.6666666666666666,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 0.0,
+      "success_soar_error_rate_limit": 1.0,
+      "runtime_measured": 100.0,
+      "discoverability_measured": 66.0,
+      "runtime_published": 100.0,
+      "discoverability_published": 63.0,
+      "ars_overall": 78.0
+    },
+    {
+      "platform_id": "plivo",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 16,
+      "success_rate": 0.8888888888888888,
+      "median_tool_calls_success": 4.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.6666666666666666,
+      "runtime_measured": 73.0,
+      "discoverability_measured": 74.0,
+      "runtime_published": 78.0,
+      "discoverability_published": 65.0,
+      "ars_overall": 70.0
+    },
+    {
+      "platform_id": "plaid",
+      "category": "payments_comms",
+      "n_valid": 12,
+      "n_success": 12,
+      "success_rate": 1.0,
+      "median_tool_calls_success": 3.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": null,
+      "runtime_measured": 64.0,
+      "discoverability_measured": 55.0,
+      "runtime_published": 73.0,
+      "discoverability_published": 57.0,
+      "ars_overall": 63.0
+    },
+    {
+      "platform_id": "razorpay",
+      "category": "payments_comms",
+      "n_valid": 18,
+      "n_success": 16,
+      "success_rate": 0.8888888888888888,
+      "median_tool_calls_success": 2.0,
+      "success_soar_auth_header": 1.0,
+      "success_soar_first_request": 1.0,
+      "success_soar_error_rate_limit": 0.6666666666666666,
+      "runtime_measured": 68.0,
+      "discoverability_measured": 80.0,
+      "runtime_published": 81.0,
+      "discoverability_published": 84.0,
+      "ars_overall": 83.0
+    }
+  ]
+}
